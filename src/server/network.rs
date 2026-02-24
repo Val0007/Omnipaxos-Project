@@ -384,7 +384,7 @@ impl ClientConnection {
     ) -> Self {
         let (reader, mut writer) = frame_servers_connection(connection);
         // Reader Actor
-        let reader_task = tokio::spawn(async move {
+        let reader_task: JoinHandle<()> = tokio::spawn(async move {
             let mut buf_reader = reader.ready_chunks(batch_size);
             while let Some(messages) = buf_reader.next().await {
                 for msg in messages {

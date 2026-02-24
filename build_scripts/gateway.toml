@@ -1,0 +1,10 @@
+# build_scripts/gateway.toml
+listen_addr = "127.0.0.1:8080"
+
+server_addrs = [
+  "127.0.0.1:8001",
+  "127.0.0.1:8002",
+  "127.0.0.1:8003",
+]
+
+request_timeout_ms = 5000
