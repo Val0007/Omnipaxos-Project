@@ -1,0 +1,3028 @@
+<html><head><style>.ops        { position: absolute; }
+.op         { position: absolute; padding: 2px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.3s cubic-bezier(.25,.8,.25,1); overflow: hidden; }
+.op.invoke  { background: #eeeeee; }
+.op.ok      { background: #6DB6FE; }
+.op.info    { background: #FFAA26; }
+.op.fail    { background: #FEB5DA; }
+.op:target  { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+</style></head><body><div><a href="/">jepsen</a> / <a href="/files/lin-kv">lin-kv</a> / <a href="/files/lin-kv/20260225T131852.251+0100">20260225T131852.251+0100</a> / <a href="/files/lin-kv/20260225T131852.251+0100/">independent</a> / <a href="/files/lin-kv/20260225T131852.251+0100/independent/"></a></div><h1>lin-kv key </h1><div class="ops"><a href="#i1"><div class="op fail" id="i1" style="width:100;left:318;top:0;height:16" title="Dur: 15 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.274Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 1
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 2]]}">3 cas [0 [1 2]]</div></a><a href="#i3"><div class="op fail" id="i3" style="width:100;left:106;top:32;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.352Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 3
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i5"><div class="op fail" id="i5" style="width:100;left:318;top:64;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.426Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 5
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 3]]}">3 cas [0 [3 3]]</div></a><a href="#i7"><div class="op fail" id="i7" style="width:100;left:318;top:96;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.536Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 7
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 2]]}">3 cas [0 [1 2]]</div></a><a href="#i9"><div class="op fail" id="i9" style="width:100;left:0;top:128;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.653Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 9
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i11"><div class="op fail" id="i11" style="width:100;left:530;top:160;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.745Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 11
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 0]]}">5 cas [0 [2 0]]</div></a><a href="#i14"><div class="op fail" id="i14" style="width:100;left:0;top:208;height:16" title="Dur: 12 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.936Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 14
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i15"><div class="op fail" id="i15" style="width:100;left:318;top:192;height:48" title="Dur: 22 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:52.941Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 15
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 1]]}">3 cas [0 [3 1]]</div></a><a href="#i17"><div class="op fail" id="i17" style="width:100;left:318;top:256;height:16" title="Dur: 14 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.007Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 17
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i20"><div class="op fail" id="i20" style="width:100;left:212;top:288;height:32" title="Dur: 243 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.326Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 20
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i21"><div class="op fail" id="i21" style="width:100;left:318;top:304;height:32" title="Dur: 129 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.326Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 21
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i23"><div class="op fail" id="i23" style="width:100;left:424;top:352;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.363Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 23
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 3]]}">4 cas [0 [3 3]]</div></a><a href="#i25"><div class="op fail" id="i25" style="width:100;left:0;top:384;height:16" title="Dur: 11 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.443Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 25
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i27"><div class="op fail" id="i27" style="width:100;left:0;top:416;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.584Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 27
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i29"><div class="op fail" id="i29" style="width:100;left:0;top:448;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.588Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 29
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i31"><div class="op fail" id="i31" style="width:100;left:106;top:480;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.608Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 31
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i33"><div class="op fail" id="i33" style="width:100;left:212;top:512;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.643Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 33
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i35"><div class="op fail" id="i35" style="width:100;left:318;top:544;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.686Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 35
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 4]]}">3 cas [0 [1 4]]</div></a><a href="#i37"><div class="op fail" id="i37" style="width:100;left:424;top:576;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.760Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :write
+ :index 37
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">4 write [0 2]</div></a><a href="#i39"><div class="op fail" id="i39" style="width:100;left:530;top:608;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.792Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 39
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 2]]}">5 cas [0 [0 2]]</div></a><a href="#i41"><div class="op fail" id="i41" style="width:100;left:0;top:640;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.836Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 41
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i43"><div class="op fail" id="i43" style="width:100;left:318;top:672;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:53.982Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 43
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 0]]}">3 cas [0 [2 0]]</div></a><a href="#i45"><div class="op fail" id="i45" style="width:100;left:106;top:704;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.058Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 45
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i47"><div class="op fail" id="i47" style="width:100;left:318;top:736;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.236Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 47
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 1]]}">3 cas [0 [1 1]]</div></a><a href="#i50"><div class="op fail" id="i50" style="width:100;left:0;top:768;height:32" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.261Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 50
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i51"><div class="op fail" id="i51" style="width:100;left:106;top:784;height:32" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.262Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 51
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i53"><div class="op fail" id="i53" style="width:100;left:0;top:832;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.318Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 53
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i55"><div class="op fail" id="i55" style="width:100;left:0;top:864;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.335Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 55
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i57"><div class="op fail" id="i57" style="width:100;left:0;top:896;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.382Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 57
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i59"><div class="op fail" id="i59" style="width:100;left:318;top:928;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.427Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 59
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 0]]}">3 cas [0 [0 0]]</div></a><a href="#i61"><div class="op fail" id="i61" style="width:100;left:318;top:960;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.577Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 61
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 1]]}">3 cas [0 [2 1]]</div></a><a href="#i63"><div class="op fail" id="i63" style="width:100;left:318;top:992;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.688Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 63
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 4]]}">3 cas [0 [0 4]]</div></a><a href="#i65"><div class="op fail" id="i65" style="width:100;left:0;top:1024;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.832Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 65
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i67"><div class="op fail" id="i67" style="width:100;left:530;top:1056;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:54.894Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 67
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 3]]}">5 cas [0 [4 3]]</div></a><a href="#i69"><div class="op fail" id="i69" style="width:100;left:318;top:1088;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.000Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 69
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 2]]}">3 cas [0 [3 2]]</div></a><a href="#i71"><div class="op fail" id="i71" style="width:100;left:0;top:1120;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.046Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 71
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i73"><div class="op fail" id="i73" style="width:100;left:106;top:1152;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.139Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 73
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i75"><div class="op fail" id="i75" style="width:100;left:212;top:1184;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.332Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 75
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i77"><div class="op fail" id="i77" style="width:100;left:318;top:1216;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.469Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 77
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 3]]}">3 cas [0 [3 3]]</div></a><a href="#i79"><div class="op fail" id="i79" style="width:100;left:0;top:1248;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.535Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 79
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i81"><div class="op fail" id="i81" style="width:100;left:0;top:1280;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.710Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 81
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i83"><div class="op fail" id="i83" style="width:100;left:0;top:1312;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:55.867Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 83
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i85"><div class="op fail" id="i85" style="width:100;left:318;top:1344;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.008Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 85
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 0]]}">3 cas [0 [1 0]]</div></a><a href="#i87"><div class="op fail" id="i87" style="width:100;left:106;top:1376;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.026Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 87
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i89"><div class="op fail" id="i89" style="width:100;left:318;top:1408;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.153Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 89
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 2]]}">3 cas [0 [1 2]]</div></a><a href="#i91"><div class="op fail" id="i91" style="width:100;left:318;top:1440;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.220Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 91
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i93"><div class="op fail" id="i93" style="width:100;left:424;top:1472;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.285Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 93
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 3]]}">4 cas [0 [0 3]]</div></a><a href="#i95"><div class="op fail" id="i95" style="width:100;left:0;top:1504;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.435Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 95
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i97"><div class="op fail" id="i97" style="width:100;left:0;top:1536;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.442Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 97
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i99"><div class="op fail" id="i99" style="width:100;left:318;top:1568;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.536Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 99
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i101"><div class="op fail" id="i101" style="width:100;left:318;top:1600;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.677Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 101
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i103"><div class="op fail" id="i103" style="width:100;left:212;top:1632;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.824Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 103
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i105"><div class="op fail" id="i105" style="width:100;left:0;top:1664;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:56.870Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 105
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i107"><div class="op fail" id="i107" style="width:100;left:0;top:1696;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.036Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 107
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i109"><div class="op fail" id="i109" style="width:100;left:530;top:1728;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.053Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 109
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">5 write [0 2]</div></a><a href="#i111"><div class="op fail" id="i111" style="width:100;left:318;top:1760;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.209Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 111
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 2]]}">3 cas [0 [3 2]]</div></a><a href="#i113"><div class="op fail" id="i113" style="width:100;left:0;top:1792;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.219Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 113
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i115"><div class="op fail" id="i115" style="width:100;left:106;top:1824;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.335Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 115
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i117"><div class="op fail" id="i117" style="width:100;left:212;top:1856;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.429Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 117
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i119"><div class="op fail" id="i119" style="width:100;left:318;top:1888;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.491Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 119
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i121"><div class="op fail" id="i121" style="width:100;left:0;top:1920;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.544Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 121
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i123"><div class="op fail" id="i123" style="width:100;left:530;top:1952;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.677Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 123
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 3]]}">5 cas [0 [1 3]]</div></a><a href="#i125"><div class="op fail" id="i125" style="width:100;left:0;top:1984;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:57.880Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 125
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i127"><div class="op fail" id="i127" style="width:100;left:0;top:2016;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.017Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 127
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i129"><div class="op fail" id="i129" style="width:100;left:318;top:2048;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.043Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 129
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i131"><div class="op fail" id="i131" style="width:100;left:212;top:2080;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.173Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 131
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i133"><div class="op fail" id="i133" style="width:100;left:0;top:2112;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.195Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 133
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i135"><div class="op fail" id="i135" style="width:100;left:0;top:2144;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.319Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 135
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i137"><div class="op fail" id="i137" style="width:100;left:0;top:2176;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.352Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 137
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i139"><div class="op fail" id="i139" style="width:100;left:318;top:2208;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.447Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 139
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 2]]}">3 cas [0 [1 2]]</div></a><a href="#i141"><div class="op fail" id="i141" style="width:100;left:318;top:2240;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.455Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 141
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 1]]}">3 cas [0 [3 1]]</div></a><a href="#i143"><div class="op fail" id="i143" style="width:100;left:318;top:2272;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.655Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 143
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i145"><div class="op fail" id="i145" style="width:100;left:318;top:2304;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.797Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 145
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 0]]}">3 cas [0 [0 0]]</div></a><a href="#i147"><div class="op fail" id="i147" style="width:100;left:318;top:2336;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:58.979Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 147
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i149"><div class="op fail" id="i149" style="width:100;left:424;top:2368;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.119Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :write
+ :index 149
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">4 write [0 4]</div></a><a href="#i151"><div class="op fail" id="i151" style="width:100;left:530;top:2400;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.189Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 151
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 1]]}">5 cas [0 [3 1]]</div></a><a href="#i153"><div class="op fail" id="i153" style="width:100;left:318;top:2432;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.360Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 153
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i155"><div class="op fail" id="i155" style="width:100;left:318;top:2464;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.452Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 155
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 2]]}">3 cas [0 [2 2]]</div></a><a href="#i157"><div class="op fail" id="i157" style="width:100;left:318;top:2496;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.474Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 157
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i159"><div class="op fail" id="i159" style="width:100;left:318;top:2528;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.676Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 159
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 0]]}">3 cas [0 [2 0]]</div></a><a href="#i161"><div class="op fail" id="i161" style="width:100;left:0;top:2560;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.755Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 161
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i163"><div class="op fail" id="i163" style="width:100;left:0;top:2592;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:18:59.930Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 163
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i165"><div class="op fail" id="i165" style="width:100;left:0;top:2624;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.109Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 165
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i167"><div class="op fail" id="i167" style="width:100;left:0;top:2656;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.236Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 167
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i169"><div class="op fail" id="i169" style="width:100;left:318;top:2688;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.260Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 169
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 3]]}">3 cas [0 [1 3]]</div></a><a href="#i171"><div class="op fail" id="i171" style="width:100;left:106;top:2720;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.353Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 171
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i173"><div class="op fail" id="i173" style="width:100;left:318;top:2752;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.383Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 173
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 3]]}">3 cas [0 [3 3]]</div></a><a href="#i175"><div class="op fail" id="i175" style="width:100;left:0;top:2784;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.576Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 175
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i177"><div class="op fail" id="i177" style="width:100;left:424;top:2816;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.650Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 177
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 1]]}">4 cas [0 [3 1]]</div></a><a href="#i179"><div class="op fail" id="i179" style="width:100;left:530;top:2848;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.715Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 179
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">5 write [0 2]</div></a><a href="#i181"><div class="op fail" id="i181" style="width:100;left:318;top:2880;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:00.886Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 181
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i183"><div class="op fail" id="i183" style="width:100;left:0;top:2912;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.069Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 183
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i185"><div class="op fail" id="i185" style="width:100;left:106;top:2944;height:16" title="Dur: 7 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.257Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 185
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i187"><div class="op fail" id="i187" style="width:100;left:212;top:2976;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.355Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 187
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i189"><div class="op fail" id="i189" style="width:100;left:0;top:3008;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.471Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 189
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i191"><div class="op fail" id="i191" style="width:100;left:0;top:3040;height:16" title="Dur: 75 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.727Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 191
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i194"><div class="op fail" id="i194" style="width:100;left:0;top:3088;height:16" title="Dur: 13 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.881Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 194
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i195"><div class="op fail" id="i195" style="width:100;left:530;top:3072;height:48" title="Dur: 51 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.905Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 195
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">5 write [0 4]</div></a><a href="#i197"><div class="op fail" id="i197" style="width:100;left:0;top:3136;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.960Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 197
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i199"><div class="op fail" id="i199" style="width:100;left:318;top:3168;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:01.979Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 199
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 0]]}">3 cas [0 [3 0]]</div></a><a href="#i201"><div class="op fail" id="i201" style="width:100;left:318;top:3200;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.017Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 201
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i203"><div class="op fail" id="i203" style="width:100;left:0;top:3232;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.096Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 203
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i205"><div class="op fail" id="i205" style="width:100;left:0;top:3264;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.195Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 205
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i207"><div class="op fail" id="i207" style="width:100;left:0;top:3296;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.353Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 207
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i209"><div class="op fail" id="i209" style="width:100;left:0;top:3328;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.399Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 209
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i211"><div class="op fail" id="i211" style="width:100;left:0;top:3360;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.457Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 211
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i213"><div class="op fail" id="i213" style="width:100;left:318;top:3392;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.628Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 213
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i215"><div class="op fail" id="i215" style="width:100;left:318;top:3424;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.742Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 215
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 3]]}">3 cas [0 [2 3]]</div></a><a href="#i217"><div class="op fail" id="i217" style="width:100;left:318;top:3456;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.771Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 217
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 4]]}">3 cas [0 [2 4]]</div></a><a href="#i219"><div class="op fail" id="i219" style="width:100;left:0;top:3488;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:02.969Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 219
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i221"><div class="op fail" id="i221" style="width:100;left:530;top:3520;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:03.122Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 221
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 0]]}">5 cas [0 [1 0]]</div></a><a href="#i223"><div class="op fail" id="i223" style="width:100;left:0;top:3552;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:03.213Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 223
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i225"><div class="op fail" id="i225" style="width:100;left:318;top:3584;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:03.393Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 225
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i227"><div class="op fail" id="i227" style="width:100;left:106;top:3616;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:03.529Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 227
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i229"><div class="op fail" id="i229" style="width:100;left:212;top:3648;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:03.720Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 229
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i231"><div class="op fail" id="i231" style="width:100;left:0;top:3680;height:16" title="Dur: 9 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:03.898Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 231
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i233"><div class="op fail" id="i233" style="width:100;left:424;top:3712;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.009Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 233
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 1]]}">4 cas [0 [1 1]]</div></a><a href="#i235"><div class="op fail" id="i235" style="width:100;left:0;top:3744;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.129Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 235
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i237"><div class="op fail" id="i237" style="width:100;left:0;top:3776;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.147Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 237
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i239"><div class="op fail" id="i239" style="width:100;left:0;top:3808;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.271Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 239
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i241"><div class="op fail" id="i241" style="width:100;left:318;top:3840;height:16" title="Dur: 0 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.274Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 241
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i243"><div class="op fail" id="i243" style="width:100;left:212;top:3872;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.305Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 243
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i245"><div class="op fail" id="i245" style="width:100;left:0;top:3904;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.450Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 245
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i247"><div class="op fail" id="i247" style="width:100;left:0;top:3936;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.648Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 247
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i249"><div class="op fail" id="i249" style="width:100;left:0;top:3968;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.852Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 249
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i251"><div class="op fail" id="i251" style="width:100;left:0;top:4000;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:04.914Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 251
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i253"><div class="op fail" id="i253" style="width:100;left:318;top:4032;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.101Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 253
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 3]]}">3 cas [0 [2 3]]</div></a><a href="#i255"><div class="op fail" id="i255" style="width:100;left:106;top:4064;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.245Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 255
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i257"><div class="op fail" id="i257" style="width:100;left:318;top:4096;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.322Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 257
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a><a href="#i259"><div class="op fail" id="i259" style="width:100;left:318;top:4128;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.388Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 259
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 2]]}">3 cas [0 [0 2]]</div></a><a href="#i261"><div class="op fail" id="i261" style="width:100;left:0;top:4160;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.403Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 261
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i263"><div class="op fail" id="i263" style="width:100;left:530;top:4192;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.500Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 263
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">5 cas [0 [4 4]]</div></a><a href="#i265"><div class="op fail" id="i265" style="width:100;left:318;top:4224;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.635Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 265
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a><a href="#i267"><div class="op fail" id="i267" style="width:100;left:0;top:4256;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.668Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 267
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i269"><div class="op fail" id="i269" style="width:100;left:318;top:4288;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.755Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 269
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 1]]}">3 cas [0 [2 1]]</div></a><a href="#i271"><div class="op fail" id="i271" style="width:100;left:318;top:4320;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.854Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 271
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 2]]}">3 cas [0 [3 2]]</div></a><a href="#i273"><div class="op fail" id="i273" style="width:100;left:0;top:4352;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.946Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 273
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i275"><div class="op fail" id="i275" style="width:100;left:0;top:4384;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:05.957Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 275
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i277"><div class="op fail" id="i277" style="width:100;left:530;top:4416;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.046Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 277
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 2]]}">5 cas [0 [1 2]]</div></a><a href="#i279"><div class="op fail" id="i279" style="width:100;left:318;top:4448;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.133Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 279
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 0]]}">3 cas [0 [0 0]]</div></a><a href="#i281"><div class="op fail" id="i281" style="width:100;left:318;top:4480;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.153Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 281
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i283"><div class="op fail" id="i283" style="width:100;left:318;top:4512;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.324Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 283
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a><a href="#i285"><div class="op fail" id="i285" style="width:100;left:212;top:4544;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.494Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 285
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i287"><div class="op fail" id="i287" style="width:100;left:318;top:4576;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.606Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 287
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 2]]}">3 cas [0 [2 2]]</div></a><a href="#i289"><div class="op fail" id="i289" style="width:100;left:0;top:4608;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.629Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 289
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i291"><div class="op fail" id="i291" style="width:100;left:0;top:4640;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.732Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 291
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i293"><div class="op fail" id="i293" style="width:100;left:0;top:4672;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:06.819Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 293
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i295"><div class="op fail" id="i295" style="width:100;left:0;top:4704;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.003Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 295
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i297"><div class="op fail" id="i297" style="width:100;left:318;top:4736;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.131Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 297
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 1]]}">3 cas [0 [2 1]]</div></a><a href="#i299"><div class="op fail" id="i299" style="width:100;left:212;top:4768;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.209Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 299
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i301"><div class="op fail" id="i301" style="width:100;left:318;top:4800;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.246Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 301
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">3 cas [0 [4 1]]</div></a><a href="#i303"><div class="op fail" id="i303" style="width:100;left:0;top:4832;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.249Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 303
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i305"><div class="op fail" id="i305" style="width:100;left:530;top:4864;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.359Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 305
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 3]]}">5 cas [0 [3 3]]</div></a><a href="#i307"><div class="op fail" id="i307" style="width:100;left:318;top:4896;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.394Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 307
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i309"><div class="op fail" id="i309" style="width:100;left:318;top:4928;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.546Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 309
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i311"><div class="op fail" id="i311" style="width:100;left:318;top:4960;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.580Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 311
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">3 cas [0 [4 1]]</div></a><a href="#i313"><div class="op fail" id="i313" style="width:100;left:212;top:4992;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.712Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 313
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i315"><div class="op fail" id="i315" style="width:100;left:318;top:5024;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.749Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 315
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i317"><div class="op fail" id="i317" style="width:100;left:424;top:5056;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:07.811Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 317
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 1]]}">4 cas [0 [3 1]]</div></a><a href="#i319"><div class="op fail" id="i319" style="width:100;left:0;top:5088;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.007Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 319
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i321"><div class="op fail" id="i321" style="width:100;left:0;top:5120;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.210Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 321
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i323"><div class="op fail" id="i323" style="width:100;left:318;top:5152;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.361Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 323
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 0]]}">3 cas [0 [3 0]]</div></a><a href="#i325"><div class="op fail" id="i325" style="width:100;left:318;top:5184;height:16" title="Dur: 9 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.387Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 325
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i327"><div class="op fail" id="i327" style="width:100;left:212;top:5216;height:16" title="Dur: 16 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.504Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 327
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i329"><div class="op fail" id="i329" style="width:100;left:318;top:5248;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.643Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 329
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 3]]}">3 cas [0 [2 3]]</div></a><a href="#i331"><div class="op fail" id="i331" style="width:100;left:0;top:5280;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.717Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 331
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i333"><div class="op fail" id="i333" style="width:100;left:530;top:5312;height:16" title="Dur: 56 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.886Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 333
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 4]]}">5 cas [0 [1 4]]</div></a><a href="#i335"><div class="op fail" id="i335" style="width:100;left:318;top:5344;height:16" title="Dur: 47 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:08.994Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 335
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 0]]}">3 cas [0 [1 0]]</div></a><a href="#i337"><div class="op fail" id="i337" style="width:100;left:318;top:5376;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.061Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 337
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i339"><div class="op fail" id="i339" style="width:100;left:318;top:5408;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.112Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 339
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a><a href="#i341"><div class="op fail" id="i341" style="width:100;left:318;top:5440;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.233Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 341
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">3 cas [0 [4 1]]</div></a><a href="#i343"><div class="op fail" id="i343" style="width:100;left:318;top:5472;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.315Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 343
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i345"><div class="op fail" id="i345" style="width:100;left:424;top:5504;height:16" title="Dur: 10 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.361Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 345
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">4 cas [0 [4 1]]</div></a><a href="#i347"><div class="op fail" id="i347" style="width:100;left:530;top:5536;height:16" title="Dur: 36 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.509Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 347
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 4]]}">5 cas [0 [0 4]]</div></a><a href="#i349"><div class="op fail" id="i349" style="width:100;left:0;top:5568;height:16" title="Dur: 36 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.697Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 349
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i351"><div class="op fail" id="i351" style="width:100;left:318;top:5600;height:16" title="Dur: 11 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.782Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 351
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 0]]}">3 cas [0 [0 0]]</div></a><a href="#i354"><div class="op fail" id="i354" style="width:100;left:318;top:5632;height:32" title="Dur: 116 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.965Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 354
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i355"><div class="op fail" id="i355" style="width:100;left:212;top:5648;height:32" title="Dur: 83 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:09.986Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 355
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i357"><div class="op fail" id="i357" style="width:100;left:0;top:5696;height:16" title="Dur: 34 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.023Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 357
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i359"><div class="op fail" id="i359" style="width:100;left:424;top:5728;height:16" title="Dur: 14 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.058Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 359
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 3]]}">4 cas [0 [0 3]]</div></a><a href="#i362"><div class="op fail" id="i362" style="width:100;left:0;top:5760;height:32" title="Dur: 118 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.241Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 362
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i363"><div class="op fail" id="i363" style="width:100;left:318;top:5776;height:32" title="Dur: 18 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.244Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 363
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 2]]}">3 cas [0 [2 2]]</div></a><a href="#i365"><div class="op fail" id="i365" style="width:100;left:318;top:5824;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.345Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 365
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 3]]}">3 cas [0 [2 3]]</div></a><a href="#i367"><div class="op fail" id="i367" style="width:100;left:318;top:5856;height:16" title="Dur: 10 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.418Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 367
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">3 cas [0 [4 1]]</div></a><a href="#i369"><div class="op fail" id="i369" style="width:100;left:212;top:5888;height:16" title="Dur: 82 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.661Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 369
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i371"><div class="op fail" id="i371" style="width:100;left:0;top:5920;height:16" title="Dur: 12 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.695Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 371
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i374"><div class="op fail" id="i374" style="width:100;left:0;top:5952;height:32" title="Dur: 7 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.833Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 374
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i375"><div class="op fail" id="i375" style="width:100;left:530;top:5968;height:32" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.836Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 375
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 0]]}">5 cas [0 [0 0]]</div></a><a href="#i377"><div class="op fail" id="i377" style="width:100;left:318;top:6016;height:16" title="Dur: 8 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.964Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 377
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i379"><div class="op fail" id="i379" style="width:100;left:0;top:6048;height:16" title="Dur: 11 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:10.990Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 379
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i381"><div class="op fail" id="i381" style="width:100;left:106;top:6080;height:16" title="Dur: 16 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.132Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 381
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i383"><div class="op fail" id="i383" style="width:100;left:318;top:6112;height:16" title="Dur: 14 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.154Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 383
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">3 write [0 1]</div></a><a href="#i386"><div class="op fail" id="i386" style="width:100;left:0;top:6160;height:16" title="Dur: 9 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.367Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 386
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i387"><div class="op fail" id="i387" style="width:100;left:318;top:6144;height:48" title="Dur: 29 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.367Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 387
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i389"><div class="op fail" id="i389" style="width:100;left:0;top:6208;height:16" title="Dur: 8 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.519Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 389
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i392"><div class="op fail" id="i392" style="width:100;left:318;top:6240;height:32" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.682Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 392
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i393"><div class="op fail" id="i393" style="width:100;left:424;top:6256;height:32" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.684Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 393
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 3]]}">4 cas [0 [2 3]]</div></a><a href="#i395"><div class="op fail" id="i395" style="width:100;left:318;top:6304;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.755Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 395
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 1]]}">3 cas [0 [3 1]]</div></a><a href="#i397"><div class="op fail" id="i397" style="width:100;left:212;top:6336;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.872Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 397
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i399"><div class="op fail" id="i399" style="width:100;left:318;top:6368;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:11.986Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 399
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 2]]}">3 cas [0 [0 2]]</div></a><a href="#i401"><div class="op fail" id="i401" style="width:100;left:424;top:6400;height:16" title="Dur: 10 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.022Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 401
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 3]]}">4 cas [0 [0 3]]</div></a><a href="#i403"><div class="op fail" id="i403" style="width:100;left:0;top:6432;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.146Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 403
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i405"><div class="op fail" id="i405" style="width:100;left:0;top:6464;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.169Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 405
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i407"><div class="op fail" id="i407" style="width:100;left:0;top:6496;height:16" title="Dur: 16 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.198Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 407
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i409"><div class="op fail" id="i409" style="width:100;left:106;top:6528;height:16" title="Dur: 8 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.249Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 409
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i411"><div class="op fail" id="i411" style="width:100;left:212;top:6560;height:16" title="Dur: 24 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.361Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 411
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i413"><div class="op fail" id="i413" style="width:100;left:0;top:6592;height:16" title="Dur: 7 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.527Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 413
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i415"><div class="op fail" id="i415" style="width:100;left:0;top:6624;height:16" title="Dur: 7 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.554Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 415
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i417"><div class="op fail" id="i417" style="width:100;left:0;top:6656;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.650Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 417
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i419"><div class="op fail" id="i419" style="width:100;left:318;top:6688;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.806Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 419
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 4]]}">3 cas [0 [3 4]]</div></a><a href="#i421"><div class="op fail" id="i421" style="width:100;left:0;top:6720;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.826Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 421
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i423"><div class="op fail" id="i423" style="width:100;left:318;top:6752;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.873Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 423
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 3]]}">3 cas [0 [0 3]]</div></a><a href="#i425"><div class="op fail" id="i425" style="width:100;left:212;top:6784;height:16" title="Dur: 7 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:12.939Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 425
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i427"><div class="op fail" id="i427" style="width:100;left:318;top:6816;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:13.113Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 427
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 2]]}">3 cas [0 [4 2]]</div></a><a href="#i429"><div class="op fail" id="i429" style="width:100;left:0;top:6848;height:16" title="Dur: 27 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:13.328Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 429
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i436"><div class="op fail" id="i436" style="width:100;left:106;top:6912;height:64" title="Dur: 697 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.431Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 436
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i437"><div class="op fail" id="i437" style="width:100;left:318;top:6944;height:48" title="Dur: 486 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.437Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 437
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i438"><div class="op fail" id="i438" style="width:100;left:0;top:6896;height:112" title="Dur: 796 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.437Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 438
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i439"><div class="op fail" id="i439" style="width:100;left:212;top:6928;height:96" title="Dur: 655 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.437Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 439
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i440"><div class="op fail" id="i440" style="width:100;left:424;top:6960;height:80" title="Dur: 362 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.437Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 440
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 3]]}">4 cas [0 [1 3]]</div></a><a href="#i441"><div class="op fail" id="i441" style="width:100;left:530;top:6880;height:176" title="Dur: 940 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.437Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 441
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 2]]}">5 cas [0 [4 2]]</div></a><a href="#i443"><div class="op fail" id="i443" style="width:100;left:0;top:7072;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.441Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 443
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i445"><div class="op fail" id="i445" style="width:100;left:0;top:7104;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.598Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 445
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i447"><div class="op fail" id="i447" style="width:100;left:0;top:7136;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.723Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 447
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i449"><div class="op fail" id="i449" style="width:100;left:318;top:7168;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.913Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 449
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 4]]}">3 cas [0 [1 4]]</div></a><a href="#i451"><div class="op fail" id="i451" style="width:100;left:106;top:7200;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:14.951Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 451
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i453"><div class="op fail" id="i453" style="width:100;left:212;top:7232;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.013Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 453
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i455"><div class="op fail" id="i455" style="width:100;left:0;top:7264;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.127Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 455
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i457"><div class="op fail" id="i457" style="width:100;left:0;top:7296;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.185Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 457
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i459"><div class="op fail" id="i459" style="width:100;left:0;top:7328;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.190Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 459
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i461"><div class="op fail" id="i461" style="width:100;left:318;top:7360;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.239Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 461
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i463"><div class="op fail" id="i463" style="width:100;left:0;top:7392;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.363Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 463
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i465"><div class="op fail" id="i465" style="width:100;left:106;top:7424;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.415Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 465
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i467"><div class="op fail" id="i467" style="width:100;left:318;top:7456;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.423Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 467
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a><a href="#i469"><div class="op fail" id="i469" style="width:100;left:318;top:7488;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.436Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 469
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 3]]}">3 cas [0 [1 3]]</div></a><a href="#i471"><div class="op fail" id="i471" style="width:100;left:424;top:7520;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.547Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :write
+ :index 471
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">4 write [0 3]</div></a><a href="#i473"><div class="op fail" id="i473" style="width:100;left:530;top:7552;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.557Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 473
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">5 write [0 2]</div></a><a href="#i475"><div class="op fail" id="i475" style="width:100;left:0;top:7584;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.586Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 475
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i477"><div class="op fail" id="i477" style="width:100;left:0;top:7616;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.688Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 477
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i479"><div class="op fail" id="i479" style="width:100;left:318;top:7648;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:15.859Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 479
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i481"><div class="op fail" id="i481" style="width:100;left:212;top:7680;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.030Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 481
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i483"><div class="op fail" id="i483" style="width:100;left:318;top:7712;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.069Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 483
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i485"><div class="op fail" id="i485" style="width:100;left:424;top:7744;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.239Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 485
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">4 cas [0 [4 1]]</div></a><a href="#i488"><div class="op fail" id="i488" style="width:100;left:530;top:7776;height:32" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.351Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 488
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 4]]}">5 cas [0 [0 4]]</div></a><a href="#i489"><div class="op fail" id="i489" style="width:100;left:0;top:7792;height:32" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.353Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 489
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i491"><div class="op fail" id="i491" style="width:100;left:318;top:7840;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.529Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 491
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i493"><div class="op fail" id="i493" style="width:100;left:318;top:7872;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.621Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 493
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i495"><div class="op fail" id="i495" style="width:100;left:212;top:7904;height:16" title="Dur: 15 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.836Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 495
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i497"><div class="op fail" id="i497" style="width:100;left:318;top:7936;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:16.913Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 497
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i499"><div class="op fail" id="i499" style="width:100;left:0;top:7968;height:16" title="Dur: 13 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.020Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 499
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i501"><div class="op fail" id="i501" style="width:100;left:530;top:8000;height:16" title="Dur: 49 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.111Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 501
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 3]]}">5 cas [0 [1 3]]</div></a><a href="#i503"><div class="op fail" id="i503" style="width:100;left:318;top:8032;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.178Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 503
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i505"><div class="op fail" id="i505" style="width:100;left:318;top:8064;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.339Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 505
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 1]]}">3 cas [0 [0 1]]</div></a><a href="#i507"><div class="op fail" id="i507" style="width:100;left:106;top:8096;height:16" title="Dur: 7 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.509Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 507
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i509"><div class="op fail" id="i509" style="width:100;left:318;top:8128;height:16" title="Dur: 6 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.612Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 509
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i511"><div class="op fail" id="i511" style="width:100;left:318;top:8160;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.786Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 511
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 2]]}">3 cas [0 [3 2]]</div></a><a href="#i514"><div class="op fail" id="i514" style="width:100;left:424;top:8192;height:32" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.976Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :write
+ :index 514
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 1]}">4 write [0 1]</div></a><a href="#i515"><div class="op fail" id="i515" style="width:100;left:0;top:8208;height:32" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:17.976Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 515
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i517"><div class="op fail" id="i517" style="width:100;left:318;top:8256;height:16" title="Dur: 14 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.010Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 517
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 0]}">3 write [0 0]</div></a><a href="#i519"><div class="op fail" id="i519" style="width:100;left:0;top:8288;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.199Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 519
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i521"><div class="op fail" id="i521" style="width:100;left:106;top:8320;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.217Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 521
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i523"><div class="op fail" id="i523" style="width:100;left:318;top:8352;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.414Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 523
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">3 cas [0 [4 1]]</div></a><a href="#i525"><div class="op fail" id="i525" style="width:100;left:318;top:8384;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.422Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 525
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [3 2]]}">3 cas [0 [3 2]]</div></a><a href="#i527"><div class="op fail" id="i527" style="width:100;left:424;top:8416;height:16" title="Dur: 8 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.552Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 527
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 0]]}">4 cas [0 [4 0]]</div></a><a href="#i529"><div class="op fail" id="i529" style="width:100;left:530;top:8448;height:16" title="Dur: 8 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.594Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :write
+ :index 529
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">5 write [0 2]</div></a><a href="#i531"><div class="op fail" id="i531" style="width:100;left:318;top:8480;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.728Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 531
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [1 3]]}">3 cas [0 [1 3]]</div></a><a href="#i533"><div class="op fail" id="i533" style="width:100;left:318;top:8512;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.786Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 533
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 3]]}">3 cas [0 [0 3]]</div></a><a href="#i535"><div class="op fail" id="i535" style="width:100;left:318;top:8544;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:18.949Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 535
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 2]]}">3 cas [0 [0 2]]</div></a><a href="#i537"><div class="op fail" id="i537" style="width:100;left:212;top:8576;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.035Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 537
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i539"><div class="op fail" id="i539" style="width:100;left:0;top:8608;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.092Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 539
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i541"><div class="op fail" id="i541" style="width:100;left:0;top:8640;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.172Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 541
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i543"><div class="op fail" id="i543" style="width:100;left:0;top:8672;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.315Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 543
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i545"><div class="op fail" id="i545" style="width:100;left:0;top:8704;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.423Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 545
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i547"><div class="op fail" id="i547" style="width:100;left:0;top:8736;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.485Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 547
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i549"><div class="op fail" id="i549" style="width:100;left:106;top:8768;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.619Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 549
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i551"><div class="op fail" id="i551" style="width:100;left:212;top:8800;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.632Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 551
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i553"><div class="op fail" id="i553" style="width:100;left:0;top:8832;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.825Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 553
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i555"><div class="op fail" id="i555" style="width:100;left:424;top:8864;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:19.871Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 555
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">4 cas [0 [4 4]]</div></a><a href="#i557"><div class="op fail" id="i557" style="width:100;left:530;top:8896;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.065Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 557
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 2]]}">5 cas [0 [2 2]]</div></a><a href="#i559"><div class="op fail" id="i559" style="width:100;left:0;top:8928;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.128Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 559
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i561"><div class="op fail" id="i561" style="width:100;left:0;top:8960;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.184Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 561
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i563"><div class="op fail" id="i563" style="width:100;left:106;top:8992;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.390Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 563
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i565"><div class="op fail" id="i565" style="width:100;left:212;top:9024;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.500Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 565
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i567"><div class="op fail" id="i567" style="width:100;left:0;top:9056;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.619Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 567
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i569"><div class="op fail" id="i569" style="width:100;left:424;top:9088;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.637Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 569
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 2]]}">4 cas [0 [2 2]]</div></a><a href="#i571"><div class="op fail" id="i571" style="width:100;left:0;top:9120;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.711Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 571
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i573"><div class="op fail" id="i573" style="width:100;left:318;top:9152;height:16" title="Dur: 5 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:20.894Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 573
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 0]]}">3 cas [0 [2 0]]</div></a><a href="#i575"><div class="op fail" id="i575" style="width:100;left:0;top:9184;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.023Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 575
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i577"><div class="op fail" id="i577" style="width:100;left:318;top:9216;height:16" title="Dur: 3 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.094Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 577
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 3]}">3 write [0 3]</div></a><a href="#i581"><div class="op fail" id="i581" style="width:100;left:0;top:9264;height:32" title="Dur: 50 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.351Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 581
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i582"><div class="op fail" id="i582" style="width:100;left:212;top:9248;height:64" title="Dur: 70 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.354Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 582
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i583"><div class="op fail" id="i583" style="width:100;left:424;top:9280;height:48" title="Dur: 50 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.355Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 583
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 1]]}">4 cas [0 [4 1]]</div></a><a href="#i585"><div class="op fail" id="i585" style="width:100;left:0;top:9344;height:16" title="Dur: 1 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.365Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 585
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i587"><div class="op fail" id="i587" style="width:100;left:318;top:9376;height:16" title="Dur: 0 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.385Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 587
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 4]}">3 write [0 4]</div></a><a href="#i589"><div class="op fail" id="i589" style="width:100;left:318;top:9408;height:16" title="Dur: 4 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.458Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :write
+ :index 589
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/put)&quot;]
+ :value [0 2]}">3 write [0 2]</div></a><a href="#i594"><div class="op fail" id="i594" style="width:100;left:212;top:9456;height:48" title="Dur: 121 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.865Z
+
+Op:
+{:process 2
+ :type :fail
+ :f :read
+ :index 594
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">2 read [0 nil]</div></a><a href="#i595"><div class="op fail" id="i595" style="width:100;left:106;top:9440;height:80" title="Dur: 207 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.865Z
+
+Op:
+{:process 1
+ :type :fail
+ :f :read
+ :index 595
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">1 read [0 nil]</div></a><a href="#i596"><div class="op fail" id="i596" style="width:100;left:0;top:9472;height:64" title="Dur: 75 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.866Z
+
+Op:
+{:process 0
+ :type :fail
+ :f :read
+ :index 596
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/get/0)&quot;]
+ :value [0 nil]}">0 read [0 nil]</div></a><a href="#i597"><div class="op fail" id="i597" style="width:100;left:424;top:9488;height:64" title="Dur: 21 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:21.866Z
+
+Op:
+{:process 4
+ :type :fail
+ :f :cas
+ :index 597
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 2]]}">4 cas [0 [0 2]]</div></a><a href="#i599"><div class="op fail" id="i599" style="width:100;left:530;top:9568;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:22.012Z
+
+Op:
+{:process 5
+ :type :fail
+ :f :cas
+ :index 599
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [2 2]]}">5 cas [0 [2 2]]</div></a><a href="#i601"><div class="op fail" id="i601" style="width:100;left:318;top:9600;height:16" title="Dur: 2 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:22.079Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 601
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [0 0]]}">3 cas [0 [0 0]]</div></a><a href="#i603"><div class="op fail" id="i603" style="width:100;left:318;top:9632;height:16" title="Dur: 9 ms
+Err: [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+Wall-clock Time: 2026-02-25T12:19:22.230Z
+
+Op:
+{:process 3
+ :type :fail
+ :f :cas
+ :index 603
+ :error [:temporarily-unavailable &quot;error sending request for url (http://127.0.0.1:8080/kv/cas)&quot;]
+ :value [0 [4 4]]}">3 cas [0 [4 4]]</div></a></div></body></html>

@@ -29,6 +29,7 @@ pub mod messages {
         Write(CommandId),
         Read(CommandId, Option<String>),
         StartSignal(Timestamp),
+        CasResult(CommandId, bool),
     }
 
     impl ServerMessage {
@@ -37,6 +38,7 @@ pub mod messages {
                 ServerMessage::Write(id) => *id,
                 ServerMessage::Read(id, _) => *id,
                 ServerMessage::StartSignal(_) => unimplemented!(),
+                ServerMessage::CasResult(id, _) => *id,
             }
         }
     }
@@ -65,6 +67,7 @@ pub mod kv {
         Put(String, String),
         Delete(String),
         Get(String),
+        Cas(String, String, String), // key, expected, new_value
     }
 
     #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -89,6 +92,7 @@ pub mod kv {
                         }
                     }
                     KVCommand::Get(_) => (),
+                    KVCommand::Cas(_, _, _) => (),
                 }
             }
             // remove keys that were put back
