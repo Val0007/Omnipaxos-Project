@@ -46,6 +46,13 @@ struct DeleteRequest {
     key: String,
 }
 
+#[derive(Deserialize)]
+struct CasRequest {
+    key: String,
+    expected: String,
+    new_value: String,
+}
+
 #[tokio::main]
 async fn main() {
     env_logger::init();
@@ -81,6 +88,7 @@ println!("GATEWAY START (before connect)");
         .route("/kv/put", post(put_handler))
         .route("/kv/delete", post(delete_handler))
         .route("/kv/get/:key", get(get_handler))
+        .route("/kv/cas", post(cas_handler))
         .with_state(state);
 
     let listener = tokio::net::TcpListener::bind(&listen_addr)
@@ -159,9 +167,16 @@ async fn reader_task(
                         let _ = tx.send(ServerMessage::Read(cmd_id, value));
                     }
                 }
+                ServerMessage::CasResult(cmd_id, success) => {
+                    let sender = pending.lock().await.remove(&cmd_id);
+                    if let Some(tx) = sender {
+                        let _ = tx.send(ServerMessage::CasResult(cmd_id, success));
+                    }
+                }
                 ServerMessage::StartSignal(ts) => {
                     info!("Ignoring start signal from server: {ts}");
                 }
+
             },
             Err(e) => error!("Error reading server message: {e:?}"),
         }
@@ -200,11 +215,32 @@ async fn get_handler(
             "cmd_id": cmd_id,
             "value": value,
         }))),
+        ServerMessage::CasResult(_, _) => Err(api_error(
+            StatusCode::INTERNAL_SERVER_ERROR,
+            "Unexpected cas result as get response",
+        )),
         ServerMessage::Write(cmd_id) => Ok(Json(json!({ "ok": true, "cmd_id": cmd_id }))),
         ServerMessage::StartSignal(_) => Err(api_error(
             StatusCode::INTERNAL_SERVER_ERROR,
             "Unexpected start signal as command response",
         )),
+    }
+}
+
+async fn cas_handler(
+    State(state): State<Arc<AppState>>,
+    Json(body): Json<CasRequest>,  // ← CasRequest not CasResult
+) -> Result<Json<Value>, (StatusCode, Json<Value>)> {
+    let response = submit_command(
+        &state,
+        KVCommand::Cas(body.key, body.expected, body.new_value),
+    ).await?;
+    match response {
+        ServerMessage::CasResult(cmd_id, true) =>   // ← ServerMessage::CasResult
+            Ok(Json(json!({ "ok": true, "cmd_id": cmd_id }))),
+        ServerMessage::CasResult(_, false) =>        // ← ServerMessage::CasResult
+            Err(api_error(StatusCode::CONFLICT, "cas conflict")),
+        _ => Err(api_error(StatusCode::INTERNAL_SERVER_ERROR, "unexpected response")),
     }
 }
 
@@ -252,6 +288,7 @@ fn command_id_from_response(msg: ServerMessage) -> Result<CommandId, (StatusCode
     match msg {
         ServerMessage::Write(cmd_id) => Ok(cmd_id),
         ServerMessage::Read(cmd_id, _) => Ok(cmd_id),
+        ServerMessage::CasResult(cmd_id, _) => Ok(cmd_id),
         ServerMessage::StartSignal(_) => Err(api_error(
             StatusCode::INTERNAL_SERVER_ERROR,
             "Unexpected start signal as command response",

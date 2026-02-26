@@ -1,0 +1,604 @@
+{:index 0, :time 13970250, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 1, :time 30178667, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 2, :time 39283833, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 3, :time 42401333, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 4, :time 166103667, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 5, :time 169448500, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 6, :time 312530208, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 7, :time 315812792, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 8, :time 452836958, :type :invoke, :process 4, :f :cas, :value [0 [2 3]]}
+{:index 9, :time 459840792, :type :fail, :process 4, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 10, :time 544993833, :type :invoke, :process 5, :f :cas, :value [0 [1 2]]}
+{:index 11, :time 547416208, :type :fail, :process 5, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 12, :time 704311625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 13, :time 709066458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 14, :time 761631292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 15, :time 763773875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 16, :time 789488417, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 17, :time 791365083, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 18, :time 880502667, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 19, :time 882376208, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 20, :time 938110708, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 21, :time 939760125, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 22, :time 1066000875, :type :invoke, :process 4, :f :cas, :value [0 [0 2]]}
+{:index 23, :time 1068283708, :type :fail, :process 4, :f :cas, :value [0 [0 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 24, :time 1241801000, :type :invoke, :process 5, :f :cas, :value [0 [1 0]]}
+{:index 25, :time 1248881500, :type :fail, :process 5, :f :cas, :value [0 [1 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 26, :time 1272060500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 27, :time 1273977167, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 28, :time 1276601000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 29, :time 1276936250, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 30, :time 1340158792, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 31, :time 1342842875, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 32, :time 1363836333, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 33, :time 1365983750, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 34, :time 1514812583, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 35, :time 1520979458, :type :fail, :process 3, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 36, :time 1628016917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 37, :time 1633165583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 38, :time 1806663000, :type :invoke, :process 5, :f :cas, :value [0 [4 3]]}
+{:index 39, :time 1811609833, :type :fail, :process 5, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 40, :time 1922759333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 41, :time 1928910042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 42, :time 1944444875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 43, :time 1947232042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 44, :time 2029564375, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 45, :time 2032747917, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 46, :time 2095010125, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 47, :time 2097634292, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 48, :time 2234860458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 49, :time 2240618125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 50, :time 2295128208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 51, :time 2297641667, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 52, :time 2297968083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 53, :time 2299715583, :type :fail, :process 5, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 54, :time 2419150583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 55, :time 2424132083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 56, :time 2588171417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 57, :time 2594447708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 58, :time 2686108333, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 59, :time 2690387833, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 60, :time 2772862125, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 61, :time 2776178042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 62, :time 2906218333, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 63, :time 2912400042, :type :fail, :process 3, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 64, :time 3043806208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 65, :time 3050594167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 66, :time 3183019125, :type :invoke, :process 5, :f :cas, :value [0 [1 3]]}
+{:index 67, :time 3188776917, :type :fail, :process 5, :f :cas, :value [0 [1 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 68, :time 3357593917, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 69, :time 3361177292, :type :fail, :process 3, :f :write, :value [0 0], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 70, :time 3506421375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 71, :time 3512544167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 72, :time 3642344375, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 73, :time 3647641000, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 74, :time 3758230375, :type :invoke, :process 3, :f :cas, :value [0 [4 3]]}
+{:index 75, :time 3762786833, :type :fail, :process 3, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 76, :time 3851625208, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 77, :time 3856585917, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 78, :time 4055216333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 79, :time 4061690542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 80, :time 4149340250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 81, :time 4155001083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 82, :time 4181535875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 83, :time 4184747375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 84, :time 4327397833, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 85, :time 4333812833, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 86, :time 4370537167, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 87, :time 4373464167, :type :invoke, :process 4, :f :write, :value [0 4]}
+{:index 88, :time 4374064208, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 89, :time 4375814708, :type :fail, :process 4, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 90, :time 4505278208, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 91, :time 4510937625, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 92, :time 4672568167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 93, :time 4675332792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 94, :time 4741150458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 95, :time 4745479625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 96, :time 4896838792, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 97, :time 4901441333, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 98, :time 4982714417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 99, :time 4988364958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 100, :time 4994311875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 101, :time 4997493458, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 102, :time 5044373208, :type :invoke, :process 3, :f :cas, :value [0 [1 3]]}
+{:index 103, :time 5047207083, :type :fail, :process 3, :f :cas, :value [0 [1 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 104, :time 5156051625, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 105, :time 5157711000, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 106, :time 5250611750, :type :invoke, :process 4, :f :cas, :value [0 [0 1]]}
+{:index 107, :time 5252162250, :type :fail, :process 4, :f :cas, :value [0 [0 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 108, :time 5341117292, :type :invoke, :process 5, :f :cas, :value [0 [1 2]]}
+{:index 109, :time 5344059208, :type :fail, :process 5, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 110, :time 5530735000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 111, :time 5536314875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 112, :time 5599557792, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 113, :time 5603694458, :type :fail, :process 3, :f :cas, :value [0 [2 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 114, :time 5751567208, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 115, :time 5755845208, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 116, :time 5912982042, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 117, :time 5915634917, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 118, :time 6105958542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 119, :time 6122761417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 120, :time 6262040417, :type :invoke, :process 4, :f :cas, :value [0 [3 0]]}
+{:index 121, :time 6267494750, :type :fail, :process 4, :f :cas, :value [0 [3 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 122, :time 6438875833, :type :invoke, :process 5, :f :cas, :value [0 [4 4]]}
+{:index 123, :time 6445043250, :type :fail, :process 5, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 124, :time 6586445042, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 125, :time 6592545708, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 126, :time 6742005542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 127, :time 6744472958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 128, :time 6762584333, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 129, :time 6764530125, :type :fail, :process 3, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 130, :time 6935359167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 131, :time 6940489500, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 132, :time 6996440375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 133, :time 7001835625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 134, :time 7119142167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 135, :time 7122894000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 136, :time 7247200625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 137, :time 7249831750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 138, :time 7412384875, :type :invoke, :process 3, :f :cas, :value [0 [0 3]]}
+{:index 139, :time 7418182125, :type :fail, :process 3, :f :cas, :value [0 [0 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 140, :time 7487348583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 141, :time 7489242375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 142, :time 7598142333, :type :invoke, :process 3, :f :cas, :value [0 [4 3]]}
+{:index 143, :time 7600264792, :type :fail, :process 3, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 144, :time 7621799417, :type :invoke, :process 3, :f :cas, :value [0 [0 1]]}
+{:index 145, :time 7623736500, :type :fail, :process 3, :f :cas, :value [0 [0 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 146, :time 7624373042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 147, :time 7625500875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 148, :time 7738521333, :type :invoke, :process 4, :f :cas, :value [0 [2 4]]}
+{:index 149, :time 7741519750, :type :fail, :process 4, :f :cas, :value [0 [2 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 150, :time 7772854542, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 151, :time 7775244083, :type :fail, :process 5, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 152, :time 7783539958, :type :invoke, :process 3, :f :cas, :value [0 [2 1]]}
+{:index 153, :time 7785936667, :type :fail, :process 3, :f :cas, :value [0 [2 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 154, :time 7879088458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 155, :time 7883171458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 156, :time 8005172625, :type :invoke, :process 3, :f :cas, :value [0 [3 0]]}
+{:index 157, :time 8007739750, :type :fail, :process 3, :f :cas, :value [0 [3 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 158, :time 8071583125, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 159, :time 8073746000, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 160, :time 8129760708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 161, :time 8131804542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 162, :time 8263502667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 163, :time 8268844292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 164, :time 8308519250, :type :invoke, :process 5, :f :cas, :value [0 [2 3]]}
+{:index 165, :time 8312124125, :type :fail, :process 5, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 166, :time 8477841958, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 167, :time 8479266125, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 168, :time 8496931500, :type :invoke, :process 3, :f :cas, :value [0 [0 1]]}
+{:index 169, :time 8498096833, :type :fail, :process 3, :f :cas, :value [0 [0 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 170, :time 8565878542, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 171, :time 8569156917, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 172, :time 8748086958, :type :invoke, :process 3, :f :cas, :value [0 [3 3]]}
+{:index 173, :time 8751755292, :type :fail, :process 3, :f :cas, :value [0 [3 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 174, :time 8875529042, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 175, :time 8878541792, :type :fail, :process 3, :f :write, :value [0 0], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 176, :time 9013860292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 177, :time 9016937000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 178, :time 9141632208, :type :invoke, :process 5, :f :cas, :value [0 [1 0]]}
+{:index 179, :time 9145618542, :type :fail, :process 5, :f :cas, :value [0 [1 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 180, :time 9267785625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 181, :time 9270911250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 182, :time 9433337833, :type :invoke, :process 3, :f :cas, :value [0 [2 2]]}
+{:index 183, :time 9435103792, :type :fail, :process 3, :f :cas, :value [0 [2 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 184, :time 9539664500, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 185, :time 9542058500, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 186, :time 9656177167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 187, :time 9658655167, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 188, :time 9714492000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 189, :time 9716465708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 190, :time 9743227750, :type :invoke, :process 4, :f :write, :value [0 3]}
+{:index 191, :time 9744996500, :type :fail, :process 4, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 192, :time 9878844542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 193, :time 9881418250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 194, :time 9960552792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 195, :time 9964096917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 196, :time 10041118208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 197, :time 10042591792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 198, :time 10092350667, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 199, :time 10093853083, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 200, :time 10185680625, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 201, :time 10188306917, :type :fail, :process 3, :f :cas, :value [0 [1 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 202, :time 10202363750, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 203, :time 10204086292, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 204, :time 10226557750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 205, :time 10227843583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 206, :time 10325717750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 207, :time 10328395375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 208, :time 10406712167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 209, :time 10408235375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 210, :time 10496333167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 211, :time 10498321542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 212, :time 10532421375, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 213, :time 10534007458, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 214, :time 10582985375, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 215, :time 10584905000, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 216, :time 10780485792, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 217, :time 10783813708, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 218, :time 10853715042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 219, :time 10856878958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 220, :time 10868338000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 221, :time 10871438333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 222, :time 11004768125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 223, :time 11010274042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 224, :time 11162989125, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 225, :time 11164600625, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 226, :time 11169455458, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 227, :time 11170445083, :type :fail, :process 3, :f :cas, :value [0 [1 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 228, :time 11198088208, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 229, :time 11199286875, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 230, :time 11330025208, :type :invoke, :process 3, :f :cas, :value [0 [4 3]]}
+{:index 231, :time 11331894458, :type :fail, :process 3, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 232, :time 11485118208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 233, :time 11487066542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 234, :time 11603803792, :type :invoke, :process 5, :f :cas, :value [0 [0 1]]}
+{:index 235, :time 11606186250, :type :fail, :process 5, :f :cas, :value [0 [0 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 236, :time 11609049750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 237, :time 11610400833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 238, :time 11655151375, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 239, :time 11657578375, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 240, :time 11773341958, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 241, :time 11775314542, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 242, :time 11776703458, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 243, :time 11777755125, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 244, :time 11855174792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 245, :time 11857158292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 246, :time 11872068583, :type :invoke, :process 4, :f :cas, :value [0 [1 1]]}
+{:index 247, :time 11873829792, :type :fail, :process 4, :f :cas, :value [0 [1 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 248, :time 12061063792, :type :invoke, :process 5, :f :cas, :value [0 [3 1]]}
+{:index 249, :time 12066796000, :type :fail, :process 5, :f :cas, :value [0 [3 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 250, :time 12112573500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 251, :time 12118864458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 252, :time 12167839708, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 253, :time 12171370875, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 254, :time 12269386333, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 255, :time 12272870958, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 256, :time 12465648500, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 257, :time 12471405917, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 258, :time 12607319833, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 259, :time 12615132292, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 260, :time 12646308542, :type :invoke, :process 4, :f :cas, :value [0 [1 3]]}
+{:index 261, :time 12649622250, :type :fail, :process 4, :f :cas, :value [0 [1 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 262, :time 12740953042, :type :invoke, :process 5, :f :cas, :value [0 [4 3]]}
+{:index 263, :time 12750619792, :type :fail, :process 5, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 264, :time 12868966375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 265, :time 12878670667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 266, :time 12886611667, :type :invoke, :process 3, :f :cas, :value [0 [3 3]]}
+{:index 267, :time 12891009458, :type :invoke, :process 4, :f :write, :value [0 0]}
+{:index 268, :time 12910262042, :type :fail, :process 3, :f :cas, :value [0 [3 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 269, :time 12918081750, :type :fail, :process 4, :f :write, :value [0 0], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 270, :time 12963804375, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 271, :time 12999992333, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 272, :time 13000097375, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 273, :time 13009903958, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 274, :time 13082343708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 275, :time 13137160917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 276, :time 13222241292, :type :invoke, :process 5, :f :cas, :value [0 [3 0]]}
+{:index 277, :time 13357258375, :type :fail, :process 5, :f :cas, :value [0 [3 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 278, :time 13357827208, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 279, :time 13369253292, :type :fail, :process 3, :f :cas, :value [0 [2 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 280, :time 13422263833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 281, :time 13454002958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 282, :time 13595912958, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 283, :time 13600670083, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 284, :time 13705925417, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 285, :time 13716370583, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 286, :time 13781992208, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 287, :time 13784946542, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 288, :time 13787781958, :type :invoke, :process 4, :f :cas, :value [0 [0 4]]}
+{:index 289, :time 13791586000, :type :fail, :process 4, :f :cas, :value [0 [0 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 290, :time 13883495292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 291, :time 13888310542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 292, :time 14047490875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 293, :time 14049171167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 294, :time 14099255333, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 295, :time 14100639792, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 296, :time 14217755750, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 297, :time 14219472708, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 298, :time 14416391167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 299, :time 14423378917, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 300, :time 14559761250, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 301, :time 14562162917, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 302, :time 14621534167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 303, :time 14626895792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 304, :time 14645772292, :type :invoke, :process 5, :f :cas, :value [0 [4 1]]}
+{:index 305, :time 14652957500, :type :fail, :process 5, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 306, :time 14814106417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 307, :time 14818736667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 308, :time 14926987375, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 309, :time 14931497958, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 310, :time 14971697125, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 311, :time 14975564042, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 312, :time 14975612708, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 313, :time 14977626042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 314, :time 15134110542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 315, :time 15138536833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 316, :time 15158267167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 317, :time 15161566000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 318, :time 15288341417, :type :invoke, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 319, :time 15292308667, :type :fail, :process 5, :f :cas, :value [0 [0 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 320, :time 15383242667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 321, :time 15384790667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 322, :time 15395456792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 323, :time 15397088292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 324, :time 15525446833, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 325, :time 15529452833, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 326, :time 15697669833, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 327, :time 15699366000, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 328, :time 15879015583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 329, :time 15887423750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 330, :time 16011443917, :type :invoke, :process 4, :f :cas, :value [0 [0 0]]}
+{:index 331, :time 16015021500, :type :fail, :process 4, :f :cas, :value [0 [0 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 332, :time 16168690542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 333, :time 16171286167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 334, :time 16308711792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 335, :time 16314089000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 336, :time 16464118333, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 337, :time 16464719917, :type :invoke, :process 4, :f :cas, :value [0 [0 4]]}
+{:index 338, :time 16467686208, :type :fail, :process 4, :f :cas, :value [0 [0 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 339, :time 16467753250, :type :fail, :process 3, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 340, :time 16588097917, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 341, :time 16625130625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 342, :time 16628057250, :type :fail, :process 3, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 343, :time 16629057000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 344, :time 16688829083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 345, :time 16695782333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 346, :time 16728066417, :type :invoke, :process 5, :f :cas, :value [0 [4 3]]}
+{:index 347, :time 16743555125, :type :fail, :process 5, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 348, :time 16744293750, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 349, :time 16754347458, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 350, :time 16792974917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 351, :time 16797360542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 352, :time 16850269750, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 353, :time 16856683792, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 354, :time 16891165917, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 355, :time 16894544000, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 356, :time 16951713667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 357, :time 16957423042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 358, :time 17057013625, :type :invoke, :process 4, :f :write, :value [0 3]}
+{:index 359, :time 17059734583, :type :fail, :process 4, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 360, :time 17251790375, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 361, :time 17254372833, :type :fail, :process 5, :f :write, :value [0 0], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 362, :time 17387517875, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 363, :time 17391015750, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 364, :time 17466979875, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 365, :time 17468939250, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 366, :time 17618470333, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 367, :time 17620320083, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 368, :time 17702966458, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 369, :time 17704940792, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 370, :time 17904631875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 371, :time 17907806458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 372, :time 17970594792, :type :invoke, :process 4, :f :write, :value [0 4]}
+{:index 373, :time 17975481417, :type :fail, :process 4, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 374, :time 17976848667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 375, :time 17979521083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 376, :time 18167800250, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 377, :time 18171336750, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 378, :time 18321095917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 379, :time 18328312625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 380, :time 18352211083, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 381, :time 18355429917, :type :fail, :process 3, :f :cas, :value [0 [4 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 382, :time 18421826042, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 383, :time 18423606458, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 384, :time 18574471792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 385, :time 18580355917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 386, :time 18706968708, :type :invoke, :process 4, :f :cas, :value [0 [4 1]]}
+{:index 387, :time 18708599167, :type :fail, :process 4, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 388, :time 18716864708, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 389, :time 18717818417, :type :fail, :process 5, :f :write, :value [0 0], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 390, :time 18877079208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 391, :time 18879131292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 392, :time 18937676833, :type :invoke, :process 3, :f :cas, :value [0 [3 2]]}
+{:index 393, :time 18939988583, :type :fail, :process 3, :f :cas, :value [0 [3 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 394, :time 19028781083, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 395, :time 19033089292, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 396, :time 19142234250, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 397, :time 19145462917, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 398, :time 19331010792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 399, :time 19333735000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 400, :time 19377180583, :type :invoke, :process 4, :f :cas, :value [0 [0 3]]}
+{:index 401, :time 19379617625, :type :fail, :process 4, :f :cas, :value [0 [0 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 402, :time 19462279625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 403, :time 19463815917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 404, :time 19617086542, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 405, :time 19618750667, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 406, :time 19754977083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 407, :time 19757360917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 408, :time 19835620542, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 409, :time 19837762542, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 410, :time 19976395792, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 411, :time 19979102708, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 412, :time 20054154250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 413, :time 20057035083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 414, :time 20057104458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 415, :time 20058947250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 416, :time 20232304208, :type :invoke, :process 5, :f :cas, :value [0 [4 4]]}
+{:index 417, :time 20237536208, :type :fail, :process 5, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 418, :time 20379654458, :type :invoke, :process 3, :f :cas, :value [0 [2 1]]}
+{:index 419, :time 20381803667, :type :fail, :process 3, :f :cas, :value [0 [2 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 420, :time 20503562208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 421, :time 20508449458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 422, :time 20706917250, :type :invoke, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 423, :time 20709644583, :type :fail, :process 3, :f :cas, :value [0 [1 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 424, :time 20775744750, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 425, :time 20777752792, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 426, :time 20863187417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 427, :time 20866886083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 428, :time 21043767708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 429, :time 21049354125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 430, :time 21221979625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 431, :time 21226311917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 432, :time 21289796667, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 433, :time 21293775292, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 434, :time 21346859542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 435, :time 21348128417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 436, :time 21395659500, :type :invoke, :process 3, :f :cas, :value [0 [4 2]]}
+{:index 437, :time 21397204458, :type :fail, :process 3, :f :cas, :value [0 [4 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 438, :time 21538207042, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 439, :time 21541516500, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 440, :time 21725054208, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 441, :time 21727487750, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 442, :time 21788157208, :type :invoke, :process 4, :f :cas, :value [0 [4 0]]}
+{:index 443, :time 21790727750, :type :fail, :process 4, :f :cas, :value [0 [4 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 444, :time 21831165250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 445, :time 21833455667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 446, :time 21953378292, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 447, :time 21956216000, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 448, :time 22033513625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 449, :time 22035653583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 450, :time 22158868750, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 451, :time 22161937208, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 452, :time 22279207583, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 453, :time 22281037917, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 454, :time 22450691333, :type :invoke, :process 3, :f :cas, :value [0 [4 3]]}
+{:index 455, :time 22454373792, :type :fail, :process 3, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 456, :time 22534624917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 457, :time 22537389333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 458, :time 22619896375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 459, :time 22622227083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 460, :time 22662233958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 461, :time 22668917875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 462, :time 22753791625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 463, :time 22756888042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 464, :time 22936842625, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 465, :time 22940597833, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 466, :time 23032672208, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 467, :time 23035418000, :type :fail, :process 3, :f :write, :value [0 2], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 468, :time 23133505375, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 469, :time 23138575542, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 470, :time 23181415375, :type :invoke, :process 4, :f :cas, :value [0 [0 1]]}
+{:index 471, :time 23184102000, :type :fail, :process 4, :f :cas, :value [0 [0 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 472, :time 23380732583, :type :invoke, :process 5, :f :cas, :value [0 [2 3]]}
+{:index 473, :time 23383058750, :type :fail, :process 5, :f :cas, :value [0 [2 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 474, :time 23501075500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 475, :time 23503725958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 476, :time 23549949958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 477, :time 23550619125, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 478, :time 23551896167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 479, :time 23552170458, :type :fail, :process 3, :f :cas, :value [0 [1 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 480, :time 23667476625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 481, :time 23669403375, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 482, :time 23721524833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 483, :time 23723596750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 484, :time 23912780333, :type :invoke, :process 4, :f :write, :value [0 1]}
+{:index 485, :time 23915496875, :type :fail, :process 4, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 486, :time 24086843333, :type :invoke, :process 5, :f :cas, :value [0 [4 3]]}
+{:index 487, :time 24092033625, :type :fail, :process 5, :f :cas, :value [0 [4 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 488, :time 24290818500, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 489, :time 24293370667, :type :fail, :process 3, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 490, :time 24331784125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 491, :time 24333807583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 492, :time 24414655875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 493, :time 24416888458, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 494, :time 24453480083, :type :invoke, :process 3, :f :cas, :value [0 [4 2]]}
+{:index 495, :time 24455562000, :type :fail, :process 3, :f :cas, :value [0 [4 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 496, :time 24628888583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 497, :time 24633038625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 498, :time 24661596167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 499, :time 24663598958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 500, :time 24800247000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 501, :time 24801002875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 502, :time 24802638958, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 503, :time 24802852792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 504, :time 24863000125, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 505, :time 24865469042, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 506, :time 24949467667, :type :invoke, :process 3, :f :cas, :value [0 [3 3]]}
+{:index 507, :time 24951613417, :type :fail, :process 3, :f :cas, :value [0 [3 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 508, :time 25088435250, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 509, :time 25091609375, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 510, :time 25192459125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 511, :time 25196547417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 512, :time 25393422292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 513, :time 25399206208, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 514, :time 25591654375, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 515, :time 25596657375, :type :fail, :process 5, :f :write, :value [0 0], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 516, :time 25749322417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 517, :time 25752680917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 518, :time 25904188958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 519, :time 25908610542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 520, :time 26066029708, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 521, :time 26071467292, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 522, :time 26242038833, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 523, :time 26247341667, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 524, :time 26270344583, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 525, :time 26272488583, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 526, :time 26281657958, :type :invoke, :process 4, :f :cas, :value [0 [1 2]]}
+{:index 527, :time 26282760042, :type :fail, :process 4, :f :cas, :value [0 [1 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 528, :time 26301003750, :type :invoke, :process 5, :f :cas, :value [0 [0 0]]}
+{:index 529, :time 26302116375, :type :fail, :process 5, :f :cas, :value [0 [0 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 530, :time 26363783375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 531, :time 26365045417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 532, :time 26556426917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 533, :time 26560308167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 534, :time 26676467875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 535, :time 26678820667, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 536, :time 26871816708, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 537, :time 26874451542, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 538, :time 26913245333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 539, :time 26915053125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 540, :time 26955692292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 541, :time 26958172583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 542, :time 27050613250, :type :invoke, :process 5, :f :cas, :value [0 [3 3]]}
+{:index 543, :time 27056234417, :type :fail, :process 5, :f :cas, :value [0 [3 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 544, :time 27246803500, :type :invoke, :process 3, :f :cas, :value [0 [3 2]]}
+{:index 545, :time 27252070667, :type :fail, :process 3, :f :cas, :value [0 [3 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 546, :time 27320324250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 547, :time 27322652583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 548, :time 27426092375, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 549, :time 27430087750, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 550, :time 27519912750, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 551, :time 27521677333, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 552, :time 27584007625, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 553, :time 27585854125, :type :fail, :process 3, :f :cas, :value [0 [4 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 554, :time 27720878792, :type :invoke, :process 4, :f :write, :value [0 1]}
+{:index 555, :time 27722611583, :type :fail, :process 4, :f :write, :value [0 1], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 556, :time 27832595375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 557, :time 27834760708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 558, :time 27865802083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 559, :time 27867792000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 560, :time 27873010667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 561, :time 27874148958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 562, :time 27900872458, :type :invoke, :process 3, :f :cas, :value [0 [3 0]]}
+{:index 563, :time 27902531000, :type :fail, :process 3, :f :cas, :value [0 [3 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 564, :time 28041966042, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 565, :time 28043669333, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 566, :time 28214072750, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 567, :time 28216091375, :type :fail, :process 3, :f :cas, :value [0 [4 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 568, :time 28218267833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 569, :time 28219042917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 570, :time 28250887833, :type :invoke, :process 5, :f :cas, :value [0 [3 3]]}
+{:index 571, :time 28252218083, :type :fail, :process 5, :f :cas, :value [0 [3 3]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 572, :time 28450811958, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 573, :time 28455252125, :type :fail, :process 3, :f :write, :value [0 4], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 574, :time 28640997833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 575, :time 28643567375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 576, :time 28774246667, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 577, :time 28776471000, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 578, :time 28809739292, :type :invoke, :process 3, :f :cas, :value [0 [2 2]]}
+{:index 579, :time 28812396208, :type :fail, :process 3, :f :cas, :value [0 [2 2]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 580, :time 29011007583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 581, :time 29016122750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 582, :time 29023697083, :type :invoke, :process 4, :f :write, :value [0 3]}
+{:index 583, :time 29026439583, :type :fail, :process 4, :f :write, :value [0 3], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]}
+{:index 584, :time 29162131917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 585, :time 29164585292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 586, :time 29211861375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 587, :time 29213247458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 588, :time 29290273917, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 589, :time 29291426625, :type :fail, :process 3, :f :cas, :value [0 [1 1]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 590, :time 29371822458, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 591, :time 29372955333, :type :fail, :process 1, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 592, :time 29378854917, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 593, :time 29380032958, :type :fail, :process 2, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 594, :time 29438468875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 595, :time 29439551000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 596, :time 29544517625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 597, :time 29545684875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 598, :time 29603775458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 599, :time 29604793583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]}
+{:index 600, :time 29737878750, :type :invoke, :process 3, :f :cas, :value [0 [3 0]]}
+{:index 601, :time 29739765208, :type :fail, :process 3, :f :cas, :value [0 [3 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}
+{:index 602, :time 29922875917, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 603, :time 29925474917, :type :fail, :process 3, :f :cas, :value [0 [4 0]], :error [:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]}

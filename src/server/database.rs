@@ -21,6 +21,15 @@ impl Database {
                 None
             }
             KVCommand::Get(key) => Some(self.db.get(&key).map(|v| v.clone())),
+            KVCommand::Cas(key, expected, new_value) => {
+                let current = self.db.get(&key).cloned();
+                if current.as_deref() == Some(expected.as_str()) {
+                    self.db.insert(key, new_value);
+                    Some(Some("ok".to_string()))      // success
+                } else {
+                    Some(Some("conflict".to_string())) // failure
+                }
+            }
         }
     }
 }

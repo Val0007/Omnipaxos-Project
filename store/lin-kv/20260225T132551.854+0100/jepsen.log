@@ -1,0 +1,320 @@
+2026-02-25 13:25:51,913{GMT}	INFO	[jepsen test runner] jepsen.core: Test version 6180679f1954f3d7fa3863903779feb0dae32cca (plus uncommitted changes)
+2026-02-25 13:25:51,914{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w lin-kv --bin ./target/debug/maelstrom --node-count 3 --time-limit 30 --rate 10 --concurrency 2n
+2026-02-25 13:25:52,014{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 3
+ :availability nil
+ :max-txn-length 4
+ :concurrency 6
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x1f299fc3"
+         "maelstrom.db$db$reify__16612@1f299fc3"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "lin-kv"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x2c9573f1" "2026-02-25T13:25:51.854+01:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x6cf58989"
+         "maelstrom.net$jepsen_net$reify__15721@6cf58989"]
+ :client
+ #object[maelstrom.workload.lin_kv$client$reify__20973
+         "0x3a1dc432"
+         "maelstrom.workload.lin_kv$client$reify__20973@3a1dc432"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x4c18b432"
+         "java.util.concurrent.CyclicBarrier@4c18b432"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x4b954cbb"
+         "jepsen.checker$compose$reify__11089@4b954cbb"]
+ :argv
+ ("test"
+  "-w"
+  "lin-kv"
+  "--bin"
+  "./target/debug/maelstrom"
+  "--node-count"
+  "3"
+  "--time-limit"
+  "30"
+  "--rate"
+  "10"
+  "--concurrency"
+  "2n")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@bec2d81"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@5f04449a"]})
+ :nodes ["n0" "n1" "n2"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "./target/debug/maelstrom"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x5aaecd25"
+         (jepsen.generator.TimeLimit
+          {:limit 30000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x1df6f57d"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@1df6f57d"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x578036a2"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@578036a2"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.OnThreads
+                                        {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                                         :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                                 "0x36cc6055"
+                                                                 "jepsen.generator.context$make_thread_filter$lazy_filter__12077@36cc6055"],
+                                         :gen (jepsen.independent.ConcurrentGenerator
+                                               {:n 6,
+                                                :fgen #object[jepsen.tests.linearizable_register$test$fn__17385
+                                                              "0x41d1bcbd"
+                                                              "jepsen.tests.linearizable_register$test$fn__17385@41d1bcbd"],
+                                                :group->threads nil,
+                                                :thread->group nil,
+                                                :group->context-filter nil,
+                                                :keys (0 1 2 3 4 5 6 7 ...),
+                                                :gens nil})})})})]})})]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0x3d45ea17"
+         "maelstrom.net$jepsen_os$reify__15724@3d45ea17"]
+ :time-limit 30
+ :workload :lin-kv
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2026-02-25 13:25:53,102{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2026-02-25 13:25:53,104{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2026-02-25 13:25:53,105{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2026-02-25 13:25:53,106{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2026-02-25 13:25:53,106{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2026-02-25 13:25:53,106{GMT}	INFO	[jepsen node n1] maelstrom.process: launching ./target/debug/maelstrom []
+2026-02-25 13:25:53,106{GMT}	INFO	[jepsen node n2] maelstrom.process: launching ./target/debug/maelstrom []
+2026-02-25 13:25:53,108{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2026-02-25 13:25:53,114{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2026-02-25 13:25:53,115{GMT}	INFO	[jepsen node n0] maelstrom.process: launching ./target/debug/maelstrom []
+2026-02-25 13:25:53,679{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2026-02-25 13:25:53,694{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:53,705{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:53,830{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:25:53,834{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:53,900{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 3]]
+2026-02-25 13:25:53,903{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:53,971{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 2]]
+2026-02-25 13:25:53,976{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:54,001{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,003{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,041{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,044{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,064{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,072{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,142{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,144{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,176{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-02-25 13:25:54,177{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:54,236{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 4]]
+2026-02-25 13:25:54,238{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 4]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:54,339{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-25 13:25:54,341{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 3]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:54,494{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,497{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,597{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 0]
+2026-02-25 13:25:54,599{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 0]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:54,660{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,663{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,683{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,686{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,886{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 4]]
+2026-02-25 13:25:54,889{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 4]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:54,980{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,989{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:54,995{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:54,995{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,167{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,169{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,299{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [1 3]]
+2026-02-25 13:25:55,303{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [1 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:55,325{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,326{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,328{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,328{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,359{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,361{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,441{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,443{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,521{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 2]]
+2026-02-25 13:25:55,524{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:55,645{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [1 1]]
+2026-02-25 13:25:55,654{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [1 1]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:55,713{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,715{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,825{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,828{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:55,985{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:55,989{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:56,117{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:25:56,120{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:56,254{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:25:56,258{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:56,263{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 2]]
+2026-02-25 13:25:56,267{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:56,413{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:56,416{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:56,518{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [2 3]]
+2026-02-25 13:25:56,521{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [2 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:56,592{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-25 13:25:56,597{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 3]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:56,679{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 4]]
+2026-02-25 13:25:56,683{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 4]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:56,739{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 4]]
+2026-02-25 13:25:56,742{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 4]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:56,814{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 4]]
+2026-02-25 13:25:56,816{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 4]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:56,942{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-02-25 13:25:56,946{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 1]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:57,093{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:57,096{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:57,268{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [2 1]]
+2026-02-25 13:25:57,271{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [2 1]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:57,367{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:57,370{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:57,546{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-25 13:25:57,550{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 3]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:57,626{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 3]]
+2026-02-25 13:25:57,630{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:57,757{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:25:57,760{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:57,793{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-25 13:25:57,796{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 2]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:57,992{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:57,994{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:58,009{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [1 2]]
+2026-02-25 13:25:58,013{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [1 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,117{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:58,119{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:58,252{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 3]]
+2026-02-25 13:25:58,255{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,343{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 0]]
+2026-02-25 13:25:58,345{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 0]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,433{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 0]]
+2026-02-25 13:25:58,435{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 0]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,596{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 0]]
+2026-02-25 13:25:58,599{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 0]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,711{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [3 2]]
+2026-02-25 13:25:58,722{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 3]
+2026-02-25 13:25:58,723{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [3 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,727{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 3]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:58,833{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 1]]
+2026-02-25 13:25:58,835{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 1]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,854{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 1]]
+2026-02-25 13:25:58,856{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 1]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:58,934{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:25:58,935{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,055{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,057{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,194{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,198{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,236{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,238{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,310{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 2]
+2026-02-25 13:25:59,311{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 2]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:25:59,314{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,316{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,376{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,377{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,425{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 1]]
+2026-02-25 13:25:59,427{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 1]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:25:59,509{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,510{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,517{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,518{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,633{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,635{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,803{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,806{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:25:59,950{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:25:59,953{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,016{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,018{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,110{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,112{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,246{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-02-25 13:26:00,248{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:26:00,335{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-25 13:26:00,338{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 3]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:26:00,353{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,355{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,381{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 2]
+2026-02-25 13:26:00,381{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 2]]
+2026-02-25 13:26:00,382{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 2]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:26:00,382{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:26:00,389{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 0]]
+2026-02-25 13:26:00,390{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 0]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:26:00,591{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,593{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,788{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,791{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,811{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,812{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:00,876{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:26:00,877{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:01,014{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:26:01,015{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:01,058{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-02-25 13:26:01,061{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 1]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:26:01,080{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-25 13:26:01,087{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:01,090{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-25 13:26:01,092{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 2]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:26:01,227{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-25 13:26:01,229{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:01,242{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 2]]
+2026-02-25 13:26:01,244{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:26:01,392{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 0]
+2026-02-25 13:26:01,394{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:write	[0 0]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:26:01,594{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 2]]
+2026-02-25 13:26:01,596{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [4 2]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:26:01,652{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 1]]
+2026-02-25 13:26:01,654{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 1]]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/cas)"]
+2026-02-25 13:26:01,726{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-25 13:26:01,728{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 4]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/put)"]
+2026-02-25 13:26:01,938{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-25 13:26:01,980{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:temporarily-unavailable "error sending request for url (http://127.0.0.1:8080/kv/get/0)"]
+2026-02-25 13:26:02,005{GMT}	INFO	[Jepsen shutdown hook] jepsen.core: Downloading DB logs before JVM shutdown...
