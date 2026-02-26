@@ -95,6 +95,7 @@ impl Network {
         let (connection_sink, mut connection_source) = mpsc::channel(30);
         let listener_handle =
             self.spawn_connection_listener(connection_sink.clone(), listen_address);
+            //when peers are connected their connections are sent via an unidirectional channel to connection_source
         self.spawn_peer_connectors(connection_sink.clone(), id, peers);
         while let Some(new_connection) = connection_source.recv().await {
             match new_connection {
@@ -110,8 +111,11 @@ impl Network {
             }
             let all_clients_connected = self.client_connections.len() >= num_clients;
             let all_cluster_connected = self.peer_connections.iter().all(|c| c.is_some());
-            if all_clients_connected && all_cluster_connected {
-                listener_handle.abort();
+            // if all_clients_connected && all_cluster_connected {
+            //     listener_handle.abort();
+            //     break;
+            // }
+            if all_cluster_connected{
                 break;
             }
         }
@@ -310,6 +314,7 @@ impl PeerConnection {
         batch_size: usize,
         incoming_messages: Sender<(NodeId, ClusterMessage)>,
     ) -> Self {
+        //using the tcp connection to the node we make a reader and writer channel 
         let (reader, mut writer) = frame_cluster_connection(connection);
         // Reader Actor
         let reader_task = tokio::spawn(async move {
