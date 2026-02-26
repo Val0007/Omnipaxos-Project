@@ -21,13 +21,16 @@ use crate::configs::OmniPaxosKVConfig;
 pub struct Network {
     peers: Vec<NodeId>,
     peer_connections: Vec<Option<PeerConnection>>,
-    client_connections: HashMap<ClientId, ClientConnection>,
+    pub client_connections: HashMap<ClientId, ClientConnection>,
     max_client_id: Arc<Mutex<ClientId>>,
     batch_size: usize,
     client_message_sender: Sender<(ClientId, ClientMessage)>,
     cluster_message_sender: Sender<(NodeId, ClusterMessage)>,
     pub cluster_messages: Receiver<(NodeId, ClusterMessage)>,
     pub client_messages: Receiver<(ClientId, ClientMessage)>,
+
+    /// Receives newly established ClientConnections from the background accept task and pushes them into client_connections
+    pub new_client_connections: Receiver<ClientConnection>,
 }
 
 fn get_addrs(config: OmniPaxosKVConfig) -> (SocketAddr, Vec<SocketAddr>) {
@@ -51,8 +54,10 @@ fn get_addrs(config: OmniPaxosKVConfig) -> (SocketAddr, Vec<SocketAddr>) {
 }
 
 impl Network {
-    // Creates a new network with connections other server nodes in the cluster and any clients.
-    // Waits until connections to all servers and clients are established before resolving.
+    // Creates a new network with connections to other server nodes in the cluster and any clients.
+    // Waits until connections to all peer servers are established before resolving.
+    // Client connections are accepted forever in a background task; newly connected clients are
+    // delivered via `self.new_client_connections`.
     pub async fn new(config: OmniPaxosKVConfig, batch_size: usize) -> Self {
         let (listen_address, node_addresses) = get_addrs(config.clone());
         let id = config.local.server_id;
@@ -67,6 +72,8 @@ impl Network {
         cluster_connections.resize_with(peer_addresses.len(), Default::default);
         let (cluster_message_sender, cluster_messages) = tokio::sync::mpsc::channel(batch_size);
         let (client_message_sender, client_messages) = tokio::sync::mpsc::channel(batch_size);
+        // Channel used to hand newly accepted ClientConnections back to the Network owner.
+        let (new_client_tx, new_client_connections) = tokio::sync::mpsc::channel(batch_size);
         let mut network = Self {
             peers: peer_addresses.iter().map(|(id, _)| *id).collect(),
             peer_connections: cluster_connections,
@@ -77,10 +84,10 @@ impl Network {
             cluster_message_sender,
             cluster_messages,
             client_messages,
+            new_client_connections,
         };
-        let num_clients = config.local.num_clients;
         network
-            .initialize_connections(id, num_clients, peer_addresses, listen_address)
+            .initialize_connections(id, peer_addresses, listen_address, new_client_tx)
             .await;
         network
     }
@@ -88,42 +95,48 @@ impl Network {
     async fn initialize_connections(
         &mut self,
         id: NodeId,
-        num_clients: usize,
         peers: Vec<(NodeId, SocketAddr)>,
         listen_address: SocketAddr,
+        new_client_tx: Sender<ClientConnection>,
     ) {
+        // Separate channel used only during initialisation to deliver both peer and client
+        // connections to this function.
         let (connection_sink, mut connection_source) = mpsc::channel(30);
-        let listener_handle =
-            self.spawn_connection_listener(connection_sink.clone(), listen_address);
-            //when peers are connected their connections are sent via an unidirectional channel to connection_source
+
+        // The listener runs forever; it sends peer connections through `connection_sink` during
+        // init AND keeps sending client connections through `new_client_tx` forever.
+        self.spawn_connection_listener(
+            connection_sink.clone(),
+            new_client_tx,
+            listen_address,
+        );
+
+        // Only connect to peers with a lower id (the higher-id side listens).
         self.spawn_peer_connectors(connection_sink.clone(), id, peers);
+
+        // Wait only until all peer connections are established.
         while let Some(new_connection) = connection_source.recv().await {
             match new_connection {
                 NewConnection::ToPeer(connection) => {
                     let peer_idx = self.cluster_id_to_idx(connection.peer_id).unwrap();
                     self.peer_connections[peer_idx] = Some(connection);
                 }
-                NewConnection::ToClient(connection) => {
-                    let _ = self
-                        .client_connections
-                        .insert(connection.client_id, connection);
-                }
             }
-            let all_clients_connected = self.client_connections.len() >= num_clients;
             let all_cluster_connected = self.peer_connections.iter().all(|c| c.is_some());
-            // if all_clients_connected && all_cluster_connected {
-            //     listener_handle.abort();
-            //     break;
-            // }
-            if all_cluster_connected{
+            if all_cluster_connected {
                 break;
             }
         }
     }
 
+    /// Spawns a TCP listener that runs forever.
+    ///
+    /// - Peer connections are sent through `peer_connection_sender` (used only during init).
+    /// - Client connections are sent through `new_client_tx` and are accepted indefinitely.
     fn spawn_connection_listener(
         &self,
-        connection_sender: Sender<NewConnection>,
+        peer_connection_sender: Sender<NewConnection>,
+        new_client_tx: Sender<ClientConnection>,
         listen_address: SocketAddr,
     ) -> tokio::task::JoinHandle<()> {
         let client_sender = self.client_message_sender.clone();
@@ -141,7 +154,8 @@ impl Network {
                             tcp_stream,
                             client_sender.clone(),
                             cluster_sender.clone(),
-                            connection_sender.clone(),
+                            peer_connection_sender.clone(),
+                            new_client_tx.clone(),
                             max_client_id_handle.clone(),
                             batch_size,
                         ));
@@ -152,27 +166,37 @@ impl Network {
         })
     }
 
+    /// Handshakes the incoming TCP stream and routes it to the right channel:
+    /// - Peer  → `peer_connection_sender` (used during cluster init)
+    /// - Client → `new_client_tx` (runs forever, independent of init)
     async fn handle_incoming_connection(
         connection: TcpStream,
         client_message_sender: Sender<(ClientId, ClientMessage)>,
         cluster_message_sender: Sender<(NodeId, ClusterMessage)>,
-        connection_sender: Sender<NewConnection>,
+        peer_connection_sender: Sender<NewConnection>,
+        new_client_tx: Sender<ClientConnection>,
         max_client_id_handle: Arc<Mutex<ClientId>>,
         batch_size: usize,
     ) {
-        // Identify connector's ID and type by handshake
         let mut registration_connection = frame_registration_connection(connection);
         let registration_message = registration_connection.next().await;
-        let new_connection = match registration_message {
+        match registration_message {
             Some(Ok(RegistrationMessage::NodeRegister(node_id))) => {
                 info!("Identified connection from node {node_id}");
                 let underlying_stream = registration_connection.into_inner().into_inner();
-                NewConnection::ToPeer(PeerConnection::new(
+                let peer_conn = PeerConnection::new(
                     node_id,
                     underlying_stream,
                     batch_size,
                     cluster_message_sender,
-                ))
+                );
+
+                //only use the connection sink here for clusters , after the functions goes out of scope
+                //this also goes out of scope and we dont use it for the clients anymore
+                peer_connection_sender
+                    .send(NewConnection::ToPeer(peer_conn))
+                    .await
+                    .unwrap();
             }
             Some(Ok(RegistrationMessage::ClientRegister)) => {
                 let next_client_id = {
@@ -182,23 +206,24 @@ impl Network {
                 };
                 info!("Identified connection from client {next_client_id}");
                 let underlying_stream = registration_connection.into_inner().into_inner();
-                NewConnection::ToClient(ClientConnection::new(
+                let client_conn = ClientConnection::new(
                     next_client_id,
                     underlying_stream,
                     batch_size,
                     client_message_sender,
-                ))
+                );
+                // Send through the dedicated client channel , using a separate Sender<NewConnection> — this never closes.
+                if let Err(err) = new_client_tx.send(client_conn).await {
+                    error!("Failed to register client {next_client_id}: {err}");
+                }
             }
             Some(Err(err)) => {
                 error!("Error deserializing handshake: {:?}", err);
-                return;
             }
             None => {
                 info!("Connection to unidentified source dropped");
-                return;
             }
-        };
-        connection_sender.send(new_connection).await.unwrap();
+        }
     }
 
     fn spawn_peer_connectors(
@@ -215,7 +240,6 @@ impl Network {
             let connection_sender = connection_sender.clone();
             let batch_size = self.batch_size;
             tokio::spawn(async move {
-                // Establish connection
                 let peer_connection = loop {
                     reconnect_interval.tick().await;
                     match TcpStream::connect(peer_address).await {
@@ -229,7 +253,6 @@ impl Network {
                         }
                     }
                 };
-                // Send handshake
                 let mut registration_connection = frame_registration_connection(peer_connection);
                 let handshake = RegistrationMessage::NodeRegister(my_id);
                 if let Err(err) = registration_connection.send(handshake).await {
@@ -237,12 +260,20 @@ impl Network {
                     return;
                 }
                 let underlying_stream = registration_connection.into_inner().into_inner();
-                // Create connection actor
                 let peer_actor =
                     PeerConnection::new(peer, underlying_stream, batch_size, cluster_sender);
                 let new_connection = NewConnection::ToPeer(peer_actor);
                 connection_sender.send(new_connection).await.unwrap();
             });
+        }
+    }
+
+    /// Drains any newly connected clients from the background accept task and registers them.
+    /// Call this periodically from your main loop before processing messages.
+    pub fn register_new_clients(&mut self) {
+        while let Ok(connection) = self.new_client_connections.try_recv() {
+            info!("Registering new client {}", connection.client_id);
+            self.client_connections.insert(connection.client_id, connection);
         }
     }
 
@@ -273,7 +304,6 @@ impl Network {
         }
     }
 
-    // Removes all client and peer connections and ends their corresponding tasks.
     #[allow(dead_code)]
     pub fn shutdown(&mut self) {
         for (_, client_connection) in self.client_connections.drain() {
@@ -295,9 +325,10 @@ impl Network {
     }
 }
 
+// During init only peer connections flow through this enum; client connections
+// are delivered directly via `new_client_tx`.
 enum NewConnection {
     ToPeer(PeerConnection),
-    ToClient(ClientConnection),
 }
 
 struct PeerConnection {
@@ -314,9 +345,7 @@ impl PeerConnection {
         batch_size: usize,
         incoming_messages: Sender<(NodeId, ClusterMessage)>,
     ) -> Self {
-        //using the tcp connection to the node we make a reader and writer channel 
         let (reader, mut writer) = frame_cluster_connection(connection);
-        // Reader Actor
         let reader_task = tokio::spawn(async move {
             let mut buf_reader = reader.ready_chunks(batch_size);
             while let Some(messages) = buf_reader.next().await {
@@ -334,7 +363,6 @@ impl PeerConnection {
                 }
             }
         });
-        // Writer Actor
         let (message_tx, mut message_rx) = mpsc::unbounded_channel();
         let writer_task = tokio::spawn(async move {
             let mut buffer = Vec::with_capacity(batch_size);
@@ -373,8 +401,8 @@ impl PeerConnection {
     }
 }
 
-struct ClientConnection {
-    client_id: ClientId,
+pub struct ClientConnection {
+    pub client_id: ClientId,
     reader_task: JoinHandle<()>,
     writer_task: JoinHandle<()>,
     outgoing_messages: UnboundedSender<ServerMessage>,
@@ -388,7 +416,6 @@ impl ClientConnection {
         incoming_messages: Sender<(ClientId, ClientMessage)>,
     ) -> Self {
         let (reader, mut writer) = frame_servers_connection(connection);
-        // Reader Actor
         let reader_task: JoinHandle<()> = tokio::spawn(async move {
             let mut buf_reader = reader.ready_chunks(batch_size);
             while let Some(messages) = buf_reader.next().await {
@@ -400,7 +427,6 @@ impl ClientConnection {
                 }
             }
         });
-        // Writer Actor
         let (message_tx, mut message_rx) = mpsc::unbounded_channel();
         let writer_task = tokio::spawn(async move {
             let mut buffer = Vec::with_capacity(batch_size);

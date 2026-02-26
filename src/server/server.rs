@@ -66,6 +66,11 @@ impl OmniPaxosServer {
                 _ = self.network.cluster_messages.recv_many(&mut cluster_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_cluster_messages(&mut cluster_msg_buf).await;
                 },
+
+                // Drains any newly connected clients from the background accept task and registers them.
+                    Some(connection) = self.network.new_client_connections.recv() => {
+                    self.network.client_connections.insert(connection.client_id, connection);
+                }
                 _ = self.network.client_messages.recv_many(&mut client_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_client_messages(&mut client_msg_buf).await;
                 },
