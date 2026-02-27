@@ -99,6 +99,7 @@ impl OmniPaxosServer {
                             break;
                         }
                     }
+                    //RUNS WHEN LEADER CRASHES OR PARTITIONS , ANOTHER NODE TRIES TO BECOME LEADER , SENDS MESSAGES TO CONNECTED NODE
                     info!("{}: Attempting to take leadership", self.id);
                     self.omnipaxos.try_become_leader();
                     self.send_outgoing_msgs();

@@ -1,4 +1,3 @@
-// REMOVED: use std::alloc::System; (unused import)
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::io::{self, BufRead, Write};
@@ -52,16 +51,13 @@ struct Message {
 enum Operation {
     Read(String),
     Write(String, String),
-    Cas(String, String, String),
 }
 
 #[derive(Debug)]
 enum Outcome {
     ReadOk(String),
     WriteOk,
-    CasOk,
     NotFound,
-    CasConflict,
     Indeterminate,
     Failed(String),
 }
@@ -89,9 +85,6 @@ async fn main() {
 
             "init" => {
                 node_id = msg.body.node_id.clone().unwrap();
-                // CHANGED: all nodes point to single gateway on 8080
-                // was: let num: u16 = node_id.trim_start_matches('n').parse().unwrap();
-                //      shim_url = format!("http://127.0.0.1:{}", 9001 + num);
                 shim_url = "http://127.0.0.1:8080".to_string();
                 eprintln!("[node] {} → gateway: {}", node_id, shim_url);
 
@@ -107,7 +100,6 @@ async fn main() {
             "read" => {
                 let key = msg.body.key.clone().unwrap().to_string();
                 let key = key.trim_matches('"').to_string();
-                // CHANGED: /get?key={key} → /kv/get/{key}
                 let url = format!("{}/kv/get/{}", shim_url, key);
 
                 let result = timeout(Duration::from_secs(5),
@@ -148,7 +140,6 @@ async fn main() {
                 let key = key.trim_matches('"').to_string();
                 let value = msg.body.value.clone().unwrap().to_string();
                 let value = value.trim_matches('"').to_string();
-                // CHANGED: /put → /kv/put
                 let url = format!("{}/kv/put", shim_url);
 
                 let result = timeout(Duration::from_secs(5),
@@ -175,8 +166,6 @@ async fn main() {
                 send_reply(&node_id, &msg, body);
             }
 
-            // CHANGED: entire cas handler replaced — gateway has no /cas endpoint
-            // now implemented as read + conditional write
             "cas" => {
                 let key = msg.body.key.clone().unwrap().to_string();
                 let key = key.trim_matches('"').to_string();
@@ -184,36 +173,50 @@ async fn main() {
                 let expected = expected.trim_matches('"').to_string();
                 let new_value = msg.body.to.clone().unwrap().to_string();
                 let new_value = new_value.trim_matches('"').to_string();
-                let url = format!("{}/kv/cas", shim_url);
 
-                let result = timeout(Duration::from_secs(5),
-                                     http.post(&url)
-                                         .json(&serde_json::json!({
-                                 "key": key,
-                                 "expected": expected,
-                                 "new_value": new_value,
-                             }))
-                                         .send()).await;
+                // Step 1: read current value
+                let get_url = format!("{}/kv/get/{}", shim_url, key);
+                let read_result = timeout(Duration::from_secs(5),
+                                          http.get(&get_url).send()).await;
 
-                let body = match result {
-                    Ok(Ok(resp)) => {
-                        if resp.status() == reqwest::StatusCode::CONFLICT {
-                            error_body(msg.body.msg_id, 22, "cas conflict".into())
-                        } else {
-                            match resp.json::<ShimResponse>().await {
-                                Ok(s) if s.ok => Body {
-                                    msg_type: "cas_ok".into(),
-                                    in_reply_to: msg.body.msg_id,
-                                    msg_id: None, node_id: None, node_ids: None,
-                                    key: None, value: None, from: None, to: None,
-                                    code: None, text: None,
-                                },
-                                Ok(s) => error_body(msg.body.msg_id, 22,
-                                                    s.error.unwrap_or("cas failed".into())),
-                                Err(e) => error_body(msg.body.msg_id, 13, e.to_string()),
+                let body = match read_result {
+                    Ok(Ok(resp)) => match resp.json::<ShimResponse>().await {
+                        Ok(s) if s.ok => {
+                            let current = s.value.unwrap_or_default();
+                            if current != expected {
+                                // Precondition failed — return code 22
+                                error_body(msg.body.msg_id, 22,
+                                    format!("expected {} but had {}", expected, current))
+                            } else {
+                                // Step 2: write new value
+                                let put_url = format!("{}/kv/put", shim_url);
+                                let write_result = timeout(Duration::from_secs(5),
+                                    http.post(&put_url)
+                                        .json(&serde_json::json!({"key": key, "value": new_value}))
+                                        .send()).await;
+
+                                match write_result {
+                                    Ok(Ok(resp)) => match resp.json::<ShimResponse>().await {
+                                        Ok(s) if s.ok => Body {
+                                            msg_type: "cas_ok".into(),
+                                            in_reply_to: msg.body.msg_id,
+                                            msg_id: None, node_id: None, node_ids: None,
+                                            key: None, value: None, from: None, to: None,
+                                            code: None, text: None,
+                                        },
+                                        Ok(s) => error_body(msg.body.msg_id, 14,
+                                                            s.error.unwrap_or("write failed".into())),
+                                        Err(e) => error_body(msg.body.msg_id, 13, e.to_string()),
+                                    },
+                                    Ok(Err(e)) => error_body(msg.body.msg_id, 11, e.to_string()),
+                                    Err(_)     => error_body(msg.body.msg_id, 11, "timeout".into()),
+                                }
                             }
-                        }
-                    }
+                        },
+                        // Key doesn't exist — treat as precondition failure
+                        Ok(_) => error_body(msg.body.msg_id, 20, "key not found".into()),
+                        Err(e) => error_body(msg.body.msg_id, 13, e.to_string()),
+                    },
                     Ok(Err(e)) => error_body(msg.body.msg_id, 11, e.to_string()),
                     Err(_)     => error_body(msg.body.msg_id, 11, "timeout".into()),
                 };
@@ -252,12 +255,10 @@ fn error_body(in_reply_to: Option<u64>, code: u32, text: String) -> Body {
 fn generate_op(rng: &mut impl Rng) -> Operation {
     let key = rng.gen_range(1_u32..=5).to_string();
     let value = rng.gen_range(1_u32..=100).to_string();
-    let expected = rng.gen_range(1_u32..=100).to_string();
 
     match rng.gen_range(0_u32..10) {
         0..=2 => Operation::Read(key),
-        3..=8 => Operation::Write(key, value),
-        _     => Operation::Cas(key, expected, value),
+        _     => Operation::Write(key, value),
     }
 }
 
@@ -269,7 +270,6 @@ async fn execute_op(
     match op {
 
         Operation::Read(key) => {
-            // CHANGED: /get?key={key} → /kv/get/{key}
             let url = format!("{}/kv/get/{}", shim_url, key);
             let result = timeout(
                 Duration::from_secs(5),
@@ -288,7 +288,6 @@ async fn execute_op(
         }
 
         Operation::Write(key, value) => {
-            // CHANGED: /put → /kv/put
             let url = format!("{}/kv/put", shim_url);
             let result = timeout(
                 Duration::from_secs(5),
@@ -303,37 +302,6 @@ async fn execute_op(
                     Ok(s)         => Outcome::Failed(s.error.unwrap_or_default()),
                     Err(e)        => Outcome::Failed(e.to_string()),
                 },
-                Ok(Err(_)) => Outcome::Indeterminate,
-                Err(_)     => Outcome::Indeterminate,
-            }
-        }
-
-        // CHANGED: /cas → read + conditional write (no gateway CAS endpoint)
-        Operation::Cas(key, expected, new_value) => {
-            let url = format!("{}/kv/cas", shim_url);
-            let result = timeout(
-                Duration::from_secs(5),
-                http.post(&url)
-                    .json(&serde_json::json!({
-                "key": key,
-                "expected": expected,
-                "new_value": new_value,
-            }))
-                    .send()
-            ).await;
-
-            match result {
-                Ok(Ok(resp)) => {
-                    if resp.status() == reqwest::StatusCode::CONFLICT {
-                        Outcome::CasConflict
-                    } else {
-                        match resp.json::<ShimResponse>().await {
-                            Ok(s) if s.ok => Outcome::CasOk,
-                            Ok(_)         => Outcome::CasConflict,
-                            Err(e)        => Outcome::Failed(e.to_string()),
-                        }
-                    }
-                }
                 Ok(Err(_)) => Outcome::Indeterminate,
                 Err(_)     => Outcome::Indeterminate,
             }

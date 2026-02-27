@@ -1,0 +1,492 @@
+2026-02-26 14:21:40,163{GMT}	INFO	[jepsen test runner] jepsen.core: Test version 66a3ec02acc69f98db7d7195e842471c64da996e (plus uncommitted changes)
+2026-02-26 14:21:40,163{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w lin-kv --bin ./target/debug/maelstrom --node-count 3 --time-limit 30 --rate 10 --concurrency 2n
+2026-02-26 14:21:40,240{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 3
+ :availability nil
+ :max-txn-length 4
+ :concurrency 6
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x6b297a62"
+         "maelstrom.db$db$reify__16612@6b297a62"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "lin-kv"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x6bdc984" "2026-02-26T14:21:40.097+01:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x1f299fc3"
+         "maelstrom.net$jepsen_net$reify__15721@1f299fc3"]
+ :client
+ #object[maelstrom.workload.lin_kv$client$reify__20973
+         "0xb997735"
+         "maelstrom.workload.lin_kv$client$reify__20973@b997735"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x178826db"
+         "java.util.concurrent.CyclicBarrier@178826db"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x7f913c47"
+         "jepsen.checker$compose$reify__11089@7f913c47"]
+ :argv
+ ("test"
+  "-w"
+  "lin-kv"
+  "--bin"
+  "./target/debug/maelstrom"
+  "--node-count"
+  "3"
+  "--time-limit"
+  "30"
+  "--rate"
+  "10"
+  "--concurrency"
+  "2n")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@2c9573f1"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@6cf58989"]})
+ :nodes ["n0" "n1" "n2"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "./target/debug/maelstrom"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x5d4f0fd5"
+         (jepsen.generator.TimeLimit
+          {:limit 30000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x1acd660d"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@1acd660d"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x22f3b213"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@22f3b213"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.OnThreads
+                                        {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                                         :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                                 "0xe18848d"
+                                                                 "jepsen.generator.context$make_thread_filter$lazy_filter__12077@e18848d"],
+                                         :gen (jepsen.independent.ConcurrentGenerator
+                                               {:n 6,
+                                                :fgen #object[jepsen.tests.linearizable_register$test$fn__17385
+                                                              "0x53a65166"
+                                                              "jepsen.tests.linearizable_register$test$fn__17385@53a65166"],
+                                                :group->threads nil,
+                                                :thread->group nil,
+                                                :group->context-filter nil,
+                                                :keys (0 1 2 3 4 5 6 7 ...),
+                                                :gens nil})})})})]})})]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0x1df6f57d"
+         "maelstrom.net$jepsen_os$reify__15724@1df6f57d"]
+ :time-limit 30
+ :workload :lin-kv
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2026-02-26 14:21:42,201{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2026-02-26 14:21:42,202{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2026-02-26 14:21:42,204{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2026-02-26 14:21:42,205{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2026-02-26 14:21:42,205{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2026-02-26 14:21:42,206{GMT}	INFO	[jepsen node n2] maelstrom.process: launching ./target/debug/maelstrom []
+2026-02-26 14:21:42,206{GMT}	INFO	[jepsen node n1] maelstrom.process: launching ./target/debug/maelstrom []
+2026-02-26 14:21:42,209{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2026-02-26 14:21:42,210{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2026-02-26 14:21:42,211{GMT}	INFO	[jepsen node n0] maelstrom.process: launching ./target/debug/maelstrom []
+2026-02-26 14:21:42,259{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2026-02-26 14:21:42,287{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 1]]
+2026-02-26 14:21:42,300{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [0 4]]
+2026-02-26 14:21:42,363{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [1 4]]
+2026-02-26 14:21:42,416{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:42,416{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [0 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:42,416{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [1 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:42,417{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-26 14:21:42,423{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-02-26 14:21:42,600{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:42,607{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:42,712{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:42,715{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:42,823{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 0]]
+2026-02-26 14:21:42,828{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:42,992{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 2]]
+2026-02-26 14:21:42,999{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:43,178{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:43,189{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:43,329{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:43,337{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 2]
+2026-02-26 14:21:43,342{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:43,345{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:43,478{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [1 0]]
+2026-02-26 14:21:43,486{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [1 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:43,500{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 1]
+2026-02-26 14:21:43,506{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:ok	:write	[0 1]
+2026-02-26 14:21:43,550{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:43,554{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-02-26 14:21:43,598{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:43,601{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-02-26 14:21:43,633{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:43,637{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-02-26 14:21:43,748{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-26 14:21:43,753{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-02-26 14:21:43,875{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:43,881{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,021{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [3 2]]
+2026-02-26 14:21:44,028{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [3 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:44,046{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,050{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,086{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,091{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,108{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,112{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,166{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,169{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:44,219{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-02-26 14:21:44,228{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:44,313{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,318{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,486{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,492{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,492{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,496{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:44,686{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,693{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,770{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,778{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:44,904{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:44,912{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:45,089{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:45,097{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 2]
+2026-02-26 14:21:45,261{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-26 14:21:45,271{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-02-26 14:21:45,286{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 2]
+2026-02-26 14:21:45,290{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 2]
+2026-02-26 14:21:45,382{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 2]
+2026-02-26 14:21:45,387{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:ok	:write	[0 2]
+2026-02-26 14:21:45,457{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 1]]
+2026-02-26 14:21:45,461{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [2 1]]
+2026-02-26 14:21:45,634{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:45,638{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-02-26 14:21:45,824{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:45,831{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:45,843{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-02-26 14:21:45,847{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [0 2]]
+2026-02-26 14:21:45,907{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:45,910{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:45,925{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [2 4]]
+2026-02-26 14:21:45,929{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [2 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:45,998{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [3 4]]
+2026-02-26 14:21:46,003{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [3 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:46,078{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:46,086{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:46,112{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:46,119{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:46,276{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:46,283{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 0]
+2026-02-26 14:21:46,448{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:46,455{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 0]
+2026-02-26 14:21:46,610{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 2]]
+2026-02-26 14:21:46,614{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:46,635{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:46,639{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:46,750{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [1 2]]
+2026-02-26 14:21:46,756{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [1 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:46,866{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:46,873{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:46,950{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:46,950{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 0]]
+2026-02-26 14:21:46,954{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:46,955{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:47,123{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:47,131{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 0]
+2026-02-26 14:21:47,194{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 0]]
+2026-02-26 14:21:47,201{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [0 0]]
+2026-02-26 14:21:47,335{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 3]
+2026-02-26 14:21:47,344{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 3]
+2026-02-26 14:21:47,538{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [2 1]]
+2026-02-26 14:21:47,539{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 0]]
+2026-02-26 14:21:47,542{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:47,542{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [2 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:47,633{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:47,640{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:47,814{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:47,823{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-02-26 14:21:48,004{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:48,011{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:48,021{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:48,025{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:48,070{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 1]
+2026-02-26 14:21:48,076{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 1]
+2026-02-26 14:21:48,204{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:48,207{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-02-26 14:21:48,330{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:48,335{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:48,514{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-26 14:21:48,524{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-02-26 14:21:48,611{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:48,615{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 4]
+2026-02-26 14:21:48,666{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:48,675{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 4]
+2026-02-26 14:21:48,867{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:48,871{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:49,058{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [0 1]]
+2026-02-26 14:21:49,067{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [0 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:49,157{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 2]]
+2026-02-26 14:21:49,163{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:ok	:cas	[0 [4 2]]
+2026-02-26 14:21:49,283{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-26 14:21:49,288{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-02-26 14:21:49,343{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 1]]
+2026-02-26 14:21:49,347{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:49,430{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:49,433{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 4]
+2026-02-26 14:21:49,525{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-26 14:21:49,533{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-02-26 14:21:49,628{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:49,633{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:49,674{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 2]]
+2026-02-26 14:21:49,681{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:cas	[0 [4 2]]
+2026-02-26 14:21:49,813{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:49,820{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:49,895{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 0]
+2026-02-26 14:21:49,901{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 0]
+2026-02-26 14:21:50,046{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 0]]
+2026-02-26 14:21:50,051{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [0 0]]
+2026-02-26 14:21:50,075{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 4]]
+2026-02-26 14:21:50,081{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:50,088{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-02-26 14:21:50,092{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:50,240{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,248{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:50,273{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,278{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:50,288{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,292{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:50,391{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,395{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:50,571{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,576{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-02-26 14:21:50,645{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 1]]
+2026-02-26 14:21:50,648{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:50,661{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,664{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 0]
+2026-02-26 14:21:50,711{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-26 14:21:50,714{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-02-26 14:21:50,748{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [2 0]]
+2026-02-26 14:21:50,751{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [2 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:50,912{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 1]]
+2026-02-26 14:21:50,919{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [4 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:50,956{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:50,961{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:51,139{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,150{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:51,164{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 3]]
+2026-02-26 14:21:51,170{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [3 3]]
+2026-02-26 14:21:51,175{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,179{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 3]
+2026-02-26 14:21:51,277{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,280{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:51,442{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 2]
+2026-02-26 14:21:51,447{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 2]
+2026-02-26 14:21:51,629{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 3]
+2026-02-26 14:21:51,636{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:ok	:write	[0 3]
+2026-02-26 14:21:51,743{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,747{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:51,816{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 0]]
+2026-02-26 14:21:51,821{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:51,822{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,826{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-02-26 14:21:51,907{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,918{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 3]
+2026-02-26 14:21:51,954{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:51,962{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:51,997{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:52,005{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:52,144{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:52,148{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:52,179{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:52,185{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:52,190{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-26 14:21:52,199{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-02-26 14:21:52,244{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-26 14:21:52,247{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-02-26 14:21:52,278{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [0 2]]
+2026-02-26 14:21:52,283{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [0 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:52,320{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 2]]
+2026-02-26 14:21:52,325{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [2 2]]
+2026-02-26 14:21:52,447{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:52,453{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:52,545{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [1 1]]
+2026-02-26 14:21:52,552{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [1 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:52,672{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:52,678{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:52,783{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 4]]
+2026-02-26 14:21:52,789{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [2 4]]
+2026-02-26 14:21:52,880{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-26 14:21:52,884{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-02-26 14:21:52,941{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:52,945{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 3]
+2026-02-26 14:21:53,065{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 2]]
+2026-02-26 14:21:53,069{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [3 2]]
+2026-02-26 14:21:53,226{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,231{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:53,377{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,383{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:53,583{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,591{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:53,684{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,692{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:53,744{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,750{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:53,778{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,783{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 2]
+2026-02-26 14:21:53,972{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:53,978{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:54,125{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:54,134{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:54,172{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:54,180{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:54,282{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:54,290{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:54,367{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:54,376{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:54,567{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-26 14:21:54,573{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-02-26 14:21:54,738{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-02-26 14:21:54,744{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 2]
+2026-02-26 14:21:54,893{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 4]]
+2026-02-26 14:21:54,898{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:55,022{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 1]]
+2026-02-26 14:21:55,028{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:55,211{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 4]]
+2026-02-26 14:21:55,218{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [4 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:55,365{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:55,371{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:55,417{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 4]]
+2026-02-26 14:21:55,422{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:55,424{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:55,429{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:55,535{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 0]]
+2026-02-26 14:21:55,539{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:55,671{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:55,674{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:55,781{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 4]]
+2026-02-26 14:21:55,786{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:55,851{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 0]]
+2026-02-26 14:21:55,870{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [4 0]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:56,036{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,043{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 2]
+2026-02-26 14:21:56,087{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-02-26 14:21:56,092{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-02-26 14:21:56,145{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,150{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-02-26 14:21:56,274{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-26 14:21:56,280{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-02-26 14:21:56,415{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,419{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:56,491{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,495{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:56,556{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,562{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:56,609{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-02-26 14:21:56,613{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 3]
+2026-02-26 14:21:56,699{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,703{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:56,720{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,725{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-02-26 14:21:56,764{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 2]]
+2026-02-26 14:21:56,779{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:56,958{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:56,964{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:57,002{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,007{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:57,021{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,027{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:57,188{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,192{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:57,381{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,386{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:57,567{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-02-26 14:21:57,575{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-02-26 14:21:57,744{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-26 14:21:57,750{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-02-26 14:21:57,788{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,791{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:57,886{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,890{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:57,910{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:57,912{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-02-26 14:21:57,978{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 1]]
+2026-02-26 14:21:57,982{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 1]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:58,028{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 2]
+2026-02-26 14:21:58,031{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 2]
+2026-02-26 14:21:58,183{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:58,188{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 2]
+2026-02-26 14:21:58,245{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 4]]
+2026-02-26 14:21:58,250{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 4]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:58,304{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 4]
+2026-02-26 14:21:58,310{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 4]
+2026-02-26 14:21:58,400{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 3]
+2026-02-26 14:21:58,404{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:write	[0 3]
+2026-02-26 14:21:58,545{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:58,549{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:58,602{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-02-26 14:21:58,606{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 3]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:58,778{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:58,785{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-02-26 14:21:58,917{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [2 3]]
+2026-02-26 14:21:58,925{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [2 3]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:59,026{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 2]]
+2026-02-26 14:21:59,033{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:59,057{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 0]]
+2026-02-26 14:21:59,062{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:cas	[0 [3 0]]
+2026-02-26 14:21:59,205{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [1 2]]
+2026-02-26 14:21:59,209{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [1 2]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:59,300{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [0 1]]
+2026-02-26 14:21:59,307{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:ok	:cas	[0 [0 1]]
+2026-02-26 14:21:59,320{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:59,326{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 1]
+2026-02-26 14:21:59,482{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [3 3]]
+2026-02-26 14:21:59,489{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [3 3]]	[:precondition-failed "cas conflict"]
+2026-02-26 14:21:59,491{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-02-26 14:21:59,494{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 1]
+2026-02-26 14:21:59,497{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 1]
+2026-02-26 14:21:59,500{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:write	[0 1]
+2026-02-26 14:21:59,694{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 4]]
+2026-02-26 14:21:59,698{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-02-26 14:21:59,701{GMT}	INFO	[Jepsen shutdown hook] jepsen.core: Downloading DB logs before JVM shutdown...

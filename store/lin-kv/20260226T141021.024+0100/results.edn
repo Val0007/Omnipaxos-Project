@@ -1,0 +1,329 @@
+{:perf {:latency-graph {:valid? :unknown,
+                        :error {:via [{:type java.lang.IllegalStateException,
+                                       :message "Error rendering plot, verify gnuplot is installed and reachable",
+                                       :at [jepsen.checker.perf$plot_BANG_
+                                            invokeStatic
+                                            "perf.clj"
+                                            494]}
+                                      {:type java.io.IOException,
+                                       :message "Cannot run program \"gnuplot\": error=2, No such file or directory",
+                                       :at [java.lang.ProcessBuilder
+                                            start
+                                            "ProcessBuilder.java"
+                                            1170]}
+                                      {:type java.io.IOException,
+                                       :message "error=2, No such file or directory",
+                                       :at [java.lang.ProcessImpl
+                                            forkAndExec
+                                            "ProcessImpl.java"
+                                            -2]}],
+                                :trace [[java.lang.ProcessImpl
+                                         forkAndExec
+                                         "ProcessImpl.java"
+                                         -2]
+                                        [java.lang.ProcessImpl
+                                         <init>
+                                         "ProcessImpl.java"
+                                         295]
+                                        [java.lang.ProcessImpl
+                                         start
+                                         "ProcessImpl.java"
+                                         225]
+                                        [java.lang.ProcessBuilder
+                                         start
+                                         "ProcessBuilder.java"
+                                         1126]
+                                        [java.lang.ProcessBuilder
+                                         start
+                                         "ProcessBuilder.java"
+                                         1089]
+                                        [java.lang.Runtime
+                                         exec
+                                         "Runtime.java"
+                                         681]
+                                        [clojure.java.shell$sh
+                                         invokeStatic
+                                         "shell.clj"
+                                         113]
+                                        [clojure.java.shell$sh
+                                         doInvoke
+                                         "shell.clj"
+                                         79]
+                                        [clojure.lang.RestFn
+                                         invoke
+                                         "RestFn.java"
+                                         515]
+                                        [gnuplot.core$run_BANG_
+                                         invokeStatic
+                                         "core.clj"
+                                         76]
+                                        [gnuplot.core$run_BANG_
+                                         invoke
+                                         "core.clj"
+                                         66]
+                                        [gnuplot.core$raw_plot_BANG_
+                                         invokeStatic
+                                         "core.clj"
+                                         106]
+                                        [gnuplot.core$raw_plot_BANG_
+                                         invoke
+                                         "core.clj"
+                                         91]
+                                        [jepsen.checker.perf$plot_BANG_
+                                         invokeStatic
+                                         "perf.clj"
+                                         494]
+                                        [jepsen.checker.perf$plot_BANG_
+                                         invoke
+                                         "perf.clj"
+                                         431]
+                                        [jepsen.checker.perf$point_graph_BANG_
+                                         invokeStatic
+                                         "perf.clj"
+                                         525]
+                                        [jepsen.checker.perf$point_graph_BANG_
+                                         invoke
+                                         "perf.clj"
+                                         498]
+                                        [jepsen.checker$latency_graph$reify__11306
+                                         check
+                                         "checker.clj"
+                                         832]
+                                        [jepsen.checker$check_safe
+                                         invokeStatic
+                                         "checker.clj"
+                                         88]
+                                        [jepsen.checker$check_safe
+                                         invoke
+                                         "checker.clj"
+                                         80]
+                                        [jepsen.checker$compose$reify__11089$fn__11091
+                                         invoke
+                                         "checker.clj"
+                                         104]
+                                        [clojure.core$pmap$fn__8582$fn__8583
+                                         invoke
+                                         "core.clj"
+                                         7169]
+                                        [clojure.core$binding_conveyor_fn$fn__5842
+                                         invoke
+                                         "core.clj"
+                                         2047]
+                                        [clojure.lang.AFn
+                                         call
+                                         "AFn.java"
+                                         18]
+                                        [java.util.concurrent.FutureTask
+                                         run
+                                         "FutureTask.java"
+                                         317]
+                                        [java.util.concurrent.ThreadPoolExecutor
+                                         runWorker
+                                         "ThreadPoolExecutor.java"
+                                         1144]
+                                        [java.util.concurrent.ThreadPoolExecutor$Worker
+                                         run
+                                         "ThreadPoolExecutor.java"
+                                         642]
+                                        [java.lang.Thread
+                                         run
+                                         "Thread.java"
+                                         1583]],
+                                :cause "error=2, No such file or directory"}},
+        :rate-graph {:valid? :unknown,
+                     :error {:via [{:type java.lang.IllegalStateException,
+                                    :message "Error rendering plot, verify gnuplot is installed and reachable",
+                                    :at [jepsen.checker.perf$plot_BANG_
+                                         invokeStatic
+                                         "perf.clj"
+                                         494]}
+                                   {:type java.io.IOException,
+                                    :message "Cannot run program \"gnuplot\": error=2, No such file or directory",
+                                    :at [java.lang.ProcessBuilder
+                                         start
+                                         "ProcessBuilder.java"
+                                         1170]}
+                                   {:type java.io.IOException,
+                                    :message "error=2, No such file or directory",
+                                    :at [java.lang.ProcessImpl
+                                         forkAndExec
+                                         "ProcessImpl.java"
+                                         -2]}],
+                             :trace [[java.lang.ProcessImpl
+                                      forkAndExec
+                                      "ProcessImpl.java"
+                                      -2]
+                                     [java.lang.ProcessImpl
+                                      <init>
+                                      "ProcessImpl.java"
+                                      295]
+                                     [java.lang.ProcessImpl
+                                      start
+                                      "ProcessImpl.java"
+                                      225]
+                                     [java.lang.ProcessBuilder
+                                      start
+                                      "ProcessBuilder.java"
+                                      1126]
+                                     [java.lang.ProcessBuilder
+                                      start
+                                      "ProcessBuilder.java"
+                                      1089]
+                                     [java.lang.Runtime
+                                      exec
+                                      "Runtime.java"
+                                      681]
+                                     [clojure.java.shell$sh
+                                      invokeStatic
+                                      "shell.clj"
+                                      113]
+                                     [clojure.java.shell$sh
+                                      doInvoke
+                                      "shell.clj"
+                                      79]
+                                     [clojure.lang.RestFn
+                                      invoke
+                                      "RestFn.java"
+                                      515]
+                                     [gnuplot.core$run_BANG_
+                                      invokeStatic
+                                      "core.clj"
+                                      76]
+                                     [gnuplot.core$run_BANG_
+                                      invoke
+                                      "core.clj"
+                                      66]
+                                     [gnuplot.core$raw_plot_BANG_
+                                      invokeStatic
+                                      "core.clj"
+                                      106]
+                                     [gnuplot.core$raw_plot_BANG_
+                                      invoke
+                                      "core.clj"
+                                      91]
+                                     [jepsen.checker.perf$plot_BANG_
+                                      invokeStatic
+                                      "perf.clj"
+                                      494]
+                                     [jepsen.checker.perf$plot_BANG_
+                                      invoke
+                                      "perf.clj"
+                                      431]
+                                     [jepsen.checker.perf$rate_graph_BANG_
+                                      invokeStatic
+                                      "perf.clj"
+                                      628]
+                                     [jepsen.checker.perf$rate_graph_BANG_
+                                      invoke
+                                      "perf.clj"
+                                      573]
+                                     [jepsen.checker$rate_graph$reify__11309
+                                      check
+                                      "checker.clj"
+                                      845]
+                                     [jepsen.checker$check_safe
+                                      invokeStatic
+                                      "checker.clj"
+                                      88]
+                                     [jepsen.checker$check_safe
+                                      invoke
+                                      "checker.clj"
+                                      80]
+                                     [jepsen.checker$compose$reify__11089$fn__11091
+                                      invoke
+                                      "checker.clj"
+                                      104]
+                                     [clojure.core$pmap$fn__8582$fn__8583
+                                      invoke
+                                      "core.clj"
+                                      7169]
+                                     [clojure.core$binding_conveyor_fn$fn__5842
+                                      invoke
+                                      "core.clj"
+                                      2047]
+                                     [clojure.lang.AFn
+                                      call
+                                      "AFn.java"
+                                      18]
+                                     [java.util.concurrent.FutureTask
+                                      run
+                                      "FutureTask.java"
+                                      317]
+                                     [java.util.concurrent.ThreadPoolExecutor
+                                      runWorker
+                                      "ThreadPoolExecutor.java"
+                                      1144]
+                                     [java.util.concurrent.ThreadPoolExecutor$Worker
+                                      run
+                                      "ThreadPoolExecutor.java"
+                                      642]
+                                     [java.lang.Thread
+                                      run
+                                      "Thread.java"
+                                      1583]],
+                             :cause "error=2, No such file or directory"}},
+        :valid? :unknown},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? true,
+         :count 290,
+         :ok-count 204,
+         :fail-count 86,
+         :info-count 0,
+         :by-f {:cas {:valid? true,
+                      :count 108,
+                      :ok-count 22,
+                      :fail-count 86,
+                      :info-count 0},
+                :read {:valid? true,
+                       :count 131,
+                       :ok-count 131,
+                       :fail-count 0,
+                       :info-count 0},
+                :write {:valid? true,
+                        :count 51,
+                        :ok-count 51,
+                        :fail-count 0,
+                        :info-count 0}}},
+ :availability {:valid? true, :ok-fraction 0.7034483},
+ :net {:all {:send-count 586,
+             :recv-count 586,
+             :msg-count 586,
+             :msgs-per-op 2.0206897},
+       :clients {:send-count 586, :recv-count 586, :msg-count 586},
+       :servers {:send-count 0,
+                 :recv-count 0,
+                 :msg-count 0,
+                 :msgs-per-op 0.0},
+       :valid? true},
+ :workload {:valid? false,
+            :results {0 {:linearizable {:valid? false,
+                                        :configs ({:model #knossos.model.CASRegister{:value nil},
+                                                   :last-op nil,
+                                                   :pending [{:process 0,
+                                                              :type :invoke,
+                                                              :f :read,
+                                                              :value 2,
+                                                              :index 0,
+                                                              :time 12691417}]}),
+                                        :final-paths ([{:op nil,
+                                                        :model #knossos.model.CASRegister{:value nil}}
+                                                       {:op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 2,
+                                                             :index 1,
+                                                             :time 61835917},
+                                                        :model #knossos.model.Inconsistent{:msg "can't read 2 from register "}}]),
+                                        :previous-ok nil,
+                                        :last-op nil,
+                                        :op {:process 0,
+                                             :type :ok,
+                                             :f :read,
+                                             :value 2,
+                                             :index 1,
+                                             :time 61835917}},
+                         :timeline {:valid? true},
+                         :valid? false}},
+            :failures [0]},
+ :valid? false}
