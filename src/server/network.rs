@@ -18,9 +18,12 @@ use tokio::{sync::mpsc, task::JoinHandle};
 
 use crate::configs::OmniPaxosKVConfig;
 
+
+pub enum ReconnectEvent { Success { peer_id: NodeId, conn: NewConnection }, Failed { peer_id: NodeId }}
+
 pub struct Network {
     peers: Vec<NodeId>,
-    peer_connections: Vec<Option<PeerConnection>>,
+    pub peer_connections: Vec<Option<PeerConnection>>,
     pub client_connections: HashMap<ClientId, ClientConnection>,
     max_client_id: Arc<Mutex<ClientId>>,
     batch_size: usize,
@@ -31,6 +34,12 @@ pub struct Network {
 
     /// Receives newly established ClientConnections from the background accept task and pushes them into client_connections
     pub new_client_connections: Receiver<ClientConnection>,
+
+    pub reconnect_peers_reciever: Receiver<ReconnectEvent>,
+    pub reconnect_peers:Sender<ReconnectEvent>,
+    id:u64,
+    pub socket_addr:Vec<SocketAddr>,
+    pub reconnecting: Vec<bool>
 }
 
 fn get_addrs(config: OmniPaxosKVConfig) -> (SocketAddr, Vec<SocketAddr>) {
@@ -53,6 +62,26 @@ fn get_addrs(config: OmniPaxosKVConfig) -> (SocketAddr, Vec<SocketAddr>) {
     (listen_address, node_addresses)
 }
 
+pub async fn connect_with_retry(peer: &str, peer_address: SocketAddr) -> TcpStream {
+            let reconnect_delay = Duration::from_secs(1);
+            let mut reconnect_interval: tokio::time::Interval = tokio::time::interval(reconnect_delay);    
+
+
+    loop {
+        reconnect_interval.tick().await;
+        match TcpStream::connect(peer_address).await {
+            Ok(connection) => {
+                info!("New connection to node {peer}");
+                connection.set_nodelay(true).unwrap();
+                return connection;
+            }
+            Err(err) => {
+                error!("Establishing connection to node {peer} failed: {err}");
+            }
+        }
+    }
+    }
+
 impl Network {
     // Creates a new network with connections to other server nodes in the cluster and any clients.
     // Waits until connections to all peer servers are established before resolving.
@@ -74,8 +103,14 @@ impl Network {
         let (client_message_sender, client_messages) = tokio::sync::mpsc::channel(batch_size);
         // Channel used to hand newly accepted ClientConnections back to the Network owner.
         let (new_client_tx, new_client_connections) = tokio::sync::mpsc::channel(batch_size);
+
+        // Channel used to handle reconnections and add the peers reconnected back into the vector
+        let (reconnect_peers, reconnect_peers_reciever) = tokio::sync::mpsc::channel(batch_size);
+
+
         let mut network = Self {
             peers: peer_addresses.iter().map(|(id, _)| *id).collect(),
+            socket_addr : peer_addresses.iter().map(|(_, addr)| *addr).collect(),
             peer_connections: cluster_connections,
             client_connections: HashMap::new(),
             max_client_id: Arc::new(Mutex::new(0)),
@@ -85,6 +120,10 @@ impl Network {
             cluster_messages,
             client_messages,
             new_client_connections,
+            reconnect_peers_reciever,
+            reconnect_peers,
+            id,
+            reconnecting: vec![false; peer_addresses.len()],
         };
         network
             .initialize_connections(id, peer_addresses, listen_address, new_client_tx)
@@ -268,14 +307,43 @@ impl Network {
         }
     }
 
-    /// Drains any newly connected clients from the background accept task and registers them.
-    /// Call this periodically from your main loop before processing messages.
-    pub fn register_new_clients(&mut self) {
-        while let Ok(connection) = self.new_client_connections.try_recv() {
-            info!("Registering new client {}", connection.client_id);
-            self.client_connections.insert(connection.client_id, connection);
+
+
+    fn spawn_reconnect(&self, peer: NodeId, idx: usize) {
+    let peer_address = self.socket_addr[idx];
+    let batch_size = self.batch_size;
+    let cluster_sender = self.cluster_message_sender.clone();
+    let sender = self.reconnect_peers.clone();
+    let my_id = self.id.clone();
+
+    tokio::spawn(async move {
+        let peer_connection = connect_with_retry(&peer.to_string(), peer_address).await;
+
+        let mut registration_connection = frame_registration_connection(peer_connection);
+        let handshake = RegistrationMessage::NodeRegister(my_id);
+        if let Err(err) = registration_connection.send(handshake).await {
+            error!("Error sending handshake to {peer}: {err}");
+            sender.send(ReconnectEvent::Failed { peer_id: peer }).await.unwrap();
+            return;
         }
-    }
+
+        let underlying_stream = registration_connection.into_inner().into_inner();
+        let peer_actor = PeerConnection::new(peer, underlying_stream, batch_size, cluster_sender);
+        let new_connection = NewConnection::ToPeer(peer_actor);
+        sender.send(ReconnectEvent::Success { peer_id: peer, conn: new_connection }).await.unwrap();
+    });
+}
+
+
+
+    // /// Drains any newly connected clients from the background accept task and registers them.
+    // /// Call this periodically from your main loop before processing messages.
+    // pub fn register_new_clients(&mut self) {
+    //     while let Ok(connection) = self.new_client_connections.try_recv() {
+    //         info!("Registering new client {}", connection.client_id);
+    //         self.client_connections.insert(connection.client_id, connection);
+    //     }
+    // }
 
     pub fn send_to_cluster(&mut self, to: NodeId, msg: ClusterMessage) {
         match self.cluster_id_to_idx(to) {
@@ -284,9 +352,16 @@ impl Network {
                     if let Err(err) = connection.send(msg) {
                         warn!("Couldn't send msg to peer {to}: {err}");
                         self.peer_connections[idx] = None;
+                          self.reconnecting[idx] = true;
+                        self.spawn_reconnect(to, idx);
                     }
                 }
-                None => warn!("Not connected to node {to}"),
+                None => {
+                            if !self.reconnecting[idx] {
+                                self.reconnecting[idx] = true;
+                                self.spawn_reconnect(to, idx);
+                            }
+                },
             },
             None => error!("Sending to unexpected node {to}"),
         }
@@ -320,18 +395,18 @@ impl Network {
     }
 
     #[inline]
-    fn cluster_id_to_idx(&self, id: NodeId) -> Option<usize> {
+    pub fn cluster_id_to_idx(&self, id: NodeId) -> Option<usize> {
         self.peers.iter().position(|&p| p == id)
     }
 }
 
 // During init only peer connections flow through this enum; client connections
 // are delivered directly via `new_client_tx`.
-enum NewConnection {
+pub enum NewConnection {
     ToPeer(PeerConnection),
 }
 
-struct PeerConnection {
+pub struct PeerConnection {
     peer_id: NodeId,
     reader_task: JoinHandle<()>,
     writer_task: JoinHandle<()>,
