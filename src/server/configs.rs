@@ -8,12 +8,42 @@ use omnipaxos::{
 };
 use serde::{Deserialize, Serialize};
 
+#[derive(Debug, Serialize, Deserialize, Clone, Copy)]
+#[serde(rename_all = "snake_case")]
+pub enum NemesisMode {
+    LeaderIsolation,
+    SplitHalf,
+    Alternate,
+}
+
+fn default_nemesis_mode() -> NemesisMode {
+    NemesisMode::LeaderIsolation
+}
+
+fn default_nemesis_interval_ms() -> u64 {
+    15_000
+}
+
+fn default_nemesis_active_ms() -> u64 {
+    7_000
+}
+
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ClusterConfig {
     pub nodes: Vec<NodeId>,
     pub node_addrs: Vec<String>,
     pub initial_leader: NodeId,
     pub initial_flexible_quorum: Option<FlexibleQuorum>,
+    #[serde(default)]
+    pub nemesis_enabled: bool,
+    #[serde(default = "default_nemesis_mode")]
+    pub nemesis_mode: NemesisMode,
+    #[serde(default)]
+    pub nemesis_start_delay_ms: u64,
+    #[serde(default = "default_nemesis_interval_ms")]
+    pub nemesis_interval_ms: u64,
+    #[serde(default = "default_nemesis_active_ms")]
+    pub nemesis_active_ms: u64,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]

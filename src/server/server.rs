@@ -1,5 +1,4 @@
 use crate::{configs::OmniPaxosKVConfig, database::Database, network::Network};
-use crate::{network::ReconnectEvent , network::NewConnection};
 use chrono::Utc;
 use log::*;
 use omnipaxos::{
@@ -59,7 +58,6 @@ impl OmniPaxosServer {
         // Main event loop with leader election
         let mut election_interval = tokio::time::interval(ELECTION_TIMEOUT);
         loop {
-            //select! will wake on each event as it arrives,
             tokio::select! {
                 _ = election_interval.tick() => {
                     self.omnipaxos.tick();
@@ -72,22 +70,7 @@ impl OmniPaxosServer {
                 // Drains any newly connected clients from the background accept task and registers them.
                     Some(connection) = self.network.new_client_connections.recv() => {
                     self.network.client_connections.insert(connection.client_id, connection);
-                },
-                Some(event) = self.network.reconnect_peers_reciever.recv() => {
-                 match event {
-                        ReconnectEvent::Success { peer_id, conn } => {
-                        let idx = self.network.cluster_id_to_idx(peer_id).unwrap();
-                        if let NewConnection::ToPeer(peer_actor) = conn {
-                        self.network.peer_connections[idx] = Some(peer_actor);
-                         self.network.reconnecting[idx] = false;
-                     }
                 }
-                 ReconnectEvent::Failed { peer_id } => {
-                     let idx = self.network.cluster_id_to_idx(peer_id).unwrap();
-                     self.network.reconnecting[idx] = false;
-                }
-    }
-},
                 _ = self.network.client_messages.recv_many(&mut client_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_client_messages(&mut client_msg_buf).await;
                 },
