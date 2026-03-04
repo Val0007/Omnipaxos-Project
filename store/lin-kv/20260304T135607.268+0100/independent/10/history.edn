@@ -1,0 +1,86 @@
+{:index 551, :time 19517489917, :type :invoke, :process 188, :f :cas, :value [2 0]}
+{:index 557, :time 19712100417, :type :invoke, :process 189, :f :cas, :value [0 3]}
+{:index 562, :time 20122173958, :type :fail, :process 189, :f :cas, :value [0 3], :error [:precondition-failed "expected 0 but had "]}
+{:index 564, :time 20136196667, :type :invoke, :process 198, :f :cas, :value [3 0]}
+{:index 565, :time 20138403000, :type :fail, :process 198, :f :cas, :value [3 0], :error [:precondition-failed "expected 3 but had "]}
+{:index 572, :time 20176454000, :type :fail, :process 188, :f :cas, :value [2 0], :error [:precondition-failed "expected 2 but had "]}
+{:index 574, :time 20199441042, :type :invoke, :process 198, :f :cas, :value [3 2]}
+{:index 575, :time 20201466000, :type :fail, :process 198, :f :cas, :value [3 2], :error [:precondition-failed "expected 3 but had "]}
+{:index 578, :time 20311444917, :type :invoke, :process 198, :f :cas, :value [1 2]}
+{:index 579, :time 20313828208, :type :fail, :process 198, :f :cas, :value [1 2], :error [:precondition-failed "expected 1 but had "]}
+{:index 580, :time 20374899917, :type :invoke, :process 198, :f :write, :value 3}
+{:index 581, :time 20377356583, :type :ok, :process 198, :f :write, :value 3}
+{:index 584, :time 20465718375, :type :invoke, :process 198, :f :cas, :value [2 4]}
+{:index 585, :time 20469578375, :type :fail, :process 198, :f :cas, :value [2 4], :error [:precondition-failed "expected 2 but had 3"]}
+{:index 588, :time 20495178208, :type :invoke, :process 188, :f :cas, :value [4 3]}
+{:index 589, :time 20498269458, :type :fail, :process 188, :f :cas, :value [4 3], :error [:precondition-failed "expected 4 but had 3"]}
+{:index 590, :time 20565015542, :type :invoke, :process 189, :f :cas, :value [3 0]}
+{:index 591, :time 20570082958, :type :ok, :process 189, :f :cas, :value [3 0]}
+{:index 592, :time 20580192042, :type :invoke, :process 202, :f :cas, :value [4 1]}
+{:index 593, :time 20583854833, :type :fail, :process 202, :f :cas, :value [4 1], :error [:precondition-failed "expected 4 but had 0"]}
+{:index 604, :time 20730673417, :type :invoke, :process 198, :f :cas, :value [1 3]}
+{:index 605, :time 20733218667, :type :fail, :process 198, :f :cas, :value [1 3], :error [:precondition-failed "expected 1 but had 0"]}
+{:index 610, :time 20875217667, :type :invoke, :process 198, :f :cas, :value [4 3]}
+{:index 611, :time 20877736583, :type :fail, :process 198, :f :cas, :value [4 3], :error [:precondition-failed "expected 4 but had 0"]}
+{:index 612, :time 20903093625, :type :invoke, :process 187, :f :cas, :value [4 2]}
+{:index 613, :time 20905793958, :type :fail, :process 187, :f :cas, :value [4 2], :error [:precondition-failed "expected 4 but had 0"]}
+{:index 616, :time 21002698083, :type :invoke, :process 189, :f :cas, :value [2 3]}
+{:index 617, :time 21004994750, :type :fail, :process 189, :f :cas, :value [2 3], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 618, :time 21053112542, :type :invoke, :process 202, :f :write, :value 1}
+{:index 619, :time 21055224167, :type :ok, :process 202, :f :write, :value 1}
+{:index 624, :time 21167406583, :type :invoke, :process 198, :f :write, :value 0}
+{:index 625, :time 21170981792, :type :ok, :process 198, :f :write, :value 0}
+{:index 628, :time 21276928292, :type :invoke, :process 198, :f :cas, :value [4 0]}
+{:index 629, :time 21279380167, :type :fail, :process 198, :f :cas, :value [4 0], :error [:precondition-failed "expected 4 but had 0"]}
+{:index 630, :time 21315340875, :type :invoke, :process 198, :f :cas, :value [3 4]}
+{:index 631, :time 21317809208, :type :fail, :process 198, :f :cas, :value [3 4], :error [:precondition-failed "expected 3 but had 0"]}
+{:index 636, :time 21432727708, :type :invoke, :process 198, :f :cas, :value [2 2]}
+{:index 637, :time 21435137667, :type :fail, :process 198, :f :cas, :value [2 2], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 638, :time 21488439958, :type :invoke, :process 187, :f :cas, :value [0 3]}
+{:index 639, :time 21491672625, :type :ok, :process 187, :f :cas, :value [0 3]}
+{:index 640, :time 21528101875, :type :invoke, :process 188, :f :write, :value 1}
+{:index 641, :time 21531145417, :type :ok, :process 188, :f :write, :value 1}
+{:index 652, :time 21745094500, :type :invoke, :process 198, :f :cas, :value [2 0]}
+{:index 653, :time 21748991625, :type :fail, :process 198, :f :cas, :value [2 0], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 654, :time 21783134750, :type :invoke, :process 198, :f :write, :value 1}
+{:index 655, :time 21787865042, :type :ok, :process 198, :f :write, :value 1}
+{:index 656, :time 21787955083, :type :invoke, :process 198, :f :write, :value 3}
+{:index 657, :time 21790959542, :type :ok, :process 198, :f :write, :value 3}
+{:index 662, :time 21923819208, :type :invoke, :process 198, :f :cas, :value [0 4]}
+{:index 663, :time 21928582667, :type :fail, :process 198, :f :cas, :value [0 4], :error [:precondition-failed "expected 0 but had 3"]}
+{:index 666, :time 22027197083, :type :invoke, :process 188, :f :write, :value 3}
+{:index 667, :time 22079659833, :type :invoke, :process 189, :f :write, :value 1}
+{:index 668, :time 22118138667, :type :invoke, :process 202, :f :write, :value 3}
+{:index 669, :time 22159583125, :type :invoke, :process 191, :f :cas, :value [3 0]}
+{:index 670, :time 22164663292, :type :invoke, :process 198, :f :cas, :value [3 4]}
+{:index 671, :time 22188407875, :type :invoke, :process 187, :f :write, :value 3}
+{:index 678, :time 23028317083, :type :info, :process 188, :f :write, :value 3, :error :net-timeout}
+{:index 679, :time 23028483500, :type :invoke, :process 200, :f :cas, :value [2 1]}
+{:index 680, :time 23085366375, :type :info, :process 189, :f :write, :value 1, :error :net-timeout}
+{:index 681, :time 23085524250, :type :invoke, :process 201, :f :cas, :value [2 2]}
+{:index 682, :time 23123561458, :type :info, :process 202, :f :write, :value 3, :error :net-timeout}
+{:index 683, :time 23123692125, :type :invoke, :process 214, :f :cas, :value [0 3]}
+{:index 684, :time 23164775083, :type :info, :process 191, :f :cas, :value [3 0], :error :net-timeout}
+{:index 685, :time 23165789708, :type :info, :process 198, :f :cas, :value [3 4], :error :net-timeout}
+{:index 686, :time 23171303500, :type :invoke, :process 203, :f :cas, :value [2 3]}
+{:index 687, :time 23190207250, :type :info, :process 187, :f :write, :value 3, :error :net-timeout}
+{:index 688, :time 23213192375, :type :invoke, :process 210, :f :cas, :value [1 1]}
+{:index 697, :time 23406610667, :type :invoke, :process 199, :f :cas, :value [4 3]}
+{:index 702, :time 24030417625, :type :info, :process 200, :f :cas, :value [2 1], :error :net-timeout}
+{:index 703, :time 24030610167, :type :invoke, :process 212, :f :cas, :value [1 4]}
+{:index 704, :time 24087876083, :type :info, :process 201, :f :cas, :value [2 2], :error :net-timeout}
+{:index 705, :time 24088014292, :type :invoke, :process 213, :f :cas, :value [2 1]}
+{:index 706, :time 24128709333, :type :info, :process 214, :f :cas, :value [0 3], :error :net-timeout}
+{:index 707, :time 24128821792, :type :invoke, :process 226, :f :cas, :value [3 0]}
+{:index 708, :time 24176283708, :type :info, :process 203, :f :cas, :value [2 3], :error :net-timeout}
+{:index 709, :time 24176413750, :type :invoke, :process 215, :f :cas, :value [4 0]}
+{:index 710, :time 24213683750, :type :info, :process 210, :f :cas, :value [1 1], :error :net-timeout}
+{:index 711, :time 24231481000, :type :invoke, :process 222, :f :write, :value 2}
+{:index 717, :time 24411933417, :type :info, :process 199, :f :cas, :value [4 3], :error :net-timeout}
+{:index 720, :time 24473495708, :type :invoke, :process 211, :f :write, :value 2}
+{:index 726, :time 25035893125, :type :info, :process 212, :f :cas, :value [1 4], :error :net-timeout}
+{:index 728, :time 25093193250, :type :info, :process 213, :f :cas, :value [2 1], :error :net-timeout}
+{:index 730, :time 25130521625, :type :info, :process 226, :f :cas, :value [3 0], :error :net-timeout}
+{:index 732, :time 25176545792, :type :info, :process 215, :f :cas, :value [4 0], :error :net-timeout}
+{:index 734, :time 25236804333, :type :info, :process 222, :f :write, :value 2, :error :net-timeout}
+{:index 742, :time 25478020708, :type :info, :process 211, :f :write, :value 2, :error :net-timeout}

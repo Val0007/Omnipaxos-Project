@@ -1,0 +1,1778 @@
+2026-03-04 13:52:45,029{GMT}	INFO	[jepsen test runner] jepsen.core: Test version a0eeeb4c6a83a331166e46d306e2b15ccb565827 (plus uncommitted changes)
+2026-03-04 13:52:45,029{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w lin-kv --bin ./target/debug/maelstrom --node-count 3 --time-limit 30 --rate 10 --concurrency 2n
+2026-03-04 13:52:45,067{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 3
+ :availability nil
+ :max-txn-length 4
+ :concurrency 6
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x5ca9a6a8"
+         "maelstrom.db$db$reify__16612@5ca9a6a8"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "lin-kv"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x7952348f" "2026-03-04T13:52:44.935+01:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x4f3d49e4"
+         "maelstrom.net$jepsen_net$reify__15721@4f3d49e4"]
+ :client
+ #object[maelstrom.workload.lin_kv$client$reify__20973
+         "0x7d26b390"
+         "maelstrom.workload.lin_kv$client$reify__20973@7d26b390"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x6ff5eeed"
+         "java.util.concurrent.CyclicBarrier@6ff5eeed"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x76b49d0"
+         "jepsen.checker$compose$reify__11089@76b49d0"]
+ :argv
+ ("test"
+  "-w"
+  "lin-kv"
+  "--bin"
+  "./target/debug/maelstrom"
+  "--node-count"
+  "3"
+  "--time-limit"
+  "30"
+  "--rate"
+  "10"
+  "--concurrency"
+  "2n")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@223c42b0"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@6acedf54"]})
+ :nodes ["n0" "n1" "n2"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "./target/debug/maelstrom"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x6f05d5f2"
+         (jepsen.generator.TimeLimit
+          {:limit 30000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x1ca2d595"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@1ca2d595"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x92a584f"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@92a584f"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.OnThreads
+                                        {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                                         :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                                 "0x36e23af"
+                                                                 "jepsen.generator.context$make_thread_filter$lazy_filter__12077@36e23af"],
+                                         :gen (jepsen.independent.ConcurrentGenerator
+                                               {:n 6,
+                                                :fgen #object[jepsen.tests.linearizable_register$test$fn__17385
+                                                              "0x5e4a9c16"
+                                                              "jepsen.tests.linearizable_register$test$fn__17385@5e4a9c16"],
+                                                :group->threads nil,
+                                                :thread->group nil,
+                                                :group->context-filter nil,
+                                                :keys (0 1 2 3 4 5 6 7 ...),
+                                                :gens nil})})})})]})})]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0xffd26d1"
+         "maelstrom.net$jepsen_os$reify__15724@ffd26d1"]
+ :time-limit 30
+ :workload :lin-kv
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2026-03-04 13:52:46,127{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2026-03-04 13:52:46,128{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2026-03-04 13:52:46,129{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2026-03-04 13:52:46,129{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2026-03-04 13:52:46,129{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2026-03-04 13:52:46,130{GMT}	INFO	[jepsen node n1] maelstrom.process: launching ./target/debug/maelstrom []
+2026-03-04 13:52:46,130{GMT}	INFO	[jepsen node n2] maelstrom.process: launching ./target/debug/maelstrom []
+2026-03-04 13:52:46,131{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2026-03-04 13:52:46,131{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2026-03-04 13:52:46,132{GMT}	INFO	[jepsen node n0] maelstrom.process: launching ./target/debug/maelstrom []
+2026-03-04 13:52:46,702{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2026-03-04 13:52:46,716{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:46,813{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 1]]
+2026-03-04 13:52:46,968{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 0]]
+2026-03-04 13:52:46,970{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:47,037{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [3 0]]
+2026-03-04 13:52:47,041{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-04 13:52:47,718{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:47,719{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:47,818{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:info	:cas	[0 [1 1]]	:net-timeout
+2026-03-04 13:52:47,819{GMT}	INFO	[jepsen worker 3] jepsen.util: 9	:invoke	:cas	[0 [0 0]]
+2026-03-04 13:52:47,971{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:47,972{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:47,974{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:info	:cas	[0 [4 0]]	:net-timeout
+2026-03-04 13:52:48,038{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:info	:cas	[0 [3 0]]	:net-timeout
+2026-03-04 13:52:48,044{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:48,146{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-04 13:52:48,226{GMT}	INFO	[jepsen worker 4] jepsen.util: 10	:invoke	:write	[0 1]
+2026-03-04 13:52:48,367{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[0 [4 3]]
+2026-03-04 13:52:48,724{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:48,725{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:48,822{GMT}	INFO	[jepsen worker 3] jepsen.util: 9	:info	:cas	[0 [0 0]]	:net-timeout
+2026-03-04 13:52:48,867{GMT}	INFO	[jepsen worker 3] jepsen.util: 15	:invoke	:write	[0 4]
+2026-03-04 13:52:48,977{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:48,978{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:49,148{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:49,149{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-04 13:52:49,232{GMT}	INFO	[jepsen worker 4] jepsen.util: 10	:info	:write	[0 1]	:net-timeout
+2026-03-04 13:52:49,232{GMT}	INFO	[jepsen worker 4] jepsen.util: 16	:invoke	:write	[0 3]
+2026-03-04 13:52:49,372{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:info	:cas	[0 [4 3]]	:net-timeout
+2026-03-04 13:52:49,422{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:invoke	:write	[0 2]
+2026-03-04 13:52:49,725{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:49,726{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:49,869{GMT}	INFO	[jepsen worker 3] jepsen.util: 15	:info	:write	[0 4]	:net-timeout
+2026-03-04 13:52:49,870{GMT}	INFO	[jepsen worker 3] jepsen.util: 21	:invoke	:write	[0 4]
+2026-03-04 13:52:49,983{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:49,984{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:50,150{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:50,150{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-04 13:52:50,236{GMT}	INFO	[jepsen worker 4] jepsen.util: 16	:info	:write	[0 3]	:net-timeout
+2026-03-04 13:52:50,236{GMT}	INFO	[jepsen worker 4] jepsen.util: 22	:invoke	:cas	[0 [0 3]]
+2026-03-04 13:52:50,425{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:info	:write	[0 2]	:net-timeout
+2026-03-04 13:52:50,426{GMT}	INFO	[jepsen worker 5] jepsen.util: 23	:invoke	:write	[0 4]
+2026-03-04 13:52:50,728{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:50,728{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:50,875{GMT}	INFO	[jepsen worker 3] jepsen.util: 21	:info	:write	[0 4]	:net-timeout
+2026-03-04 13:52:50,875{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:write	[0 0]
+2026-03-04 13:52:50,989{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:50,989{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:51,156{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:51,156{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-04 13:52:51,241{GMT}	INFO	[jepsen worker 4] jepsen.util: 22	:info	:cas	[0 [0 3]]	:net-timeout
+2026-03-04 13:52:51,316{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:write	[0 3]
+2026-03-04 13:52:51,431{GMT}	INFO	[jepsen worker 5] jepsen.util: 23	:info	:write	[0 4]	:net-timeout
+2026-03-04 13:52:51,431{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:invoke	:cas	[0 [4 3]]
+2026-03-04 13:52:51,729{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:51,729{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:51,736{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:write	[0 0]
+2026-03-04 13:52:51,737{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-03-04 13:52:51,865{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [1 3]]
+2026-03-04 13:52:51,880{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:fail	:cas	[0 [1 3]]	[:precondition-failed "expected 1 but had 0"]
+2026-03-04 13:52:51,985{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-03-04 13:52:51,987{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:ok	:write	[0 3]
+2026-03-04 13:52:52,053{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[0 4]
+2026-03-04 13:52:52,053{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [1 0]]
+2026-03-04 13:52:52,055{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:ok	:cas	[0 [4 3]]
+2026-03-04 13:52:52,055{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [1 0]]	[:precondition-failed "expected 1 but had 4"]
+2026-03-04 13:52:52,230{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:52,235{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:52,363{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [3 3]]
+2026-03-04 13:52:52,369{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:cas	[0 [3 3]]
+2026-03-04 13:52:52,481{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:52,484{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:52,524{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:52,527{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 3]
+2026-03-04 13:52:52,645{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [1 3]]
+2026-03-04 13:52:52,650{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:fail	:cas	[0 [1 3]]	[:precondition-failed "expected 1 but had 3"]
+2026-03-04 13:52:52,751{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:52,756{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:52,831{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [0 4]]
+2026-03-04 13:52:52,836{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [0 4]]	[:precondition-failed "expected 0 but had 3"]
+2026-03-04 13:52:52,894{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:52,899{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:53,045{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [4 2]]
+2026-03-04 13:52:53,050{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:fail	:cas	[0 [4 2]]	[:precondition-failed "expected 4 but had 3"]
+2026-03-04 13:52:53,154{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [0 0]]
+2026-03-04 13:52:53,158{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:fail	:cas	[0 [0 0]]	[:precondition-failed "expected 0 but had 3"]
+2026-03-04 13:52:53,310{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:write	[0 3]
+2026-03-04 13:52:53,314{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:write	[0 3]
+2026-03-04 13:52:53,447{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [2 1]]
+2026-03-04 13:52:53,452{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:fail	:cas	[0 [2 1]]	[:precondition-failed "expected 2 but had 3"]
+2026-03-04 13:52:53,483{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:53,487{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:53,521{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [1 1]]
+2026-03-04 13:52:53,524{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [1 1]]	[:precondition-failed "expected 1 but had 3"]
+2026-03-04 13:52:53,638{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:53,641{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:53,741{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:53,745{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 3]
+2026-03-04 13:52:53,767{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:write	[0 3]
+2026-03-04 13:52:53,771{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:write	[0 3]
+2026-03-04 13:52:53,886{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [3 2]]
+2026-03-04 13:52:53,890{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:cas	[0 [3 2]]
+2026-03-04 13:52:54,046{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [0 0]]
+2026-03-04 13:52:54,049{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:fail	:cas	[0 [0 0]]	[:precondition-failed "expected 0 but had 2"]
+2026-03-04 13:52:54,096{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:write	[0 4]
+2026-03-04 13:52:54,100{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:write	[0 4]
+2026-03-04 13:52:54,174{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:54,178{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-03-04 13:52:54,191{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:54,195{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-03-04 13:52:54,264{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:54,267{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-03-04 13:52:54,329{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:54,334{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 4]
+2026-03-04 13:52:54,523{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:54,527{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[0 4]
+2026-03-04 13:52:54,527{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:write	[0 4]
+2026-03-04 13:52:54,531{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:write	[0 4]
+2026-03-04 13:52:54,598{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [4 0]]
+2026-03-04 13:52:54,604{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:ok	:cas	[0 [4 0]]
+2026-03-04 13:52:54,622{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [3 4]]
+2026-03-04 13:52:54,626{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [3 4]]	[:precondition-failed "expected 3 but had 0"]
+2026-03-04 13:52:54,665{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:invoke	:cas	[0 [1 2]]
+2026-03-04 13:52:54,668{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:fail	:cas	[0 [1 2]]	[:precondition-failed "expected 1 but had 0"]
+2026-03-04 13:52:54,824{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:54,828{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[0 0]
+2026-03-04 13:52:55,007{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [1 4]]
+2026-03-04 13:52:55,132{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [1 0]]
+2026-03-04 13:52:55,314{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:invoke	:cas	[0 [0 0]]
+2026-03-04 13:52:55,466{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-04 13:52:55,551{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-04 13:52:55,609{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-04 13:52:56,012{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:info	:cas	[0 [1 4]]	:net-timeout
+2026-03-04 13:52:56,012{GMT}	INFO	[jepsen worker 3] jepsen.util: 33	:invoke	:write	[0 0]
+2026-03-04 13:52:56,133{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:info	:cas	[0 [1 0]]	:net-timeout
+2026-03-04 13:52:56,133{GMT}	INFO	[jepsen worker 4] jepsen.util: 34	:invoke	:write	[0 3]
+2026-03-04 13:52:56,315{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:info	:cas	[0 [0 0]]	:net-timeout
+2026-03-04 13:52:56,316{GMT}	INFO	[jepsen worker 5] jepsen.util: 35	:invoke	:cas	[1 [3 3]]
+2026-03-04 13:52:56,467{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:56,468{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-04 13:52:56,556{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:56,614{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-04 13:52:56,626{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-04 13:52:56,813{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-04 13:52:57,013{GMT}	INFO	[jepsen worker 3] jepsen.util: 33	:info	:write	[0 0]	:net-timeout
+2026-03-04 13:52:57,013{GMT}	INFO	[jepsen worker 3] jepsen.util: 39	:invoke	:cas	[1 [3 4]]
+2026-03-04 13:52:57,138{GMT}	INFO	[jepsen worker 4] jepsen.util: 34	:info	:write	[0 3]	:net-timeout
+2026-03-04 13:52:57,138{GMT}	INFO	[jepsen worker 4] jepsen.util: 40	:invoke	:cas	[1 [3 3]]
+2026-03-04 13:52:57,319{GMT}	INFO	[jepsen worker 5] jepsen.util: 35	:info	:cas	[1 [3 3]]	:net-timeout
+2026-03-04 13:52:57,325{GMT}	INFO	[jepsen worker 5] jepsen.util: 41	:invoke	:cas	[1 [1 1]]
+2026-03-04 13:52:57,473{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:57,474{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-04 13:52:57,630{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:57,630{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-04 13:52:57,817{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:57,817{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-04 13:52:58,018{GMT}	INFO	[jepsen worker 3] jepsen.util: 39	:info	:cas	[1 [3 4]]	:net-timeout
+2026-03-04 13:52:58,018{GMT}	INFO	[jepsen worker 3] jepsen.util: 45	:invoke	:cas	[1 [0 0]]
+2026-03-04 13:52:58,139{GMT}	INFO	[jepsen worker 4] jepsen.util: 40	:info	:cas	[1 [3 3]]	:net-timeout
+2026-03-04 13:52:58,139{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:invoke	:cas	[1 [3 4]]
+2026-03-04 13:52:58,330{GMT}	INFO	[jepsen worker 5] jepsen.util: 41	:info	:cas	[1 [1 1]]	:net-timeout
+2026-03-04 13:52:58,330{GMT}	INFO	[jepsen worker 5] jepsen.util: 47	:invoke	:write	[1 1]
+2026-03-04 13:52:58,479{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:58,479{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-04 13:52:58,631{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:58,631{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-04 13:52:58,820{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:58,820{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-04 13:52:59,019{GMT}	INFO	[jepsen worker 3] jepsen.util: 45	:info	:cas	[1 [0 0]]	:net-timeout
+2026-03-04 13:52:59,019{GMT}	INFO	[jepsen worker 3] jepsen.util: 51	:invoke	:cas	[1 [1 4]]
+2026-03-04 13:52:59,140{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:info	:cas	[1 [3 4]]	:net-timeout
+2026-03-04 13:52:59,140{GMT}	INFO	[jepsen worker 4] jepsen.util: 52	:invoke	:write	[1 3]
+2026-03-04 13:52:59,335{GMT}	INFO	[jepsen worker 5] jepsen.util: 47	:info	:write	[1 1]	:net-timeout
+2026-03-04 13:52:59,336{GMT}	INFO	[jepsen worker 5] jepsen.util: 53	:invoke	:cas	[1 [3 4]]
+2026-03-04 13:52:59,479{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:59,486{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-04 13:52:59,636{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:59,637{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-04 13:52:59,825{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:52:59,825{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-04 13:53:00,022{GMT}	INFO	[jepsen worker 3] jepsen.util: 51	:info	:cas	[1 [1 4]]	:net-timeout
+2026-03-04 13:53:00,022{GMT}	INFO	[jepsen worker 3] jepsen.util: 57	:invoke	:cas	[1 [0 0]]
+2026-03-04 13:53:00,141{GMT}	INFO	[jepsen worker 4] jepsen.util: 52	:info	:write	[1 3]	:net-timeout
+2026-03-04 13:53:00,186{GMT}	INFO	[jepsen worker 4] jepsen.util: 58	:invoke	:write	[1 2]
+2026-03-04 13:53:00,339{GMT}	INFO	[jepsen worker 5] jepsen.util: 53	:info	:cas	[1 [3 4]]	:net-timeout
+2026-03-04 13:53:00,346{GMT}	INFO	[jepsen worker 5] jepsen.util: 59	:invoke	:cas	[1 [0 1]]
+2026-03-04 13:53:00,488{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:53:00,503{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-04 13:53:00,639{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:53:00,640{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-04 13:53:00,826{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:53:00,827{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-04 13:53:01,027{GMT}	INFO	[jepsen worker 3] jepsen.util: 57	:info	:cas	[1 [0 0]]	:net-timeout
+2026-03-04 13:53:01,028{GMT}	INFO	[jepsen worker 3] jepsen.util: 63	:invoke	:cas	[1 [1 4]]
+2026-03-04 13:53:01,191{GMT}	INFO	[jepsen worker 4] jepsen.util: 58	:info	:write	[1 2]	:net-timeout
+2026-03-04 13:53:01,192{GMT}	INFO	[jepsen worker 4] jepsen.util: 64	:invoke	:cas	[1 [0 1]]
+2026-03-04 13:53:01,348{GMT}	INFO	[jepsen worker 5] jepsen.util: 59	:info	:cas	[1 [0 1]]	:net-timeout
+2026-03-04 13:53:01,365{GMT}	INFO	[jepsen worker 5] jepsen.util: 65	:invoke	:write	[2 0]
+2026-03-04 13:53:01,505{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:53:01,505{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:01,640{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:53:01,640{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:01,831{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	:net-timeout
+2026-03-04 13:53:01,831{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:02,033{GMT}	INFO	[jepsen worker 3] jepsen.util: 63	:info	:cas	[1 [1 4]]	:net-timeout
+2026-03-04 13:53:02,033{GMT}	INFO	[jepsen worker 3] jepsen.util: 69	:invoke	:cas	[2 [0 2]]
+2026-03-04 13:53:02,197{GMT}	INFO	[jepsen worker 4] jepsen.util: 64	:info	:cas	[1 [0 1]]	:net-timeout
+2026-03-04 13:53:02,197{GMT}	INFO	[jepsen worker 4] jepsen.util: 70	:invoke	:write	[2 0]
+2026-03-04 13:53:02,370{GMT}	INFO	[jepsen worker 5] jepsen.util: 65	:info	:write	[2 0]	:net-timeout
+2026-03-04 13:53:02,371{GMT}	INFO	[jepsen worker 5] jepsen.util: 71	:invoke	:write	[2 0]
+2026-03-04 13:53:02,510{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:02,511{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:02,645{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:02,650{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:02,836{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:02,836{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:03,039{GMT}	INFO	[jepsen worker 3] jepsen.util: 69	:info	:cas	[2 [0 2]]	:net-timeout
+2026-03-04 13:53:03,039{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:write	[2 1]
+2026-03-04 13:53:03,203{GMT}	INFO	[jepsen worker 4] jepsen.util: 70	:info	:write	[2 0]	:net-timeout
+2026-03-04 13:53:03,244{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:invoke	:cas	[2 [1 3]]
+2026-03-04 13:53:03,376{GMT}	INFO	[jepsen worker 5] jepsen.util: 71	:info	:write	[2 0]	:net-timeout
+2026-03-04 13:53:03,376{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:invoke	:write	[2 4]
+2026-03-04 13:53:03,516{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:03,516{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:03,654{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:03,683{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:03,842{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:03,868{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:03,904{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:ok	:write	[2 4]
+2026-03-04 13:53:03,904{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:fail	:cas	[2 [1 3]]	[:precondition-failed "expected 1 but had 4"]
+2026-03-04 13:53:03,905{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[2 1]
+2026-03-04 13:53:03,905{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:ok	:write	[2 1]
+2026-03-04 13:53:03,905{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[2 1]
+2026-03-04 13:53:03,905{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:04,053{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:04,058{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:04,238{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [3 2]]
+2026-03-04 13:53:04,244{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:fail	:cas	[2 [3 2]]	[:precondition-failed "expected 3 but had 1"]
+2026-03-04 13:53:04,397{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:04,402{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:04,486{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [4 0]]
+2026-03-04 13:53:04,492{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:fail	:cas	[2 [4 0]]	[:precondition-failed "expected 4 but had 1"]
+2026-03-04 13:53:04,654{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:04,659{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[2 1]
+2026-03-04 13:53:04,838{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:04,842{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:04,988{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:04,993{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:04,993{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:invoke	:cas	[2 [2 1]]
+2026-03-04 13:53:04,997{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:fail	:cas	[2 [2 1]]	[:precondition-failed "expected 2 but had 1"]
+2026-03-04 13:53:05,120{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [0 0]]
+2026-03-04 13:53:05,125{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:fail	:cas	[2 [0 0]]	[:precondition-failed "expected 0 but had 1"]
+2026-03-04 13:53:05,257{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:05,263{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:05,430{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [2 1]]
+2026-03-04 13:53:05,436{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:fail	:cas	[2 [2 1]]	[:precondition-failed "expected 2 but had 1"]
+2026-03-04 13:53:05,562{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:05,567{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[2 1]
+2026-03-04 13:53:05,713{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [2 3]]
+2026-03-04 13:53:05,717{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:fail	:cas	[2 [2 3]]	[:precondition-failed "expected 2 but had 1"]
+2026-03-04 13:53:05,873{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:05,878{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 1]
+2026-03-04 13:53:05,950{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:invoke	:write	[2 0]
+2026-03-04 13:53:05,955{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:ok	:write	[2 0]
+2026-03-04 13:53:06,056{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [2 2]]
+2026-03-04 13:53:06,061{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:fail	:cas	[2 [2 2]]	[:precondition-failed "expected 2 but had 0"]
+2026-03-04 13:53:06,075{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:cas	[2 [0 4]]
+2026-03-04 13:53:06,081{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:ok	:cas	[2 [0 4]]
+2026-03-04 13:53:06,227{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:06,232{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[2 4]
+2026-03-04 13:53:06,285{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:06,289{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[2 4]
+2026-03-04 13:53:06,447{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:06,451{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 4]
+2026-03-04 13:53:06,468{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:invoke	:cas	[2 [1 0]]
+2026-03-04 13:53:06,473{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:fail	:cas	[2 [1 0]]	[:precondition-failed "expected 1 but had 4"]
+2026-03-04 13:53:06,546{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:invoke	:cas	[2 [0 1]]
+2026-03-04 13:53:06,550{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:fail	:cas	[2 [0 1]]	[:precondition-failed "expected 0 but had 4"]
+2026-03-04 13:53:06,732{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:06,736{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[2 4]
+2026-03-04 13:53:06,913{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:07,064{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:write	[2 4]
+2026-03-04 13:53:07,156{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:07,336{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:07,422{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:invoke	:cas	[2 [4 3]]
+2026-03-04 13:53:07,466{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:invoke	:cas	[2 [2 0]]
+2026-03-04 13:53:07,918{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:07,918{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:08,070{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:info	:write	[2 4]	:net-timeout
+2026-03-04 13:53:08,070{GMT}	INFO	[jepsen worker 3] jepsen.util: 81	:invoke	:cas	[2 [2 3]]
+2026-03-04 13:53:08,158{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:08,159{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:08,341{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:08,341{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:08,424{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:info	:cas	[2 [4 3]]	:net-timeout
+2026-03-04 13:53:08,424{GMT}	INFO	[jepsen worker 4] jepsen.util: 82	:invoke	:cas	[2 [2 3]]
+2026-03-04 13:53:08,468{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:info	:cas	[2 [2 0]]	:net-timeout
+2026-03-04 13:53:08,524{GMT}	INFO	[jepsen worker 5] jepsen.util: 83	:invoke	:cas	[2 [0 4]]
+2026-03-04 13:53:08,923{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:08,923{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:09,075{GMT}	INFO	[jepsen worker 3] jepsen.util: 81	:info	:cas	[2 [2 3]]	:net-timeout
+2026-03-04 13:53:09,076{GMT}	INFO	[jepsen worker 3] jepsen.util: 87	:invoke	:cas	[2 [0 1]]
+2026-03-04 13:53:09,160{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:09,214{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:09,344{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:09,344{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:09,425{GMT}	INFO	[jepsen worker 4] jepsen.util: 82	:info	:cas	[2 [2 3]]	:net-timeout
+2026-03-04 13:53:09,469{GMT}	INFO	[jepsen worker 4] jepsen.util: 88	:invoke	:cas	[2 [1 2]]
+2026-03-04 13:53:09,529{GMT}	INFO	[jepsen worker 5] jepsen.util: 83	:info	:cas	[2 [0 4]]	:net-timeout
+2026-03-04 13:53:09,564{GMT}	INFO	[jepsen worker 5] jepsen.util: 89	:invoke	:cas	[2 [1 0]]
+2026-03-04 13:53:09,924{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:09,925{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-04 13:53:10,077{GMT}	INFO	[jepsen worker 3] jepsen.util: 87	:info	:cas	[2 [0 1]]	:net-timeout
+2026-03-04 13:53:10,077{GMT}	INFO	[jepsen worker 3] jepsen.util: 93	:invoke	:write	[2 2]
+2026-03-04 13:53:10,219{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:10,219{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-04 13:53:10,350{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:10,412{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-04 13:53:10,472{GMT}	INFO	[jepsen worker 4] jepsen.util: 88	:info	:cas	[2 [1 2]]	:net-timeout
+2026-03-04 13:53:10,491{GMT}	INFO	[jepsen worker 4] jepsen.util: 94	:invoke	:write	[2 1]
+2026-03-04 13:53:10,570{GMT}	INFO	[jepsen worker 5] jepsen.util: 89	:info	:cas	[2 [1 0]]	:net-timeout
+2026-03-04 13:53:10,595{GMT}	INFO	[jepsen worker 5] jepsen.util: 95	:invoke	:cas	[3 [4 1]]
+2026-03-04 13:53:10,930{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:10,930{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-04 13:53:11,082{GMT}	INFO	[jepsen worker 3] jepsen.util: 93	:info	:write	[2 2]	:net-timeout
+2026-03-04 13:53:11,083{GMT}	INFO	[jepsen worker 3] jepsen.util: 99	:invoke	:cas	[3 [1 3]]
+2026-03-04 13:53:11,222{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:11,222{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-04 13:53:11,414{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	:net-timeout
+2026-03-04 13:53:11,414{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-04 13:53:11,496{GMT}	INFO	[jepsen worker 4] jepsen.util: 94	:info	:write	[2 1]	:net-timeout
+2026-03-04 13:53:11,514{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:write	[3 3]
+2026-03-04 13:53:11,599{GMT}	INFO	[jepsen worker 5] jepsen.util: 95	:info	:cas	[3 [4 1]]	:net-timeout
+2026-03-04 13:53:11,600{GMT}	INFO	[jepsen worker 5] jepsen.util: 101	:invoke	:cas	[3 [4 1]]
+2026-03-04 13:53:11,931{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:11,931{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-04 13:53:12,088{GMT}	INFO	[jepsen worker 3] jepsen.util: 99	:info	:cas	[3 [1 3]]	:net-timeout
+2026-03-04 13:53:12,088{GMT}	INFO	[jepsen worker 3] jepsen.util: 105	:invoke	:cas	[3 [4 3]]
+2026-03-04 13:53:12,225{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:12,225{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-04 13:53:12,418{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:12,418{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-04 13:53:12,519{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:info	:write	[3 3]	:net-timeout
+2026-03-04 13:53:12,605{GMT}	INFO	[jepsen worker 5] jepsen.util: 101	:info	:cas	[3 [4 1]]	:net-timeout
+2026-03-04 13:53:12,607{GMT}	INFO	[jepsen worker 4] jepsen.util: 106	:invoke	:write	[3 3]
+2026-03-04 13:53:12,689{GMT}	INFO	[jepsen worker 5] jepsen.util: 107	:invoke	:cas	[3 [1 1]]
+2026-03-04 13:53:12,936{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:12,937{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-04 13:53:13,089{GMT}	INFO	[jepsen worker 3] jepsen.util: 105	:info	:cas	[3 [4 3]]	:net-timeout
+2026-03-04 13:53:13,090{GMT}	INFO	[jepsen worker 3] jepsen.util: 111	:invoke	:write	[3 1]
+2026-03-04 13:53:13,229{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:13,230{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-04 13:53:13,422{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:13,422{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-04 13:53:13,610{GMT}	INFO	[jepsen worker 4] jepsen.util: 106	:info	:write	[3 3]	:net-timeout
+2026-03-04 13:53:13,610{GMT}	INFO	[jepsen worker 4] jepsen.util: 112	:invoke	:cas	[3 [1 0]]
+2026-03-04 13:53:13,691{GMT}	INFO	[jepsen worker 5] jepsen.util: 107	:info	:cas	[3 [1 1]]	:net-timeout
+2026-03-04 13:53:13,776{GMT}	INFO	[jepsen worker 5] jepsen.util: 113	:invoke	:cas	[3 [4 0]]
+2026-03-04 13:53:13,939{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:13,939{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-04 13:53:14,090{GMT}	INFO	[jepsen worker 3] jepsen.util: 111	:info	:write	[3 1]	:net-timeout
+2026-03-04 13:53:14,090{GMT}	INFO	[jepsen worker 3] jepsen.util: 117	:invoke	:write	[3 2]
+2026-03-04 13:53:14,232{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:14,232{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-04 13:53:14,425{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:14,425{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-04 13:53:14,613{GMT}	INFO	[jepsen worker 4] jepsen.util: 112	:info	:cas	[3 [1 0]]	:net-timeout
+2026-03-04 13:53:14,613{GMT}	INFO	[jepsen worker 4] jepsen.util: 118	:invoke	:cas	[3 [4 2]]
+2026-03-04 13:53:14,781{GMT}	INFO	[jepsen worker 5] jepsen.util: 113	:info	:cas	[3 [4 0]]	:net-timeout
+2026-03-04 13:53:14,781{GMT}	INFO	[jepsen worker 5] jepsen.util: 119	:invoke	:cas	[3 [2 4]]
+2026-03-04 13:53:14,944{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:14,944{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-04 13:53:15,091{GMT}	INFO	[jepsen worker 3] jepsen.util: 117	:info	:write	[3 2]	:net-timeout
+2026-03-04 13:53:15,138{GMT}	INFO	[jepsen worker 3] jepsen.util: 123	:invoke	:cas	[3 [4 0]]
+2026-03-04 13:53:15,237{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:15,327{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-04 13:53:15,430{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:15,497{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-04 13:53:15,615{GMT}	INFO	[jepsen worker 4] jepsen.util: 118	:info	:cas	[3 [4 2]]	:net-timeout
+2026-03-04 13:53:15,700{GMT}	INFO	[jepsen worker 4] jepsen.util: 124	:invoke	:cas	[3 [2 4]]
+2026-03-04 13:53:15,783{GMT}	INFO	[jepsen worker 5] jepsen.util: 119	:info	:cas	[3 [2 4]]	:net-timeout
+2026-03-04 13:53:15,784{GMT}	INFO	[jepsen worker 5] jepsen.util: 125	:invoke	:write	[4 2]
+2026-03-04 13:53:15,950{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:15,950{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[4 nil]
+2026-03-04 13:53:16,140{GMT}	INFO	[jepsen worker 3] jepsen.util: 123	:info	:cas	[3 [4 0]]	:net-timeout
+2026-03-04 13:53:16,140{GMT}	INFO	[jepsen worker 3] jepsen.util: 129	:invoke	:write	[4 0]
+2026-03-04 13:53:16,330{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:16,330{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[4 nil]
+2026-03-04 13:53:16,502{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-04 13:53:16,503{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[4 nil]
+2026-03-04 13:53:16,700{GMT}	INFO	[jepsen worker 4] jepsen.util: 124	:info	:cas	[3 [2 4]]	:net-timeout
+2026-03-04 13:53:16,701{GMT}	INFO	[jepsen worker 4] jepsen.util: 130	:invoke	:cas	[4 [1 3]]
+2026-03-04 13:53:16,789{GMT}	INFO	[jepsen worker 5] jepsen.util: 125	:info	:write	[4 2]	:net-timeout
+2026-03-04 13:53:16,944{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[4 nil]	[:key-does-not-exist "key not found"]
+2026-03-04 13:53:16,945{GMT}	INFO	[jepsen worker 3] jepsen.util: 129	:ok	:write	[4 0]
+2026-03-04 13:53:17,185{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[4 2]
+2026-03-04 13:53:17,367{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[4 2]
+2026-03-04 13:53:17,368{GMT}	INFO	[jepsen worker 4] jepsen.util: 130	:fail	:cas	[4 [1 3]]	[:precondition-failed "expected 1 but had 2"]
+2026-03-04 13:53:17,381{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2026-03-04 13:53:17,420{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2026-03-04 13:53:17,420{GMT}	INFO	[jepsen node n2] maelstrom.db: Tearing down n2
+2026-03-04 13:53:17,420{GMT}	INFO	[jepsen node n1] maelstrom.db: Tearing down n1
+2026-03-04 13:53:18,340{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2026-03-04 13:53:18,343{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2026-03-04 13:53:18,443{GMT}	INFO	[clojure-agent-send-pool-4] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/4/results.edn
+2026-03-04 13:53:18,445{GMT}	INFO	[clojure-agent-send-pool-4] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/4/history.edn
+2026-03-04 13:53:18,483{GMT}	INFO	[clojure-agent-send-pool-1] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/1/results.edn
+2026-03-04 13:53:18,484{GMT}	INFO	[clojure-agent-send-pool-0] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/0/results.edn
+2026-03-04 13:53:18,485{GMT}	INFO	[clojure-agent-send-pool-1] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/1/history.edn
+2026-03-04 13:53:18,487{GMT}	INFO	[clojure-agent-send-pool-3] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/3/results.edn
+2026-03-04 13:53:18,487{GMT}	INFO	[clojure-agent-send-pool-0] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/0/history.edn
+2026-03-04 13:53:18,488{GMT}	INFO	[clojure-agent-send-pool-3] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/3/history.edn
+2026-03-04 13:53:18,604{GMT}	INFO	[clojure-agent-send-pool-2] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/2/results.edn
+2026-03-04 13:53:18,606{GMT}	INFO	[clojure-agent-send-pool-2] jepsen.independent: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/independent/2/history.edn
+2026-03-04 13:53:19,020{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2026-03-04 13:53:19,106{GMT}	INFO	[jepsen results] jepsen.store: Wrote /Users/md.sakibulislam/Desktop/KTH/Period - 3/Distributed-Systems-Advance/Project/Omnipaxos-Project/store/lin-kv/20260304T135244.935+0100/results.edn
+2026-03-04 13:53:19,175{GMT}	INFO	[jepsen test runner] jepsen.core: {:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? true,
+         :count 199,
+         :ok-count 49,
+         :fail-count 87,
+         :info-count 63,
+         :by-f {:cas {:valid? true,
+                      :count 68,
+                      :ok-count 5,
+                      :fail-count 22,
+                      :info-count 41},
+                :read {:valid? true,
+                       :count 99,
+                       :ok-count 34,
+                       :fail-count 65,
+                       :info-count 0},
+                :write {:valid? true,
+                        :count 32,
+                        :ok-count 10,
+                        :fail-count 0,
+                        :info-count 22}}},
+ :availability {:valid? true, :ok-fraction 0.24623115},
+ :net {:all {:send-count 404,
+             :recv-count 395,
+             :msg-count 404,
+             :msgs-per-op 2.0301507},
+       :clients {:send-count 404, :recv-count 395, :msg-count 404},
+       :servers {:send-count 0,
+                 :recv-count 0,
+                 :msg-count 0,
+                 :msgs-per-op 0.0},
+       :valid? true},
+ :workload {:valid? true,
+            :results {0 {:linearizable {:valid? true,
+                                        :model #knossos.model.CASRegister{:value 3},
+                                        :final-paths (),
+                                        :configs ()},
+                         :timeline {:valid? true},
+                         :valid? true},
+                      1 {:linearizable {:valid? true,
+                                        :configs ({:model #knossos.model.CASRegister{:value nil},
+                                                   :last-op nil,
+                                                   :pending [{:process 35,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [3
+                                                                      3],
+                                                              :index 137,
+                                                              :time 9614281667}
+                                                             {:process 39,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [3
+                                                                      4],
+                                                              :index 145,
+                                                              :time 10311484417}
+                                                             {:process 40,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [3
+                                                                      3],
+                                                              :index 147,
+                                                              :time 10436764375}
+                                                             {:process 41,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      1],
+                                                              :index 149,
+                                                              :time 10623996708}
+                                                             {:process 45,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      0],
+                                                              :index 157,
+                                                              :time 11317043500}
+                                                             {:process 46,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [3
+                                                                      4],
+                                                              :index 159,
+                                                              :time 11437869542}
+                                                             {:process 47,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 161,
+                                                              :time 11629143875}
+                                                             {:process 51,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      4],
+                                                              :index 169,
+                                                              :time 12317937000}
+                                                             {:process 52,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 3,
+                                                              :index 171,
+                                                              :time 12438935667}
+                                                             {:process 53,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [3
+                                                                      4],
+                                                              :index 173,
+                                                              :time 12634481792}
+                                                             {:process 57,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      0],
+                                                              :index 181,
+                                                              :time 13320659750}
+                                                             {:process 58,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 183,
+                                                              :time 13484883583}
+                                                             {:process 59,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 185,
+                                                              :time 13644640167}
+                                                             {:process 63,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      4],
+                                                              :index 193,
+                                                              :time 14326354333}
+                                                             {:process 64,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 195,
+                                                              :time 14490368750}]}),
+                                        :final-paths ()},
+                         :timeline {:valid? true},
+                         :valid? true},
+                      2 {:linearizable {:valid? true,
+                                        :configs ({:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 69,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      2],
+                                                              :index 205,
+                                                              :time 15331949625}
+                                                             {:process 70,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 207,
+                                                              :time 15495989708}
+                                                             {:process 71,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 209,
+                                                              :time 15669170750}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 65,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 197,
+                                                              :time 14662800625}
+                                                             {:process 70,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 207,
+                                                              :time 15495989708}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 69,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      2],
+                                                              :index 205,
+                                                              :time 15331949625}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 65,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 197,
+                                                              :time 14662800625}
+                                                             {:process 69,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      2],
+                                                              :index 205,
+                                                              :time 15331949625}
+                                                             {:process 71,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 209,
+                                                              :time 15669170750}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 71,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 209,
+                                                              :time 15669170750}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 69,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      2],
+                                                              :index 205,
+                                                              :time 15331949625}
+                                                             {:process 70,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 207,
+                                                              :time 15495989708}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 65,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 197,
+                                                              :time 14662800625}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 65,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 197,
+                                                              :time 14662800625}
+                                                             {:process 69,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      2],
+                                                              :index 205,
+                                                              :time 15331949625}
+                                                             {:process 70,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 207,
+                                                              :time 15495989708}
+                                                             {:process 71,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 209,
+                                                              :time 15669170750}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 65,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 197,
+                                                              :time 14662800625}
+                                                             {:process 69,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      2],
+                                                              :index 205,
+                                                              :time 15331949625}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}
+                                                  {:model #knossos.model.CASRegister{:value 4},
+                                                   :last-op {:process 0,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 4,
+                                                             :index 279,
+                                                             :time 20035193000},
+                                                   :pending [{:process 65,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 197,
+                                                              :time 14662800625}
+                                                             {:process 71,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 0,
+                                                              :index 209,
+                                                              :time 15669170750}
+                                                             {:process 75,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 4,
+                                                              :index 281,
+                                                              :time 20362759250}
+                                                             {:process 76,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 284,
+                                                              :time 20720052958}
+                                                             {:process 77,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      0],
+                                                              :index 285,
+                                                              :time 20763976208}
+                                                             {:process 81,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 289,
+                                                              :time 21368749917}
+                                                             {:process 82,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      3],
+                                                              :index 295,
+                                                              :time 21722621250}
+                                                             {:process 83,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      4],
+                                                              :index 297,
+                                                              :time 21822555292}
+                                                             {:process 87,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [0
+                                                                      1],
+                                                              :index 301,
+                                                              :time 22374337792}
+                                                             {:process 88,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      2],
+                                                              :index 307,
+                                                              :time 22766852375}
+                                                             {:process 89,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 309,
+                                                              :time 22862706375}
+                                                             {:process 93,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 313,
+                                                              :time 23375839583}
+                                                             {:process 94,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 319,
+                                                              :time 23789617333}]}),
+                                        :final-paths ()},
+                         :timeline {:valid? true},
+                         :valid? true},
+                      3 {:linearizable {:valid? true,
+                                        :configs ({:model #knossos.model.CASRegister{:value nil},
+                                                   :last-op nil,
+                                                   :pending [{:process 95,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      1],
+                                                              :index 321,
+                                                              :time 23893157875}
+                                                             {:process 99,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      3],
+                                                              :index 325,
+                                                              :time 24381373208}
+                                                             {:process 100,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 3,
+                                                              :index 331,
+                                                              :time 24812602667}
+                                                             {:process 101,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      1],
+                                                              :index 333,
+                                                              :time 24898446667}
+                                                             {:process 105,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      3],
+                                                              :index 337,
+                                                              :time 25387025625}
+                                                             {:process 106,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 3,
+                                                              :index 344,
+                                                              :time 25906044458}
+                                                             {:process 107,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      1],
+                                                              :index 345,
+                                                              :time 25986638333}
+                                                             {:process 111,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 1,
+                                                              :index 349,
+                                                              :time 26388367667}
+                                                             {:process 112,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [1
+                                                                      0],
+                                                              :index 355,
+                                                              :time 26908649458}
+                                                             {:process 113,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      0],
+                                                              :index 357,
+                                                              :time 27074007042}
+                                                             {:process 117,
+                                                              :type :invoke,
+                                                              :f :write,
+                                                              :value 2,
+                                                              :index 361,
+                                                              :time 27388724125}
+                                                             {:process 118,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      2],
+                                                              :index 367,
+                                                              :time 27911960042}
+                                                             {:process 119,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      4],
+                                                              :index 369,
+                                                              :time 28080139792}
+                                                             {:process 123,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [4
+                                                                      0],
+                                                              :index 373,
+                                                              :time 28436687083}
+                                                             {:process 124,
+                                                              :type :invoke,
+                                                              :f :cas,
+                                                              :value [2
+                                                                      4],
+                                                              :index 379,
+                                                              :time 28997949083}]}),
+                                        :final-paths ()},
+                         :timeline {:valid? true},
+                         :valid? true},
+                      4 {:linearizable {:valid? true,
+                                        :configs ({:model #knossos.model.CASRegister{:value 2},
+                                                   :last-op {:process 1,
+                                                             :type :ok,
+                                                             :f :read,
+                                                             :value 2,
+                                                             :index 396,
+                                                             :time 30666058542},
+                                                   :pending []}
+                                                  {:model #knossos.model.CASRegister{:value 0},
+                                                   :last-op {:process 129,
+                                                             :type :ok,
+                                                             :f :write,
+                                                             :value 0,
+                                                             :index 394,
+                                                             :time 30243979292},
+                                                   :pending []}),
+                                        :final-paths ()},
+                         :timeline {:valid? true},
+                         :valid? true}},
+            :failures []},
+ :valid? true}
+
+
+Everything looks good! ヽ(‘ー`)ノ

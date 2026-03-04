@@ -1,0 +1,12 @@
+{:index 381, :time 29082315000, :type :invoke, :process 125, :f :write, :value 2}
+{:index 383, :time 29248546375, :type :invoke, :process 0, :f :read, :value nil}
+{:index 385, :time 29439039625, :type :invoke, :process 129, :f :write, :value 0}
+{:index 387, :time 29628836333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 389, :time 29801430667, :type :invoke, :process 1, :f :read, :value nil}
+{:index 391, :time 29999474000, :type :invoke, :process 130, :f :cas, :value [1 3]}
+{:index 392, :time 30088039083, :type :info, :process 125, :f :write, :value 2, :error :net-timeout}
+{:index 393, :time 30243058417, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "key not found"]}
+{:index 394, :time 30243979292, :type :ok, :process 129, :f :write, :value 0}
+{:index 395, :time 30484395875, :type :ok, :process 2, :f :read, :value 2}
+{:index 396, :time 30666058542, :type :ok, :process 1, :f :read, :value 2}
+{:index 397, :time 30667266875, :type :fail, :process 130, :f :cas, :value [1 3], :error [:precondition-failed "expected 1 but had 2"]}
