@@ -233,10 +233,10 @@ impl Network {
 
                 //only use the connection sink here for clusters , after the functions goes out of scope
                 //this also goes out of scope and we dont use it for the clients anymore
-                peer_connection_sender
-                    .send(NewConnection::ToPeer(peer_conn))
-                    .await
-                    .unwrap();
+               if let Err(err) = peer_connection_sender.send(NewConnection::ToPeer(peer_conn)).await {
+    // Receiver is gone (init finished), this is a reconnect — ignore
+    info!("Init channel closed, dropping inbound peer connection from {node_id}");
+}
             }
             Some(Ok(RegistrationMessage::ClientRegister)) => {
                 let next_client_id = {

@@ -1,0 +1,578 @@
+{:index 0, :time 5858333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1, :time 10344083, :type :info, :process :nemesis, :f :start-partition, :value :majority}
+{:index 2, :time 12026416, :type :info, :process :nemesis, :f :start-partition, :value [:isolated {"n2" #{"n1" "n0"}, "n1" #{"n2"}, "n0" #{"n2"}}]}
+{:index 3, :time 25741416, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key not found"]}
+{:index 4, :time 114576458, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 5, :time 118515083, :type :fail, :process 3, :f :cas, :value [0 [4 0]], :error [:precondition-failed "expected 4 but had "]}
+{:index 6, :time 240694000, :type :invoke, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 7, :time 247552666, :type :fail, :process 3, :f :cas, :value [0 [1 0]], :error [:precondition-failed "expected 1 but had "]}
+{:index 8, :time 419546708, :type :invoke, :process 4, :f :cas, :value [0 [3 4]]}
+{:index 9, :time 434088916, :type :fail, :process 4, :f :cas, :value [0 [3 4]], :error [:precondition-failed "expected 3 but had "]}
+{:index 10, :time 597202791, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 11, :time 602283583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "key not found"]}
+{:index 12, :time 747877166, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 13, :time 763215041, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 14, :time 855837000, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 15, :time 860454291, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:precondition-failed "expected 1 but had 4"]}
+{:index 16, :time 1001167666, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 17, :time 1009700958, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 18, :time 1096036541, :type :info, :process :nemesis, :f :stop-partition, :value nil}
+{:index 19, :time 1099830291, :type :info, :process :nemesis, :f :stop-partition, :value :network-healed}
+{:index 20, :time 1114470333, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 21, :time 1125106041, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 22, :time 1201503208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 23, :time 1209870333, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 24, :time 1401425291, :type :invoke, :process 5, :f :cas, :value [0 [3 3]]}
+{:index 25, :time 1408787333, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 26, :time 1419073166, :type :fail, :process 5, :f :cas, :value [0 [3 3]], :error [:precondition-failed "expected 3 but had 4"]}
+{:index 27, :time 1419496208, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 4"]}
+{:index 28, :time 1490787208, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 29, :time 1497613750, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:precondition-failed "expected 1 but had 4"]}
+{:index 30, :time 1584459125, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 31, :time 1592526166, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 32, :time 1667195250, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 33, :time 1679298500, :type :ok, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 34, :time 1853162500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 35, :time 1857423041, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 36, :time 1992388500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 37, :time 1999569958, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 38, :time 2037697208, :type :invoke, :process 5, :f :cas, :value [0 [1 4]]}
+{:index 39, :time 2039006958, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 40, :time 2048655916, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 41, :time 2048881291, :type :fail, :process 5, :f :cas, :value [0 [1 4]], :error [:precondition-failed "expected 1 but had 0"]}
+{:index 42, :time 2176113458, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 43, :time 2187960958, :type :ok, :process 3, :f :write, :value [0 0]}
+{:index 44, :time 2252375125, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 45, :time 2262731291, :type :ok, :process 1, :f :read, :value [0 0]}
+{:index 46, :time 2308362833, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 47, :time 2315378791, :type :ok, :process 3, :f :write, :value [0 3]}
+{:index 48, :time 2512224833, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 49, :time 2524022250, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:precondition-failed "expected 0 but had 3"]}
+{:index 50, :time 2687623541, :type :invoke, :process 4, :f :write, :value [0 3]}
+{:index 51, :time 2691221166, :type :ok, :process 4, :f :write, :value [0 3]}
+{:index 52, :time 2881454625, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 53, :time 2888213375, :type :ok, :process 5, :f :write, :value [0 3]}
+{:index 54, :time 2949420583, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 55, :time 2954469125, :type :ok, :process 3, :f :write, :value [0 2]}
+{:index 56, :time 3080884791, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 57, :time 3088948666, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 58, :time 3125958750, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 59, :time 3129975291, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 60, :time 3174020833, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 61, :time 3178707000, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 62, :time 3262542500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 63, :time 3271698708, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 64, :time 3286532541, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 65, :time 3292314416, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 66, :time 3414005166, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 67, :time 3426590291, :type :ok, :process 5, :f :write, :value [0 3]}
+{:index 68, :time 3499783041, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 69, :time 3509135708, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 70, :time 3648427750, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 71, :time 3658729250, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:precondition-failed "expected 1 but had 3"]}
+{:index 72, :time 3816711666, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 73, :time 3824802416, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 74, :time 3881248416, :type :invoke, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 75, :time 3891869125, :type :ok, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 76, :time 3956540875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 77, :time 3964537791, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 78, :time 4014569375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 79, :time 4022715666, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 80, :time 4142699208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 81, :time 4151834041, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 82, :time 4211004750, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 83, :time 4220061583, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 84, :time 4372879875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 85, :time 4383783583, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 86, :time 4421952583, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 87, :time 4432571958, :type :ok, :process 3, :f :write, :value [0 0]}
+{:index 88, :time 4623678833, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 89, :time 4632861791, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 90, :time 4761512750, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 91, :time 4772749791, :type :fail, :process 3, :f :cas, :value [0 [2 0]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 92, :time 4917848000, :type :invoke, :process 4, :f :cas, :value [0 [2 1]]}
+{:index 93, :time 4932019541, :type :fail, :process 4, :f :cas, :value [0 [2 1]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 94, :time 4998078916, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 95, :time 5009606916, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 96, :time 5082709250, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 97, :time 5097997375, :type :ok, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 98, :time 5278428833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 99, :time 5288331750, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 100, :time 5403673458, :type :invoke, :process 3, :f :cas, :value [0 [3 4]]}
+{:index 101, :time 5412924333, :type :fail, :process 3, :f :cas, :value [0 [3 4]], :error [:precondition-failed "expected 3 but had 0"]}
+{:index 102, :time 5413406000, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 103, :time 5419883291, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 104, :time 5606562250, :type :invoke, :process 3, :f :cas, :value [0 [0 1]]}
+{:index 105, :time 5617878916, :type :ok, :process 3, :f :cas, :value [0 [0 1]]}
+{:index 106, :time 5793285875, :type :invoke, :process 4, :f :cas, :value [0 [3 4]]}
+{:index 107, :time 5803454458, :type :fail, :process 4, :f :cas, :value [0 [3 4]], :error [:precondition-failed "expected 3 but had 1"]}
+{:index 108, :time 5804881958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 109, :time 5810598208, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 110, :time 5906447458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 111, :time 5914268875, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 112, :time 5939772625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 113, :time 5963014125, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 114, :time 6130638000, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 115, :time 6141448500, :type :ok, :process 1, :f :read, :value [0 1]}
+{:index 116, :time 6158579000, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 117, :time 6167227083, :type :ok, :process 3, :f :write, :value [0 3]}
+{:index 118, :time 6345330916, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 119, :time 6352840166, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 120, :time 6486948500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 121, :time 6492418041, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 122, :time 6623115833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 123, :time 6628719625, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 124, :time 6787619125, :type :invoke, :process 3, :f :cas, :value [0 [0 1]]}
+{:index 125, :time 6791383000, :type :fail, :process 3, :f :cas, :value [0 [0 1]], :error [:precondition-failed "expected 0 but had 3"]}
+{:index 126, :time 6909348000, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 127, :time 6916248125, :type :ok, :process 3, :f :write, :value [0 0]}
+{:index 128, :time 7036431166, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 129, :time 7040018708, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3 but had 0"]}
+{:index 130, :time 7178184083, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 131, :time 7179371208, :type :invoke, :process 4, :f :cas, :value [0 [4 1]]}
+{:index 132, :time 7193018958, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 133, :time 7193175666, :type :fail, :process 4, :f :cas, :value [0 [4 1]], :error [:precondition-failed "expected 4 but had 0"]}
+{:index 134, :time 7290627666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 135, :time 7294112916, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 136, :time 7491542833, :type :invoke, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 137, :time 7500097833, :type :fail, :process 5, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 138, :time 7531832333, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 139, :time 7537769416, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 140, :time 7564899541, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 141, :time 7570784416, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 142, :time 7587863875, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 143, :time 7593848500, :type :ok, :process 3, :f :write, :value [0 3]}
+{:index 144, :time 7707039125, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 145, :time 7716000708, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 146, :time 7878853750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 147, :time 7883336583, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 148, :time 7952947458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 149, :time 7956855416, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 150, :time 8100238166, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 151, :time 8107605208, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 152, :time 8297984125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 153, :time 8305720416, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 154, :time 8315908916, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 155, :time 8322944291, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 156, :time 8436256375, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 157, :time 8446912875, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 158, :time 8448391791, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 159, :time 8453625083, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 160, :time 8470478416, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 161, :time 8473756500, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 162, :time 8638514083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 163, :time 8645836000, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 164, :time 8777806166, :type :invoke, :process 5, :f :cas, :value [0 [3 0]]}
+{:index 165, :time 8786114166, :type :fail, :process 5, :f :cas, :value [0 [3 0]], :error [:precondition-failed "expected 3 but had 4"]}
+{:index 166, :time 8789840125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 167, :time 8796554416, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 168, :time 8860450375, :type :invoke, :process 3, :f :cas, :value [0 [3 4]]}
+{:index 169, :time 8868042958, :type :fail, :process 3, :f :cas, :value [0 [3 4]], :error [:precondition-failed "expected 3 but had 4"]}
+{:index 170, :time 8973990791, :type :info, :process :nemesis, :f :start-partition, :value :majority}
+{:index 171, :time 8977372000, :type :info, :process :nemesis, :f :start-partition, :value [:isolated {"n0" #{"n2" "n1"}, "n2" #{"n0"}, "n1" #{"n0"}}]}
+{:index 172, :time 9048491000, :type :invoke, :process 3, :f :cas, :value [0 [2 2]]}
+{:index 173, :time 9055749125, :type :fail, :process 3, :f :cas, :value [0 [2 2]], :error [:precondition-failed "expected 2 but had 4"]}
+{:index 174, :time 9208167875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 175, :time 9219841208, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 176, :time 9234466125, :type :invoke, :process 4, :f :cas, :value [0 [0 2]]}
+{:index 177, :time 9239340250, :type :fail, :process 4, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0 but had 4"]}
+{:index 178, :time 9390677083, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 179, :time 9395418208, :type :ok, :process 5, :f :write, :value [0 1]}
+{:index 180, :time 9427467541, :type :invoke, :process 3, :f :cas, :value [0 [1 3]]}
+{:index 181, :time 9435399250, :type :ok, :process 3, :f :cas, :value [0 [1 3]]}
+{:index 182, :time 9625664583, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 183, :time 9634873208, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:precondition-failed "expected 1 but had 3"]}
+{:index 184, :time 9810858833, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 185, :time 9819577500, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 186, :time 9887636041, :type :invoke, :process 3, :f :cas, :value [0 [4 2]]}
+{:index 187, :time 9895432833, :type :fail, :process 3, :f :cas, :value [0 [4 2]], :error [:precondition-failed "expected 4 but had 3"]}
+{:index 188, :time 9963011166, :type :invoke, :process 3, :f :cas, :value [0 [4 0]]}
+{:index 189, :time 9971316416, :type :fail, :process 3, :f :cas, :value [0 [4 0]], :error [:precondition-failed "expected 4 but had 3"]}
+{:index 190, :time 9993272500, :type :invoke, :process 4, :f :cas, :value [0 [0 1]]}
+{:index 191, :time 10001153416, :type :fail, :process 4, :f :cas, :value [0 [0 1]], :error [:precondition-failed "expected 0 but had 3"]}
+{:index 192, :time 10147310000, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 193, :time 10156703583, :type :ok, :process 5, :f :write, :value [0 0]}
+{:index 194, :time 10160852541, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 195, :time 10168421958, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 196, :time 10287081416, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 197, :time 10295062750, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0 but had 4"]}
+{:index 198, :time 10419826541, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 199, :time 10427525708, :type :ok, :process 3, :f :write, :value [0 3]}
+{:index 200, :time 10583769541, :type :invoke, :process 3, :f :cas, :value [0 [3 2]]}
+{:index 201, :time 10595745041, :type :ok, :process 3, :f :cas, :value [0 [3 2]]}
+{:index 202, :time 10603815708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 203, :time 10610254541, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 204, :time 10701229375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 205, :time 10708454250, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 206, :time 10895372375, :type :invoke, :process 5, :f :cas, :value [0 [0 1]]}
+{:index 207, :time 10903712208, :type :fail, :process 5, :f :cas, :value [0 [0 1]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 208, :time 11074597625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 209, :time 11081432458, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 210, :time 11230293333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 211, :time 11238996083, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 212, :time 11313168333, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 213, :time 11320584583, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 214, :time 11328839583, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 215, :time 11333911833, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 216, :time 11493581583, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 217, :time 11499461791, :type :ok, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 218, :time 11580372583, :type :invoke, :process 4, :f :write, :value [0 4]}
+{:index 219, :time 11585360833, :type :ok, :process 4, :f :write, :value [0 4]}
+{:index 220, :time 11729967125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 221, :time 11739140333, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 222, :time 11814052791, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 223, :time 11816778291, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 224, :time 11986102166, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 225, :time 11994418916, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 226, :time 12176421750, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 227, :time 12184341916, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 228, :time 12317055333, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 229, :time 12323446583, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 230, :time 12455005625, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 231, :time 12464336708, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:precondition-failed "expected 0 but had 1"]}
+{:index 232, :time 12604225291, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 233, :time 12612764750, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 234, :time 12689168208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 235, :time 12697754500, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 236, :time 12851158125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 237, :time 12858681708, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 238, :time 12938079333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 239, :time 12944954958, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 240, :time 13040700375, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 241, :time 13051441666, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 242, :time 13168550041, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 243, :time 13175685375, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 244, :time 13290670291, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 245, :time 13298065416, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 246, :time 13351000625, :type :invoke, :process 4, :f :cas, :value [0 [3 3]]}
+{:index 247, :time 13360674250, :type :fail, :process 4, :f :cas, :value [0 [3 3]], :error [:precondition-failed "expected 3 but had 1"]}
+{:index 248, :time 13479682875, :type :invoke, :process 5, :f :cas, :value [0 [4 3]]}
+{:index 249, :time 13488409625, :type :fail, :process 5, :f :cas, :value [0 [4 3]], :error [:precondition-failed "expected 4 but had 1"]}
+{:index 250, :time 13544672083, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 251, :time 13554414458, :type :ok, :process 3, :f :write, :value [0 0]}
+{:index 252, :time 13641322125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 253, :time 13644891041, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 254, :time 13732813916, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 255, :time 13738626125, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 256, :time 13847661125, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 257, :time 13855072291, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 258, :time 13950989250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 259, :time 13959116375, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 260, :time 14095174458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 261, :time 14104155291, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 262, :time 14106771500, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 263, :time 14113553291, :type :ok, :process 1, :f :read, :value [0 1]}
+{:index 264, :time 14274169125, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 265, :time 14286837000, :type :ok, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 266, :time 14440647916, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 267, :time 14449143916, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 268, :time 14614480958, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 269, :time 14624876875, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3 but had 4"]}
+{:index 270, :time 14695762333, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 271, :time 14704710833, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 272, :time 14827355333, :type :invoke, :process 3, :f :cas, :value [0 [3 4]]}
+{:index 273, :time 14836629916, :type :fail, :process 3, :f :cas, :value [0 [3 4]], :error [:precondition-failed "expected 3 but had 4"]}
+{:index 274, :time 14991768500, :type :invoke, :process 4, :f :cas, :value [0 [0 1]]}
+{:index 275, :time 15000828125, :type :fail, :process 4, :f :cas, :value [0 [0 1]], :error [:precondition-failed "expected 0 but had 4"]}
+{:index 276, :time 15053405500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 277, :time 15064843250, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 278, :time 15208814708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 279, :time 15217126041, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 280, :time 15307118250, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 281, :time 15318385541, :type :ok, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 282, :time 15450384250, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 283, :time 15458317333, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 284, :time 15504231750, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 285, :time 15512861041, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 286, :time 15537035000, :type :invoke, :process 3, :f :write, :value [0 0]}
+{:index 287, :time 15545748000, :type :ok, :process 3, :f :write, :value [0 0]}
+{:index 288, :time 15679147375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 289, :time 15689323875, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 290, :time 15820597166, :type :invoke, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 291, :time 15830518791, :type :ok, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 292, :time 15889423250, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 293, :time 15896077458, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 294, :time 15964348375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 295, :time 15970634041, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 296, :time 16012989083, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 297, :time 16015345958, :type :ok, :process 1, :f :read, :value [0 4]}
+{:index 298, :time 16203929416, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 299, :time 16213032375, :type :ok, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 300, :time 16337665166, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 301, :time 16344502208, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 302, :time 16506910666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 303, :time 16514910041, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 304, :time 16516304708, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 305, :time 16521141833, :type :ok, :process 5, :f :write, :value [0 1]}
+{:index 306, :time 16638503666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 307, :time 16646415666, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 308, :time 16769742208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 309, :time 16773206291, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 310, :time 16947436125, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 311, :time 16956760250, :type :ok, :process 1, :f :read, :value [0 1]}
+{:index 312, :time 16973973375, :type :invoke, :process 3, :f :cas, :value [0 [0 3]]}
+{:index 313, :time 16977845583, :type :fail, :process 3, :f :cas, :value [0 [0 3]], :error [:precondition-failed "expected 0 but had 1"]}
+{:index 314, :time 16999091000, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 315, :time 17003758666, :type :ok, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 316, :time 17016246208, :type :invoke, :process 4, :f :cas, :value [0 [2 3]]}
+{:index 317, :time 17019388875, :type :fail, :process 4, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 318, :time 17065881166, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 319, :time 17070879541, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 320, :time 17247338083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 321, :time 17254125208, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 322, :time 17313491166, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 323, :time 17320802041, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 324, :time 17414110416, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 325, :time 17422197458, :type :ok, :process 1, :f :read, :value [0 1]}
+{:index 326, :time 17545515583, :type :invoke, :process 3, :f :cas, :value [0 [2 1]]}
+{:index 327, :time 17554802958, :type :fail, :process 3, :f :cas, :value [0 [2 1]], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 328, :time 17679498750, :type :invoke, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 329, :time 17690208375, :type :ok, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 330, :time 17883711125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 331, :time 17887862583, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 332, :time 18026050750, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 333, :time 18037368375, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 334, :time 18040369250, :type :ok, :process 5, :f :write, :value [0 2]}
+{:index 335, :time 18044007291, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3 but had 2"]}
+{:index 336, :time 18218842583, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 337, :time 18226278958, :type :fail, :process 3, :f :cas, :value [0 [1 1]], :error [:precondition-failed "expected 1 but had 2"]}
+{:index 338, :time 18226430250, :type :invoke, :process 3, :f :cas, :value [0 [4 2]]}
+{:index 339, :time 18233811791, :type :invoke, :process 4, :f :write, :value [0 2]}
+{:index 340, :time 18234785458, :type :fail, :process 3, :f :cas, :value [0 [4 2]], :error [:precondition-failed "expected 4 but had 2"]}
+{:index 341, :time 18238114625, :type :ok, :process 4, :f :write, :value [0 2]}
+{:index 342, :time 18392944083, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 343, :time 18401680416, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:precondition-failed "expected 4 but had 2"]}
+{:index 344, :time 18489118958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 345, :time 18496816583, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 346, :time 18677249833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 347, :time 18686131916, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 348, :time 18720904166, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 349, :time 18733155208, :type :ok, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 350, :time 18813243375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 351, :time 18819162791, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 352, :time 18854249041, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 353, :time 18860732958, :type :ok, :process 1, :f :read, :value [0 0]}
+{:index 354, :time 19031410666, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 355, :time 19040382500, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 356, :time 19182596875, :type :invoke, :process 3, :f :cas, :value [0 [1 0]]}
+{:index 357, :time 19190798000, :type :fail, :process 3, :f :cas, :value [0 [1 0]], :error [:precondition-failed "expected 1 but had 4"]}
+{:index 358, :time 19256504208, :type :invoke, :process 4, :f :cas, :value [0 [1 0]]}
+{:index 359, :time 19262749958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 360, :time 19266093541, :type :fail, :process 4, :f :cas, :value [0 [1 0]], :error [:precondition-failed "expected 1 but had 4"]}
+{:index 361, :time 19270114791, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 362, :time 19366571166, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 363, :time 19373682750, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:precondition-failed "expected 0 but had 4"]}
+{:index 364, :time 19541165375, :type :invoke, :process 3, :f :cas, :value [0 [3 2]]}
+{:index 365, :time 19550179125, :type :fail, :process 3, :f :cas, :value [0 [3 2]], :error [:precondition-failed "expected 3 but had 4"]}
+{:index 366, :time 19718979833, :type :invoke, :process 3, :f :write, :value [0 4]}
+{:index 367, :time 19727722500, :type :ok, :process 3, :f :write, :value [0 4]}
+{:index 368, :time 19835960833, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 369, :time 19856712333, :type :ok, :process 2, :f :read, :value [0 4]}
+{:index 370, :time 19941787208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 371, :time 19950209375, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 372, :time 20142434625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 373, :time 20151579416, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 374, :time 20320345500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 375, :time 20327095708, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 376, :time 20327261708, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 377, :time 20335846333, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:precondition-failed "expected 1 but had 4"]}
+{:index 378, :time 20362503666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 379, :time 20367709500, :type :ok, :process 0, :f :read, :value [0 4]}
+{:index 380, :time 20549743458, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 381, :time 20558579750, :type :ok, :process 3, :f :write, :value [0 3]}
+{:index 382, :time 20740967375, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 383, :time 20749442583, :type :ok, :process 2, :f :read, :value [0 3]}
+{:index 384, :time 20789973791, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 385, :time 20799224958, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 386, :time 20974752458, :type :invoke, :process 4, :f :cas, :value [0 [2 3]]}
+{:index 387, :time 20984541625, :type :fail, :process 4, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2 but had 3"]}
+{:index 388, :time 21170916583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 389, :time 21178487375, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 390, :time 21237562500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 391, :time 21245172708, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 392, :time 21403101500, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 393, :time 21410586083, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 3"]}
+{:index 394, :time 21504539041, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 395, :time 21513433000, :type :ok, :process 1, :f :read, :value [0 3]}
+{:index 396, :time 21539371000, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 397, :time 21546024833, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2 but had 3"]}
+{:index 398, :time 21692625750, :type :invoke, :process 3, :f :cas, :value [0 [4 2]]}
+{:index 399, :time 21700206125, :type :fail, :process 3, :f :cas, :value [0 [4 2]], :error [:precondition-failed "expected 4 but had 3"]}
+{:index 400, :time 21837546375, :type :invoke, :process 4, :f :write, :value [0 4]}
+{:index 401, :time 21841035166, :type :ok, :process 4, :f :write, :value [0 4]}
+{:index 402, :time 21983275166, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 403, :time 21989722416, :type :ok, :process 5, :f :write, :value [0 3]}
+{:index 404, :time 22003485875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 405, :time 22010389250, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 406, :time 22081287333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 407, :time 22087079375, :type :ok, :process 0, :f :read, :value [0 3]}
+{:index 408, :time 22201256375, :type :invoke, :process 3, :f :write, :value [0 3]}
+{:index 409, :time 22205615166, :type :ok, :process 3, :f :write, :value [0 3]}
+{:index 410, :time 22234393625, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 411, :time 22238710083, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 412, :time 22270603291, :type :invoke, :process 3, :f :cas, :value [0 [0 4]]}
+{:index 413, :time 22276791833, :type :fail, :process 3, :f :cas, :value [0 [0 4]], :error [:precondition-failed "expected 0 but had 1"]}
+{:index 414, :time 22354924083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 415, :time 22358785333, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 416, :time 22555344041, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 417, :time 22562134041, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 418, :time 22677060666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 419, :time 22683685833, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 420, :time 22866124166, :type :invoke, :process 3, :f :cas, :value [0 [3 0]]}
+{:index 421, :time 22870561333, :type :fail, :process 3, :f :cas, :value [0 [3 0]], :error [:precondition-failed "expected 3 but had 1"]}
+{:index 422, :time 22904069416, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 423, :time 22906803083, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:precondition-failed "expected 4 but had 1"]}
+{:index 424, :time 22988182083, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 425, :time 22988722500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 426, :time 22996029875, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 427, :time 22996123250, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 428, :time 23114953583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 429, :time 23118891541, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 430, :time 23203075666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 431, :time 23210535916, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 432, :time 23253087666, :type :invoke, :process 3, :f :cas, :value [0 [2 0]]}
+{:index 433, :time 23265323666, :type :fail, :process 3, :f :cas, :value [0 [2 0]], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 434, :time 23429793375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 435, :time 23434300333, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 436, :time 23503406583, :type :invoke, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 437, :time 23508850166, :type :ok, :process 3, :f :cas, :value [0 [1 1]]}
+{:index 438, :time 23567718083, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 439, :time 23570408291, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 440, :time 23573774625, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 441, :time 23576223541, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2 but had 1"]}
+{:index 442, :time 23671757750, :type :invoke, :process 4, :f :cas, :value [0 [1 1]]}
+{:index 443, :time 23679668666, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 444, :time 23683118000, :type :ok, :process 4, :f :cas, :value [0 [1 1]]}
+{:index 445, :time 23684751875, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 446, :time 23797666583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 447, :time 23800999916, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 448, :time 23971289500, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 449, :time 23978541541, :type :ok, :process 3, :f :write, :value [0 2]}
+{:index 450, :time 23993997625, :type :invoke, :process 3, :f :cas, :value [0 [0 4]]}
+{:index 451, :time 23997449583, :type :fail, :process 3, :f :cas, :value [0 [0 4]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 452, :time 24085599708, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 453, :time 24090203000, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 454, :time 24285485000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 455, :time 24289539291, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 456, :time 24336375083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 457, :time 24339509291, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 458, :time 24434171083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 459, :time 24439086291, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 460, :time 24515141458, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 461, :time 24522401125, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:precondition-failed "expected 4 but had 2"]}
+{:index 462, :time 24594766333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 463, :time 24598356000, :type :invoke, :process 3, :f :cas, :value [0 [1 3]]}
+{:index 464, :time 24601537375, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 465, :time 24605041666, :type :fail, :process 3, :f :cas, :value [0 [1 3]], :error [:precondition-failed "expected 1 but had 2"]}
+{:index 466, :time 24656665791, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 467, :time 24663478000, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 468, :time 24815385083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 469, :time 24821170708, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 470, :time 24934183708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 471, :time 24939965083, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 472, :time 25079556166, :type :invoke, :process 5, :f :cas, :value [0 [1 0]]}
+{:index 473, :time 25087407333, :type :fail, :process 5, :f :cas, :value [0 [1 0]], :error [:precondition-failed "expected 1 but had 2"]}
+{:index 474, :time 25115134500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 475, :time 25121387500, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 476, :time 25289633250, :type :invoke, :process 3, :f :cas, :value [0 [0 3]]}
+{:index 477, :time 25297338500, :type :fail, :process 3, :f :cas, :value [0 [0 3]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 478, :time 25443772291, :type :invoke, :process 3, :f :write, :value [0 2]}
+{:index 479, :time 25453471791, :type :ok, :process 3, :f :write, :value [0 2]}
+{:index 480, :time 25558644916, :type :invoke, :process 3, :f :cas, :value [0 [1 3]]}
+{:index 481, :time 25567283666, :type :fail, :process 3, :f :cas, :value [0 [1 3]], :error [:precondition-failed "expected 1 but had 2"]}
+{:index 482, :time 25738092625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 483, :time 25742196375, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 484, :time 25880226250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 485, :time 25885669416, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 486, :time 25992405333, :type :invoke, :process 5, :f :cas, :value [0 [4 3]]}
+{:index 487, :time 26001790958, :type :fail, :process 5, :f :cas, :value [0 [4 3]], :error [:precondition-failed "expected 4 but had 2"]}
+{:index 488, :time 26005193541, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 489, :time 26012976208, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:precondition-failed "expected 4 but had 2"]}
+{:index 490, :time 26148834750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 491, :time 26155461708, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 492, :time 26251382208, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 493, :time 26258817583, :type :ok, :process 1, :f :read, :value [0 2]}
+{:index 494, :time 26403957625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 495, :time 26411241833, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 496, :time 26428760083, :type :invoke, :process 3, :f :cas, :value [0 [0 0]]}
+{:index 497, :time 26433886458, :type :fail, :process 3, :f :cas, :value [0 [0 0]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 498, :time 26532334500, :type :invoke, :process 4, :f :cas, :value [0 [0 4]]}
+{:index 499, :time 26535921000, :type :fail, :process 4, :f :cas, :value [0 [0 4]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 500, :time 26553038333, :type :invoke, :process 5, :f :cas, :value [0 [1 0]]}
+{:index 501, :time 26555912166, :type :fail, :process 5, :f :cas, :value [0 [1 0]], :error [:precondition-failed "expected 1 but had 2"]}
+{:index 502, :time 26674469291, :type :invoke, :process 3, :f :cas, :value [0 [0 2]]}
+{:index 503, :time 26680507875, :type :fail, :process 3, :f :cas, :value [0 [0 2]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 504, :time 26735283125, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 505, :time 26740857500, :type :invoke, :process 4, :f :cas, :value [0 [0 3]]}
+{:index 506, :time 26741295333, :type :fail, :process 3, :f :cas, :value [0 [1 4]], :error [:precondition-failed "expected 1 but had 2"]}
+{:index 507, :time 26749020416, :type :fail, :process 4, :f :cas, :value [0 [0 3]], :error [:precondition-failed "expected 0 but had 2"]}
+{:index 508, :time 26908212625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 509, :time 26914000250, :type :ok, :process 2, :f :read, :value [0 2]}
+{:index 510, :time 26973542583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 511, :time 26979830791, :type :ok, :process 0, :f :read, :value [0 2]}
+{:index 512, :time 27103952916, :type :invoke, :process 4, :f :write, :value [0 0]}
+{:index 513, :time 27113094000, :type :ok, :process 4, :f :write, :value [0 0]}
+{:index 514, :time 27263077208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 515, :time 27271588416, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 516, :time 27403631958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 517, :time 27410582041, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 518, :time 27427653958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 519, :time 27435822291, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 520, :time 27451395708, :type :invoke, :process 3, :f :cas, :value [0 [3 3]]}
+{:index 521, :time 27458879541, :type :fail, :process 3, :f :cas, :value [0 [3 3]], :error [:precondition-failed "expected 3 but had 0"]}
+{:index 522, :time 27540188291, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 523, :time 27546779666, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 524, :time 27728686166, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 525, :time 27735557083, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 526, :time 27845335208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 527, :time 27852794250, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 528, :time 27881001750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 529, :time 27886218833, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 530, :time 28019364416, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 531, :time 28026562958, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 532, :time 28157058916, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 533, :time 28162924291, :type :info, :process :nemesis, :f :stop-partition, :value nil}
+{:index 534, :time 28165484166, :type :info, :process :nemesis, :f :stop-partition, :value :network-healed}
+{:index 535, :time 28166623375, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 536, :time 28228335166, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 537, :time 28236761083, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 538, :time 28384086458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 539, :time 28393302541, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 540, :time 28538588416, :type :invoke, :process 4, :f :cas, :value [0 [3 3]]}
+{:index 541, :time 28547980625, :type :fail, :process 4, :f :cas, :value [0 [3 3]], :error [:precondition-failed "expected 3 but had 0"]}
+{:index 542, :time 28687575375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 543, :time 28695908208, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 544, :time 28737557833, :type :invoke, :process 3, :f :cas, :value [0 [1 2]]}
+{:index 545, :time 28744819625, :type :fail, :process 3, :f :cas, :value [0 [1 2]], :error [:precondition-failed "expected 1 but had 0"]}
+{:index 546, :time 28748924166, :type :invoke, :process 3, :f :cas, :value [0 [2 3]]}
+{:index 547, :time 28753936500, :type :fail, :process 3, :f :cas, :value [0 [2 3]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 548, :time 28898644125, :type :invoke, :process 3, :f :cas, :value [0 [4 4]]}
+{:index 549, :time 28905043166, :type :fail, :process 3, :f :cas, :value [0 [4 4]], :error [:precondition-failed "expected 4 but had 0"]}
+{:index 550, :time 28929560666, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 551, :time 28936786666, :type :ok, :process 2, :f :read, :value [0 0]}
+{:index 552, :time 28998567000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 553, :time 29004385500, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 554, :time 29020909541, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 555, :time 29026719250, :type :ok, :process 0, :f :read, :value [0 0]}
+{:index 556, :time 29126932375, :type :invoke, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 557, :time 29134348541, :type :fail, :process 5, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 558, :time 29297255500, :type :invoke, :process 3, :f :cas, :value [0 [2 4]]}
+{:index 559, :time 29304105250, :type :fail, :process 3, :f :cas, :value [0 [2 4]], :error [:precondition-failed "expected 2 but had 0"]}
+{:index 560, :time 29372174208, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 561, :time 29379522166, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 562, :time 29515018416, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 563, :time 29518016791, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 564, :time 29524069833, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 565, :time 29524182541, :type :ok, :process 2, :f :read, :value [0 1]}
+{:index 566, :time 29563156583, :type :invoke, :process 3, :f :write, :value [0 1]}
+{:index 567, :time 29569511166, :type :ok, :process 3, :f :write, :value [0 1]}
+{:index 568, :time 29579708000, :type :invoke, :process 4, :f :cas, :value [0 [3 1]]}
+{:index 569, :time 29585396833, :type :fail, :process 4, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3 but had 1"]}
+{:index 570, :time 29688135375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 571, :time 29695668125, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 572, :time 29753385083, :type :invoke, :process 3, :f :cas, :value [0 [4 1]]}
+{:index 573, :time 29760976708, :type :fail, :process 3, :f :cas, :value [0 [4 1]], :error [:precondition-failed "expected 4 but had 1"]}
+{:index 574, :time 29807391708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 575, :time 29814442416, :type :ok, :process 0, :f :read, :value [0 1]}
+{:index 576, :time 29924324208, :type :invoke, :process 3, :f :cas, :value [0 [3 1]]}
+{:index 577, :time 29936781916, :type :fail, :process 3, :f :cas, :value [0 [3 1]], :error [:precondition-failed "expected 3 but had 1"]}
