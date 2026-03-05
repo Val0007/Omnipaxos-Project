@@ -82,6 +82,9 @@ impl OmniPaxosServer {
                     Some(connection) = self.network.new_client_connections.recv() => {
                     self.network.client_connections.insert(connection.client_id, connection);
                 }
+                Some(event) = self.network.reconnect_peers_reciever.recv() => {
+                    self.network.handle_reconnect_event(event);
+                }
                 _ = self.network.client_messages.recv_many(&mut client_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_client_messages(&mut client_msg_buf).await;
                 },
@@ -124,6 +127,9 @@ impl OmniPaxosServer {
                 _ = self.network.client_messages.recv_many(client_msg_buffer, NETWORK_BATCH_SIZE) => {
                     self.handle_client_messages(client_msg_buffer).await;
                 },
+                Some(event) = self.network.reconnect_peers_reciever.recv() => {
+                    self.network.handle_reconnect_event(event);
+                }
             }
         }
     }
@@ -174,7 +180,14 @@ impl OmniPaxosServer {
         for msg in outgoing {
             let to = msg.get_receiver();
             if self.should_drop_cluster_message(to) {
-                info!("{}: Nemesis dropped cluster message to {}", self.id, to);
+                let mode = self
+                    .active_nemesis_window()
+                    .map(|w| self.resolve_nemesis_mode(w))
+                    .unwrap_or(self.config.cluster.nemesis_mode);
+                info!(
+                    "NEMESIS {:?}: dropped cluster message {} -> {}",
+                    mode, self.id, to
+                );
                 continue;
             }
             let cluster_msg = ClusterMessage::OmniPaxosMessage(msg);
@@ -256,6 +269,10 @@ impl OmniPaxosServer {
         for (from, message) in messages.drain(..) {
             match message {
                 ClientMessage::Append(command_id, kv_command) => {
+                    info!(
+                        "SERVER {} received client command from client={} cmd_id={} op={kv_command:?}",
+                        self.id, from, command_id
+                    );
                     self.append_to_log(from, command_id, kv_command)
                 }
             }
@@ -293,6 +310,10 @@ impl OmniPaxosServer {
             id: command_id,
             kv_cmd: kv_command,
         };
+        info!(
+            "SERVER {} appending to OmniPaxos log: client={} cmd_id={} op={:?}",
+            self.id, command.client_id, command.id, command.kv_cmd
+        );
         self.omnipaxos
             .append(command)
             .expect("Append to Omnipaxos log failed");

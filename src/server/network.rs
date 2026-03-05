@@ -68,7 +68,7 @@ pub async fn connect_with_retry(peer: &str, peer_address: SocketAddr) -> TcpStre
 
 
     loop {
-        println!("TRYING TCP CONNECT To {}",peer);
+        debug!("TRYING TCP CONNECT to node {} at {}", peer, peer_address);
         reconnect_interval.tick().await;
         match TcpStream::connect(peer_address).await {
             Ok(connection) => {
@@ -126,9 +126,14 @@ impl Network {
             id,
             reconnecting: vec![false; peer_addresses.len()],
         };
+        info!(
+            "NETWORK init node={} peers={:?} listen_address={}",
+            id, network.peers, listen_address
+        );
         network
             .initialize_connections(id, peer_addresses, listen_address, new_client_tx)
             .await;
+        info!("NETWORK init complete node={}", id);
         network
     }
 
@@ -160,10 +165,12 @@ impl Network {
                 NewConnection::ToPeer(connection) => {
                     let peer_idx = self.cluster_id_to_idx(connection.peer_id).unwrap();
                     self.peer_connections[peer_idx] = Some(connection);
+                    info!("NETWORK node={} peer connected at idx={}", id, peer_idx);
                 }
             }
             let all_cluster_connected = self.peer_connections.iter().all(|c| c.is_some());
             if all_cluster_connected {
+                info!("NETWORK node={} all initial peer connections established", id);
                 break;
             }
         }
@@ -185,6 +192,7 @@ impl Network {
         let batch_size = self.batch_size;
         tokio::spawn(async move {
             let listener = TcpListener::bind(listen_address).await.unwrap();
+            info!("NETWORK listener bound on {}", listen_address);
             loop {
                 match listener.accept().await {
                     Ok((tcp_stream, socket_addr)) => {
@@ -220,6 +228,7 @@ impl Network {
     ) {
         let mut registration_connection = frame_registration_connection(connection);
         let registration_message = registration_connection.next().await;
+        debug!("NETWORK registration frame received: {:?}", registration_message);
         match registration_message {
             Some(Ok(RegistrationMessage::NodeRegister(node_id))) => {
                 info!("Identified connection from node {node_id}");
@@ -230,6 +239,7 @@ impl Network {
                     batch_size,
                     cluster_message_sender,
                 );
+                info!("NETWORK created PeerConnection actor for node {}", node_id);
 
                 //only use the connection sink here for clusters , after the functions goes out of scope
                 //this also goes out of scope and we dont use it for the clients anymore
@@ -251,6 +261,10 @@ impl Network {
                     underlying_stream,
                     batch_size,
                     client_message_sender,
+                );
+                info!(
+                    "NETWORK created ClientConnection actor for client {}",
+                    next_client_id
                 );
                 // Send through the dedicated client channel , using a separate Sender<NewConnection> — this never closes.
                 if let Err(err) = new_client_tx.send(client_conn).await {
@@ -280,8 +294,10 @@ impl Network {
             let connection_sender = connection_sender.clone();
             let batch_size = self.batch_size;
             tokio::spawn(async move {
+                info!("NETWORK connector task started local={} peer={}", my_id, peer);
                 let peer_connection = loop {
                     reconnect_interval.tick().await;
+                    debug!("NETWORK dialing peer {} at {}", peer, peer_address);
                     match TcpStream::connect(peer_address).await {
                         Ok(connection) => {
                             info!("New connection to node {peer}");
@@ -299,11 +315,13 @@ impl Network {
                     error!("Error sending handshake to {peer}: {err}");
                     return;
                 }
+                info!("NETWORK sent NodeRegister handshake local={} -> peer={}", my_id, peer);
                 let underlying_stream = registration_connection.into_inner().into_inner();
                 let peer_actor =
                     PeerConnection::new(peer, underlying_stream, batch_size, cluster_sender);
                 let new_connection = NewConnection::ToPeer(peer_actor);
                 connection_sender.send(new_connection).await.unwrap();
+                info!("NETWORK delivered connector peer actor for peer={}", peer);
             });
         }
     }
@@ -318,6 +336,7 @@ impl Network {
     let my_id = self.id.clone();
 
     tokio::spawn(async move {
+        info!("Starting reconnect attempt {} -> {}", my_id, peer);
         let peer_connection = connect_with_retry(&peer.to_string(), peer_address).await;
 
         let mut registration_connection = frame_registration_connection(peer_connection);
@@ -347,21 +366,29 @@ impl Network {
     // }
 
     pub fn send_to_cluster(&mut self, to: NodeId, msg: ClusterMessage) {
+        trace!("NETWORK send_to_cluster from={} to={} msg={:?}", self.id, to, msg);
         match self.cluster_id_to_idx(to) {
             Some(idx) => match &mut self.peer_connections[idx] {
                 Some(ref mut connection) => {
                     if let Err(err) = connection.send(msg) {
-                        println!("Couldn't send msg to peer {to} , will try to reconnect from {}",self.id);
+                        warn!(
+                            "Couldn't send msg to peer {to}: {err}. Starting reconnect from {}",
+                            self.id
+                        );
                         self.peer_connections[idx] = None;
-                          self.reconnecting[idx] = true;
+                        self.reconnecting[idx] = true;
                         self.spawn_reconnect(to, idx);
                     }
                 }
                 None => {
-                            if !self.reconnecting[idx] {
-                                self.reconnecting[idx] = true;
-                                self.spawn_reconnect(to, idx);
-                            }
+                    if !self.reconnecting[idx] {
+                        info!(
+                            "Peer {to} currently disconnected from {}. Starting reconnect",
+                            self.id
+                        );
+                        self.reconnecting[idx] = true;
+                        self.spawn_reconnect(to, idx);
+                    }
                 },
             },
             None => error!("Sending to unexpected node {to}"),
@@ -369,6 +396,7 @@ impl Network {
     }
 
     pub fn send_to_client(&mut self, to: ClientId, msg: ServerMessage) {
+        trace!("NETWORK send_to_client to={} msg={:?}", to, msg);
         match self.client_connections.get_mut(&to) {
             Some(connection) => {
                 if let Err(err) = connection.send(msg) {
@@ -377,6 +405,34 @@ impl Network {
                 }
             }
             None => warn!("Not connected to client {to}"),
+        }
+    }
+
+    pub fn handle_reconnect_event(&mut self, event: ReconnectEvent) {
+        match event {
+            ReconnectEvent::Success { peer_id, conn } => {
+                let Some(idx) = self.cluster_id_to_idx(peer_id) else {
+                    error!("Reconnect success for unknown peer {peer_id}");
+                    return;
+                };
+                match conn {
+                    NewConnection::ToPeer(connection) => {
+                        self.peer_connections[idx] = Some(connection);
+                        self.reconnecting[idx] = false;
+                        info!("Reconnected to peer {peer_id}");
+                    }
+                }
+            }
+            ReconnectEvent::Failed { peer_id } => {
+                let Some(idx) = self.cluster_id_to_idx(peer_id) else {
+                    error!("Reconnect failure for unknown peer {peer_id}");
+                    return;
+                };
+                self.reconnecting[idx] = false;
+                warn!("Reconnect attempt to peer {peer_id} failed; retrying");
+                self.reconnecting[idx] = true;
+                self.spawn_reconnect(peer_id, idx);
+            }
         }
     }
 
@@ -428,6 +484,7 @@ impl PeerConnection {
                 for msg in messages {
                     match msg {
                         Ok(m) => {
+                            trace!("NETWORK peer reader peer={} msg={:?}", peer_id, m);
                             if let Err(_) = incoming_messages.send((peer_id, m)).await {
                                 break;
                             };
@@ -444,6 +501,7 @@ impl PeerConnection {
             let mut buffer = Vec::with_capacity(batch_size);
             while message_rx.recv_many(&mut buffer, batch_size).await != 0 {
                 for msg in buffer.drain(..) {
+                    trace!("NETWORK peer writer peer={} msg={:?}", peer_id, msg);
                     if let Err(err) = writer.feed(msg).await {
                         error!("Couldn't send message to node {peer_id}: {err}");
                         break;
@@ -497,7 +555,10 @@ impl ClientConnection {
             while let Some(messages) = buf_reader.next().await {
                 for msg in messages {
                     match msg {
-                        Ok(m) => incoming_messages.send((client_id, m)).await.unwrap(),
+                        Ok(m) => {
+                            trace!("NETWORK client reader client={} msg={:?}", client_id, m);
+                            incoming_messages.send((client_id, m)).await.unwrap()
+                        }
                         Err(err) => error!("Error deserializing message: {:?}", err),
                     }
                 }
@@ -508,6 +569,7 @@ impl ClientConnection {
             let mut buffer = Vec::with_capacity(batch_size);
             while message_rx.recv_many(&mut buffer, batch_size).await != 0 {
                 for msg in buffer.drain(..) {
+                    trace!("NETWORK client writer client={} msg={:?}", client_id, msg);
                     if let Err(err) = writer.feed(msg).await {
                         error!("Couldn't send message to client {client_id}: {err}");
                         error!("Killing connection to client {client_id}");
@@ -541,30 +603,3 @@ impl ClientConnection {
         self.writer_task.abort();
     }
 }
-    pub fn handle_reconnect_event(&mut self, event: ReconnectEvent) {
-        match event {
-            ReconnectEvent::Success { peer_id, conn } => {
-                let Some(idx) = self.cluster_id_to_idx(peer_id) else {
-                    error!("Reconnect success for unknown peer {peer_id}");
-                    return;
-                };
-                match conn {
-                    NewConnection::ToPeer(connection) => {
-                        self.peer_connections[idx] = Some(connection);
-                        self.reconnecting[idx] = false;
-                        info!("Reconnected to peer {peer_id}");
-                    }
-                }
-            }
-            ReconnectEvent::Failed { peer_id } => {
-                let Some(idx) = self.cluster_id_to_idx(peer_id) else {
-                    error!("Reconnect failure for unknown peer {peer_id}");
-                    return;
-                };
-                self.reconnecting[idx] = false;
-                warn!("Reconnect attempt to peer {peer_id} failed; retrying");
-                self.reconnecting[idx] = true;
-                self.spawn_reconnect(peer_id, idx);
-            }
-        }
-    }

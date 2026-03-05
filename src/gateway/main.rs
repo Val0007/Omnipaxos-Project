@@ -190,8 +190,10 @@ async fn put_handler(
     State(state): State<Arc<AppState>>,
     Json(body): Json<PutRequest>,
 ) -> Result<Json<Value>, (StatusCode, Json<Value>)> {
+    info!("GATEWAY HTTP /kv/put key={}", body.key);
     let response = submit_command(&state, KVCommand::Put(body.key, body.value)).await?;
     let cmd_id = command_id_from_response(response)?;
+    info!("GATEWAY HTTP /kv/put completed cmd_id={cmd_id}");
     Ok(Json(json!({ "ok": true, "cmd_id": cmd_id })))
 }
 
@@ -199,8 +201,10 @@ async fn delete_handler(
     State(state): State<Arc<AppState>>,
     Json(body): Json<DeleteRequest>,
 ) -> Result<Json<Value>, (StatusCode, Json<Value>)> {
+    info!("GATEWAY HTTP /kv/delete key={}", body.key);
     let response = submit_command(&state, KVCommand::Delete(body.key)).await?;
     let cmd_id = command_id_from_response(response)?;
+    info!("GATEWAY HTTP /kv/delete completed cmd_id={cmd_id}");
     Ok(Json(json!({ "ok": true, "cmd_id": cmd_id })))
 }
 
@@ -208,13 +212,17 @@ async fn get_handler(
     State(state): State<Arc<AppState>>,
     Path(key): Path<String>,
 ) -> Result<Json<Value>, (StatusCode, Json<Value>)> {
+    info!("GATEWAY HTTP /kv/get key={key}");
     let response = submit_command(&state, KVCommand::Get(key)).await?;
     match response {
-        ServerMessage::Read(cmd_id, value) => Ok(Json(json!({
+        ServerMessage::Read(cmd_id, value) => {
+            info!("GATEWAY HTTP /kv/get completed cmd_id={cmd_id} value={value:?}");
+            Ok(Json(json!({
             "ok": true,
             "cmd_id": cmd_id,
             "value": value,
-        }))),
+        })))
+        }
         ServerMessage::CasResult(_, _) => Err(api_error(
             StatusCode::INTERNAL_SERVER_ERROR,
             "Unexpected cas result as get response",
@@ -231,13 +239,19 @@ async fn cas_handler(
     State(state): State<Arc<AppState>>,
     Json(body): Json<CasRequest>,  // ← CasRequest not CasResult
 ) -> Result<Json<Value>, (StatusCode, Json<Value>)> {
+    info!(
+        "GATEWAY HTTP /kv/cas key={} expected={} new_value={}",
+        body.key, body.expected, body.new_value
+    );
     let response = submit_command(
         &state,
         KVCommand::Cas(body.key, body.expected, body.new_value),
     ).await?;
     match response {
-        ServerMessage::CasResult(cmd_id, true) =>   // ← ServerMessage::CasResult
-            Ok(Json(json!({ "ok": true, "cmd_id": cmd_id }))),
+        ServerMessage::CasResult(cmd_id, true) => {
+            info!("GATEWAY HTTP /kv/cas success cmd_id={cmd_id}");
+            Ok(Json(json!({ "ok": true, "cmd_id": cmd_id })))
+        }
         ServerMessage::CasResult(_, false) =>        // ← ServerMessage::CasResult
             Err(api_error(StatusCode::CONFLICT, "cas conflict")),
         _ => Err(api_error(StatusCode::INTERNAL_SERVER_ERROR, "unexpected response")),
@@ -254,6 +268,7 @@ async fn submit_command(
     let (tx, rx) = oneshot::channel();
 
     state.pending.lock().await.insert(cmd_id, tx);
+    info!("GATEWAY TCP SEND cmd_id={cmd_id} op={kv_cmd:?}");
 
     if state
         .tcp_tx
