@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cluster_size=3
-rust_log="info"
+rust_log="${RUST_LOG:-info}"
 
 # Nemesis knobs (can be overridden by env before running script).
 nemesis_mode="${NEMESIS_MODE:-alternate}"              # leader_isolation | split_half | alternate

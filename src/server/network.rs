@@ -540,3 +540,30 @@ impl ClientConnection {
         self.writer_task.abort();
     }
 }
+    pub fn handle_reconnect_event(&mut self, event: ReconnectEvent) {
+        match event {
+            ReconnectEvent::Success { peer_id, conn } => {
+                let Some(idx) = self.cluster_id_to_idx(peer_id) else {
+                    error!("Reconnect success for unknown peer {peer_id}");
+                    return;
+                };
+                match conn {
+                    NewConnection::ToPeer(connection) => {
+                        self.peer_connections[idx] = Some(connection);
+                        self.reconnecting[idx] = false;
+                        info!("Reconnected to peer {peer_id}");
+                    }
+                }
+            }
+            ReconnectEvent::Failed { peer_id } => {
+                let Some(idx) = self.cluster_id_to_idx(peer_id) else {
+                    error!("Reconnect failure for unknown peer {peer_id}");
+                    return;
+                };
+                self.reconnecting[idx] = false;
+                warn!("Reconnect attempt to peer {peer_id} failed; retrying");
+                self.reconnecting[idx] = true;
+                self.spawn_reconnect(peer_id, idx);
+            }
+        }
+    }

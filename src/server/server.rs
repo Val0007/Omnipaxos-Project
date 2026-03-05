@@ -1,4 +1,8 @@
-use crate::{configs::OmniPaxosKVConfig, database::Database, network::Network};
+use crate::{
+    configs::{NemesisMode, OmniPaxosKVConfig},
+    database::Database,
+    network::Network,
+};
 use chrono::Utc;
 use log::*;
 use omnipaxos::{
@@ -8,7 +12,12 @@ use omnipaxos::{
 };
 use omnipaxos_kv::common::{kv::*, messages::*, utils::Timestamp};
 use omnipaxos_storage::memory_storage::MemoryStorage;
-use std::{fs::File, io::Write, time::Duration};
+use std::{
+    collections::HashSet,
+    fs::File,
+    io::Write,
+    time::{Duration, Instant},
+};
 
 type OmniPaxosInstance = OmniPaxos<Command, MemoryStorage<Command>>;
 const NETWORK_BATCH_SIZE: usize = 100;
@@ -24,6 +33,7 @@ pub struct OmniPaxosServer {
     omnipaxos_msg_buffer: Vec<Message<Command>>,
     config: OmniPaxosKVConfig,
     peers: Vec<NodeId>,
+    nemesis_start: Instant,
 }
 
 impl OmniPaxosServer {
@@ -44,6 +54,7 @@ impl OmniPaxosServer {
             omnipaxos_msg_buffer,
             peers: config.get_peers(config.local.server_id),
             config,
+            nemesis_start: Instant::now(),
         }
     }
 
@@ -159,11 +170,86 @@ impl OmniPaxosServer {
     fn send_outgoing_msgs(&mut self) {
         self.omnipaxos
             .take_outgoing_messages(&mut self.omnipaxos_msg_buffer);
-        for msg in self.omnipaxos_msg_buffer.drain(..) {
+        let outgoing: Vec<_> = self.omnipaxos_msg_buffer.drain(..).collect();
+        for msg in outgoing {
             let to = msg.get_receiver();
+            if self.should_drop_cluster_message(to) {
+                info!("{}: Nemesis dropped cluster message to {}", self.id, to);
+                continue;
+            }
             let cluster_msg = ClusterMessage::OmniPaxosMessage(msg);
             self.network.send_to_cluster(to, cluster_msg);
         }
+    }
+
+    fn should_drop_cluster_message(&self, to: NodeId) -> bool {
+        let Some(window_idx) = self.active_nemesis_window() else {
+            return false;
+        };
+        let mode = self.resolve_nemesis_mode(window_idx);
+        match mode {
+            NemesisMode::LeaderIsolation => {
+                let leader = self
+                    .omnipaxos
+                    .get_current_leader()
+                    .map(|(leader, _)| leader)
+                    .unwrap_or(self.config.cluster.initial_leader);
+                self.id == leader || to == leader
+            }
+            NemesisMode::SplitHalf => self.is_cross_half_edge(to),
+            NemesisMode::Alternate => false,
+        }
+    }
+
+    fn active_nemesis_window(&self) -> Option<u128> {
+        if !self.config.cluster.nemesis_enabled {
+            return None;
+        }
+        let interval_ms = self.config.cluster.nemesis_interval_ms;
+        let active_ms = self.config.cluster.nemesis_active_ms;
+        if interval_ms == 0 || active_ms == 0 || active_ms > interval_ms {
+            return None;
+        }
+
+        let elapsed_ms = self.nemesis_start.elapsed().as_millis();
+        let start_delay_ms = u128::from(self.config.cluster.nemesis_start_delay_ms);
+        if elapsed_ms < start_delay_ms {
+            return None;
+        }
+        let since_start = elapsed_ms - start_delay_ms;
+        let interval_u128 = u128::from(interval_ms);
+        let phase = since_start % interval_u128;
+        if phase >= u128::from(active_ms) {
+            return None;
+        }
+        Some(since_start / interval_u128)
+    }
+
+    fn resolve_nemesis_mode(&self, window_idx: u128) -> NemesisMode {
+        match self.config.cluster.nemesis_mode {
+            NemesisMode::Alternate => {
+                if window_idx % 2 == 0 {
+                    NemesisMode::LeaderIsolation
+                } else {
+                    NemesisMode::SplitHalf
+                }
+            }
+            mode => mode,
+        }
+    }
+
+    fn is_cross_half_edge(&self, to: NodeId) -> bool {
+        let mut nodes = self.config.cluster.nodes.clone();
+        nodes.sort_unstable();
+        if nodes.len() < 2 {
+            return false;
+        }
+        let split_idx = nodes.len() / 2;
+        if split_idx == 0 || split_idx >= nodes.len() {
+            return false;
+        }
+        let left: HashSet<NodeId> = nodes[..split_idx].iter().copied().collect();
+        left.contains(&self.id) != left.contains(&to)
     }
 
     async fn handle_client_messages(&mut self, messages: &mut Vec<(ClientId, ClientMessage)>) {
