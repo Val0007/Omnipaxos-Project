@@ -68,6 +68,7 @@ pub async fn connect_with_retry(peer: &str, peer_address: SocketAddr) -> TcpStre
 
 
     loop {
+        println!("TRYING TCP CONNECT To {}",peer);
         reconnect_interval.tick().await;
         match TcpStream::connect(peer_address).await {
             Ok(connection) => {
@@ -350,7 +351,7 @@ impl Network {
             Some(idx) => match &mut self.peer_connections[idx] {
                 Some(ref mut connection) => {
                     if let Err(err) = connection.send(msg) {
-                        warn!("Couldn't send msg to peer {to}: {err}");
+                        println!("Couldn't send msg to peer {to} , will try to reconnect from {}",self.id);
                         self.peer_connections[idx] = None;
                           self.reconnecting[idx] = true;
                         self.spawn_reconnect(to, idx);
