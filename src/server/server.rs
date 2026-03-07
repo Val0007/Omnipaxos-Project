@@ -1,4 +1,4 @@
-use crate::{configs::OmniPaxosKVConfig, database::Database, network::Network};
+use crate::{configs::OmniPaxosKVConfig, database::Database, network::{Network, NewConnection, ReconnectEvent}};
 use chrono::Utc;
 use log::*;
 use omnipaxos::{
@@ -70,10 +70,30 @@ impl OmniPaxosServer {
                 // Drains any newly connected clients from the background accept task and registers them.
                     Some(connection) = self.network.new_client_connections.recv() => {
                     self.network.client_connections.insert(connection.client_id, connection);
+                },
+              Some(event) = self.network.reconnect_peers_reciever.recv() => {
+    match event {
+        ReconnectEvent::Success { peer_id, conn } => {
+            let idx = self.network.cluster_id_to_idx(peer_id).unwrap();
+            if let NewConnection::ToPeer(peer_actor) = conn {
+                if let Some(old) = self.network.peer_connections[idx].take() {
+                    old.close();
                 }
+                self.network.peer_connections[idx] = Some(peer_actor);
+                self.network.reconnecting[idx] = false;
+                info!("Reconnected to peer {peer_id}");
+            }
+        }
+        ReconnectEvent::Failed { peer_id } => {
+            let idx = self.network.cluster_id_to_idx(peer_id).unwrap();
+            self.network.reconnecting[idx] = false;
+            warn!("Reconnect handshake failed for peer {peer_id}, will retry on next send");
+        }
+    }
+},
                 _ = self.network.client_messages.recv_many(&mut client_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_client_messages(&mut client_msg_buf).await;
-                },
+                }
             }
         }
     }
@@ -113,6 +133,7 @@ impl OmniPaxosServer {
                 _ = self.network.client_messages.recv_many(client_msg_buffer, NETWORK_BATCH_SIZE) => {
                     self.handle_client_messages(client_msg_buffer).await;
                 },
+
             }
         }
     }

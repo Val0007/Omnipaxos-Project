@@ -72,7 +72,7 @@ pub async fn connect_with_retry(peer: &str, peer_address: SocketAddr) -> TcpStre
         reconnect_interval.tick().await;
         match TcpStream::connect(peer_address).await {
             Ok(connection) => {
-                info!("New connection to node {peer}");
+                info!("Retry TCP connect successfull to {peer}");
                 connection.set_nodelay(true).unwrap();
                 return connection;
             }
@@ -471,7 +471,7 @@ impl PeerConnection {
         self.outgoing_messages.send(msg)
     }
 
-    fn close(self) {
+    pub fn close(self) {
         self.reader_task.abort();
         self.writer_task.abort();
     }
