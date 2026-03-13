@@ -1,0 +1,1100 @@
+{:index 0, :time 9014792, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 1, :time 41686625, :type :invoke, :process 4, :f :write, :value 4}
+{:index 2, :time 200559875, :type :invoke, :process 2, :f :read, :value nil}
+{:index 3, :time 343412042, :type :fail, :process 3, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 4, :time 343703208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 5, :time 347262500, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 6, :time 499475375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 7, :time 516865042, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 8, :time 607691667, :type :invoke, :process 2, :f :read, :value nil}
+{:index 9, :time 649905875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 10, :time 785868458, :type :invoke, :process 3, :f :cas, :value [0 3]}
+{:index 11, :time 822340250, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 12, :time 858336958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 13, :time 913837833, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 14, :time 1004422208, :type :invoke, :process 4, :f :cas, :value [2 3]}
+{:index 15, :time 1078456917, :type :invoke, :process 5, :f :write, :value 4}
+{:index 16, :time 1093923500, :type :fail, :process 3, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 17, :time 1171296458, :type :invoke, :process 3, :f :cas, :value [1 4]}
+{:index 18, :time 1183768542, :type :invoke, :process 1, :f :read, :value nil}
+{:index 19, :time 1271334000, :type :invoke, :process 2, :f :read, :value nil}
+{:index 20, :time 1317418000, :type :fail, :process 4, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 21, :time 1388624958, :type :fail, :process 5, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 22, :time 1398469917, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 23, :time 1413338583, :type :invoke, :process 4, :f :write, :value 2}
+{:index 24, :time 1523059167, :type :invoke, :process 0, :f :read, :value nil}
+{:index 25, :time 1558325917, :type :invoke, :process 5, :f :cas, :value [0 3]}
+{:index 26, :time 1619958583, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 27, :time 1692590875, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 28, :time 1702518333, :type :fail, :process 3, :f :cas, :value [1 4], :error [:key-does-not-exist "key not found"]}
+{:index 29, :time 1743423958, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 30, :time 1924233292, :type :fail, :process 4, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 31, :time 1931722250, :type :invoke, :process 1, :f :read, :value nil}
+{:index 32, :time 1994011167, :type :fail, :process 5, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 33, :time 2004801667, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 34, :time 2126740208, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 35, :time 2159045667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 36, :time 2241416792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 37, :time 2265885708, :type :invoke, :process 5, :f :cas, :value [0 0]}
+{:index 38, :time 2288312333, :type :invoke, :process 1, :f :read, :value nil}
+{:index 39, :time 2313737792, :type :fail, :process 3, :f :cas, :value [4 4], :error [:key-does-not-exist "key not found"]}
+{:index 40, :time 2463911833, :type :invoke, :process 3, :f :write, :value 2}
+{:index 41, :time 2543694958, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 42, :time 2573472583, :type :fail, :process 5, :f :cas, :value [0 0], :error [:key-does-not-exist "key not found"]}
+{:index 43, :time 2573544458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 44, :time 2617778167, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 45, :time 2661897667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 46, :time 2769882542, :type :invoke, :process 4, :f :cas, :value [3 1]}
+{:index 47, :time 2849227292, :type :invoke, :process 5, :f :cas, :value [4 2]}
+{:index 48, :time 2850191958, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 49, :time 2881799000, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 50, :time 2882021250, :type :invoke, :process 1, :f :read, :value nil}
+{:index 51, :time 2908392500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 52, :time 2922597292, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 53, :time 3023113083, :type :invoke, :process 3, :f :write, :value 4}
+{:index 54, :time 3154677792, :type :fail, :process 4, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 55, :time 3184832792, :type :fail, :process 5, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 56, :time 3220678083, :type :invoke, :process 4, :f :cas, :value [3 3]}
+{:index 57, :time 3225809208, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 58, :time 3262895917, :type :invoke, :process 0, :f :read, :value nil}
+{:index 59, :time 3432858375, :type :invoke, :process 5, :f :cas, :value [3 1]}
+{:index 60, :time 3460377083, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 61, :time 3494170167, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 62, :time 3531582000, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 63, :time 3611053833, :type :invoke, :process 3, :f :write, :value 2}
+{:index 64, :time 3764009208, :type :fail, :process 4, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 65, :time 3798083958, :type :fail, :process 5, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 66, :time 3811094917, :type :invoke, :process 4, :f :cas, :value [4 0]}
+{:index 67, :time 3832593167, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 68, :time 3840707792, :type :invoke, :process 0, :f :read, :value nil}
+{:index 69, :time 4037345917, :type :invoke, :process 5, :f :cas, :value [2 3]}
+{:index 70, :time 4115219250, :type :fail, :process 4, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 71, :time 4135294708, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 72, :time 4146118917, :type :invoke, :process 2, :f :read, :value nil}
+{:index 73, :time 4243617833, :type :invoke, :process 1, :f :read, :value nil}
+{:index 74, :time 4315323625, :type :invoke, :process 4, :f :cas, :value [1 2]}
+{:index 75, :time 4348716917, :type :fail, :process 5, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 76, :time 4420379500, :type :invoke, :process 5, :f :cas, :value [3 4]}
+{:index 77, :time 4440773208, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 78, :time 4481433792, :type :invoke, :process 3, :f :cas, :value [1 0]}
+{:index 79, :time 4509486417, :type :invoke, :process 0, :f :read, :value nil}
+{:index 80, :time 4548586458, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 81, :time 4647883625, :type :invoke, :process 1, :f :read, :value nil}
+{:index 82, :time 4649514458, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 83, :time 4705716375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 84, :time 4789273417, :type :fail, :process 3, :f :cas, :value [1 0], :error [:key-does-not-exist "key not found"]}
+{:index 85, :time 4822214917, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 86, :time 4851806250, :type :fail, :process 4, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 87, :time 4912937708, :type :invoke, :process 4, :f :cas, :value [0 4]}
+{:index 88, :time 4953936958, :type :fail, :process 5, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 89, :time 5047302292, :type :invoke, :process 5, :f :cas, :value [2 0]}
+{:index 90, :time 5095180208, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 91, :time 5155975792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 92, :time 5234847667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 93, :time 5256309083, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 94, :time 5351457875, :type :invoke, :process 1, :f :read, :value nil}
+{:index 95, :time 5398629000, :type :fail, :process 3, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 96, :time 5458856667, :type :fail, :process 4, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 97, :time 5492938083, :type :invoke, :process 2, :f :read, :value nil}
+{:index 98, :time 5558848125, :type :fail, :process 5, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 99, :time 5678291750, :type :invoke, :process 3, :f :write, :value 4}
+{:index 100, :time 5700884750, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 101, :time 5735488875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 102, :time 5761931792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 103, :time 5842696292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 104, :time 5862300833, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 105, :time 5994618000, :type :invoke, :process 2, :f :read, :value nil}
+{:index 106, :time 6004675792, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 107, :time 6149989042, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 108, :time 6164959042, :type :invoke, :process 1, :f :read, :value nil}
+{:index 109, :time 6179601833, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 110, :time 6192444958, :type :invoke, :process 4, :f :cas, :value [1 2]}
+{:index 111, :time 6255524417, :type :invoke, :process 5, :f :cas, :value [0 1]}
+{:index 112, :time 6303094750, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 113, :time 6306205167, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 114, :time 6371086500, :type :invoke, :process 0, :f :read, :value nil}
+{:index 115, :time 6470068208, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 116, :time 6569876542, :type :invoke, :process 1, :f :read, :value nil}
+{:index 117, :time 6608223875, :type :fail, :process 5, :f :cas, :value [0 1], :error [:key-does-not-exist "key not found"]}
+{:index 118, :time 6610319792, :type :fail, :process 3, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 119, :time 6649692833, :type :invoke, :process 5, :f :cas, :value [2 4]}
+{:index 120, :time 6773432750, :type :fail, :process 4, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 121, :time 6792639500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 122, :time 6850995542, :type :invoke, :process 3, :f :write, :value 2}
+{:index 123, :time 6916569375, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 124, :time 6959836833, :type :fail, :process 5, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 125, :time 7015038500, :type :invoke, :process 4, :f :write, :value 3}
+{:index 126, :time 7071105625, :type :invoke, :process 5, :f :cas, :value [4 1]}
+{:index 127, :time 7079407125, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 128, :time 7221121583, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 129, :time 7247482792, :type :invoke, :process 3, :f :write, :value 1}
+{:index 130, :time 7261844708, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 131, :time 7320964708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 132, :time 7381701208, :type :fail, :process 4, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 133, :time 7452472500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 134, :time 7554869500, :type :fail, :process 3, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 135, :time 7567847583, :type :fail, :process 5, :f :cas, :value [4 1], :error [:key-does-not-exist "key not found"]}
+{:index 136, :time 7641866500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 137, :time 7760907208, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 138, :time 7791660750, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 139, :time 7857075583, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 140, :time 7939364792, :type :invoke, :process 4, :f :cas, :value [3 2]}
+{:index 141, :time 7949360083, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 142, :time 8053881083, :type :invoke, :process 5, :f :cas, :value [2 4]}
+{:index 143, :time 8162678625, :type :fail, :process 3, :f :cas, :value [0 1], :error [:key-does-not-exist "key not found"]}
+{:index 144, :time 8168772125, :type :invoke, :process 3, :f :cas, :value [1 2]}
+{:index 145, :time 8248964875, :type :fail, :process 4, :f :cas, :value [3 2], :error [:key-does-not-exist "key not found"]}
+{:index 146, :time 8289441250, :type :invoke, :process 4, :f :cas, :value [4 0]}
+{:index 147, :time 8298236625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 148, :time 8344106125, :type :invoke, :process 1, :f :read, :value nil}
+{:index 149, :time 8361154750, :type :fail, :process 5, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 150, :time 8438068292, :type :invoke, :process 5, :f :cas, :value [1 2]}
+{:index 151, :time 8476448833, :type :fail, :process 3, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 152, :time 8490444958, :type :invoke, :process 2, :f :read, :value nil}
+{:index 153, :time 8586990667, :type :invoke, :process 3, :f :write, :value 4}
+{:index 154, :time 8601764042, :type :fail, :process 4, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 155, :time 8669555250, :type :invoke, :process 4, :f :cas, :value [2 3]}
+{:index 156, :time 8745623667, :type :fail, :process 5, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 157, :time 8747364333, :type :invoke, :process 5, :f :cas, :value [4 1]}
+{:index 158, :time 8781269292, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 159, :time 8864210250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 160, :time 8904207208, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 161, :time 8904318125, :type :invoke, :process 1, :f :read, :value nil}
+{:index 162, :time 9051352875, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 163, :time 9051582375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 164, :time 9086340250, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 165, :time 9086535958, :type :invoke, :process 3, :f :write, :value 0}
+{:index 166, :time 9207605458, :type :fail, :process 4, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 167, :time 9248313083, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 168, :time 9354974917, :type :fail, :process 5, :f :cas, :value [4 1], :error [:key-does-not-exist "key not found"]}
+{:index 169, :time 9355187083, :type :invoke, :process 5, :f :cas, :value [2 2]}
+{:index 170, :time 9390237958, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 171, :time 9429771292, :type :invoke, :process 0, :f :read, :value nil}
+{:index 172, :time 9510318542, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 173, :time 9510423875, :type :invoke, :process 1, :f :read, :value nil}
+{:index 174, :time 9658040417, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 175, :time 9658134417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 176, :time 9692299167, :type :fail, :process 3, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 177, :time 9714864458, :type :invoke, :process 3, :f :write, :value 3}
+{:index 178, :time 9816153208, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 179, :time 9816317583, :type :invoke, :process 4, :f :write, :value 0}
+{:index 180, :time 9961238667, :type :fail, :process 5, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 181, :time 9961327083, :type :invoke, :process 5, :f :cas, :value [1 1]}
+{:index 182, :time 9993946792, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 183, :time 10106454708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 184, :time 10119515500, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 185, :time 10251973667, :type :invoke, :process 1, :f :read, :value nil}
+{:index 186, :time 10266778083, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 187, :time 10297905417, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 188, :time 10374912583, :type :invoke, :process 2, :f :read, :value nil}
+{:index 189, :time 10421960083, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 190, :time 10536494833, :type :invoke, :process 3, :f :cas, :value [1 3]}
+{:index 191, :time 10569569417, :type :fail, :process 5, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 192, :time 10585761292, :type :invoke, :process 4, :f :write, :value 4}
+{:index 193, :time 10600533708, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 194, :time 10616562250, :type :invoke, :process 5, :f :write, :value 3}
+{:index 195, :time 10625890667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 196, :time 10725400542, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 197, :time 10725487000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 198, :time 10873304208, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 199, :time 10873436875, :type :invoke, :process 2, :f :read, :value nil}
+{:index 200, :time 10905574625, :type :fail, :process 3, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 201, :time 10906006292, :type :invoke, :process 3, :f :write, :value 4}
+{:index 202, :time 11027918750, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 203, :time 11028013958, :type :invoke, :process 4, :f :write, :value 0}
+{:index 204, :time 11178127458, :type :fail, :process 5, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 205, :time 11178258042, :type :invoke, :process 5, :f :cas, :value [3 2]}
+{:index 206, :time 11209005875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 207, :time 11209138208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 208, :time 11334067667, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 209, :time 11352513292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 210, :time 11483791333, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 211, :time 11483978458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 212, :time 11514851667, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 213, :time 11620355417, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 214, :time 11637273875, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 215, :time 11788073250, :type :fail, :process 5, :f :cas, :value [3 2], :error [:key-does-not-exist "key not found"]}
+{:index 216, :time 11818500333, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 217, :time 11818683208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 218, :time 11943255917, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 219, :time 11972710583, :type :invoke, :process 4, :f :write, :value 1}
+{:index 220, :time 12035862083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 221, :time 12092783625, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 222, :time 12121458958, :type :fail, :process 3, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 223, :time 12121526333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 224, :time 12182244708, :type :invoke, :process 3, :f :write, :value 4}
+{:index 225, :time 12212112875, :type :invoke, :process 5, :f :write, :value 4}
+{:index 226, :time 12279879833, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 227, :time 12295633833, :type :invoke, :process 4, :f :cas, :value [2 1]}
+{:index 228, :time 12424550083, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 229, :time 12424723708, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 230, :time 12471017208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 231, :time 12585574833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 232, :time 12620631375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 233, :time 12728575583, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 234, :time 12728742250, :type :fail, :process 5, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 235, :time 12775062083, :type :invoke, :process 2, :f :read, :value nil}
+{:index 236, :time 12890485250, :type :fail, :process 4, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 237, :time 12980300375, :type :invoke, :process 3, :f :write, :value 2}
+{:index 238, :time 13033945958, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 239, :time 13043782958, :type :invoke, :process 4, :f :cas, :value [4 4]}
+{:index 240, :time 13084806708, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 241, :time 13152505125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 242, :time 13195023708, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 243, :time 13203929292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 244, :time 13231619417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 245, :time 13253160875, :type :invoke, :process 5, :f :write, :value 2}
+{:index 246, :time 13336679458, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 247, :time 13336753542, :type :invoke, :process 3, :f :cas, :value [2 3]}
+{:index 248, :time 13500831250, :type :fail, :process 4, :f :cas, :value [4 4], :error [:key-does-not-exist "key not found"]}
+{:index 249, :time 13500989167, :type :invoke, :process 4, :f :write, :value 4}
+{:index 250, :time 13537905375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 251, :time 13641047875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 252, :time 13700531833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 253, :time 13702734875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 254, :time 13803657583, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 255, :time 13838817583, :type :fail, :process 5, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 256, :time 13891800292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 257, :time 13944589000, :type :fail, :process 3, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 258, :time 14085033375, :type :invoke, :process 5, :f :cas, :value [2 4]}
+{:index 259, :time 14107409708, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 260, :time 14142513458, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 261, :time 14214001833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 262, :time 14242026042, :type :invoke, :process 3, :f :write, :value 0}
+{:index 263, :time 14246424125, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 264, :time 14380613250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 265, :time 14409786833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 266, :time 14445205917, :type :fail, :process 5, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 267, :time 14550521875, :type :fail, :process 3, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 268, :time 14582285750, :type :invoke, :process 1, :f :read, :value nil}
+{:index 269, :time 14747802833, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 270, :time 14773348917, :type :invoke, :process 2, :f :read, :value nil}
+{:index 271, :time 14852677250, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 272, :time 14874462333, :type :invoke, :process 4, :f :write, :value 0}
+{:index 273, :time 14885966333, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 274, :time 14935355167, :type :invoke, :process 0, :f :read, :value nil}
+{:index 275, :time 14967628500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 276, :time 15081658875, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 277, :time 15082534333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 278, :time 15195477375, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 279, :time 15241347667, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 280, :time 15252477042, :type :invoke, :process 0, :f :read, :value nil}
+{:index 281, :time 15353682000, :type :invoke, :process 3, :f :write, :value 3}
+{:index 282, :time 15384910583, :type :invoke, :process 4, :f :write, :value 4}
+{:index 283, :time 15387754792, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 284, :time 15482450625, :type :invoke, :process 2, :f :read, :value nil}
+{:index 285, :time 15495231125, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 286, :time 15501859333, :type :invoke, :process 1, :f :read, :value nil}
+{:index 287, :time 15557498250, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 288, :time 15583625208, :type :invoke, :process 5, :f :cas, :value [1 2]}
+{:index 289, :time 15769774625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 290, :time 15787315000, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 291, :time 15798157708, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 292, :time 15859184875, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 293, :time 15968216167, :type :invoke, :process 2, :f :read, :value nil}
+{:index 294, :time 16077668583, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 295, :time 16092226667, :type :fail, :process 5, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 296, :time 16101826958, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 297, :time 16161769875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 298, :time 16226455167, :type :invoke, :process 0, :f :read, :value nil}
+{:index 299, :time 16330887708, :type :invoke, :process 1, :f :read, :value nil}
+{:index 300, :time 16394387417, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 301, :time 16434793167, :type :invoke, :process 2, :f :read, :value nil}
+{:index 302, :time 16465175292, :type :fail, :process 3, :f :cas, :value [4 4], :error [:key-does-not-exist "key not found"]}
+{:index 303, :time 16505677750, :type :invoke, :process 3, :f :write, :value 4}
+{:index 304, :time 16639407375, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 305, :time 16639575708, :type :invoke, :process 1, :f :read, :value nil}
+{:index 306, :time 16642469875, :type :invoke, :process 4, :f :write, :value 0}
+{:index 307, :time 16740265833, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 308, :time 16769775583, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 309, :time 16771651500, :type :invoke, :process 5, :f :cas, :value [3 0]}
+{:index 310, :time 16869836625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 311, :time 16944406792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 312, :time 16976861000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 313, :time 17072736542, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 314, :time 17076826333, :type :fail, :process 5, :f :cas, :value [3 0], :error [:key-does-not-exist "key not found"]}
+{:index 315, :time 17120506792, :type :invoke, :process 5, :f :cas, :value [1 3]}
+{:index 316, :time 17228820625, :type :invoke, :process 3, :f :write, :value 4}
+{:index 317, :time 17249659958, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 318, :time 17355216833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 319, :time 17378276542, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 320, :time 17427707417, :type :fail, :process 5, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 321, :time 17488098125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 322, :time 17523867292, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 323, :time 17552997417, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 324, :time 17627193583, :type :invoke, :process 5, :f :write, :value 1}
+{:index 325, :time 17637601542, :type :invoke, :process 1, :f :read, :value nil}
+{:index 326, :time 17681330583, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 327, :time 17700911167, :type :invoke, :process 3, :f :write, :value 4}
+{:index 328, :time 17730430333, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 329, :time 17829736917, :type :invoke, :process 2, :f :read, :value nil}
+{:index 330, :time 17858264208, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 331, :time 17935863500, :type :invoke, :process 4, :f :write, :value 2}
+{:index 332, :time 17984924833, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 333, :time 18023876333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 334, :time 18033546667, :type :fail, :process 5, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 335, :time 18058260583, :type :invoke, :process 5, :f :cas, :value [2 0]}
+{:index 336, :time 18159773958, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 337, :time 18164306458, :type :invoke, :process 1, :f :read, :value nil}
+{:index 338, :time 18306184042, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 339, :time 18322563292, :type :invoke, :process 3, :f :cas, :value [0 3]}
+{:index 340, :time 18384329792, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 341, :time 18466302000, :type :fail, :process 4, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 342, :time 18472804042, :type :invoke, :process 2, :f :read, :value nil}
+{:index 343, :time 18599088083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 344, :time 18599240333, :type :invoke, :process 4, :f :write, :value 1}
+{:index 345, :time 18657378958, :type :fail, :process 5, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 346, :time 18715704250, :type :invoke, :process 5, :f :cas, :value [2 3]}
+{:index 347, :time 18749428167, :type :invoke, :process 0, :f :read, :value nil}
+{:index 348, :time 18769899583, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 349, :time 18770025083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 350, :time 18903622708, :type :fail, :process 3, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 351, :time 18903797500, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 352, :time 18961888417, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 353, :time 18962022375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 354, :time 19072285208, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 355, :time 19072360833, :type :invoke, :process 4, :f :cas, :value [0 3]}
+{:index 356, :time 19205274708, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 357, :time 19205342042, :type :invoke, :process 0, :f :read, :value nil}
+{:index 358, :time 19265067917, :type :fail, :process 5, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 359, :time 19265111375, :type :invoke, :process 5, :f :cas, :value [0 3]}
+{:index 360, :time 19375415875, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 361, :time 19375525083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 362, :time 19510242000, :type :fail, :process 3, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 363, :time 19510416458, :type :invoke, :process 3, :f :cas, :value [1 2]}
+{:index 364, :time 19567236208, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 365, :time 19567301792, :type :invoke, :process 2, :f :read, :value nil}
+{:index 366, :time 19678270125, :type :fail, :process 4, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 367, :time 19678335875, :type :invoke, :process 4, :f :cas, :value [1 4]}
+{:index 368, :time 19816061333, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 369, :time 19816195500, :type :invoke, :process 0, :f :read, :value nil}
+{:index 370, :time 19872741458, :type :fail, :process 5, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 371, :time 19981959042, :type :invoke, :process 5, :f :write, :value 0}
+{:index 372, :time 19985622833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 373, :time 20119322417, :type :fail, :process 3, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 374, :time 20175925625, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 375, :time 20179874500, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 376, :time 20289865125, :type :fail, :process 4, :f :cas, :value [1 4], :error [:key-does-not-exist "key not found"]}
+{:index 377, :time 20302292750, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 378, :time 20421459000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 379, :time 20479261208, :type :fail, :process 5, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 380, :time 20497105042, :type :invoke, :process 2, :f :read, :value nil}
+{:index 381, :time 20515457250, :type :invoke, :process 5, :f :cas, :value [0 4]}
+{:index 382, :time 20580903000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 383, :time 20608445833, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 384, :time 20636630958, :type :invoke, :process 1, :f :read, :value nil}
+{:index 385, :time 20696639542, :type :invoke, :process 4, :f :write, :value 1}
+{:index 386, :time 20725181708, :type :fail, :process 3, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 387, :time 20804084333, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 388, :time 20895868750, :type :invoke, :process 2, :f :read, :value nil}
+{:index 389, :time 20949233208, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 390, :time 21031301958, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 391, :time 21031499000, :type :invoke, :process 3, :f :write, :value 1}
+{:index 392, :time 21109823792, :type :fail, :process 5, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 393, :time 21216107917, :type :invoke, :process 5, :f :cas, :value [3 1]}
+{:index 394, :time 21251840583, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 395, :time 21339993833, :type :fail, :process 3, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 396, :time 21391688667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 397, :time 21413726958, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 398, :time 21470024958, :type :invoke, :process 1, :f :read, :value nil}
+{:index 399, :time 21516586208, :type :invoke, :process 2, :f :read, :value nil}
+{:index 400, :time 21586635125, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 401, :time 21698849625, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 402, :time 21737034875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 403, :time 21742689583, :type :fail, :process 5, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 404, :time 21774449792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 405, :time 21836161750, :type :invoke, :process 4, :f :cas, :value [1 3]}
+{:index 406, :time 21905725750, :type :invoke, :process 5, :f :cas, :value [1 4]}
+{:index 407, :time 22002816792, :type :fail, :process 3, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 408, :time 22047929917, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 409, :time 22061081000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 410, :time 22142038000, :type :fail, :process 4, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 411, :time 22244722917, :type :invoke, :process 4, :f :write, :value 2}
+{:index 412, :time 22306474000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 413, :time 22350229833, :type :fail, :process 5, :f :cas, :value [1 4], :error [:key-does-not-exist "key not found"]}
+{:index 414, :time 22436076958, :type :invoke, :process 5, :f :cas, :value [1 2]}
+{:index 415, :time 22446143875, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 416, :time 22564446708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 417, :time 22692522542, :type :invoke, :process 1, :f :read, :value nil}
+{:index 418, :time 22742522583, :type :fail, :process 5, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 419, :time 22749084333, :type :fail, :process 4, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 420, :time 22753472833, :type :invoke, :process 3, :f :cas, :value [2 2]}
+{:index 421, :time 22803312292, :type :invoke, :process 2, :f :read, :value nil}
+{:index 422, :time 22872281083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 423, :time 22898612375, :type :invoke, :process 0, :f :read, :value nil}
+{:index 424, :time 23054156083, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 425, :time 23057919917, :type :invoke, :process 1, :f :read, :value nil}
+{:index 426, :time 23110707125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 427, :time 23158356417, :type :invoke, :process 5, :f :write, :value 1}
+{:index 428, :time 23177124750, :type :fail, :process 3, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 429, :time 23291618458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 430, :time 23365150833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 431, :time 23466491083, :type :invoke, :process 3, :f :cas, :value [0 0]}
+{:index 432, :time 23467994750, :type :fail, :process 5, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 433, :time 23480974458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 434, :time 23614651000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 435, :time 23657541417, :type :invoke, :process 0, :f :read, :value nil}
+{:index 436, :time 23734341250, :type :invoke, :process 4, :f :cas, :value [2 4]}
+{:index 437, :time 23772331125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 438, :time 23785860583, :type :fail, :process 3, :f :cas, :value [0 0], :error [:key-does-not-exist "key not found"]}
+{:index 439, :time 23880738167, :type :invoke, :process 2, :f :read, :value nil}
+{:index 440, :time 23921800083, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 441, :time 24015540375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 442, :time 24091110167, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 443, :time 24149630375, :type :invoke, :process 0, :f :read, :value nil}
+{:index 444, :time 24187492708, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 445, :time 24223882458, :type :fail, :process 4, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 446, :time 24351480667, :type :invoke, :process 2, :f :read, :value nil}
+{:index 447, :time 24453379458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 448, :time 24487235333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 449, :time 24527666000, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 450, :time 24657929292, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 451, :time 24658262250, :type :invoke, :process 3, :f :write, :value 2}
+{:index 452, :time 24699891167, :type :invoke, :process 4, :f :cas, :value [3 4]}
+{:index 453, :time 24793603917, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 454, :time 24905109000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 455, :time 24989739292, :type :invoke, :process 5, :f :write, :value 4}
+{:index 456, :time 25004387208, :type :fail, :process 4, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 457, :time 25097653042, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 458, :time 25097844458, :type :invoke, :process 3, :f :write, :value 4}
+{:index 459, :time 25293860417, :type :invoke, :process 1, :f :read, :value nil}
+{:index 460, :time 25296340750, :type :fail, :process 5, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 461, :time 25401101208, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 462, :time 25430222375, :type :invoke, :process 4, :f :cas, :value [2 1]}
+{:index 463, :time 25601065792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 464, :time 25624944833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 465, :time 25704502917, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 466, :time 25785592875, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 467, :time 25837714375, :type :invoke, :process 5, :f :write, :value 3}
+{:index 468, :time 25906814417, :type :fail, :process 4, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 469, :time 25931667125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 470, :time 26013987958, :type :invoke, :process 4, :f :cas, :value [1 3]}
+{:index 471, :time 26090746083, :type :fail, :process 3, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 472, :time 26146766458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 473, :time 26236481417, :type :invoke, :process 3, :f :write, :value 2}
+{:index 474, :time 26237158375, :type :fail, :process 5, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 475, :time 26259561458, :type :invoke, :process 5, :f :cas, :value [1 3]}
+{:index 476, :time 26321079042, :type :fail, :process 4, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 477, :time 26326673458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 478, :time 26447875417, :type :invoke, :process 1, :f :read, :value nil}
+{:index 479, :time 26452981875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 480, :time 26571832083, :type :fail, :process 5, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 481, :time 26613335083, :type :invoke, :process 4, :f :cas, :value [3 3]}
+{:index 482, :time 26650595083, :type :invoke, :process 5, :f :write, :value 0}
+{:index 483, :time 26700267000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 484, :time 26755530292, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 485, :time 26755608375, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 486, :time 26772685667, :type :invoke, :process 1, :f :read, :value nil}
+{:index 487, :time 26874988583, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 488, :time 26921214083, :type :invoke, :process 2, :f :read, :value nil}
+{:index 489, :time 26989147083, :type :invoke, :process 3, :f :write, :value 0}
+{:index 490, :time 27061064042, :type :fail, :process 4, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 491, :time 27061137208, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 492, :time 27158236708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 493, :time 27178620583, :type :fail, :process 5, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 494, :time 27342486833, :type :invoke, :process 4, :f :write, :value 1}
+{:index 495, :time 27367303250, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 496, :time 27367423708, :type :fail, :process 3, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 497, :time 27484083375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 498, :time 27484254083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 499, :time 27595618583, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 500, :time 27748964417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 501, :time 27800928417, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 502, :time 27800968250, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 503, :time 27922470917, :type :invoke, :process 4, :f :cas, :value [3 2]}
+{:index 504, :time 28036941750, :type :fail, :process 3, :f :cas, :value [4 4], :error [:key-does-not-exist "key not found"]}
+{:index 505, :time 28037033083, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 506, :time 28047978208, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 507, :time 28107176833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 508, :time 28111085458, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 509, :time 28289966750, :type :invoke, :process 5, :f :write, :value 3}
+{:index 510, :time 28324453583, :type :invoke, :process 1, :f :read, :value nil}
+{:index 511, :time 28340236875, :type :fail, :process 4, :f :cas, :value [3 2], :error [:key-does-not-exist "key not found"]}
+{:index 512, :time 28340341792, :type :invoke, :process 2, :f :read, :value nil}
+{:index 513, :time 28351923083, :type :fail, :process 3, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 514, :time 28391410875, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 515, :time 28579339625, :type :invoke, :process 4, :f :cas, :value [1 2]}
+{:index 516, :time 28599851042, :type :fail, :process 5, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 517, :time 28599924458, :type :invoke, :process 5, :f :cas, :value [0 1]}
+{:index 518, :time 28643190500, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 519, :time 28655753000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 520, :time 28790529667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 521, :time 28898369292, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 522, :time 28946234958, :type :fail, :process 4, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 523, :time 28957444833, :type :fail, :process 3, :f :cas, :value [0 1], :error [:key-does-not-exist "key not found"]}
+{:index 524, :time 28977645625, :type :invoke, :process 1, :f :read, :value nil}
+{:index 525, :time 29039538542, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 526, :time 29046229000, :type :invoke, :process 4, :f :cas, :value [4 3]}
+{:index 527, :time 29200811708, :type :fail, :process 5, :f :cas, :value [0 1], :error [:key-does-not-exist "key not found"]}
+{:index 528, :time 29244650333, :type :invoke, :process 5, :f :cas, :value [3 1]}
+{:index 529, :time 29260753833, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 530, :time 29281651333, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 531, :time 29361076417, :type :invoke, :process 1, :f :read, :value nil}
+{:index 532, :time 29512153708, :type :invoke, :process 2, :f :read, :value nil}
+{:index 533, :time 29549412833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 534, :time 29564261667, :type :fail, :process 3, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 535, :time 29584543417, :type :fail, :process 4, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 536, :time 29584590542, :type :invoke, :process 4, :f :cas, :value [3 4]}
+{:index 537, :time 29596793042, :type :invoke, :process 3, :f :cas, :value [1 0]}
+{:index 538, :time 29707445292, :type :fail, :process 5, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 539, :time 29707498750, :type :invoke, :process 5, :f :cas, :value [3 3]}
+{:index 540, :time 29867958458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 541, :time 29868055833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 542, :time 29887519292, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 543, :time 29953051083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 544, :time 30009661792, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 545, :time 30009738542, :type :invoke, :process 2, :f :read, :value nil}
+{:index 546, :time 30171374500, :type :fail, :process 3, :f :cas, :value [1 0], :error [:key-does-not-exist "key not found"]}
+{:index 547, :time 30171469292, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 548, :time 30191553375, :type :fail, :process 4, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 549, :time 30191629042, :type :invoke, :process 4, :f :write, :value 0}
+{:index 550, :time 30314107333, :type :fail, :process 5, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 551, :time 30347616292, :type :invoke, :process 5, :f :cas, :value [3 1]}
+{:index 552, :time 30472794083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 553, :time 30494623625, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 554, :time 30539791625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 555, :time 30590754583, :type :invoke, :process 1, :f :read, :value nil}
+{:index 556, :time 30616648125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 557, :time 30616697458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 558, :time 30777087417, :type :fail, :process 3, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 559, :time 30777208292, :type :invoke, :process 3, :f :cas, :value [1 2]}
+{:index 560, :time 30803175208, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 561, :time 30921118125, :type :fail, :process 5, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 562, :time 30962389583, :type :invoke, :process 4, :f :write, :value 4}
+{:index 563, :time 31080632542, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 564, :time 31105512375, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 565, :time 31155861917, :type :invoke, :process 5, :f :write, :value 2}
+{:index 566, :time 31181165167, :type :invoke, :process 0, :f :read, :value nil}
+{:index 567, :time 31227178167, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 568, :time 31265512000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 569, :time 31361124125, :type :invoke, :process 2, :f :read, :value nil}
+{:index 570, :time 31383796917, :type :fail, :process 3, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 571, :time 31408179375, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 572, :time 31413832750, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 573, :time 31473667292, :type :invoke, :process 4, :f :cas, :value [4 4]}
+{:index 574, :time 31529142458, :type :fail, :process 5, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 575, :time 31589124125, :type :invoke, :process 5, :f :write, :value 3}
+{:index 576, :time 31685233917, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 577, :time 31703047208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 578, :time 31711123583, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 579, :time 31730345292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 580, :time 31834772667, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 581, :time 31834877333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 582, :time 31987687667, :type :fail, :process 3, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 583, :time 31987740875, :type :invoke, :process 3, :f :write, :value 4}
+{:index 584, :time 32012817000, :type :fail, :process 4, :f :cas, :value [4 4], :error [:key-does-not-exist "key not found"]}
+{:index 585, :time 32012850500, :type :invoke, :process 4, :f :cas, :value [2 4]}
+{:index 586, :time 32136795333, :type :fail, :process 5, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 587, :time 32136856375, :type :invoke, :process 5, :f :cas, :value [0 2]}
+{:index 588, :time 32291857083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 589, :time 32292003667, :type :invoke, :process 0, :f :read, :value nil}
+{:index 590, :time 32316295500, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 591, :time 32316543292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 592, :time 32441110125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 593, :time 32441247042, :type :invoke, :process 2, :f :read, :value nil}
+{:index 594, :time 32594162333, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 595, :time 32594218167, :type :invoke, :process 3, :f :write, :value 1}
+{:index 596, :time 32618817542, :type :fail, :process 4, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 597, :time 32744630792, :type :fail, :process 5, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 598, :time 32762532042, :type :invoke, :process 4, :f :cas, :value [0 1]}
+{:index 599, :time 32897877667, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 600, :time 32922158167, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 601, :time 32953401500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 602, :time 33006478250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 603, :time 33048072250, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 604, :time 33057969542, :type :invoke, :process 5, :f :cas, :value [2 0]}
+{:index 605, :time 33201504000, :type :fail, :process 3, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 606, :time 33224045125, :type :fail, :process 4, :f :cas, :value [0 1], :error [:key-does-not-exist "key not found"]}
+{:index 607, :time 33259769667, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 608, :time 33363158292, :type :fail, :process 5, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 609, :time 33458231708, :type :invoke, :process 2, :f :read, :value nil}
+{:index 610, :time 33503930125, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 611, :time 33527213250, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 612, :time 33574902625, :type :invoke, :process 3, :f :write, :value 2}
+{:index 613, :time 33763640208, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 614, :time 33773050083, :type :invoke, :process 5, :f :cas, :value [2 2]}
+{:index 615, :time 33829753792, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 616, :time 33879004292, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 617, :time 33965798792, :type :invoke, :process 1, :f :read, :value nil}
+{:index 618, :time 34045456417, :type :invoke, :process 3, :f :write, :value 1}
+{:index 619, :time 34077997292, :type :fail, :process 5, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 620, :time 34211969458, :type :invoke, :process 4, :f :cas, :value [3 3]}
+{:index 621, :time 34241160625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 622, :time 34258586792, :type :invoke, :process 2, :f :read, :value nil}
+{:index 623, :time 34271972417, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 624, :time 34352777042, :type :fail, :process 3, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 625, :time 34404330000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 626, :time 34546541500, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 627, :time 34549118208, :type :invoke, :process 5, :f :cas, :value [1 1]}
+{:index 628, :time 34563152375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 629, :time 34575148875, :type :fail, :process 4, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 630, :time 34655429000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 631, :time 34714636500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 632, :time 34868657667, :type :fail, :process 5, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 633, :time 34880771375, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 634, :time 34902430458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 635, :time 34958144583, :type :fail, :process 3, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 636, :time 35067765917, :type :invoke, :process 4, :f :cas, :value [2 2]}
+{:index 637, :time 35172253125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 638, :time 35242389083, :type :invoke, :process 5, :f :write, :value 0}
+{:index 639, :time 35261357875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 640, :time 35269892833, :type :invoke, :process 3, :f :cas, :value [1 4]}
+{:index 641, :time 35319733958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 642, :time 35373169417, :type :invoke, :process 1, :f :read, :value nil}
+{:index 643, :time 35375167708, :type :fail, :process 4, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 644, :time 35446531875, :type :invoke, :process 2, :f :read, :value nil}
+{:index 645, :time 35546990125, :type :fail, :process 5, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 646, :time 35573985375, :type :fail, :process 3, :f :cas, :value [1 4], :error [:key-does-not-exist "key not found"]}
+{:index 647, :time 35617192458, :type :invoke, :process 3, :f :cas, :value [2 1]}
+{:index 648, :time 35680731625, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 649, :time 35728770167, :type :invoke, :process 4, :f :cas, :value [2 2]}
+{:index 650, :time 35838898875, :type :invoke, :process 1, :f :read, :value nil}
+{:index 651, :time 35851302083, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 652, :time 35875874792, :type :invoke, :process 2, :f :read, :value nil}
+{:index 653, :time 35877315667, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 654, :time 35915492417, :type :invoke, :process 0, :f :read, :value nil}
+{:index 655, :time 36008815333, :type :invoke, :process 5, :f :cas, :value [4 2]}
+{:index 656, :time 36034524542, :type :fail, :process 4, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 657, :time 36109001292, :type :invoke, :process 4, :f :write, :value 4}
+{:index 658, :time 36181213792, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 659, :time 36181345125, :type :fail, :process 3, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 660, :time 36284711875, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 661, :time 36337115833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 662, :time 36356212167, :type :invoke, :process 1, :f :read, :value nil}
+{:index 663, :time 36486204792, :type :fail, :process 5, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 664, :time 36486338083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 665, :time 36551288958, :type :invoke, :process 5, :f :write, :value 3}
+{:index 666, :time 36608834083, :type :invoke, :process 0, :f :read, :value nil}
+{:index 667, :time 36641428917, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 668, :time 36686154875, :type :invoke, :process 4, :f :write, :value 2}
+{:index 669, :time 36791250500, :type :fail, :process 3, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 670, :time 36808281208, :type :invoke, :process 3, :f :write, :value 1}
+{:index 671, :time 36858282167, :type :fail, :process 5, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 672, :time 36884521792, :type :invoke, :process 2, :f :read, :value nil}
+{:index 673, :time 36944299417, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 674, :time 37002899250, :type :invoke, :process 5, :f :cas, :value [2 4]}
+{:index 675, :time 37095663000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 676, :time 37188180875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 677, :time 37190877167, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 678, :time 37228792500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 679, :time 37249277083, :type :fail, :process 4, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 680, :time 37399023292, :type :fail, :process 3, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 681, :time 37399096750, :type :invoke, :process 2, :f :read, :value nil}
+{:index 682, :time 37496450125, :type :fail, :process 5, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 683, :time 37555052167, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 684, :time 37569133042, :type :invoke, :process 3, :f :write, :value 2}
+{:index 685, :time 37701796750, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 686, :time 37728765458, :type :invoke, :process 1, :f :read, :value nil}
+{:index 687, :time 37800149375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 688, :time 37816323542, :type :invoke, :process 2, :f :read, :value nil}
+{:index 689, :time 37973964167, :type :invoke, :process 4, :f :write, :value 0}
+{:index 690, :time 38008232667, :type :fail, :process 3, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 691, :time 38029195500, :type :invoke, :process 0, :f :read, :value nil}
+{:index 692, :time 38054815042, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 693, :time 38065534167, :type :invoke, :process 5, :f :write, :value 1}
+{:index 694, :time 38147950667, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 695, :time 38243366625, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 696, :time 38249386750, :type :invoke, :process 1, :f :read, :value nil}
+{:index 697, :time 38283361417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 698, :time 38340933292, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 699, :time 38359789875, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 700, :time 38447300292, :type :fail, :process 5, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 701, :time 38468329500, :type :invoke, :process 0, :f :read, :value nil}
+{:index 702, :time 38490889042, :type :invoke, :process 4, :f :cas, :value [4 0]}
+{:index 703, :time 38535623042, :type :invoke, :process 5, :f :cas, :value [1 3]}
+{:index 704, :time 38643769917, :type :fail, :process 3, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 705, :time 38650552500, :type :invoke, :process 3, :f :write, :value 3}
+{:index 706, :time 38662281583, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 707, :time 38749677667, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 708, :time 38760816667, :type :invoke, :process 1, :f :read, :value nil}
+{:index 709, :time 38853077292, :type :invoke, :process 2, :f :read, :value nil}
+{:index 710, :time 38946962167, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 711, :time 38965382583, :type :fail, :process 4, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 712, :time 39022983000, :type :invoke, :process 4, :f :cas, :value [4 2]}
+{:index 713, :time 39053080583, :type :fail, :process 5, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 714, :time 39090472333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 715, :time 39185748958, :type :invoke, :process 5, :f :cas, :value [4 2]}
+{:index 716, :time 39251381667, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 717, :time 39268362417, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 718, :time 39357234375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 719, :time 39375564875, :type :invoke, :process 3, :f :write, :value 0}
+{:index 720, :time 39440508708, :type :invoke, :process 1, :f :read, :value nil}
+{:index 721, :time 39444405667, :type :invoke, :process 2, :f :read, :value nil}
+{:index 722, :time 39553923542, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 723, :time 39554014792, :type :invoke, :process 0, :f :read, :value nil}
+{:index 724, :time 39571121583, :type :fail, :process 4, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 725, :time 39620562542, :type :invoke, :process 4, :f :cas, :value [1 1]}
+{:index 726, :time 39660294375, :type :fail, :process 5, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 727, :time 39715525875, :type :invoke, :process 5, :f :write, :value 1}
+{:index 728, :time 39858471167, :type :fail, :process 3, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 729, :time 39858627333, :type :invoke, :process 3, :f :cas, :value [0 3]}
+{:index 730, :time 39874170125, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 731, :time 39964957875, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 732, :time 40048858542, :type :invoke, :process 1, :f :read, :value nil}
+{:index 733, :time 40160866125, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 734, :time 40177560125, :type :fail, :process 4, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 735, :time 40225548458, :type :invoke, :process 4, :f :cas, :value [4 2]}
+{:index 736, :time 40267501708, :type :fail, :process 5, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 737, :time 40267541917, :type :invoke, :process 5, :f :write, :value 2}
+{:index 738, :time 40458224792, :type :invoke, :process 0, :f :read, :value nil}
+{:index 739, :time 40463795583, :type :fail, :process 3, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 740, :time 40479876125, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 741, :time 40557135250, :type :invoke, :process 1, :f :read, :value nil}
+{:index 742, :time 40570835958, :type :fail, :process 5, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 743, :time 40646648958, :type :invoke, :process 3, :f :cas, :value [0 4]}
+{:index 744, :time 40769888917, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 745, :time 40784852292, :type :fail, :process 4, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 746, :time 40791094417, :type :invoke, :process 4, :f :cas, :value [4 3]}
+{:index 747, :time 40836893125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 748, :time 40964342000, :type :invoke, :process 5, :f :cas, :value [0 2]}
+{:index 749, :time 41075439875, :type :fail, :process 3, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 750, :time 41088767917, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 751, :time 41127360500, :type :invoke, :process 3, :f :cas, :value [0 4]}
+{:index 752, :time 41240931792, :type :invoke, :process 1, :f :read, :value nil}
+{:index 753, :time 41269447583, :type :fail, :process 5, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 754, :time 41378464500, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 755, :time 41391173792, :type :fail, :process 4, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 756, :time 41415068917, :type :invoke, :process 2, :f :read, :value nil}
+{:index 757, :time 41516065500, :type :invoke, :process 0, :f :read, :value nil}
+{:index 758, :time 41651285917, :type :invoke, :process 4, :f :write, :value 4}
+{:index 759, :time 41680936958, :type :fail, :process 3, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 760, :time 41685734417, :type :invoke, :process 5, :f :write, :value 2}
+{:index 761, :time 41693810542, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 762, :time 41718806417, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 763, :time 41850458292, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 764, :time 41984491792, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 765, :time 41996852792, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 766, :time 42022113458, :type :fail, :process 5, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 767, :time 42047852042, :type :invoke, :process 0, :f :read, :value nil}
+{:index 768, :time 42078425458, :type :invoke, :process 1, :f :read, :value nil}
+{:index 769, :time 42180785667, :type :invoke, :process 2, :f :read, :value nil}
+{:index 770, :time 42208242708, :type :invoke, :process 4, :f :cas, :value [0 3]}
+{:index 771, :time 42280577167, :type :invoke, :process 5, :f :cas, :value [0 4]}
+{:index 772, :time 42288073208, :type :fail, :process 3, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 773, :time 42412712375, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 774, :time 42474980042, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 775, :time 42487335458, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 776, :time 42593182042, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 777, :time 42593352917, :type :invoke, :process 0, :f :read, :value nil}
+{:index 778, :time 42687708750, :type :invoke, :process 1, :f :read, :value nil}
+{:index 779, :time 42705563083, :type :fail, :process 4, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 780, :time 42724931083, :type :invoke, :process 2, :f :read, :value nil}
+{:index 781, :time 42791010625, :type :fail, :process 5, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 782, :time 42807598625, :type :invoke, :process 4, :f :cas, :value [0 4]}
+{:index 783, :time 42897970833, :type :fail, :process 3, :f :cas, :value [4 1], :error [:key-does-not-exist "key not found"]}
+{:index 784, :time 42958056125, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 785, :time 43010250208, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 786, :time 43096789250, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 787, :time 43103463583, :type :invoke, :process 5, :f :cas, :value [2 2]}
+{:index 788, :time 43152923958, :type :invoke, :process 1, :f :read, :value nil}
+{:index 789, :time 43195430542, :type :invoke, :process 2, :f :read, :value nil}
+{:index 790, :time 43199488458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 791, :time 43313273208, :type :fail, :process 4, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 792, :time 43346788083, :type :invoke, :process 4, :f :cas, :value [2 1]}
+{:index 793, :time 43393004833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 794, :time 43409945750, :type :fail, :process 5, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 795, :time 43487687292, :type :invoke, :process 5, :f :write, :value 1}
+{:index 796, :time 43504569042, :type :fail, :process 3, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 797, :time 43609671792, :type :invoke, :process 3, :f :cas, :value [0 2]}
+{:index 798, :time 43618773667, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 799, :time 43716223917, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 800, :time 43800886208, :type :invoke, :process 1, :f :read, :value nil}
+{:index 801, :time 43809552333, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 802, :time 43878781792, :type :invoke, :process 0, :f :read, :value nil}
+{:index 803, :time 43901139667, :type :invoke, :process 2, :f :read, :value nil}
+{:index 804, :time 43922065167, :type :fail, :process 4, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 805, :time 43958230542, :type :invoke, :process 4, :f :write, :value 1}
+{:index 806, :time 44019868833, :type :fail, :process 5, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 807, :time 44112135750, :type :fail, :process 3, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 808, :time 44158236833, :type :invoke, :process 3, :f :write, :value 4}
+{:index 809, :time 44165945542, :type :invoke, :process 5, :f :cas, :value [3 3]}
+{:index 810, :time 44224769667, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 811, :time 44224815083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 812, :time 44324190833, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 813, :time 44324826917, :type :invoke, :process 2, :f :read, :value nil}
+{:index 814, :time 44415464458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 815, :time 44465329917, :type :invoke, :process 0, :f :read, :value nil}
+{:index 816, :time 44530061875, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 817, :time 44626359083, :type :fail, :process 5, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 818, :time 44626427375, :type :invoke, :process 5, :f :cas, :value [4 0]}
+{:index 819, :time 44631395042, :type :invoke, :process 4, :f :write, :value 1}
+{:index 820, :time 44719089042, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 821, :time 44795500958, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 822, :time 44835650792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 823, :time 44864717000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 824, :time 44929687417, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 825, :time 44938941417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 826, :time 45022467042, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 827, :time 45046669083, :type :invoke, :process 0, :f :read, :value nil}
+{:index 828, :time 45140516250, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 829, :time 45140610042, :type :invoke, :process 4, :f :cas, :value [0 3]}
+{:index 830, :time 45233955708, :type :fail, :process 5, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 831, :time 45326660583, :type :fail, :process 3, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 832, :time 45339812125, :type :invoke, :process 5, :f :cas, :value [1 2]}
+{:index 833, :time 45430779792, :type :invoke, :process 3, :f :write, :value 3}
+{:index 834, :time 45445077583, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 835, :time 45536922708, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 836, :time 45613262625, :type :invoke, :process 1, :f :read, :value nil}
+{:index 837, :time 45628762333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 838, :time 45631174708, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 839, :time 45643723375, :type :invoke, :process 0, :f :read, :value nil}
+{:index 840, :time 45749494083, :type :fail, :process 4, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 841, :time 45749678000, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 842, :time 45841665375, :type :fail, :process 5, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 843, :time 45841771833, :type :invoke, :process 5, :f :cas, :value [4 4]}
+{:index 844, :time 45936085500, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 845, :time 46041653750, :type :invoke, :process 3, :f :cas, :value [3 2]}
+{:index 846, :time 46053845458, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 847, :time 46144889958, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 848, :time 46166197375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 849, :time 46239810458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 850, :time 46324668583, :type :invoke, :process 0, :f :read, :value nil}
+{:index 851, :time 46356823208, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 852, :time 46402730375, :type :invoke, :process 4, :f :cas, :value [1 3]}
+{:index 853, :time 46419444417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 854, :time 46448030708, :type :fail, :process 5, :f :cas, :value [4 4], :error [:key-does-not-exist "key not found"]}
+{:index 855, :time 46477544958, :type :invoke, :process 5, :f :cas, :value [2 0]}
+{:index 856, :time 46541871250, :type :fail, :process 3, :f :cas, :value [3 2], :error [:key-does-not-exist "key not found"]}
+{:index 857, :time 46642465125, :type :invoke, :process 3, :f :cas, :value [2 0]}
+{:index 858, :time 46660105917, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 859, :time 46750964542, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 860, :time 46774891250, :type :invoke, :process 1, :f :read, :value nil}
+{:index 861, :time 46845141125, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 862, :time 46962469708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 863, :time 46964980292, :type :fail, :process 4, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 864, :time 47054047958, :type :fail, :process 5, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 865, :time 47078803708, :type :invoke, :process 2, :f :read, :value nil}
+{:index 866, :time 47148636458, :type :fail, :process 3, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 867, :time 47237697125, :type :invoke, :process 3, :f :write, :value 3}
+{:index 868, :time 47270117000, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 869, :time 47379913583, :type :invoke, :process 1, :f :read, :value nil}
+{:index 870, :time 47384361583, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 871, :time 47452773583, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 872, :time 47458307208, :type :invoke, :process 4, :f :cas, :value [1 3]}
+{:index 873, :time 47473797542, :type :invoke, :process 0, :f :read, :value nil}
+{:index 874, :time 47516985833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 875, :time 47652314917, :type :invoke, :process 5, :f :cas, :value [1 4]}
+{:index 876, :time 47686370333, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 877, :time 47756385917, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 878, :time 47790443583, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 879, :time 47817294833, :type :invoke, :process 1, :f :read, :value nil}
+{:index 880, :time 47823729125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 881, :time 47987694458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 882, :time 47991280667, :type :fail, :process 4, :f :cas, :value [1 3], :error [:key-does-not-exist "key not found"]}
+{:index 883, :time 48030512833, :type :invoke, :process 4, :f :cas, :value [4 1]}
+{:index 884, :time 48060068458, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 885, :time 48125922375, :type :fail, :process 5, :f :cas, :value [1 4], :error [:key-does-not-exist "key not found"]}
+{:index 886, :time 48158932292, :type :invoke, :process 5, :f :cas, :value [0 3]}
+{:index 887, :time 48294975750, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 888, :time 48300886625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 889, :time 48325824375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 890, :time 48362928250, :type :fail, :process 3, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 891, :time 48362982208, :type :invoke, :process 3, :f :cas, :value [2 1]}
+{:index 892, :time 48429900125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 893, :time 48491789042, :type :invoke, :process 2, :f :read, :value nil}
+{:index 894, :time 48600982917, :type :fail, :process 4, :f :cas, :value [4 1], :error [:key-does-not-exist "key not found"]}
+{:index 895, :time 48601112375, :type :invoke, :process 4, :f :write, :value 0}
+{:index 896, :time 48666359250, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 897, :time 48666441708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 898, :time 48733032208, :type :fail, :process 5, :f :cas, :value [0 3], :error [:key-does-not-exist "key not found"]}
+{:index 899, :time 48854272833, :type :invoke, :process 5, :f :cas, :value [4 3]}
+{:index 900, :time 48905635667, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 901, :time 48970204333, :type :fail, :process 3, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 902, :time 49006990375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 903, :time 49038118125, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 904, :time 49204258333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 905, :time 49208437667, :type :fail, :process 4, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 906, :time 49266587250, :type :invoke, :process 3, :f :cas, :value [0 4]}
+{:index 907, :time 49272417542, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 908, :time 49311956083, :type :invoke, :process 4, :f :cas, :value [0 0]}
+{:index 909, :time 49346795542, :type :fail, :process 5, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 910, :time 49357125292, :type :invoke, :process 5, :f :cas, :value [2 2]}
+{:index 911, :time 49457001542, :type :invoke, :process 0, :f :read, :value nil}
+{:index 912, :time 49513329708, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 913, :time 49575963917, :type :fail, :process 3, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 914, :time 49650032500, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 915, :time 49656289917, :type :invoke, :process 3, :f :cas, :value [2 3]}
+{:index 916, :time 49791558167, :type :invoke, :process 1, :f :read, :value nil}
+{:index 917, :time 49816814917, :type :fail, :process 4, :f :cas, :value [0 0], :error [:key-does-not-exist "key not found"]}
+{:index 918, :time 49880607375, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 919, :time 49954838667, :type :fail, :process 5, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 920, :time 49988313083, :type :invoke, :process 4, :f :cas, :value [4 0]}
+{:index 921, :time 50120222000, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 922, :time 50185266500, :type :fail, :process 3, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 923, :time 50188981917, :type :invoke, :process 0, :f :read, :value nil}
+{:index 924, :time 50362370167, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 925, :time 50422136542, :type :fail, :process 4, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 926, :time 50422202833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 927, :time 50493951167, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 928, :time 50541520292, :type :invoke, :process 4, :f :cas, :value [2 1]}
+{:index 929, :time 50566848708, :type :invoke, :process 5, :f :cas, :value [3 1]}
+{:index 930, :time 50726889375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 931, :time 50727082417, :type :invoke, :process 0, :f :read, :value nil}
+{:index 932, :time 50796738292, :type :fail, :process 3, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 933, :time 50846220958, :type :fail, :process 4, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 934, :time 50893026458, :type :invoke, :process 1, :f :read, :value nil}
+{:index 935, :time 51030829333, :type :fail, :process 5, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 936, :time 51096082625, :type :invoke, :process 2, :f :read, :value nil}
+{:index 937, :time 51100679333, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 938, :time 51169377833, :type :invoke, :process 3, :f :write, :value 4}
+{:index 939, :time 51175776792, :type :invoke, :process 4, :f :write, :value 2}
+{:index 940, :time 51201563292, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 941, :time 51337624125, :type :invoke, :process 5, :f :cas, :value [2 1]}
+{:index 942, :time 51402653917, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 943, :time 51449946000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 944, :time 51477072750, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 945, :time 51503986250, :type :fail, :process 4, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 946, :time 51603190833, :type :invoke, :process 1, :f :read, :value nil}
+{:index 947, :time 51642961292, :type :invoke, :process 2, :f :read, :value nil}
+{:index 948, :time 51707314042, :type :fail, :process 5, :f :cas, :value [2 1], :error [:key-does-not-exist "key not found"]}
+{:index 949, :time 51780382917, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 950, :time 51783883208, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 951, :time 51848774167, :type :invoke, :process 4, :f :cas, :value [2 0]}
+{:index 952, :time 51907352875, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 953, :time 51955338458, :type :invoke, :process 5, :f :cas, :value [2 0]}
+{:index 954, :time 52011088458, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 955, :time 52090530125, :type :fail, :process 3, :f :cas, :value [4 0], :error [:key-does-not-exist "key not found"]}
+{:index 956, :time 52096437250, :type :invoke, :process 3, :f :cas, :value [3 0]}
+{:index 957, :time 52210654167, :type :fail, :process 4, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 958, :time 52234381292, :type :invoke, :process 4, :f :write, :value 4}
+{:index 959, :time 52276561000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 960, :time 52315928708, :type :fail, :process 5, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 961, :time 52401729750, :type :fail, :process 3, :f :cas, :value [3 0], :error [:key-does-not-exist "key not found"]}
+{:index 962, :time 52465357708, :type :invoke, :process 1, :f :read, :value nil}
+{:index 963, :time 52542730500, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 964, :time 52591556083, :type :invoke, :process 3, :f :cas, :value [2 3]}
+{:index 965, :time 52706992083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 966, :time 52789739458, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 967, :time 52848496792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 968, :time 52890872667, :type :invoke, :process 2, :f :read, :value nil}
+{:index 969, :time 53010655792, :type :fail, :process 3, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 970, :time 53044241542, :type :invoke, :process 0, :f :read, :value nil}
+{:index 971, :time 53152571000, :type :fail, :process 4, :f :cas, :value [0 2], :error [:key-does-not-exist "key not found"]}
+{:index 972, :time 53197835250, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 973, :time 53198005000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 974, :time 53253692083, :type :invoke, :process 2, :f :read, :value nil}
+{:index 975, :time 53352660333, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 976, :time 53419064458, :type :invoke, :process 3, :f :cas, :value [0 4]}
+{:index 977, :time 53504356083, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 978, :time 53515184000, :type :invoke, :process 4, :f :write, :value 1}
+{:index 979, :time 53559702833, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 980, :time 53612109292, :type :invoke, :process 5, :f :cas, :value [3 4]}
+{:index 981, :time 53710973792, :type :invoke, :process 2, :f :read, :value nil}
+{:index 982, :time 53727635000, :type :fail, :process 3, :f :cas, :value [0 4], :error [:key-does-not-exist "key not found"]}
+{:index 983, :time 53820123250, :type :fail, :process 4, :f :write, :value 1, :error [:abort "Server response timeout"]}
+{:index 984, :time 53832696542, :type :invoke, :process 3, :f :write, :value 0}
+{:index 985, :time 53892443458, :type :invoke, :process 4, :f :cas, :value [4 1]}
+{:index 986, :time 53918783625, :type :fail, :process 5, :f :cas, :value [3 4], :error [:key-does-not-exist "key not found"]}
+{:index 987, :time 53991483208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 988, :time 54065485292, :type :invoke, :process 5, :f :cas, :value [1 2]}
+{:index 989, :time 54138909042, :type :fail, :process 3, :f :write, :value 0, :error [:abort "Server response timeout"]}
+{:index 990, :time 54197938667, :type :fail, :process 4, :f :cas, :value [4 1], :error [:key-does-not-exist "key not found"]}
+{:index 991, :time 54217853250, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 992, :time 54222084375, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 993, :time 54419521792, :type :invoke, :process 4, :f :cas, :value [4 1]}
+{:index 994, :time 54442795708, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 995, :time 54525558000, :type :fail, :process 5, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 996, :time 54545403625, :type :invoke, :process 5, :f :cas, :value [2 0]}
+{:index 997, :time 54681594917, :type :invoke, :process 0, :f :read, :value nil}
+{:index 998, :time 54689786958, :type :invoke, :process 1, :f :read, :value nil}
+{:index 999, :time 54725352708, :type :fail, :process 4, :f :cas, :value [4 1], :error [:key-does-not-exist "key not found"]}
+{:index 1000, :time 54746266000, :type :fail, :process 3, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 1001, :time 54811044375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1002, :time 54851662042, :type :fail, :process 5, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 1003, :time 54912260750, :type :invoke, :process 3, :f :write, :value 3}
+{:index 1004, :time 55000717000, :type :invoke, :process 4, :f :cas, :value [2 3]}
+{:index 1005, :time 55013570583, :type :invoke, :process 5, :f :write, :value 4}
+{:index 1006, :time 55030043792, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1007, :time 55031214958, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1008, :time 55048253125, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1009, :time 55156114292, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1010, :time 55191283417, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1011, :time 55335330833, :type :fail, :process 4, :f :cas, :value [2 3], :error [:key-does-not-exist "key not found"]}
+{:index 1012, :time 55346088167, :type :invoke, :process 4, :f :cas, :value [3 3]}
+{:index 1013, :time 55352184000, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 1014, :time 55459124042, :type :fail, :process 5, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 1015, :time 55494825042, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1016, :time 55520528417, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 1017, :time 55638468750, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1018, :time 55654608208, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1019, :time 55692980333, :type :invoke, :process 5, :f :cas, :value [2 4]}
+{:index 1020, :time 55801046208, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1021, :time 55819049208, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1022, :time 55931666042, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1023, :time 55946012792, :type :fail, :process 4, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 1024, :time 55959608250, :type :fail, :process 3, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 1025, :time 56106488500, :type :fail, :process 5, :f :cas, :value [2 4], :error [:key-does-not-exist "key not found"]}
+{:index 1026, :time 56106690292, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1027, :time 56239260958, :type :invoke, :process 4, :f :cas, :value [4 2]}
+{:index 1028, :time 56251429542, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1029, :time 56254459958, :type :invoke, :process 5, :f :cas, :value [1 1]}
+{:index 1030, :time 56286530500, :type :invoke, :process 3, :f :cas, :value [1 1]}
+{:index 1031, :time 56411261083, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1032, :time 56411334250, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1033, :time 56464542542, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1034, :time 56555098000, :type :fail, :process 4, :f :cas, :value [4 2], :error [:key-does-not-exist "key not found"]}
+{:index 1035, :time 56632099833, :type :invoke, :process 4, :f :write, :value 2}
+{:index 1036, :time 56713921208, :type :fail, :process 3, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 1037, :time 56714004792, :type :fail, :process 5, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 1038, :time 56715666125, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 1039, :time 56789268167, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1040, :time 56936452083, :type :fail, :process 4, :f :write, :value 2, :error [:abort "Server response timeout"]}
+{:index 1041, :time 56974186083, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1042, :time 56986552792, :type :invoke, :process 5, :f :cas, :value [3 3]}
+{:index 1043, :time 57018811375, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1044, :time 57065748458, :type :invoke, :process 4, :f :cas, :value [1 2]}
+{:index 1045, :time 57239264250, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1046, :time 57247599417, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1047, :time 57279630500, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1048, :time 57322808958, :type :fail, :process 3, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 1049, :time 57339339333, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 1050, :time 57423777417, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1051, :time 57543483833, :type :fail, :process 4, :f :cas, :value [1 2], :error [:key-does-not-exist "key not found"]}
+{:index 1052, :time 57585502208, :type :fail, :process 5, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 1053, :time 57608208292, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1054, :time 57629856500, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1055, :time 57737172000, :type :invoke, :process 4, :f :cas, :value [2 0]}
+{:index 1056, :time 57888627250, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1057, :time 57908249042, :type :invoke, :process 5, :f :cas, :value [1 1]}
+{:index 1058, :time 57916728833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1059, :time 57934385875, :type :fail, :process 3, :f :cas, :value [4 3], :error [:key-does-not-exist "key not found"]}
+{:index 1060, :time 58041017625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1061, :time 58048177500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1062, :time 58216007000, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1063, :time 58217023125, :type :fail, :process 5, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 1064, :time 58219272292, :type :fail, :process 4, :f :cas, :value [2 0], :error [:key-does-not-exist "key not found"]}
+{:index 1065, :time 58349189000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1066, :time 58366444000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1067, :time 58493517292, :type :invoke, :process 3, :f :write, :value 3}
+{:index 1068, :time 58506845083, :type :invoke, :process 4, :f :write, :value 4}
+{:index 1069, :time 58524566167, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1070, :time 58524667458, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1071, :time 58628316000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1072, :time 58636154792, :type :invoke, :process 5, :f :cas, :value [2 2]}
+{:index 1073, :time 58673494875, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1074, :time 58746098458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1075, :time 58747672708, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1076, :time 58827933000, :type :fail, :process 4, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 1077, :time 58899889083, :type :invoke, :process 4, :f :cas, :value [3 3]}
+{:index 1078, :time 58941720958, :type :fail, :process 5, :f :cas, :value [2 2], :error [:key-does-not-exist "key not found"]}
+{:index 1079, :time 58941778125, :type :invoke, :process 5, :f :cas, :value [1 1]}
+{:index 1080, :time 58975614250, :type :fail, :process 3, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 1081, :time 59054399375, :type :invoke, :process 3, :f :write, :value 4}
+{:index 1082, :time 59130997917, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1083, :time 59210311750, :type :invoke, :process 1, :f :read, :value nil}
+{:index 1084, :time 59245434417, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1085, :time 59280197125, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1086, :time 59315400083, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1087, :time 59434329833, :type :fail, :process 4, :f :cas, :value [3 3], :error [:key-does-not-exist "key not found"]}
+{:index 1088, :time 59498023833, :type :invoke, :process 4, :f :write, :value 3}
+{:index 1089, :time 59549631417, :type :fail, :process 5, :f :cas, :value [1 1], :error [:key-does-not-exist "key not found"]}
+{:index 1090, :time 59583031417, :type :fail, :process 3, :f :write, :value 4, :error [:abort "Server response timeout"]}
+{:index 1091, :time 59624865417, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 1092, :time 59738955833, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1093, :time 59747618917, :type :invoke, :process 2, :f :read, :value nil}
+{:index 1094, :time 59886141292, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1095, :time 59940965542, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1096, :time 60042458250, :type :fail, :process 4, :f :write, :value 3, :error [:abort "Server response timeout"]}
+{:index 1097, :time 60054504875, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "not found"]}
+{:index 1098, :time 60191505000, :type :fail, :process 3, :f :cas, :value [3 1], :error [:key-does-not-exist "key not found"]}
+{:index 1099, :time 60495602000, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "not found"]}

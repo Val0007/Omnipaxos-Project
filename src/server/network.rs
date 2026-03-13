@@ -183,6 +183,7 @@ impl Network {
         let cluster_sender = self.cluster_message_sender.clone();
         let max_client_id_handle = self.max_client_id.clone();
         let batch_size = self.batch_size;
+        let reconnect_sender = self.reconnect_peers.clone();
         tokio::spawn(async move {
             let listener = TcpListener::bind(listen_address).await.unwrap();
             loop {
@@ -198,6 +199,7 @@ impl Network {
                             new_client_tx.clone(),
                             max_client_id_handle.clone(),
                             batch_size,
+                            reconnect_sender.clone()
                         ));
                     }
                     Err(e) => error!("Error listening for new connection: {:?}", e),
@@ -217,6 +219,7 @@ impl Network {
         new_client_tx: Sender<ClientConnection>,
         max_client_id_handle: Arc<Mutex<ClientId>>,
         batch_size: usize,
+        reconnect_sender:Sender<ReconnectEvent>
     ) {
         let mut registration_connection = frame_registration_connection(connection);
         let registration_message = registration_connection.next().await;
@@ -233,9 +236,13 @@ impl Network {
 
                 //only use the connection sink here for clusters , after the functions goes out of scope
                 //this also goes out of scope and we dont use it for the clients anymore
-               if let Err(err) = peer_connection_sender.send(NewConnection::ToPeer(peer_conn)).await {
-    // Receiver is gone (init finished), this is a reconnect — ignore
-    info!("Init channel closed, dropping inbound peer connection from {node_id}");
+            let new_connection = NewConnection::ToPeer(peer_conn);
+                if let Err(rejected) = peer_connection_sender.send(new_connection).await {
+                // Receiver is gone (init finished), route through reconnect channel
+                reconnect_sender.send(ReconnectEvent::Success { 
+                 peer_id: node_id, 
+                 conn: rejected.0  // get the value back out of the SendError
+             }).await.unwrap();
 }
             }
             Some(Ok(RegistrationMessage::ClientRegister)) => {
@@ -314,7 +321,7 @@ impl Network {
     let peer_address = self.socket_addr[idx];
     let batch_size = self.batch_size;
     let cluster_sender = self.cluster_message_sender.clone();
-    let sender = self.reconnect_peers.clone();
+    let sender: Sender<ReconnectEvent> = self.reconnect_peers.clone();
     let my_id = self.id.clone();
 
     tokio::spawn(async move {

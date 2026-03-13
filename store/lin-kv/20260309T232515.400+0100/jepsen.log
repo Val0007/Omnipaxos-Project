@@ -1,0 +1,572 @@
+2026-03-09 23:25:15,453{GMT}	INFO	[jepsen test runner] jepsen.core: Test version c6f93e91a319d9d3f3adbe62cadb64f7b53b436f (plus uncommitted changes)
+2026-03-09 23:25:15,454{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w lin-kv --bin ./target/debug/maelstrom --node-count 3 --time-limit 60 --rate 10 --concurrency 2n
+2026-03-09 23:25:15,506{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 3
+ :availability nil
+ :max-txn-length 4
+ :concurrency 6
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x1f9b8c23"
+         "maelstrom.db$db$reify__16612@1f9b8c23"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "lin-kv"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x26e74d50" "2026-03-09T23:25:15.400+01:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x6bdc984"
+         "maelstrom.net$jepsen_net$reify__15721@6bdc984"]
+ :client
+ #object[maelstrom.workload.lin_kv$client$reify__20973
+         "0x1f299fc3"
+         "maelstrom.workload.lin_kv$client$reify__20973@1f299fc3"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0xb997735"
+         "java.util.concurrent.CyclicBarrier@b997735"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x178826db"
+         "jepsen.checker$compose$reify__11089@178826db"]
+ :argv
+ ("test"
+  "-w"
+  "lin-kv"
+  "--bin"
+  "./target/debug/maelstrom"
+  "--node-count"
+  "3"
+  "--time-limit"
+  "60"
+  "--rate"
+  "10"
+  "--concurrency"
+  "2n")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@7f913c47"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@2c9573f1"]})
+ :nodes ["n0" "n1" "n2"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "./target/debug/maelstrom"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x37a5ac85"
+         (jepsen.generator.TimeLimit
+          {:limit 60000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x239fdf8f"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@239fdf8f"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x1acd660d"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@1acd660d"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.OnThreads
+                                        {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                                         :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                                 "0x22f3b213"
+                                                                 "jepsen.generator.context$make_thread_filter$lazy_filter__12077@22f3b213"],
+                                         :gen (jepsen.independent.ConcurrentGenerator
+                                               {:n 6,
+                                                :fgen #object[jepsen.tests.linearizable_register$test$fn__17385
+                                                              "0xe18848d"
+                                                              "jepsen.tests.linearizable_register$test$fn__17385@e18848d"],
+                                                :group->threads nil,
+                                                :thread->group nil,
+                                                :group->context-filter nil,
+                                                :keys (0 1 2 3 4 5 6 7 ...),
+                                                :gens nil})})})})]})})]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0x22aaa811"
+         "maelstrom.net$jepsen_os$reify__15724@22aaa811"]
+ :time-limit 60
+ :workload :lin-kv
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2026-03-09 23:25:16,848{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2026-03-09 23:25:16,849{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2026-03-09 23:25:16,850{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2026-03-09 23:25:16,851{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2026-03-09 23:25:16,851{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2026-03-09 23:25:16,851{GMT}	INFO	[jepsen node n1] maelstrom.process: launching ./target/debug/maelstrom []
+2026-03-09 23:25:16,851{GMT}	INFO	[jepsen node n2] maelstrom.process: launching ./target/debug/maelstrom []
+2026-03-09 23:25:16,852{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2026-03-09 23:25:16,853{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2026-03-09 23:25:16,853{GMT}	INFO	[jepsen node n0] maelstrom.process: launching ./target/debug/maelstrom []
+2026-03-09 23:25:16,902{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2026-03-09 23:25:16,917{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [1 0]]
+2026-03-09 23:25:16,953{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 1]
+2026-03-09 23:25:17,068{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:17,211{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:17,333{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 4]
+2026-03-09 23:25:17,436{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [1 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:17,461{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:write	[0 1]	[:abort "Server response timeout"]
+2026-03-09 23:25:17,492{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:17,573{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:17,687{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:write	[0 3]
+2026-03-09 23:25:17,846{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:17,934{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:17,999{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:18,049{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 0]
+2026-03-09 23:25:18,078{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 4]	[:abort "Server response timeout"]
+2026-03-09 23:25:18,176{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:18,333{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [0 1]]
+2026-03-09 23:25:18,441{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:write	[0 3]	[:abort "Server response timeout"]
+2026-03-09 23:25:18,518{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 4]]
+2026-03-09 23:25:18,550{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:18,556{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:write	[0 0]	[:abort "Server response timeout"]
+2026-03-09 23:25:18,581{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:18,685{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:18,860{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:cas	[0 [4 1]]
+2026-03-09 23:25:18,942{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:19,053{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:19,061{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:19,085{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [0 1]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:19,171{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:19,186{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 1]
+2026-03-09 23:25:19,448{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:fail	:cas	[0 [4 4]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:19,449{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:cas	[0 [4 3]]
+2026-03-09 23:25:19,566{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:fail	:cas	[0 [4 1]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:19,567{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:write	[0 0]
+2026-03-09 23:25:19,588{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:19,767{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:19,951{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:19,952{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:20,076{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:20,076{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:20,090{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 1]	[:abort "Server response timeout"]
+2026-03-09 23:25:20,167{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 0]
+2026-03-09 23:25:20,453{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:info	:cas	[0 [4 3]]	:net-timeout
+2026-03-09 23:25:20,454{GMT}	INFO	[jepsen worker 3] jepsen.util: 9	:invoke	:write	[0 3]
+2026-03-09 23:25:20,573{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:info	:write	[0 0]	:net-timeout
+2026-03-09 23:25:20,573{GMT}	INFO	[jepsen worker 4] jepsen.util: 10	:invoke	:cas	[0 [1 0]]
+2026-03-09 23:25:20,594{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:20,663{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:20,958{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:20,959{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:21,080{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:21,082{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:21,098{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 0]	[:abort "Server response timeout"]
+2026-03-09 23:25:21,176{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [4 0]]
+2026-03-09 23:25:21,459{GMT}	INFO	[jepsen worker 3] jepsen.util: 9	:info	:write	[0 3]	:net-timeout
+2026-03-09 23:25:21,459{GMT}	INFO	[jepsen worker 3] jepsen.util: 15	:invoke	:cas	[0 [0 1]]
+2026-03-09 23:25:21,575{GMT}	INFO	[jepsen worker 4] jepsen.util: 10	:info	:cas	[0 [1 0]]	:net-timeout
+2026-03-09 23:25:21,576{GMT}	INFO	[jepsen worker 4] jepsen.util: 16	:invoke	:cas	[0 [4 2]]
+2026-03-09 23:25:21,602{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:21,603{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:21,965{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:21,967{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:22,088{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:22,102{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:22,108{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [4 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:22,150{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [2 3]]
+2026-03-09 23:25:22,488{GMT}	INFO	[jepsen worker 3] jepsen.util: 15	:info	:cas	[0 [0 1]]	:net-timeout
+2026-03-09 23:25:22,543{GMT}	INFO	[jepsen worker 3] jepsen.util: 21	:invoke	:write	[0 3]
+2026-03-09 23:25:22,578{GMT}	INFO	[jepsen worker 4] jepsen.util: 16	:info	:cas	[0 [4 2]]	:net-timeout
+2026-03-09 23:25:22,584{GMT}	INFO	[jepsen worker 4] jepsen.util: 22	:invoke	:cas	[0 [1 2]]
+2026-03-09 23:25:22,613{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:22,775{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:22,972{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:22,973{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:23,104{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:23,118{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [2 3]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:23,126{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:23,315{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [0 3]]
+2026-03-09 23:25:23,550{GMT}	INFO	[jepsen worker 3] jepsen.util: 21	:info	:write	[0 3]	:net-timeout
+2026-03-09 23:25:23,552{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:invoke	:cas	[0 [1 3]]
+2026-03-09 23:25:23,586{GMT}	INFO	[jepsen worker 4] jepsen.util: 22	:info	:cas	[0 [1 2]]	:net-timeout
+2026-03-09 23:25:23,623{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:23,684{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:write	[0 1]
+2026-03-09 23:25:23,784{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:23,975{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:23,975{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:24,128{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [0 3]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:24,128{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:24,129{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:24,265{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [3 0]]
+2026-03-09 23:25:24,559{GMT}	INFO	[jepsen worker 3] jepsen.util: 27	:info	:cas	[0 [1 3]]	:net-timeout
+2026-03-09 23:25:24,559{GMT}	INFO	[jepsen worker 3] jepsen.util: 33	:invoke	:cas	[0 [1 4]]
+2026-03-09 23:25:24,633{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:write	[0 1]	[:abort "Server response timeout"]
+2026-03-09 23:25:24,633{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:24,635{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:write	[0 2]
+2026-03-09 23:25:24,660{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:24,982{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:24,982{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:25,133{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:25,133{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:25,135{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [3 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:25,212{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 4]
+2026-03-09 23:25:25,561{GMT}	INFO	[jepsen worker 3] jepsen.util: 33	:info	:cas	[0 [1 4]]	:net-timeout
+2026-03-09 23:25:25,562{GMT}	INFO	[jepsen worker 3] jepsen.util: 39	:invoke	:cas	[0 [1 0]]
+2026-03-09 23:25:25,638{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:write	[0 2]	[:abort "Server response timeout"]
+2026-03-09 23:25:25,639{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:25,734{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:write	[0 3]
+2026-03-09 23:25:25,794{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:25,986{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:25,987{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:26,138{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:26,138{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:26,142{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 4]	[:abort "Server response timeout"]
+2026-03-09 23:25:26,329{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 2]
+2026-03-09 23:25:26,567{GMT}	INFO	[jepsen worker 3] jepsen.util: 39	:info	:cas	[0 [1 0]]	:net-timeout
+2026-03-09 23:25:26,568{GMT}	INFO	[jepsen worker 3] jepsen.util: 45	:invoke	:cas	[0 [3 0]]
+2026-03-09 23:25:26,648{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:26,650{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:write	[0 3]	[:abort "Server response timeout"]
+2026-03-09 23:25:26,720{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [2 3]]
+2026-03-09 23:25:26,894{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:26,992{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:26,992{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:27,145{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:27,147{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:27,152{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 2]	[:abort "Server response timeout"]
+2026-03-09 23:25:27,313{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [1 0]]
+2026-03-09 23:25:27,569{GMT}	INFO	[jepsen worker 3] jepsen.util: 45	:info	:cas	[0 [3 0]]	:net-timeout
+2026-03-09 23:25:27,569{GMT}	INFO	[jepsen worker 3] jepsen.util: 51	:invoke	:cas	[0 [3 2]]
+2026-03-09 23:25:27,655{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:27,655{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [2 3]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:27,655{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:27,788{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [1 0]]
+2026-03-09 23:25:27,996{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:27,997{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:28,153{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:28,154{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:28,158{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [1 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:28,278{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:cas	[0 [0 4]]
+2026-03-09 23:25:28,574{GMT}	INFO	[jepsen worker 3] jepsen.util: 51	:info	:cas	[0 [3 2]]	:net-timeout
+2026-03-09 23:25:28,575{GMT}	INFO	[jepsen worker 3] jepsen.util: 57	:invoke	:cas	[0 [0 3]]
+2026-03-09 23:25:28,660{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:28,664{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [1 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:28,709{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[0 [2 4]]
+2026-03-09 23:25:28,734{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:29,000{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:29,001{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:29,159{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:29,160{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:29,169{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:cas	[0 [0 4]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:29,360{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 0]
+2026-03-09 23:25:29,581{GMT}	INFO	[jepsen worker 3] jepsen.util: 57	:info	:cas	[0 [0 3]]	:net-timeout
+2026-03-09 23:25:29,583{GMT}	INFO	[jepsen worker 3] jepsen.util: 63	:invoke	:cas	[0 [2 3]]
+2026-03-09 23:25:29,673{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[0 [2 4]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:29,673{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:29,749{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:write	[0 4]
+2026-03-09 23:25:29,892{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[0 nil]
+2026-03-09 23:25:30,006{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:30,006{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[0 nil]
+2026-03-09 23:25:30,166{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:30,167{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[0 nil]
+2026-03-09 23:25:30,178{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:fail	:write	[0 0]	[:abort "Server response timeout"]
+2026-03-09 23:25:30,178{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:invoke	:write	[0 4]
+2026-03-09 23:25:30,589{GMT}	INFO	[jepsen worker 3] jepsen.util: 63	:info	:cas	[0 [2 3]]	:net-timeout
+2026-03-09 23:25:30,590{GMT}	INFO	[jepsen worker 3] jepsen.util: 69	:invoke	:cas	[1 [1 2]]
+2026-03-09 23:25:30,681{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[0 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:30,681{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:write	[0 4]	[:abort "Server response timeout"]
+2026-03-09 23:25:30,727{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:30,910{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[1 [1 1]]
+2026-03-09 23:25:31,008{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:31,099{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:31,172{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[0 nil]	:net-timeout
+2026-03-09 23:25:31,178{GMT}	INFO	[jepsen worker 5] jepsen.util: 5	:info	:write	[0 4]	:net-timeout
+2026-03-09 23:25:31,288{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[1 [1 0]]
+2026-03-09 23:25:31,446{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:31,594{GMT}	INFO	[jepsen worker 3] jepsen.util: 69	:info	:cas	[1 [1 2]]	:net-timeout
+2026-03-09 23:25:31,594{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:invoke	:write	[1 0]
+2026-03-09 23:25:31,687{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:31,687{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[1 [1 1]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:31,717{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:31,745{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:cas	[1 [0 2]]
+2026-03-09 23:25:32,105{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:32,106{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:32,192{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:32,192{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[1 [1 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:32,295{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[1 [1 4]]
+2026-03-09 23:25:32,350{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:32,600{GMT}	INFO	[jepsen worker 3] jepsen.util: 75	:info	:write	[1 0]	:net-timeout
+2026-03-09 23:25:32,601{GMT}	INFO	[jepsen worker 3] jepsen.util: 81	:invoke	:cas	[1 [2 0]]
+2026-03-09 23:25:32,696{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:32,696{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:fail	:cas	[1 [0 2]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:32,698{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:invoke	:write	[1 1]
+2026-03-09 23:25:32,843{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:33,109{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:33,110{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:33,201{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[1 [1 4]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:33,201{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:33,202{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:33,323{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:write	[1 0]
+2026-03-09 23:25:33,610{GMT}	INFO	[jepsen worker 3] jepsen.util: 81	:info	:cas	[1 [2 0]]	:net-timeout
+2026-03-09 23:25:33,611{GMT}	INFO	[jepsen worker 3] jepsen.util: 87	:invoke	:write	[1 4]
+2026-03-09 23:25:33,702{GMT}	INFO	[jepsen worker 4] jepsen.util: 28	:info	:write	[1 1]	:net-timeout
+2026-03-09 23:25:33,702{GMT}	INFO	[jepsen worker 4] jepsen.util: 34	:invoke	:cas	[1 [0 4]]
+2026-03-09 23:25:33,704{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:33,744{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:34,112{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:34,112{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:34,207{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:34,211{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:write	[1 0]	[:abort "Server response timeout"]
+2026-03-09 23:25:34,259{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:34,356{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[1 [3 3]]
+2026-03-09 23:25:34,614{GMT}	INFO	[jepsen worker 3] jepsen.util: 87	:info	:write	[1 4]	:net-timeout
+2026-03-09 23:25:34,615{GMT}	INFO	[jepsen worker 3] jepsen.util: 93	:invoke	:write	[1 2]
+2026-03-09 23:25:34,708{GMT}	INFO	[jepsen worker 4] jepsen.util: 34	:info	:cas	[1 [0 4]]	:net-timeout
+2026-03-09 23:25:34,708{GMT}	INFO	[jepsen worker 4] jepsen.util: 40	:invoke	:cas	[1 [3 4]]
+2026-03-09 23:25:34,718{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:34,784{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:35,115{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:35,116{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:35,233{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[1 [3 3]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:35,241{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:35,283{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:35,393{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[1 [1 3]]
+2026-03-09 23:25:35,616{GMT}	INFO	[jepsen worker 3] jepsen.util: 93	:info	:write	[1 2]	:net-timeout
+2026-03-09 23:25:35,617{GMT}	INFO	[jepsen worker 3] jepsen.util: 99	:invoke	:write	[1 0]
+2026-03-09 23:25:35,709{GMT}	INFO	[jepsen worker 4] jepsen.util: 40	:info	:cas	[1 [3 4]]	:net-timeout
+2026-03-09 23:25:35,743{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:35,772{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:invoke	:cas	[1 [0 3]]
+2026-03-09 23:25:35,895{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:36,122{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:36,122{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:36,246{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:36,246{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[1 [1 3]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:36,294{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:cas	[1 [1 0]]
+2026-03-09 23:25:36,371{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:36,621{GMT}	INFO	[jepsen worker 3] jepsen.util: 99	:info	:write	[1 0]	:net-timeout
+2026-03-09 23:25:36,621{GMT}	INFO	[jepsen worker 3] jepsen.util: 105	:invoke	:write	[1 0]
+2026-03-09 23:25:36,748{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:36,748{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:fail	:cas	[1 [0 3]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:36,775{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:invoke	:write	[1 0]
+2026-03-09 23:25:36,792{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:37,128{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:37,128{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:37,253{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:37,254{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:fail	:cas	[1 [1 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:37,254{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:invoke	:write	[1 2]
+2026-03-09 23:25:37,423{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:37,625{GMT}	INFO	[jepsen worker 3] jepsen.util: 105	:info	:write	[1 0]	:net-timeout
+2026-03-09 23:25:37,625{GMT}	INFO	[jepsen worker 3] jepsen.util: 111	:invoke	:write	[1 4]
+2026-03-09 23:25:37,756{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:37,756{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:fail	:write	[1 0]	[:abort "Server response timeout"]
+2026-03-09 23:25:37,756{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:invoke	:write	[1 1]
+2026-03-09 23:25:37,830{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:38,135{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:38,136{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:38,255{GMT}	INFO	[jepsen worker 5] jepsen.util: 11	:info	:write	[1 2]	:net-timeout
+2026-03-09 23:25:38,259{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:38,323{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:invoke	:cas	[1 [2 4]]
+2026-03-09 23:25:38,362{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:38,631{GMT}	INFO	[jepsen worker 3] jepsen.util: 111	:info	:write	[1 4]	:net-timeout
+2026-03-09 23:25:38,631{GMT}	INFO	[jepsen worker 3] jepsen.util: 117	:invoke	:write	[1 3]
+2026-03-09 23:25:38,758{GMT}	INFO	[jepsen worker 4] jepsen.util: 46	:info	:write	[1 1]	:net-timeout
+2026-03-09 23:25:38,758{GMT}	INFO	[jepsen worker 4] jepsen.util: 52	:invoke	:cas	[1 [4 2]]
+2026-03-09 23:25:38,765{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:38,794{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[1 nil]
+2026-03-09 23:25:39,141{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:39,142{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[1 nil]
+2026-03-09 23:25:39,270{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:fail	:cas	[1 [2 4]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:39,270{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:39,271{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[1 nil]
+2026-03-09 23:25:39,352{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:invoke	:cas	[1 [0 1]]
+2026-03-09 23:25:39,637{GMT}	INFO	[jepsen worker 3] jepsen.util: 117	:info	:write	[1 3]	:net-timeout
+2026-03-09 23:25:39,639{GMT}	INFO	[jepsen worker 3] jepsen.util: 123	:invoke	:cas	[2 [2 1]]
+2026-03-09 23:25:39,760{GMT}	INFO	[jepsen worker 4] jepsen.util: 52	:info	:cas	[1 [4 2]]	:net-timeout
+2026-03-09 23:25:39,760{GMT}	INFO	[jepsen worker 4] jepsen.util: 58	:invoke	:cas	[2 [3 0]]
+2026-03-09 23:25:39,772{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[1 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:39,933{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-09 23:25:40,143{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:40,143{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-09 23:25:40,276{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[1 nil]	:net-timeout
+2026-03-09 23:25:40,278{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:fail	:cas	[1 [0 1]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:40,308{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:invoke	:cas	[2 [0 2]]
+2026-03-09 23:25:40,333{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-09 23:25:40,645{GMT}	INFO	[jepsen worker 3] jepsen.util: 123	:info	:cas	[2 [2 1]]	:net-timeout
+2026-03-09 23:25:40,646{GMT}	INFO	[jepsen worker 3] jepsen.util: 129	:invoke	:write	[2 2]
+2026-03-09 23:25:40,766{GMT}	INFO	[jepsen worker 4] jepsen.util: 58	:info	:cas	[2 [3 0]]	:net-timeout
+2026-03-09 23:25:40,767{GMT}	INFO	[jepsen worker 4] jepsen.util: 64	:invoke	:cas	[2 [0 3]]
+2026-03-09 23:25:40,782{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:40,888{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-09 23:25:41,146{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:41,147{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-09 23:25:41,286{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:fail	:cas	[2 [0 2]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:41,286{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:41,288{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:invoke	:cas	[2 [2 2]]
+2026-03-09 23:25:41,442{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-09 23:25:41,647{GMT}	INFO	[jepsen worker 3] jepsen.util: 129	:info	:write	[2 2]	:net-timeout
+2026-03-09 23:25:41,648{GMT}	INFO	[jepsen worker 3] jepsen.util: 135	:invoke	:cas	[2 [4 2]]
+2026-03-09 23:25:41,771{GMT}	INFO	[jepsen worker 4] jepsen.util: 64	:info	:cas	[2 [0 3]]	:net-timeout
+2026-03-09 23:25:41,772{GMT}	INFO	[jepsen worker 4] jepsen.util: 70	:invoke	:cas	[2 [0 4]]
+2026-03-09 23:25:41,790{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:41,971{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-09 23:25:42,152{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:42,153{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-09 23:25:42,289{GMT}	INFO	[jepsen worker 5] jepsen.util: 17	:info	:cas	[2 [2 2]]	:net-timeout
+2026-03-09 23:25:42,293{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:42,347{GMT}	INFO	[jepsen worker 5] jepsen.util: 23	:invoke	:write	[2 4]
+2026-03-09 23:25:42,490{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-09 23:25:42,649{GMT}	INFO	[jepsen worker 3] jepsen.util: 135	:info	:cas	[2 [4 2]]	:net-timeout
+2026-03-09 23:25:42,650{GMT}	INFO	[jepsen worker 3] jepsen.util: 141	:invoke	:cas	[2 [2 1]]
+2026-03-09 23:25:42,774{GMT}	INFO	[jepsen worker 4] jepsen.util: 70	:info	:cas	[2 [0 4]]	:net-timeout
+2026-03-09 23:25:42,775{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:invoke	:write	[2 0]
+2026-03-09 23:25:42,799{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:42,924{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-09 23:25:43,156{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:43,156{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-09 23:25:43,306{GMT}	INFO	[jepsen worker 5] jepsen.util: 23	:fail	:write	[2 4]	[:abort "Server response timeout"]
+2026-03-09 23:25:43,306{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:43,307{GMT}	INFO	[jepsen worker 5] jepsen.util: 23	:invoke	:cas	[2 [4 2]]
+2026-03-09 23:25:43,488{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-09 23:25:43,654{GMT}	INFO	[jepsen worker 3] jepsen.util: 141	:info	:cas	[2 [2 1]]	:net-timeout
+2026-03-09 23:25:43,655{GMT}	INFO	[jepsen worker 3] jepsen.util: 147	:invoke	:write	[2 2]
+2026-03-09 23:25:43,777{GMT}	INFO	[jepsen worker 4] jepsen.util: 76	:info	:write	[2 0]	:net-timeout
+2026-03-09 23:25:43,778{GMT}	INFO	[jepsen worker 4] jepsen.util: 82	:invoke	:cas	[2 [4 0]]
+2026-03-09 23:25:43,822{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:43,942{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-09 23:25:44,157{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:44,157{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-09 23:25:44,309{GMT}	INFO	[jepsen worker 5] jepsen.util: 23	:info	:cas	[2 [4 2]]	:net-timeout
+2026-03-09 23:25:44,310{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:invoke	:cas	[2 [4 0]]
+2026-03-09 23:25:44,313{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:44,461{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-09 23:25:44,658{GMT}	INFO	[jepsen worker 3] jepsen.util: 147	:info	:write	[2 2]	:net-timeout
+2026-03-09 23:25:44,658{GMT}	INFO	[jepsen worker 3] jepsen.util: 153	:invoke	:write	[2 3]
+2026-03-09 23:25:44,783{GMT}	INFO	[jepsen worker 4] jepsen.util: 82	:info	:cas	[2 [4 0]]	:net-timeout
+2026-03-09 23:25:44,783{GMT}	INFO	[jepsen worker 4] jepsen.util: 88	:invoke	:cas	[2 [0 4]]
+2026-03-09 23:25:44,815{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:44,816{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[2 nil]
+2026-03-09 23:25:45,158{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:45,159{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[2 nil]
+2026-03-09 23:25:45,316{GMT}	INFO	[jepsen worker 5] jepsen.util: 29	:info	:cas	[2 [4 0]]	:net-timeout
+2026-03-09 23:25:45,319{GMT}	INFO	[jepsen worker 5] jepsen.util: 35	:invoke	:cas	[2 [2 0]]
+2026-03-09 23:25:45,324{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:45,336{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[2 nil]
+2026-03-09 23:25:45,659{GMT}	INFO	[jepsen worker 3] jepsen.util: 153	:info	:write	[2 3]	:net-timeout
+2026-03-09 23:25:45,659{GMT}	INFO	[jepsen worker 3] jepsen.util: 159	:invoke	:cas	[3 [1 3]]
+2026-03-09 23:25:45,784{GMT}	INFO	[jepsen worker 4] jepsen.util: 88	:info	:cas	[2 [0 4]]	:net-timeout
+2026-03-09 23:25:45,785{GMT}	INFO	[jepsen worker 4] jepsen.util: 94	:invoke	:cas	[3 [1 1]]
+2026-03-09 23:25:45,819{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:45,917{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:46,165{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[2 nil]	:net-timeout
+2026-03-09 23:25:46,165{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:46,320{GMT}	INFO	[jepsen worker 5] jepsen.util: 35	:info	:cas	[2 [2 0]]	:net-timeout
+2026-03-09 23:25:46,328{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[2 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:46,352{GMT}	INFO	[jepsen worker 5] jepsen.util: 41	:invoke	:cas	[3 [2 0]]
+2026-03-09 23:25:46,386{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:46,665{GMT}	INFO	[jepsen worker 3] jepsen.util: 159	:info	:cas	[3 [1 3]]	:net-timeout
+2026-03-09 23:25:46,666{GMT}	INFO	[jepsen worker 3] jepsen.util: 165	:invoke	:cas	[3 [2 2]]
+2026-03-09 23:25:46,791{GMT}	INFO	[jepsen worker 4] jepsen.util: 94	:info	:cas	[3 [1 1]]	:net-timeout
+2026-03-09 23:25:46,833{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:46,848{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:write	[3 2]
+2026-03-09 23:25:46,908{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:47,171{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:47,171{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:47,337{GMT}	INFO	[jepsen worker 5] jepsen.util: 41	:fail	:cas	[3 [2 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:47,337{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:47,343{GMT}	INFO	[jepsen worker 5] jepsen.util: 41	:invoke	:cas	[3 [3 2]]
+2026-03-09 23:25:47,416{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:47,669{GMT}	INFO	[jepsen worker 3] jepsen.util: 165	:info	:cas	[3 [2 2]]	:net-timeout
+2026-03-09 23:25:47,670{GMT}	INFO	[jepsen worker 3] jepsen.util: 171	:invoke	:cas	[3 [3 0]]
+2026-03-09 23:25:47,842{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:47,842{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:fail	:write	[3 2]	[:abort "Server response timeout"]
+2026-03-09 23:25:47,842{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:47,915{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:cas	[3 [0 2]]
+2026-03-09 23:25:48,175{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:48,176{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:48,346{GMT}	INFO	[jepsen worker 5] jepsen.util: 41	:info	:cas	[3 [3 2]]	:net-timeout
+2026-03-09 23:25:48,348{GMT}	INFO	[jepsen worker 5] jepsen.util: 47	:invoke	:cas	[3 [1 0]]
+2026-03-09 23:25:48,348{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:48,512{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:48,672{GMT}	INFO	[jepsen worker 3] jepsen.util: 171	:info	:cas	[3 [3 0]]	:net-timeout
+2026-03-09 23:25:48,672{GMT}	INFO	[jepsen worker 3] jepsen.util: 177	:invoke	:cas	[3 [3 1]]
+2026-03-09 23:25:48,842{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:48,843{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:48,849{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:fail	:cas	[3 [0 2]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:48,953{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:cas	[3 [3 0]]
+2026-03-09 23:25:49,181{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:49,182{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:49,352{GMT}	INFO	[jepsen worker 5] jepsen.util: 47	:info	:cas	[3 [1 0]]	:net-timeout
+2026-03-09 23:25:49,352{GMT}	INFO	[jepsen worker 5] jepsen.util: 53	:invoke	:cas	[3 [3 3]]
+2026-03-09 23:25:49,353{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:49,358{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:49,675{GMT}	INFO	[jepsen worker 3] jepsen.util: 177	:info	:cas	[3 [3 1]]	:net-timeout
+2026-03-09 23:25:49,675{GMT}	INFO	[jepsen worker 3] jepsen.util: 183	:invoke	:cas	[3 [4 1]]
+2026-03-09 23:25:49,846{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:49,858{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:fail	:cas	[3 [3 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:49,869{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:49,925{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:write	[3 3]
+2026-03-09 23:25:50,185{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:50,186{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:50,357{GMT}	INFO	[jepsen worker 5] jepsen.util: 53	:info	:cas	[3 [3 3]]	:net-timeout
+2026-03-09 23:25:50,357{GMT}	INFO	[jepsen worker 5] jepsen.util: 59	:invoke	:write	[3 2]
+2026-03-09 23:25:50,360{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:50,421{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:50,677{GMT}	INFO	[jepsen worker 3] jepsen.util: 183	:info	:cas	[3 [4 1]]	:net-timeout
+2026-03-09 23:25:50,677{GMT}	INFO	[jepsen worker 3] jepsen.util: 189	:invoke	:write	[3 4]
+2026-03-09 23:25:50,866{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:fail	:write	[3 3]	[:abort "Server response timeout"]
+2026-03-09 23:25:50,866{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:50,867{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:50,907{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:cas	[3 [0 4]]
+2026-03-09 23:25:51,191{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:51,191{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:51,358{GMT}	INFO	[jepsen worker 5] jepsen.util: 59	:info	:write	[3 2]	:net-timeout
+2026-03-09 23:25:51,366{GMT}	INFO	[jepsen worker 5] jepsen.util: 65	:invoke	:cas	[3 [4 3]]
+2026-03-09 23:25:51,370{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	[:key-does-not-exist "not found"]
+2026-03-09 23:25:51,378{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:51,680{GMT}	INFO	[jepsen worker 3] jepsen.util: 189	:info	:write	[3 4]	:net-timeout
+2026-03-09 23:25:51,680{GMT}	INFO	[jepsen worker 3] jepsen.util: 195	:invoke	:write	[3 3]
+2026-03-09 23:25:51,872{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:51,873{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[3 nil]
+2026-03-09 23:25:51,874{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:fail	:cas	[3 [0 4]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:52,057{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:cas	[3 [4 0]]
+2026-03-09 23:25:52,196{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:52,197{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[3 nil]
+2026-03-09 23:25:52,378{GMT}	INFO	[jepsen worker 5] jepsen.util: 65	:info	:cas	[3 [4 3]]	:net-timeout
+2026-03-09 23:25:52,401{GMT}	INFO	[jepsen worker 5] jepsen.util: 71	:invoke	:cas	[3 [3 3]]
+2026-03-09 23:25:52,404{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:52,468{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[3 nil]
+2026-03-09 23:25:52,681{GMT}	INFO	[jepsen worker 3] jepsen.util: 195	:info	:write	[3 3]	:net-timeout
+2026-03-09 23:25:52,683{GMT}	INFO	[jepsen worker 3] jepsen.util: 201	:invoke	:cas	[4 [3 1]]
+2026-03-09 23:25:52,881{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:52,895{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	[4 nil]
+2026-03-09 23:25:52,987{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:fail	:cas	[3 [4 0]]	[:key-does-not-exist "key not found"]
+2026-03-09 23:25:53,016{GMT}	INFO	[jepsen worker 4] jepsen.util: 100	:invoke	:write	[4 3]
+2026-03-09 23:25:53,198{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:53,198{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	[4 nil]
+2026-03-09 23:25:53,435{GMT}	INFO	[jepsen worker 5] jepsen.util: 71	:info	:cas	[3 [3 3]]	:net-timeout
+2026-03-09 23:25:53,436{GMT}	INFO	[jepsen worker 5] jepsen.util: 77	:invoke	:cas	[4 [4 0]]
+2026-03-09 23:25:53,472{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:read	[3 nil]	:net-timeout
+2026-03-09 23:25:53,472{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	[4 nil]
+2026-03-09 23:25:53,549{GMT}	INFO	[Jepsen shutdown hook] jepsen.core: Downloading DB logs before JVM shutdown...

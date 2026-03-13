@@ -62,6 +62,8 @@ impl OmniPaxosServer {
                 _ = election_interval.tick() => {
                     self.omnipaxos.tick();
                     self.send_outgoing_msgs();
+                    let r = self.omnipaxos.get_current_leader().unwrap();
+                    println!("LEADER IS {}",r.0);
                 },
                 _ = self.network.cluster_messages.recv_many(&mut cluster_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_cluster_messages(&mut cluster_msg_buf).await;
@@ -112,18 +114,18 @@ impl OmniPaxosServer {
                 _ = leader_takeover_interval.tick(), if self.config.cluster.initial_leader == self.id => {
                     if let Some((curr_leader, is_accept_phase)) = self.omnipaxos.get_current_leader(){
                         if curr_leader == self.id && is_accept_phase {
-                            info!("{}: Leader fully initialized", self.id);
+                            println!("{}: Leader fully initialized", self.id);
                             let experiment_sync_start = (Utc::now() + Duration::from_secs(2)).timestamp_millis();
                             self.send_cluster_start_signals(experiment_sync_start);
                             self.send_client_start_signals(experiment_sync_start);
                             break;
                         }
                     }
-                    //RUNS WHEN LEADER CRASHES OR PARTITIONS , ANOTHER NODE TRIES TO BECOME LEADER , SENDS MESSAGES TO CONNECTED NODE
-                    info!("{}: Attempting to take leadership", self.id);
+                    //if someone else is leader , make node 1
                     self.omnipaxos.try_become_leader();
                     self.send_outgoing_msgs();
                 },
+                //only runs during start for node 2 and 3 to hanlde leader election
                 _ = self.network.cluster_messages.recv_many(cluster_msg_buffer, NETWORK_BATCH_SIZE) => {
                     let recv_start = self.handle_cluster_messages(cluster_msg_buffer).await;
                     if recv_start {

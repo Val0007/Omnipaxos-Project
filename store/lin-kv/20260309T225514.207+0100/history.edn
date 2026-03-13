@@ -1,0 +1,1122 @@
+{:index 0, :time 7861792, :type :invoke, :process 3, :f :cas, :value [0 [1 4]]}
+{:index 1, :time 73667958, :type :invoke, :process 4, :f :write, :value [0 1]}
+{:index 2, :time 98069375, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 3, :time 112416750, :type :fail, :process 5, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 4, :time 291850917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 5, :time 293910708, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 6, :time 298721208, :type :fail, :process 5, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 7, :time 381746333, :type :invoke, :process 5, :f :write, :value [0 4]}
+{:index 8, :time 389309917, :type :fail, :process 5, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 9, :time 502330167, :type :invoke, :process 5, :f :cas, :value [0 [2 0]]}
+{:index 10, :time 510611042, :type :fail, :process 5, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 11, :time 684727083, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 12, :time 691129583, :type :fail, :process 5, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 13, :time 736892917, :type :invoke, :process 5, :f :cas, :value [0 [4 0]]}
+{:index 14, :time 746072500, :type :fail, :process 5, :f :cas, :value [0 [4 0]], :error [:key-does-not-exist "key not found"]}
+{:index 15, :time 872727708, :type :invoke, :process 5, :f :write, :value [0 4]}
+{:index 16, :time 878840167, :type :fail, :process 5, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 17, :time 1022237625, :type :info, :process 3, :f :cas, :value [0 [1 4]], :error :net-timeout}
+{:index 18, :time 1022783083, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 19, :time 1075950500, :type :info, :process 4, :f :write, :value [0 1], :error :net-timeout}
+{:index 20, :time 1152443917, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 21, :time 1156419333, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 22, :time 1265430792, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 23, :time 1271959417, :type :fail, :process 5, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 24, :time 1299674500, :type :fail, :process 0, :f :read, :value [0 nil], :error :net-timeout}
+{:index 25, :time 1382291333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 26, :time 1461238500, :type :invoke, :process 9, :f :write, :value [0 4]}
+{:index 27, :time 1585732000, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 28, :time 1593218958, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 29, :time 1636827167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 30, :time 1640969917, :type :invoke, :process 10, :f :cas, :value [0 [3 3]]}
+{:index 31, :time 1645405042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 32, :time 1719097708, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 33, :time 1723992000, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 34, :time 1799227792, :type :invoke, :process 5, :f :cas, :value [0 [1 4]]}
+{:index 35, :time 1805260792, :type :fail, :process 5, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 36, :time 1899152000, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 37, :time 1906868417, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 38, :time 1914207667, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 39, :time 1919327917, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 40, :time 2029873333, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 41, :time 2032141542, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 42, :time 2189830458, :type :invoke, :process 5, :f :cas, :value [0 [3 0]]}
+{:index 43, :time 2197398750, :type :fail, :process 5, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 44, :time 2272947208, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 45, :time 2278646125, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 46, :time 2389044917, :type :fail, :process 0, :f :read, :value [0 nil], :error :net-timeout}
+{:index 47, :time 2422574625, :type :invoke, :process 5, :f :cas, :value [0 [0 3]]}
+{:index 48, :time 2429243333, :type :fail, :process 5, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 49, :time 2465610542, :type :info, :process 9, :f :write, :value [0 4], :error :net-timeout}
+{:index 50, :time 2471729458, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 51, :time 2479284583, :type :fail, :process 5, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 52, :time 2601531625, :type :invoke, :process 15, :f :cas, :value [0 [4 0]]}
+{:index 53, :time 2646632250, :type :info, :process 10, :f :cas, :value [0 [3 3]], :error :net-timeout}
+{:index 54, :time 2782869125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 55, :time 2799059042, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 56, :time 2803567083, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 57, :time 2841376625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 58, :time 2848252042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 59, :time 2973076792, :type :invoke, :process 16, :f :cas, :value [0 [2 3]]}
+{:index 60, :time 2980332792, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 61, :time 2982874917, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 62, :time 3035992792, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 63, :time 3099154375, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 64, :time 3106184708, :type :fail, :process 5, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 65, :time 3295282375, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 66, :time 3427973167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 67, :time 3432579667, :type :invoke, :process 5, :f :cas, :value [0 [0 1]]}
+{:index 68, :time 3436601292, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 69, :time 3439414167, :type :fail, :process 5, :f :cas, :value [0 [0 1]], :error [:key-does-not-exist "key not found"]}
+{:index 70, :time 3597438250, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 71, :time 3600880125, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 72, :time 3606366583, :type :info, :process 15, :f :cas, :value [0 [4 0]], :error :net-timeout}
+{:index 73, :time 3708525250, :type :invoke, :process 21, :f :cas, :value [0 [3 3]]}
+{:index 74, :time 3789329750, :type :fail, :process 0, :f :read, :value [0 nil], :error :net-timeout}
+{:index 75, :time 3829770333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 76, :time 3920685083, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 77, :time 3926999875, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 78, :time 3976392417, :type :info, :process 16, :f :cas, :value [0 [2 3]], :error :net-timeout}
+{:index 79, :time 4002113292, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 80, :time 4008795125, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 81, :time 4077391583, :type :invoke, :process 22, :f :cas, :value [0 [3 4]]}
+{:index 82, :time 4127405833, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 83, :time 4134797833, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 84, :time 4302742000, :type :fail, :process 1, :f :read, :value [0 nil], :error :net-timeout}
+{:index 85, :time 4319165875, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 86, :time 4325362708, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 87, :time 4366249208, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 88, :time 4502159167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 89, :time 4513102625, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 90, :time 4602418792, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 91, :time 4609706750, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 92, :time 4714808042, :type :info, :process 21, :f :cas, :value [0 [3 3]], :error :net-timeout}
+{:index 93, :time 4761942833, :type :invoke, :process 27, :f :cas, :value [0 [1 4]]}
+{:index 94, :time 4829911208, :type :invoke, :process 5, :f :write, :value [0 4]}
+{:index 95, :time 4833281125, :type :fail, :process 5, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 96, :time 4833893708, :type :fail, :process 0, :f :read, :value [0 nil], :error :net-timeout}
+{:index 97, :time 4919311958, :type :invoke, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 98, :time 4921668458, :type :fail, :process 5, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 99, :time 5027094708, :type :fail, :process 27, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 100, :time 5080017583, :type :info, :process 22, :f :cas, :value [0 [3 4]], :error :net-timeout}
+{:index 101, :time 5082156208, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 102, :time 5095144625, :type :invoke, :process 27, :f :cas, :value [0 [2 4]]}
+{:index 103, :time 5097012333, :type :fail, :process 27, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 104, :time 5122918292, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 105, :time 5124723625, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 106, :time 5211823458, :type :invoke, :process 28, :f :cas, :value [0 [3 0]]}
+{:index 107, :time 5214628417, :type :fail, :process 28, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 108, :time 5379196500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 109, :time 5385907875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 110, :time 5502933083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 111, :time 5509838000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 112, :time 5642322875, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 113, :time 5645710583, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 114, :time 5840464750, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 115, :time 5850208292, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 116, :time 5896664458, :type :invoke, :process 27, :f :cas, :value [0 [3 3]]}
+{:index 117, :time 5901864708, :type :fail, :process 27, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 118, :time 5946890042, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 119, :time 5952573333, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 120, :time 6130776250, :type :invoke, :process 28, :f :cas, :value [0 [1 2]]}
+{:index 121, :time 6138726917, :type :fail, :process 28, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 122, :time 6173356542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 123, :time 6179857958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 124, :time 6336851000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 125, :time 6342908750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 126, :time 6390172958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 127, :time 6396993833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 128, :time 6422310167, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 129, :time 6425763667, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 130, :time 6433039333, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 131, :time 6434885042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 132, :time 6578467708, :type :invoke, :process 27, :f :cas, :value [0 [3 0]]}
+{:index 133, :time 6581132458, :type :fail, :process 27, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 134, :time 6618162208, :type :invoke, :process 28, :f :write, :value [0 4]}
+{:index 135, :time 6620398750, :type :fail, :process 28, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 136, :time 6758699250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 137, :time 6765880833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 138, :time 6961905708, :type :invoke, :process 27, :f :cas, :value [0 [0 1]]}
+{:index 139, :time 6968572792, :type :fail, :process 27, :f :cas, :value [0 [0 1]], :error [:key-does-not-exist "key not found"]}
+{:index 140, :time 7096639750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 141, :time 7103384000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 142, :time 7154701833, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 143, :time 7161489333, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 144, :time 7184966667, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 145, :time 7188912875, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 146, :time 7369967833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 147, :time 7376333792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 148, :time 7520851042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 149, :time 7527086083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 150, :time 7637034250, :type :invoke, :process 5, :f :cas, :value [0 [4 4]]}
+{:index 151, :time 7644609417, :type :fail, :process 5, :f :cas, :value [0 [4 4]], :error [:key-does-not-exist "key not found"]}
+{:index 152, :time 7703244958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 153, :time 7716601833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 154, :time 7888266500, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 155, :time 7891717333, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 156, :time 7996835042, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 157, :time 7999251167, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 158, :time 8165137833, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 159, :time 8171185667, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 160, :time 8230302792, :type :invoke, :process 27, :f :cas, :value [0 [3 3]]}
+{:index 161, :time 8236845292, :type :fail, :process 27, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 162, :time 8277401833, :type :invoke, :process 28, :f :cas, :value [0 [1 1]]}
+{:index 163, :time 8284478625, :type :fail, :process 28, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 164, :time 8397538000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 165, :time 8401771500, :type :invoke, :process 27, :f :cas, :value [0 [3 1]]}
+{:index 166, :time 8404669125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 167, :time 8405898042, :type :fail, :process 27, :f :cas, :value [0 [3 1]], :error [:key-does-not-exist "key not found"]}
+{:index 168, :time 8478620875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 169, :time 8485584292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 170, :time 8681195500, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 171, :time 8688619625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 172, :time 8827457083, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 173, :time 8834987625, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 174, :time 8964213042, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 175, :time 8971141792, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 176, :time 9166396542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 177, :time 9173347500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 178, :time 9371609583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 179, :time 9378371083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 180, :time 9448406167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 181, :time 9455380500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 182, :time 9585738000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 183, :time 9592320875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 184, :time 9692197917, :type :invoke, :process 27, :f :cas, :value [0 [3 4]]}
+{:index 185, :time 9695707875, :type :fail, :process 27, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 186, :time 9878500542, :type :invoke, :process 27, :f :cas, :value [0 [0 1]]}
+{:index 187, :time 9880746542, :type :fail, :process 27, :f :cas, :value [0 [0 1]], :error [:key-does-not-exist "key not found"]}
+{:index 188, :time 10052034500, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 189, :time 10054118333, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 190, :time 10140438667, :type :invoke, :process 28, :f :cas, :value [0 [2 4]]}
+{:index 191, :time 10142418958, :type :fail, :process 28, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 192, :time 10263194958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 193, :time 10269859708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 194, :time 10374055125, :type :invoke, :process 27, :f :cas, :value [0 [3 3]]}
+{:index 195, :time 10379081750, :type :fail, :process 27, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 196, :time 10560859292, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 197, :time 10568809833, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 198, :time 10645230417, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 199, :time 10652201208, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 200, :time 10752892292, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 201, :time 10760608750, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 202, :time 10891502542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 203, :time 10897696750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 204, :time 10972950500, :type :invoke, :process 28, :f :cas, :value [0 [3 3]]}
+{:index 205, :time 10979343375, :type :fail, :process 28, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 206, :time 11028793333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 207, :time 11035065417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 208, :time 11179558042, :type :invoke, :process 27, :f :cas, :value [0 [1 1]]}
+{:index 209, :time 11186976417, :type :fail, :process 27, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 210, :time 11350216833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 211, :time 11356974417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 212, :time 11510215000, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 213, :time 11517274708, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 214, :time 11689628083, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 215, :time 11696795667, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 216, :time 11785060292, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 217, :time 11791951458, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 218, :time 11850915875, :type :invoke, :process 28, :f :cas, :value [0 [3 3]]}
+{:index 219, :time 11857602375, :type :fail, :process 28, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 220, :time 12041934625, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 221, :time 12048120250, :type :fail, :process 5, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 222, :time 12224881333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 223, :time 12230647667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 224, :time 12406484708, :type :invoke, :process 27, :f :cas, :value [0 [1 4]]}
+{:index 225, :time 12411984250, :type :fail, :process 27, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 226, :time 12500907250, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 227, :time 12506824625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 228, :time 12691678625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 229, :time 12694622250, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 230, :time 12857498250, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 231, :time 12863394125, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 232, :time 12997028958, :type :invoke, :process 28, :f :write, :value [0 2]}
+{:index 233, :time 13000023625, :type :fail, :process 28, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 234, :time 13143403167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 235, :time 13149925917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 236, :time 13251786167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 237, :time 13258434167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 238, :time 13310875125, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 239, :time 13317513375, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 240, :time 13417382667, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 241, :time 13424417708, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 242, :time 13451570167, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 243, :time 13457485125, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 244, :time 13495525042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 245, :time 13501552875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 246, :time 13639597417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 247, :time 13646383292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 248, :time 13660513167, :type :invoke, :process 5, :f :cas, :value [0 [3 0]]}
+{:index 249, :time 13665380625, :type :fail, :process 5, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 250, :time 13755706417, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 251, :time 13762567375, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 252, :time 13856271708, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 253, :time 13861818917, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 254, :time 14048846208, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 255, :time 14055825792, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 256, :time 14067164792, :type :invoke, :process 27, :f :cas, :value [0 [1 1]]}
+{:index 257, :time 14075099583, :type :fail, :process 27, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 258, :time 14138642292, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 259, :time 14142383833, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 260, :time 14291095375, :type :invoke, :process 28, :f :write, :value [0 3]}
+{:index 261, :time 14293883208, :type :fail, :process 28, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 262, :time 14321687333, :type :invoke, :process 5, :f :write, :value [0 2]}
+{:index 263, :time 14324318042, :type :fail, :process 5, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 264, :time 14461979042, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 265, :time 14469280917, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 266, :time 14474854000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 267, :time 14478557833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 268, :time 14679784292, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 269, :time 14686369042, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 270, :time 14786870042, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 271, :time 14793277958, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 272, :time 14862881625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 273, :time 14865335083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 274, :time 15001365417, :type :invoke, :process 28, :f :write, :value [0 2]}
+{:index 275, :time 15003366417, :type :fail, :process 28, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 276, :time 15045148250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 277, :time 15046766083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 278, :time 15185742125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 279, :time 15188817500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 280, :time 15357759833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 281, :time 15364192667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 282, :time 15473008917, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 283, :time 15478990625, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 284, :time 15638183042, :type :invoke, :process 27, :f :cas, :value [0 [1 2]]}
+{:index 285, :time 15645337750, :type :fail, :process 27, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 286, :time 15726600750, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 287, :time 15729247250, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 288, :time 15814785917, :type :invoke, :process 28, :f :cas, :value [0 [3 2]]}
+{:index 289, :time 15818852750, :type :fail, :process 28, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 290, :time 15899264625, :type :invoke, :process 5, :f :cas, :value [0 [1 0]]}
+{:index 291, :time 15904841000, :type :fail, :process 5, :f :cas, :value [0 [1 0]], :error [:key-does-not-exist "key not found"]}
+{:index 292, :time 16066459000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 293, :time 16069157375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 294, :time 16102456000, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 295, :time 16107194833, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 296, :time 16164625667, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 297, :time 16166665375, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 298, :time 16232687750, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 299, :time 16235243250, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 300, :time 16339334208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 301, :time 16344034375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 302, :time 16408963292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 303, :time 16411624917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 304, :time 16538658958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 305, :time 16543191500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 306, :time 16635787167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 307, :time 16641812542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 308, :time 16754082333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 309, :time 16759289208, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 310, :time 16928529417, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 311, :time 16933134208, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 312, :time 17064465750, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 313, :time 17067273167, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 314, :time 17189605250, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 315, :time 17194911042, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 316, :time 17244144167, :type :invoke, :process 28, :f :write, :value [0 0]}
+{:index 317, :time 17251170042, :type :fail, :process 28, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 318, :time 17366338750, :type :invoke, :process 5, :f :write, :value [0 4]}
+{:index 319, :time 17372945333, :type :fail, :process 5, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 320, :time 17552360333, :type :invoke, :process 27, :f :cas, :value [0 [2 0]]}
+{:index 321, :time 17560547083, :type :fail, :process 27, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 322, :time 17627778625, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 323, :time 17630836417, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 324, :time 17714233250, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 325, :time 17721380750, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 326, :time 17824980625, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 327, :time 17831998917, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 328, :time 17979538125, :type :invoke, :process 27, :f :cas, :value [0 [1 2]]}
+{:index 329, :time 17982112875, :type :fail, :process 27, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 330, :time 18074191292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 331, :time 18077973250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 332, :time 18261753875, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 333, :time 18268907083, :type :fail, :process 5, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 334, :time 18395113000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 335, :time 18402453917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 336, :time 18521882167, :type :invoke, :process 27, :f :cas, :value [0 [0 0]]}
+{:index 337, :time 18524365917, :type :fail, :process 27, :f :cas, :value [0 [0 0]], :error [:key-does-not-exist "key not found"]}
+{:index 338, :time 18667095625, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 339, :time 18672393750, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 340, :time 18696040333, :type :invoke, :process 27, :f :cas, :value [0 [0 0]]}
+{:index 341, :time 18702283000, :type :fail, :process 27, :f :cas, :value [0 [0 0]], :error [:key-does-not-exist "key not found"]}
+{:index 342, :time 18829563958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 343, :time 18832930250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 344, :time 18931461708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 345, :time 18938094792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 346, :time 19126082625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 347, :time 19132214333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 348, :time 19147403292, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 349, :time 19153346625, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 350, :time 19171488708, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 351, :time 19175074833, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 352, :time 19331274208, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 353, :time 19337600292, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 354, :time 19502366000, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 355, :time 19515219458, :type :invoke, :process 27, :f :cas, :value [0 [3 3]]}
+{:index 356, :time 19521388542, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 357, :time 19547429875, :type :fail, :process 27, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 358, :time 19687975417, :type :invoke, :process 28, :f :write, :value [0 2]}
+{:index 359, :time 19695424250, :type :fail, :process 28, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 360, :time 19765056042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 361, :time 19771690208, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 362, :time 19807615083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 363, :time 19813897667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 364, :time 20011924833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 365, :time 20013815875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 366, :time 20039679500, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 367, :time 20041171042, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 368, :time 20146643458, :type :invoke, :process 27, :f :cas, :value [0 [2 2]]}
+{:index 369, :time 20148978042, :type :fail, :process 27, :f :cas, :value [0 [2 2]], :error [:key-does-not-exist "key not found"]}
+{:index 370, :time 20150876208, :type :invoke, :process 27, :f :cas, :value [0 [2 0]]}
+{:index 371, :time 20152533292, :type :fail, :process 27, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 372, :time 20347466917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 373, :time 20354057333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 374, :time 20354955792, :type :invoke, :process 5, :f :write, :value [0 4]}
+{:index 375, :time 20359525167, :type :fail, :process 5, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 376, :time 20410949292, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 377, :time 20414524042, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 378, :time 20546684208, :type :invoke, :process 27, :f :cas, :value [0 [2 0]]}
+{:index 379, :time 20551325833, :type :fail, :process 27, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 380, :time 20613471208, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 381, :time 20617379958, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 382, :time 20781559750, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 383, :time 20787787167, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 384, :time 20960889583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 385, :time 20967610333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 386, :time 21112080042, :type :invoke, :process 28, :f :cas, :value [0 [3 2]]}
+{:index 387, :time 21119522125, :type :fail, :process 28, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 388, :time 21306248333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 389, :time 21311660625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 390, :time 21378486750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 391, :time 21384410375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 392, :time 21555019625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 393, :time 21561037125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 394, :time 21667864667, :type :invoke, :process 27, :f :cas, :value [0 [1 3]]}
+{:index 395, :time 21671227458, :type :fail, :process 27, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 396, :time 21863847167, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 397, :time 21868391083, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 398, :time 22010717042, :type :invoke, :process 27, :f :cas, :value [0 [2 2]]}
+{:index 399, :time 22017929458, :type :fail, :process 27, :f :cas, :value [0 [2 2]], :error [:key-does-not-exist "key not found"]}
+{:index 400, :time 22108975875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 401, :time 22117815375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 402, :time 22237978708, :type :invoke, :process 5, :f :cas, :value [0 [4 1]]}
+{:index 403, :time 22243629833, :type :fail, :process 5, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 404, :time 22289286250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 405, :time 22295000958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 406, :time 22313332125, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 407, :time 22321098000, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 408, :time 22412093500, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 409, :time 22418459625, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 410, :time 22592823542, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 411, :time 22610453708, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 412, :time 22685799500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 413, :time 22693070250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 414, :time 22780370667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 415, :time 22786782333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 416, :time 22905957667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 417, :time 22913418917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 418, :time 23066472583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 419, :time 23071209167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 420, :time 23134686458, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 421, :time 23140102583, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 422, :time 23177260042, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 423, :time 23183354000, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 424, :time 23378001042, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 425, :time 23384482375, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 426, :time 23454575458, :type :invoke, :process 27, :f :cas, :value [0 [2 4]]}
+{:index 427, :time 23460311500, :type :fail, :process 27, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 428, :time 23471269458, :type :invoke, :process 28, :f :write, :value [0 4]}
+{:index 429, :time 23476026208, :type :fail, :process 28, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 430, :time 23574616000, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 431, :time 23580283792, :type :fail, :process 5, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 432, :time 23700252083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 433, :time 23706552417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 434, :time 23830165833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 435, :time 23836691333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 436, :time 23878435667, :type :invoke, :process 27, :f :cas, :value [0 [4 4]]}
+{:index 437, :time 23884332583, :type :fail, :process 27, :f :cas, :value [0 [4 4]], :error [:key-does-not-exist "key not found"]}
+{:index 438, :time 23951825625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 439, :time 23957404292, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 440, :time 24135510750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 441, :time 24142111625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 442, :time 24261794000, :type :invoke, :process 28, :f :cas, :value [0 [1 4]]}
+{:index 443, :time 24268187458, :type :fail, :process 28, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 444, :time 24269529958, :type :invoke, :process 5, :f :cas, :value [0 [3 4]]}
+{:index 445, :time 24274751292, :type :fail, :process 5, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 446, :time 24301292292, :type :invoke, :process 27, :f :cas, :value [0 [1 1]]}
+{:index 447, :time 24305496250, :type :fail, :process 27, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 448, :time 24477217000, :type :invoke, :process 27, :f :cas, :value [0 [1 4]]}
+{:index 449, :time 24484822458, :type :fail, :process 27, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 450, :time 24502174500, :type :invoke, :process 27, :f :cas, :value [0 [3 2]]}
+{:index 451, :time 24507602167, :type :fail, :process 27, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 452, :time 24552706750, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 453, :time 24559105125, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 454, :time 24580086792, :type :invoke, :process 27, :f :cas, :value [0 [3 1]]}
+{:index 455, :time 24585625958, :type :fail, :process 27, :f :cas, :value [0 [3 1]], :error [:key-does-not-exist "key not found"]}
+{:index 456, :time 24586748000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 457, :time 24591413917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 458, :time 24677751708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 459, :time 24683845792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 460, :time 24805929833, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 461, :time 24808435667, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 462, :time 24944802125, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 463, :time 24947397958, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 464, :time 25124800500, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 465, :time 25126768583, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 466, :time 25166126667, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 467, :time 25167967917, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 468, :time 25180676292, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 469, :time 25182135250, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 470, :time 25240438875, :type :invoke, :process 28, :f :cas, :value [0 [0 0]]}
+{:index 471, :time 25242197333, :type :fail, :process 28, :f :cas, :value [0 [0 0]], :error [:key-does-not-exist "key not found"]}
+{:index 472, :time 25333701708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 473, :time 25338202042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 474, :time 25485198458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 475, :time 25491285583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 476, :time 25506238042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 477, :time 25509022500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 478, :time 25555373708, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 479, :time 25561533000, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 480, :time 25719064833, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 481, :time 25725460958, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 482, :time 25822228667, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 483, :time 25827992458, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 484, :time 26005170792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 485, :time 26011868250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 486, :time 26056230833, :type :invoke, :process 5, :f :cas, :value [0 [1 3]]}
+{:index 487, :time 26061775208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 488, :time 26063153958, :type :fail, :process 5, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 489, :time 26069093625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 490, :time 26069725875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 491, :time 26074224458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 492, :time 26230942500, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 493, :time 26236916250, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 494, :time 26406264875, :type :invoke, :process 27, :f :cas, :value [0 [2 4]]}
+{:index 495, :time 26412270208, :type :fail, :process 27, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 496, :time 26529402417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 497, :time 26535579458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 498, :time 26605956583, :type :invoke, :process 28, :f :cas, :value [0 [4 1]]}
+{:index 499, :time 26612040958, :type :fail, :process 28, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 500, :time 26794265875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 501, :time 26795520000, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 502, :time 26801162708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 503, :time 26802174833, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 504, :time 26894311250, :type :invoke, :process 27, :f :cas, :value [0 [1 4]]}
+{:index 505, :time 26900257417, :type :fail, :process 27, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 506, :time 26961875917, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 507, :time 26970660625, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 508, :time 27028628583, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 509, :time 27035811667, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 510, :time 27086250375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 511, :time 27088865542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 512, :time 27182386250, :type :invoke, :process 28, :f :cas, :value [0 [4 2]]}
+{:index 513, :time 27187700792, :type :fail, :process 28, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 514, :time 27221835333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 515, :time 27228187833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 516, :time 27423413375, :type :invoke, :process 27, :f :cas, :value [0 [2 0]]}
+{:index 517, :time 27428848375, :type :fail, :process 27, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 518, :time 27561816542, :type :invoke, :process 27, :f :cas, :value [0 [2 4]]}
+{:index 519, :time 27568228833, :type :fail, :process 27, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 520, :time 27662319167, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 521, :time 27669091625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 522, :time 27681353292, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 523, :time 27686170708, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 524, :time 27751362833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 525, :time 27754042375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 526, :time 27941023750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 527, :time 27943519125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 528, :time 28014004583, :type :invoke, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 529, :time 28015600542, :type :fail, :process 5, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 530, :time 28097748917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 531, :time 28101373542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 532, :time 28176215458, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 533, :time 28181412750, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 534, :time 28264014583, :type :invoke, :process 27, :f :cas, :value [0 [2 1]]}
+{:index 535, :time 28270068042, :type :fail, :process 27, :f :cas, :value [0 [2 1]], :error [:key-does-not-exist "key not found"]}
+{:index 536, :time 28456990833, :type :invoke, :process 27, :f :cas, :value [0 [2 0]]}
+{:index 537, :time 28463372250, :type :fail, :process 27, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 538, :time 28578473208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 539, :time 28584235667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 540, :time 28622669167, :type :invoke, :process 28, :f :write, :value [0 2]}
+{:index 541, :time 28628513167, :type :fail, :process 28, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 542, :time 28730759667, :type :invoke, :process 5, :f :cas, :value [0 [0 0]]}
+{:index 543, :time 28737166792, :type :fail, :process 5, :f :cas, :value [0 [0 0]], :error [:key-does-not-exist "key not found"]}
+{:index 544, :time 28817919750, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 545, :time 28824940042, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 546, :time 28977038083, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 547, :time 28983404875, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 548, :time 28997402750, :type :invoke, :process 27, :f :cas, :value [0 [0 0]]}
+{:index 549, :time 29003914833, :type :fail, :process 27, :f :cas, :value [0 [0 0]], :error [:key-does-not-exist "key not found"]}
+{:index 550, :time 29159835750, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 551, :time 29165791750, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 552, :time 29314081000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 553, :time 29320180167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 554, :time 29428459292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 555, :time 29430656000, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 556, :time 29434813292, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 557, :time 29434936875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 558, :time 29478453542, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 559, :time 29483110875, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 560, :time 29534111458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 561, :time 29537095083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 562, :time 29575157667, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 563, :time 29578265125, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 564, :time 29755940583, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 565, :time 29761912583, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 566, :time 29784887458, :type :invoke, :process 27, :f :cas, :value [0 [0 1]]}
+{:index 567, :time 29789796000, :type :fail, :process 27, :f :cas, :value [0 [0 1]], :error [:key-does-not-exist "key not found"]}
+{:index 568, :time 29799200625, :type :invoke, :process 28, :f :cas, :value [0 [0 2]]}
+{:index 569, :time 29801773833, :type :fail, :process 28, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 570, :time 29859162250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 571, :time 29861258875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 572, :time 30010635542, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 573, :time 30012787500, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 574, :time 30133236333, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 575, :time 30145229958, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 576, :time 30256024083, :type :invoke, :process 27, :f :cas, :value [0 [2 0]]}
+{:index 577, :time 30257848750, :type :fail, :process 27, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 578, :time 30427742000, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 579, :time 30434143292, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 580, :time 30502643000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 581, :time 30504799542, :type :invoke, :process 28, :f :write, :value [0 0]}
+{:index 582, :time 30508342000, :type :fail, :process 28, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 583, :time 30508492125, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 584, :time 30578165625, :type :invoke, :process 5, :f :cas, :value [0 [1 2]]}
+{:index 585, :time 30584245583, :type :fail, :process 5, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 586, :time 30621540083, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 587, :time 30625618208, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 588, :time 30767364333, :type :invoke, :process 27, :f :cas, :value [0 [1 4]]}
+{:index 589, :time 30772520417, :type :fail, :process 27, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 590, :time 30955951125, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 591, :time 30958564000, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 592, :time 31094278875, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 593, :time 31100309417, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 594, :time 31239584292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 595, :time 31245502458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 596, :time 31411344458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 597, :time 31417942208, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 598, :time 31524840625, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 599, :time 31527938625, :type :fail, :process 5, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 600, :time 31621815375, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 601, :time 31628427125, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 602, :time 31818193542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 603, :time 31823541667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 604, :time 31861497208, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 605, :time 31866663500, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 606, :time 31952681083, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 607, :time 31957997542, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 608, :time 32157677042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 609, :time 32166795708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 610, :time 32239253042, :type :invoke, :process 28, :f :cas, :value [0 [1 3]]}
+{:index 611, :time 32241009333, :type :fail, :process 28, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 612, :time 32329415583, :type :invoke, :process 5, :f :cas, :value [0 [3 4]]}
+{:index 613, :time 32334305917, :type :fail, :process 5, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 614, :time 32526106458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 615, :time 32531384292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 616, :time 32654009750, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 617, :time 32659450125, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 618, :time 32758704125, :type :invoke, :process 27, :f :cas, :value [0 [2 4]]}
+{:index 619, :time 32770363917, :type :fail, :process 27, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 620, :time 32810750042, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 621, :time 32813871583, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 622, :time 32899747917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 623, :time 32904882000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 624, :time 33014060167, :type :invoke, :process 28, :f :write, :value [0 3]}
+{:index 625, :time 33016921333, :type :fail, :process 28, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 626, :time 33177282375, :type :invoke, :process 5, :f :cas, :value [0 [4 0]]}
+{:index 627, :time 33183164458, :type :fail, :process 5, :f :cas, :value [0 [4 0]], :error [:key-does-not-exist "key not found"]}
+{:index 628, :time 33339586292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 629, :time 33345767958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 630, :time 33361224542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 631, :time 33364470750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 632, :time 33540961792, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 633, :time 33544609333, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 634, :time 33566506375, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 635, :time 33570088792, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 636, :time 33702591542, :type :invoke, :process 27, :f :cas, :value [0 [1 3]]}
+{:index 637, :time 33708488375, :type :fail, :process 27, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 638, :time 33877936458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 639, :time 33882588708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 640, :time 33904372875, :type :invoke, :process 5, :f :cas, :value [0 [0 4]]}
+{:index 641, :time 33908704667, :type :fail, :process 5, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 642, :time 33932855125, :type :invoke, :process 27, :f :cas, :value [0 [3 4]]}
+{:index 643, :time 33935262792, :type :fail, :process 27, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 644, :time 33958592667, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 645, :time 33960260625, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 646, :time 34090221167, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 647, :time 34095174458, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 648, :time 34246618458, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 649, :time 34253150917, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 650, :time 34352325375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 651, :time 34358002625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 652, :time 34475467083, :type :invoke, :process 28, :f :cas, :value [0 [3 1]]}
+{:index 653, :time 34478046083, :type :fail, :process 28, :f :cas, :value [0 [3 1]], :error [:key-does-not-exist "key not found"]}
+{:index 654, :time 34569724708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 655, :time 34579416292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 656, :time 34644710958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 657, :time 34648204375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 658, :time 34835298542, :type :invoke, :process 27, :f :cas, :value [0 [1 3]]}
+{:index 659, :time 34839663250, :type :fail, :process 27, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 660, :time 35005155583, :type :invoke, :process 27, :f :cas, :value [0 [3 0]]}
+{:index 661, :time 35007961417, :type :fail, :process 27, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 662, :time 35079323375, :type :invoke, :process 27, :f :cas, :value [0 [3 2]]}
+{:index 663, :time 35081771417, :type :fail, :process 27, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 664, :time 35268710167, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 665, :time 35270943333, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 666, :time 35367492250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 667, :time 35370774417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 668, :time 35463194542, :type :invoke, :process 5, :f :cas, :value [0 [3 1]]}
+{:index 669, :time 35468490042, :type :fail, :process 5, :f :cas, :value [0 [3 1]], :error [:key-does-not-exist "key not found"]}
+{:index 670, :time 35561309542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 671, :time 35566191292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 672, :time 35654893917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 673, :time 35660703000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 674, :time 35856220083, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 675, :time 35861730042, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 676, :time 35990399958, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 677, :time 35995832958, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 678, :time 36008475542, :type :invoke, :process 27, :f :cas, :value [0 [2 2]]}
+{:index 679, :time 36014531083, :type :fail, :process 27, :f :cas, :value [0 [2 2]], :error [:key-does-not-exist "key not found"]}
+{:index 680, :time 36142322333, :type :invoke, :process 28, :f :cas, :value [0 [0 4]]}
+{:index 681, :time 36148228542, :type :fail, :process 28, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 682, :time 36331491250, :type :invoke, :process 5, :f :cas, :value [0 [1 4]]}
+{:index 683, :time 36335498375, :type :fail, :process 5, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 684, :time 36349581583, :type :invoke, :process 27, :f :cas, :value [0 [2 4]]}
+{:index 685, :time 36351736750, :type :fail, :process 27, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 686, :time 36521813833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 687, :time 36527122917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 688, :time 36581771208, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 689, :time 36587269208, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 690, :time 36665176250, :type :invoke, :process 27, :f :cas, :value [0 [3 4]]}
+{:index 691, :time 36671062083, :type :fail, :process 27, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 692, :time 36811755708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 693, :time 36817832333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 694, :time 36850800417, :type :invoke, :process 28, :f :cas, :value [0 [3 0]]}
+{:index 695, :time 36855472792, :type :fail, :process 28, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 696, :time 36935767625, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 697, :time 36942719542, :type :fail, :process 5, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 698, :time 37021143875, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 699, :time 37023447333, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 700, :time 37072544792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 701, :time 37074770708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 702, :time 37241379292, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 703, :time 37245759625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 704, :time 37270109875, :type :invoke, :process 27, :f :cas, :value [0 [0 3]]}
+{:index 705, :time 37275028083, :type :fail, :process 27, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 706, :time 37339231958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 707, :time 37346038792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 708, :time 37380118958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 709, :time 37385644667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 710, :time 37480095083, :type :invoke, :process 5, :f :cas, :value [0 [4 4]]}
+{:index 711, :time 37487009750, :type :fail, :process 5, :f :cas, :value [0 [4 4]], :error [:key-does-not-exist "key not found"]}
+{:index 712, :time 37536533833, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 713, :time 37539045667, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 714, :time 37642310792, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 715, :time 37649179500, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 716, :time 37666203292, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 717, :time 37671969833, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 718, :time 37772672375, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 719, :time 37775538208, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 720, :time 37929252833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 721, :time 37931984667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 722, :time 38000083542, :type :invoke, :process 28, :f :write, :value [0 2]}
+{:index 723, :time 38002484958, :type :fail, :process 28, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 724, :time 38091864708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 725, :time 38096686417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 726, :time 38262155875, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 727, :time 38268939208, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 728, :time 38344647333, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 729, :time 38351334958, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 730, :time 38539588917, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 731, :time 38544965292, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 732, :time 38710472208, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 733, :time 38716376750, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 734, :time 38913462875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 735, :time 38919166375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 736, :time 38961639250, :type :invoke, :process 28, :f :cas, :value [0 [1 1]]}
+{:index 737, :time 38967839792, :type :fail, :process 28, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 738, :time 39110909917, :type :invoke, :process 5, :f :cas, :value [0 [1 4]]}
+{:index 739, :time 39117228458, :type :fail, :process 5, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 740, :time 39239631708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 741, :time 39244738167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 742, :time 39256704125, :type :invoke, :process 27, :f :cas, :value [0 [1 4]]}
+{:index 743, :time 39263753167, :type :fail, :process 27, :f :cas, :value [0 [1 4]], :error [:key-does-not-exist "key not found"]}
+{:index 744, :time 39428686875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 745, :time 39434270625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 746, :time 39555159083, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 747, :time 39561174583, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 748, :time 39664675542, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 749, :time 39666735875, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 750, :time 39845985958, :type :invoke, :process 28, :f :cas, :value [0 [1 3]]}
+{:index 751, :time 39848720000, :type :fail, :process 28, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 752, :time 40045073625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 753, :time 40046824542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 754, :time 40172937125, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 755, :time 40177724042, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 756, :time 40177801542, :type :invoke, :process 27, :f :cas, :value [0 [3 1]]}
+{:index 757, :time 40180374500, :type :fail, :process 27, :f :cas, :value [0 [3 1]], :error [:key-does-not-exist "key not found"]}
+{:index 758, :time 40245138625, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 759, :time 40247007250, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 760, :time 40411189583, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 761, :time 40416270750, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 762, :time 40502113208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 763, :time 40510258917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 764, :time 40573157583, :type :invoke, :process 28, :f :write, :value [0 0]}
+{:index 765, :time 40578297000, :type :fail, :process 28, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 766, :time 40702330583, :type :invoke, :process 5, :f :cas, :value [0 [2 1]]}
+{:index 767, :time 40708839250, :type :fail, :process 5, :f :cas, :value [0 [2 1]], :error [:key-does-not-exist "key not found"]}
+{:index 768, :time 40889545542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 769, :time 40895764208, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 770, :time 40997391250, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 771, :time 41003914958, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 772, :time 41122860250, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 773, :time 41127908708, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 774, :time 41202304000, :type :invoke, :process 27, :f :cas, :value [0 [3 3]]}
+{:index 775, :time 41209199500, :type :fail, :process 27, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 776, :time 41238142333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 777, :time 41243424250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 778, :time 41371821542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 779, :time 41387077042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 780, :time 41472891542, :type :invoke, :process 5, :f :cas, :value [0 [2 3]]}
+{:index 781, :time 41478271875, :type :fail, :process 5, :f :cas, :value [0 [2 3]], :error [:key-does-not-exist "key not found"]}
+{:index 782, :time 41486013500, :type :invoke, :process 27, :f :cas, :value [0 [1 1]]}
+{:index 783, :time 41491893875, :type :fail, :process 27, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 784, :time 41575051083, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 785, :time 41580828542, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 786, :time 41766432292, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 787, :time 41773621625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 788, :time 41881891083, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 789, :time 41887467875, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 790, :time 42019697167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 791, :time 42022473417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 792, :time 42221826083, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 793, :time 42227153167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 794, :time 42228114792, :type :invoke, :process 5, :f :cas, :value [0 [0 2]]}
+{:index 795, :time 42237157667, :type :fail, :process 5, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 796, :time 42294601667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 797, :time 42299823042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 798, :time 42461738458, :type :invoke, :process 27, :f :cas, :value [0 [3 4]]}
+{:index 799, :time 42467799125, :type :fail, :process 27, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 800, :time 42628452958, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 801, :time 42634901208, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 802, :time 42766099167, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 803, :time 42795847750, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 804, :time 42828383042, :type :invoke, :process 27, :f :cas, :value [0 [3 3]]}
+{:index 805, :time 42835316458, :type :fail, :process 27, :f :cas, :value [0 [3 3]], :error [:key-does-not-exist "key not found"]}
+{:index 806, :time 42845049667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 807, :time 42848184083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 808, :time 42976807042, :type :invoke, :process 5, :f :cas, :value [0 [4 0]]}
+{:index 809, :time 42979042417, :type :fail, :process 5, :f :cas, :value [0 [4 0]], :error [:key-does-not-exist "key not found"]}
+{:index 810, :time 43119429917, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 811, :time 43122075708, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 812, :time 43245189458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 813, :time 43251183708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 814, :time 43305923708, :type :invoke, :process 27, :f :cas, :value [0 [2 3]]}
+{:index 815, :time 43311559875, :type :fail, :process 27, :f :cas, :value [0 [2 3]], :error [:key-does-not-exist "key not found"]}
+{:index 816, :time 43371485042, :type :invoke, :process 27, :f :cas, :value [0 [2 1]]}
+{:index 817, :time 43376301542, :type :fail, :process 27, :f :cas, :value [0 [2 1]], :error [:key-does-not-exist "key not found"]}
+{:index 818, :time 43472593042, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 819, :time 43477742083, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 820, :time 43661435875, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 821, :time 43667288292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 822, :time 43761095750, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 823, :time 43767139875, :type :fail, :process 5, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 824, :time 43795123250, :type :invoke, :process 27, :f :cas, :value [0 [1 0]]}
+{:index 825, :time 43800664708, :type :fail, :process 27, :f :cas, :value [0 [1 0]], :error [:key-does-not-exist "key not found"]}
+{:index 826, :time 43963410750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 827, :time 43969608750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 828, :time 43990824458, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 829, :time 43995509292, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 830, :time 44144499458, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 831, :time 44147338458, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 832, :time 44188865375, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 833, :time 44192643250, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 834, :time 44272776042, :type :invoke, :process 28, :f :cas, :value [0 [0 2]]}
+{:index 835, :time 44276850542, :type :fail, :process 28, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 836, :time 44455993917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 837, :time 44462375500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 838, :time 44566186292, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 839, :time 44569633500, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 840, :time 44761749833, :type :invoke, :process 27, :f :cas, :value [0 [1 2]]}
+{:index 841, :time 44765323958, :type :fail, :process 27, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 842, :time 44961119333, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 843, :time 44963241833, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 844, :time 45001146500, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 845, :time 45002962250, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 846, :time 45061742583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 847, :time 45063413500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 848, :time 45206199292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 849, :time 45209730958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 850, :time 45357834500, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 851, :time 45359912667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 852, :time 45516043458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 853, :time 45522203417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 854, :time 45571783792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 855, :time 45574674500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 856, :time 45700336833, :type :invoke, :process 27, :f :cas, :value [0 [3 0]]}
+{:index 857, :time 45706477333, :type :fail, :process 27, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 858, :time 45771956292, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 859, :time 45774911375, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 860, :time 45811826542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 861, :time 45817267667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 862, :time 45934541417, :type :invoke, :process 28, :f :write, :value [0 1]}
+{:index 863, :time 45941284292, :type :fail, :process 28, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 864, :time 45978407042, :type :invoke, :process 5, :f :cas, :value [0 [0 4]]}
+{:index 865, :time 45983077625, :type :fail, :process 5, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 866, :time 46133043375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 867, :time 46136373958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 868, :time 46205202333, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 869, :time 46207868458, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 870, :time 46235876375, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 871, :time 46238475083, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 872, :time 46412034250, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 873, :time 46415263333, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 874, :time 46575400833, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 875, :time 46580540125, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 876, :time 46693900625, :type :invoke, :process 28, :f :cas, :value [0 [2 2]]}
+{:index 877, :time 46700172125, :type :fail, :process 28, :f :cas, :value [0 [2 2]], :error [:key-does-not-exist "key not found"]}
+{:index 878, :time 46723453500, :type :invoke, :process 5, :f :cas, :value [0 [1 2]]}
+{:index 879, :time 46728072167, :type :fail, :process 5, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 880, :time 46860018000, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 881, :time 46865385833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 882, :time 46940739417, :type :invoke, :process 27, :f :cas, :value [0 [3 2]]}
+{:index 883, :time 46946310625, :type :fail, :process 27, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 884, :time 47062135167, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 885, :time 47067743958, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 886, :time 47258982375, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 887, :time 47264483125, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 888, :time 47438448458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 889, :time 47455201167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 890, :time 47489623458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 891, :time 47492315083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 892, :time 47507983583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 893, :time 47509804708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 894, :time 47610718125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 895, :time 47622608000, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 896, :time 47795134417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 897, :time 47800209167, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 898, :time 47904815208, :type :invoke, :process 27, :f :cas, :value [0 [3 2]]}
+{:index 899, :time 47909993500, :type :fail, :process 27, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 900, :time 48003503250, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 901, :time 48005954708, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 902, :time 48150575375, :type :invoke, :process 27, :f :cas, :value [0 [3 4]]}
+{:index 903, :time 48156018125, :type :fail, :process 27, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 904, :time 48256218500, :type :invoke, :process 28, :f :write, :value [0 3]}
+{:index 905, :time 48259286000, :type :fail, :process 28, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 906, :time 48437805250, :type :invoke, :process 5, :f :cas, :value [0 [1 2]]}
+{:index 907, :time 48447928042, :type :fail, :process 5, :f :cas, :value [0 [1 2]], :error [:key-does-not-exist "key not found"]}
+{:index 908, :time 48569040458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 909, :time 48574556750, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 910, :time 48761780792, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 911, :time 48767871250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 912, :time 48811737583, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 913, :time 48818109750, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 914, :time 48916792625, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 915, :time 48921822500, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 916, :time 49097366250, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 917, :time 49099826208, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 918, :time 49231045875, :type :invoke, :process 28, :f :cas, :value [0 [0 4]]}
+{:index 919, :time 49236965958, :type :fail, :process 28, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 920, :time 49336339542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 921, :time 49340256625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 922, :time 49505111292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 923, :time 49509898833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 924, :time 49672892333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 925, :time 49678787333, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 926, :time 49771468500, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 927, :time 49777654708, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 928, :time 49852496958, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 929, :time 49855472208, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 930, :time 49944864583, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 931, :time 49947187500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 932, :time 50107137667, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 933, :time 50111467250, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 934, :time 50134154833, :type :invoke, :process 5, :f :cas, :value [0 [3 4]]}
+{:index 935, :time 50136353125, :type :fail, :process 5, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 936, :time 50140854292, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 937, :time 50142332625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 938, :time 50270076792, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 939, :time 50275807000, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 940, :time 50464784458, :type :invoke, :process 27, :f :write, :value [0 0]}
+{:index 941, :time 50467493958, :type :fail, :process 27, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 942, :time 50521744417, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 943, :time 50523937625, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 944, :time 50570167125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 945, :time 50572279792, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 946, :time 50640395292, :type :invoke, :process 28, :f :write, :value [0 1]}
+{:index 947, :time 50646225583, :type :fail, :process 28, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 948, :time 50712012375, :type :invoke, :process 5, :f :cas, :value [0 [3 0]]}
+{:index 949, :time 50717549042, :type :fail, :process 5, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 950, :time 50853160417, :type :invoke, :process 27, :f :cas, :value [0 [3 1]]}
+{:index 951, :time 50858189000, :type :fail, :process 27, :f :cas, :value [0 [3 1]], :error [:key-does-not-exist "key not found"]}
+{:index 952, :time 50978442833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 953, :time 50984025917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 954, :time 51042029875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 955, :time 51047102625, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 956, :time 51161757542, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 957, :time 51166383083, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 958, :time 51195466417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 959, :time 51201853833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 960, :time 51210698458, :type :invoke, :process 28, :f :cas, :value [0 [1 0]]}
+{:index 961, :time 51216275250, :type :fail, :process 28, :f :cas, :value [0 [1 0]], :error [:key-does-not-exist "key not found"]}
+{:index 962, :time 51374609333, :type :invoke, :process 5, :f :cas, :value [0 [2 4]]}
+{:index 963, :time 51379537375, :type :fail, :process 5, :f :cas, :value [0 [2 4]], :error [:key-does-not-exist "key not found"]}
+{:index 964, :time 51428945542, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 965, :time 51434869500, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 966, :time 51552323292, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 967, :time 51558574458, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 968, :time 51619941500, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 969, :time 51628612792, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 970, :time 51819831042, :type :invoke, :process 27, :f :cas, :value [0 [0 2]]}
+{:index 971, :time 51825846042, :type :fail, :process 27, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 972, :time 51928454875, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 973, :time 51934321333, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 974, :time 52047388958, :type :invoke, :process 28, :f :cas, :value [0 [1 3]]}
+{:index 975, :time 52053547583, :type :fail, :process 28, :f :cas, :value [0 [1 3]], :error [:key-does-not-exist "key not found"]}
+{:index 976, :time 52075450208, :type :invoke, :process 5, :f :write, :value [0 3]}
+{:index 977, :time 52077966917, :type :fail, :process 5, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 978, :time 52084504583, :type :invoke, :process 27, :f :cas, :value [0 [3 2]]}
+{:index 979, :time 52086068208, :type :fail, :process 27, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 980, :time 52123476458, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 981, :time 52125939667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 982, :time 52222128958, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 983, :time 52224285750, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 984, :time 52383933125, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 985, :time 52389379042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 986, :time 52488453167, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 987, :time 52493618000, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 988, :time 52539259542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 989, :time 52544235583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 990, :time 52605830000, :type :invoke, :process 5, :f :write, :value [0 1]}
+{:index 991, :time 52610075375, :type :fail, :process 5, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 992, :time 52711828333, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 993, :time 52715554792, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 994, :time 52789550167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 995, :time 52795737833, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 996, :time 52960759625, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 997, :time 52962867833, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 998, :time 53122974833, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 999, :time 53135825625, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1000, :time 53164225250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1001, :time 53168351500, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1002, :time 53244196625, :type :invoke, :process 28, :f :write, :value [0 0]}
+{:index 1003, :time 53247701958, :type :fail, :process 28, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1004, :time 53382331708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1005, :time 53385696958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1006, :time 53452358375, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 1007, :time 53455972917, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1008, :time 53590159042, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1009, :time 53593429208, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1010, :time 53661814083, :type :invoke, :process 27, :f :cas, :value [0 [4 4]]}
+{:index 1011, :time 53665486250, :type :fail, :process 27, :f :cas, :value [0 [4 4]], :error [:key-does-not-exist "key not found"]}
+{:index 1012, :time 53763093708, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 1013, :time 53766330500, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1014, :time 53955916417, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 1015, :time 53959066625, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 1016, :time 53960890375, :type :invoke, :process 28, :f :write, :value [0 2]}
+{:index 1017, :time 53965765708, :type :fail, :process 28, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1018, :time 54162426667, :type :invoke, :process 5, :f :cas, :value [0 [2 1]]}
+{:index 1019, :time 54169950083, :type :fail, :process 5, :f :cas, :value [0 [2 1]], :error [:key-does-not-exist "key not found"]}
+{:index 1020, :time 54282640208, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1021, :time 54288935042, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1022, :time 54363116708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1023, :time 54369677667, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1024, :time 54432799792, :type :invoke, :process 27, :f :cas, :value [0 [3 2]]}
+{:index 1025, :time 54438552875, :type :fail, :process 27, :f :cas, :value [0 [3 2]], :error [:key-does-not-exist "key not found"]}
+{:index 1026, :time 54447730500, :type :invoke, :process 27, :f :cas, :value [0 [3 0]]}
+{:index 1027, :time 54451204917, :type :fail, :process 27, :f :cas, :value [0 [3 0]], :error [:key-does-not-exist "key not found"]}
+{:index 1028, :time 54596244750, :type :invoke, :process 27, :f :cas, :value [0 [0 4]]}
+{:index 1029, :time 54598458708, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1030, :time 54603947375, :type :fail, :process 27, :f :cas, :value [0 [0 4]], :error [:key-does-not-exist "key not found"]}
+{:index 1031, :time 54607278958, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1032, :time 54748566333, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1033, :time 54753574875, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1034, :time 54922392708, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 1035, :time 54925011417, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 1036, :time 55022572958, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1037, :time 55024753375, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1038, :time 55154264042, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 1039, :time 55159181292, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1040, :time 55298030500, :type :invoke, :process 27, :f :cas, :value [0 [0 0]]}
+{:index 1041, :time 55303055333, :type :fail, :process 27, :f :cas, :value [0 [0 0]], :error [:key-does-not-exist "key not found"]}
+{:index 1042, :time 55472575417, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1043, :time 55474742583, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1044, :time 55672864167, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1045, :time 55678231708, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1046, :time 55822873833, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1047, :time 55826473625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1048, :time 56005086750, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1049, :time 56009750292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1050, :time 56139239875, :type :invoke, :process 27, :f :cas, :value [0 [2 2]]}
+{:index 1051, :time 56144932708, :type :fail, :process 27, :f :cas, :value [0 [2 2]], :error [:key-does-not-exist "key not found"]}
+{:index 1052, :time 56168493458, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 1053, :time 56170871042, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1054, :time 56332820458, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 1055, :time 56339056208, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1056, :time 56439587125, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 1057, :time 56444937417, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1058, :time 56628413583, :type :invoke, :process 28, :f :cas, :value [0 [4 1]]}
+{:index 1059, :time 56634370750, :type :fail, :process 28, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 1060, :time 56747624500, :type :invoke, :process 5, :f :cas, :value [0 [0 3]]}
+{:index 1061, :time 56753130833, :type :fail, :process 5, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 1062, :time 56933898625, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1063, :time 56943571917, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1064, :time 57019245375, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 1065, :time 57022736708, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1066, :time 57131785083, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 1067, :time 57135397750, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1068, :time 57161506958, :type :invoke, :process 27, :f :write, :value [0 2]}
+{:index 1069, :time 57200089958, :type :fail, :process 27, :f :write, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1070, :time 57280964042, :type :invoke, :process 27, :f :cas, :value [0 [4 2]]}
+{:index 1071, :time 57290040042, :type :fail, :process 27, :f :cas, :value [0 [4 2]], :error [:key-does-not-exist "key not found"]}
+{:index 1072, :time 57330144667, :type :invoke, :process 28, :f :cas, :value [0 [0 3]]}
+{:index 1073, :time 57332277875, :type :fail, :process 28, :f :cas, :value [0 [0 3]], :error [:key-does-not-exist "key not found"]}
+{:index 1074, :time 57496744375, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1075, :time 57499952542, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1076, :time 57535260542, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 1077, :time 57539653250, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1078, :time 57719989917, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1079, :time 57724827083, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1080, :time 57918123458, :type :invoke, :process 27, :f :cas, :value [0 [4 1]]}
+{:index 1081, :time 57923307875, :type :fail, :process 27, :f :cas, :value [0 [4 1]], :error [:key-does-not-exist "key not found"]}
+{:index 1082, :time 57950849667, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 1083, :time 57953627875, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1084, :time 57970635375, :type :invoke, :process 27, :f :write, :value [0 4]}
+{:index 1085, :time 57974135417, :type :fail, :process 27, :f :write, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1086, :time 58038260542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1087, :time 58041037625, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1088, :time 58142874750, :type :invoke, :process 5, :f :cas, :value [0 [2 0]]}
+{:index 1089, :time 58146142417, :type :fail, :process 5, :f :cas, :value [0 [2 0]], :error [:key-does-not-exist "key not found"]}
+{:index 1090, :time 58339593583, :type :invoke, :process 27, :f :cas, :value [0 [4 3]]}
+{:index 1091, :time 58347242542, :type :fail, :process 27, :f :cas, :value [0 [4 3]], :error [:key-does-not-exist "key not found"]}
+{:index 1092, :time 58437434500, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 1093, :time 58441007125, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1094, :time 58516543708, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 1095, :time 58520497250, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1096, :time 58575201708, :type :invoke, :process 2, :f :read, :value [0 nil]}
+{:index 1097, :time 58578646042, :type :fail, :process 2, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1098, :time 58670102625, :type :invoke, :process 27, :f :cas, :value [0 [1 0]]}
+{:index 1099, :time 58673420542, :type :fail, :process 27, :f :cas, :value [0 [1 0]], :error [:key-does-not-exist "key not found"]}
+{:index 1100, :time 58735653083, :type :invoke, :process 28, :f :cas, :value [0 [1 1]]}
+{:index 1101, :time 58738640792, :type :fail, :process 28, :f :cas, :value [0 [1 1]], :error [:key-does-not-exist "key not found"]}
+{:index 1102, :time 58777467250, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1103, :time 58781413292, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1104, :time 58934613542, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1105, :time 58940443458, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1106, :time 59040927292, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 1107, :time 59043298125, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1108, :time 59147879875, :type :invoke, :process 1, :f :read, :value [0 nil]}
+{:index 1109, :time 59151678792, :type :fail, :process 1, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1110, :time 59293909375, :type :invoke, :process 27, :f :cas, :value [0 [3 4]]}
+{:index 1111, :time 59297540750, :type :fail, :process 27, :f :cas, :value [0 [3 4]], :error [:key-does-not-exist "key not found"]}
+{:index 1112, :time 59455920125, :type :invoke, :process 0, :f :read, :value [0 nil]}
+{:index 1113, :time 59462611417, :type :fail, :process 0, :f :read, :value [0 nil], :error [:key-does-not-exist "not found"]}
+{:index 1114, :time 59647062125, :type :invoke, :process 28, :f :cas, :value [0 [0 2]]}
+{:index 1115, :time 59655776375, :type :fail, :process 28, :f :cas, :value [0 [0 2]], :error [:key-does-not-exist "key not found"]}
+{:index 1116, :time 59734121083, :type :invoke, :process 5, :f :write, :value [0 0]}
+{:index 1117, :time 59740484625, :type :fail, :process 5, :f :write, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1118, :time 59797281500, :type :invoke, :process 27, :f :write, :value [0 1]}
+{:index 1119, :time 59801327958, :type :fail, :process 27, :f :write, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1120, :time 59992338458, :type :invoke, :process 27, :f :write, :value [0 3]}
+{:index 1121, :time 59994775542, :type :fail, :process 27, :f :write, :value [0 3], :error [:abort "TCP sender unavailable"]}

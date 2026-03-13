@@ -167,61 +167,27 @@ async fn main() {
             }
 
             "cas" => {
-                let key = msg.body.key.clone().unwrap().to_string();
-                let key = key.trim_matches('"').to_string();
-                let expected = msg.body.from.clone().unwrap().to_string();
-                let expected = expected.trim_matches('"').to_string();
-                let new_value = msg.body.to.clone().unwrap().to_string();
-                let new_value = new_value.trim_matches('"').to_string();
+    let url = format!("{}/kv/cas", shim_url);
+    let result = timeout(Duration::from_secs(5),
+        http.post(&url)
+            .json(&serde_json::json!({
+                "key": key,
+                "expected": expected,
+                "new_value": new_value
+            }))
+            .send()).await;
 
-                // Step 1: read current value
-                let get_url = format!("{}/kv/get/{}", shim_url, key);
-                let read_result = timeout(Duration::from_secs(5),
-                                          http.get(&get_url).send()).await;
-
-                let body = match read_result {
-                    Ok(Ok(resp)) => match resp.json::<ShimResponse>().await {
-                        Ok(s) if s.ok => {
-                            let current = s.value.unwrap_or_default();
-                            if current != expected {
-                                // Precondition failed — return code 22
-                                error_body(msg.body.msg_id, 22,
-                                    format!("expected {} but had {}", expected, current))
-                            } else {
-                                // Step 2: write new value
-                                let put_url = format!("{}/kv/put", shim_url);
-                                let write_result = timeout(Duration::from_secs(5),
-                                    http.post(&put_url)
-                                        .json(&serde_json::json!({"key": key, "value": new_value}))
-                                        .send()).await;
-
-                                match write_result {
-                                    Ok(Ok(resp)) => match resp.json::<ShimResponse>().await {
-                                        Ok(s) if s.ok => Body {
-                                            msg_type: "cas_ok".into(),
-                                            in_reply_to: msg.body.msg_id,
-                                            msg_id: None, node_id: None, node_ids: None,
-                                            key: None, value: None, from: None, to: None,
-                                            code: None, text: None,
-                                        },
-                                        Ok(s) => error_body(msg.body.msg_id, 14,
-                                                            s.error.unwrap_or("write failed".into())),
-                                        Err(e) => error_body(msg.body.msg_id, 13, e.to_string()),
-                                    },
-                                    Ok(Err(e)) => error_body(msg.body.msg_id, 11, e.to_string()),
-                                    Err(_)     => error_body(msg.body.msg_id, 11, "timeout".into()),
-                                }
-                            }
-                        },
-                        // Key doesn't exist — treat as precondition failure
-                        Ok(_) => error_body(msg.body.msg_id, 20, "key not found".into()),
-                        Err(e) => error_body(msg.body.msg_id, 13, e.to_string()),
-                    },
-                    Ok(Err(e)) => error_body(msg.body.msg_id, 11, e.to_string()),
-                    Err(_)     => error_body(msg.body.msg_id, 11, "timeout".into()),
-                };
-                send_reply(&node_id, &msg, body);
-            }
+    let body = match result {
+        Ok(Ok(resp)) => match resp.json::<ShimResponse>().await {
+            Ok(s) if s.ok => Body { msg_type: "cas_ok".into(), ... },
+            Ok(s) => error_body(msg.body.msg_id, 22, s.error.unwrap_or("cas failed".into())),
+            Err(e) => error_body(msg.body.msg_id, 13, e.to_string()),
+        },
+        Ok(Err(e)) => error_body(msg.body.msg_id, 11, e.to_string()),
+        Err(_) => error_body(msg.body.msg_id, 11, "timeout".into()),
+    };
+    send_reply(&node_id, &msg, body);
+}
 
             other => eprintln!("[node] unknown type: {other}"),
         }

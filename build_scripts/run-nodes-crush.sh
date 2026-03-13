@@ -9,14 +9,15 @@ kill_port() {
 }
 
 while true; do
-    SERVER=$((RANDOM % 3 + 1))
+    SERVER=$((RANDOM % 2 + 1))
     PORT=$((8000 + SERVER))
     echo "Killing server $SERVER (port $PORT)"
 
+
     kill_port $PORT
 
-    echo "Waiting 3 seconds before restart..."
-    sleep 3
+    echo "Waiting sometime seconds before restart... within 3s"
+    sleep 3  # wait 3 seconds before restart
 
     echo "Restarting server $SERVER"
     RUST_LOG=info \
@@ -25,4 +26,7 @@ while true; do
         ../target/debug/server >> ./logs/server-${SERVER}-nemesis.log 2>&1 &
 
     echo "Server $SERVER restarted (PID $!)"
+    echo "sleeping for 10-15s before next kill"
+    sleep $((RANDOM % 10 + 5))  # 10-15 seconds between kills
+
 done
