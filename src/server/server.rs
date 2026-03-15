@@ -57,12 +57,20 @@ impl OmniPaxosServer {
             .await;
         // Main event loop with leader election
         let mut election_interval = tokio::time::interval(ELECTION_TIMEOUT);
+        let mut heartbeat_interval = tokio::time::interval(Duration::from_secs(60));
         loop {
             tokio::select! {
                 _ = election_interval.tick() => {
                     self.omnipaxos.tick();
                     self.send_outgoing_msgs();
                 },
+               _ = heartbeat_interval.tick() => {                    // ← ADD THIS ARM
+                for peer in self.peers.clone() {
+                    self.network.send_to_cluster(peer, ClusterMessage::Heartbeat);
+                }
+                self.network.check_heartbeat_timeouts();
+            },
+
                 _ = self.network.cluster_messages.recv_many(&mut cluster_msg_buf, NETWORK_BATCH_SIZE) => {
                     self.handle_cluster_messages(&mut cluster_msg_buf).await;
                 },
@@ -214,6 +222,12 @@ impl OmniPaxosServer {
                     debug!("Received start message from peer {from}");
                     received_start_signal = true;
                     self.send_client_start_signals(start_time);
+                }
+                ClusterMessage::Heartbeat => {                                    // ← ADD
+                    self.network.send_to_cluster(from, ClusterMessage::HeartbeatAck);
+                }
+                ClusterMessage::HeartbeatAck => {                                 // ← ADD
+                    self.network.update_heartbeat_ack(from);
                 }
             }
         }

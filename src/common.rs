@@ -17,6 +17,8 @@ pub mod messages {
     pub enum ClusterMessage {
         OmniPaxosMessage(OmniPaxosMessage<Command>),
         LeaderStartSignal(Timestamp),
+        Heartbeat,        // ← ADD THIS
+        HeartbeatAck,     // ← ADD THIS
     }
 
     #[derive(Clone, Debug, Serialize, Deserialize)]

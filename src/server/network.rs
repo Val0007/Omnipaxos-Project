@@ -39,7 +39,8 @@ pub struct Network {
     pub reconnect_peers:Sender<ReconnectEvent>,
     id:u64,
     pub socket_addr:Vec<SocketAddr>,
-    pub reconnecting: Vec<bool>
+    pub reconnecting: Vec<bool>,
+    pub last_heartbeat_ack: Vec<std::time::Instant>, // ← ADD
 }
 
 fn get_addrs(config: OmniPaxosKVConfig) -> (SocketAddr, Vec<SocketAddr>) {
@@ -125,6 +126,7 @@ impl Network {
             reconnect_peers,
             id,
             reconnecting: vec![false; peer_addresses.len()],
+            last_heartbeat_ack: vec![std::time::Instant::now(); peer_addresses.len()],
         };
         network
             .initialize_connections(id, peer_addresses, listen_address, new_client_tx)
@@ -335,6 +337,37 @@ impl Network {
     });
 }
 
+    pub fn check_heartbeat_timeouts(&mut self) {
+        println!("CHECK HEARTBEAT TIMEOUTS CALLED");
+        let timeout = Duration::from_secs(8);  // ← increase to 8s
+        for idx in 0..self.peers.len() {
+            let peer_id = self.peers[idx];
+            let elapsed = self.last_heartbeat_ack[idx].elapsed();
+            println!("  peer {} last ack: {}ms ago (timeout={}ms)",
+                     peer_id,
+                     elapsed.as_millis(),      // ← milliseconds to see exact value
+                     timeout.as_millis()
+            );
+            if elapsed > timeout {
+                if self.peer_connections[idx].is_some() {
+                    println!("detecting failure for peer {}", peer_id);
+                    warn!("=== PARTITION/FAILURE DETECTED: peer {} not responding for {}s ===",
+                    peer_id, elapsed.as_secs());
+                    self.peer_connections[idx] = None;
+                    if !self.reconnecting[idx] {
+                        self.reconnecting[idx] = true;
+                        self.spawn_reconnect(peer_id, idx);
+                    }
+                }
+            }
+        }
+    }
+
+    pub fn update_heartbeat_ack(&mut self, from: NodeId) {
+        if let Some(idx) = self.cluster_id_to_idx(from) {
+            self.last_heartbeat_ack[idx] = std::time::Instant::now();
+        }
+    }
 
 
     // /// Drains any newly connected clients from the background accept task and registers them.
