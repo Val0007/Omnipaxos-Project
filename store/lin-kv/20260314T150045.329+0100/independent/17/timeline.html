@@ -1,0 +1,457 @@
+<html><head><style>.ops        { position: absolute; }
+.op         { position: absolute; padding: 2px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.3s cubic-bezier(.25,.8,.25,1); overflow: hidden; }
+.op.invoke  { background: #eeeeee; }
+.op.ok      { background: #6DB6FE; }
+.op.info    { background: #FFAA26; }
+.op.fail    { background: #FEB5DA; }
+.op:target  { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+</style></head><body><div><a href="/">jepsen</a> / <a href="/files/lin-kv">lin-kv</a> / <a href="/files/lin-kv/20260314T150045.329+0100">20260314T150045.329+0100</a> / <a href="/files/lin-kv/20260314T150045.329+0100/">independent</a> / <a href="/files/lin-kv/20260314T150045.329+0100/independent/17">17</a></div><h1>lin-kv key 17</h1><div class="ops"><a href="#i1312"><div class="op info" id="i1312" style="width:100;left:106;top:0;height:1488" title="Dur: 1002 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:27.697Z
+
+Op:
+{:process 345
+ :type :info
+ :f :cas
+ :index 1312
+ :error :net-timeout
+ :value [0 2]}">345 cas [0 2]</div></a><a href="#i1316"><div class="op info" id="i1316" style="width:100;left:212;top:16;height:1472" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:27.766Z
+
+Op:
+{:process 346
+ :type :info
+ :f :write
+ :index 1316
+ :error :net-timeout
+ :value 3}">346 write 3</div></a><a href="#i1318"><div class="op info" id="i1318" style="width:100;left:318;top:32;height:1456" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:27.808Z
+
+Op:
+{:process 347
+ :type :info
+ :f :cas
+ :index 1318
+ :error :net-timeout
+ :value [3 1]}">347 cas [3 1]</div></a><a href="#i1322"><div class="op info" id="i1322" style="width:100;left:0;top:48;height:1440" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:27.898Z
+
+Op:
+{:process 344
+ :type :info
+ :f :write
+ :index 1322
+ :error :net-timeout
+ :value 0}">344 write 0</div></a><a href="#i1328"><div class="op info" id="i1328" style="width:100;left:954;top:64;height:1424" title="Dur: 999 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:28.470Z
+
+Op:
+{:process 366
+ :type :info
+ :f :cas
+ :index 1328
+ :error :net-timeout
+ :value [2 2]}">366 cas [2 2]</div></a><a href="#i1331"><div class="op ok" id="i1331" style="width:100;left:636;top:112;height:144" title="Dur: 799 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:28.496Z
+
+Op:
+{:process 357
+ :type :ok
+ :f :write
+ :index 1331
+ :value 0}">357 write 0</div></a><a href="#i1334"><div class="op fail" id="i1334" style="width:100;left:1378;top:240;height:32" title="Dur: 27 ms
+Err: [:precondition-failed &quot;expected 4 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:28.497Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1334
+ :error [:precondition-failed &quot;expected 4 but had 0&quot;]
+ :value [4 2]}">378 cas [4 2]</div></a><a href="#i1335"><div class="op ok" id="i1335" style="width:100;left:848;top:176;height:112" title="Dur: 688 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:28.497Z
+
+Op:
+{:process 359
+ :type :ok
+ :f :cas
+ :index 1335
+ :value [0 4]}">359 cas [0 4]</div></a><a href="#i1336"><div class="op ok" id="i1336" style="width:100;left:530;top:208;height:96" title="Dur: 580 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:28.498Z
+
+Op:
+{:process 356
+ :type :ok
+ :f :write
+ :index 1336
+ :value 3}">356 write 3</div></a><a href="#i1339"><div class="op fail" id="i1339" style="width:100;left:530;top:320;height:16" title="Dur: 1 ms
+Err: [:precondition-failed &quot;expected 2 but had 3&quot;]
+Wall-clock Time: 2026-03-14T14:01:28.526Z
+
+Op:
+{:process 356
+ :type :fail
+ :f :cas
+ :index 1339
+ :error [:precondition-failed &quot;expected 2 but had 3&quot;]
+ :value [2 0]}">356 cas [2 0]</div></a><a href="#i1340"><div class="op fail" id="i1340" style="width:100;left:424;top:80;height:272" title="Dur: 899 ms
+Err: [:precondition-failed &quot;expected 2 but had 3&quot;]
+Wall-clock Time: 2026-03-14T14:01:28.545Z
+
+Op:
+{:process 355
+ :type :fail
+ :f :cas
+ :index 1340
+ :error [:precondition-failed &quot;expected 2 but had 3&quot;]
+ :value [2 2]}">355 cas [2 2]</div></a><a href="#i1342"><div class="op fail" id="i1342" style="width:100;left:742;top:144;height:224" title="Dur: 780 ms
+Err: [:precondition-failed &quot;expected 2 but had 3&quot;]
+Wall-clock Time: 2026-03-14T14:01:28.546Z
+
+Op:
+{:process 358
+ :type :fail
+ :f :cas
+ :index 1342
+ :error [:precondition-failed &quot;expected 2 but had 3&quot;]
+ :value [2 0]}">358 cas [2 0]</div></a><a href="#i1349"><div class="op ok" id="i1349" style="width:100;left:848;top:384;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:28.640Z
+
+Op:
+{:process 359
+ :type :ok
+ :f :cas
+ :index 1349
+ :value [3 4]}">359 cas [3 4]</div></a><a href="#i1353"><div class="op ok" id="i1353" style="width:100;left:1378;top:416;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:28.733Z
+
+Op:
+{:process 378
+ :type :ok
+ :f :write
+ :index 1353
+ :value 0}">378 write 0</div></a><a href="#i1366"><div class="op fail" id="i1366" style="width:100;left:1378;top:448;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 3 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:28.939Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1366
+ :error [:precondition-failed &quot;expected 3 but had 0&quot;]
+ :value [3 3]}">378 cas [3 3]</div></a><a href="#i1369"><div class="op fail" id="i1369" style="width:100;left:530;top:480;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 2 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.008Z
+
+Op:
+{:process 356
+ :type :fail
+ :f :cas
+ :index 1369
+ :error [:precondition-failed &quot;expected 2 but had 0&quot;]
+ :value [2 3]}">356 cas [2 3]</div></a><a href="#i1371"><div class="op fail" id="i1371" style="width:100;left:636;top:512;height:16" title="Dur: 1 ms
+Err: [:precondition-failed &quot;expected 4 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.013Z
+
+Op:
+{:process 357
+ :type :fail
+ :f :cas
+ :index 1371
+ :error [:precondition-failed &quot;expected 4 but had 0&quot;]
+ :value [4 3]}">357 cas [4 3]</div></a><a href="#i1377"><div class="op fail" id="i1377" style="width:100;left:1378;top:544;height:16" title="Dur: 3 ms
+Err: [:precondition-failed &quot;expected 4 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.068Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1377
+ :error [:precondition-failed &quot;expected 4 but had 0&quot;]
+ :value [4 1]}">378 cas [4 1]</div></a><a href="#i1379"><div class="op fail" id="i1379" style="width:100;left:1378;top:576;height:16" title="Dur: 4 ms
+Err: [:precondition-failed &quot;expected 4 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.126Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1379
+ :error [:precondition-failed &quot;expected 4 but had 0&quot;]
+ :value [4 1]}">378 cas [4 1]</div></a><a href="#i1383"><div class="op fail" id="i1383" style="width:100;left:1378;top:608;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 4 but had 0&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.196Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1383
+ :error [:precondition-failed &quot;expected 4 but had 0&quot;]
+ :value [4 2]}">378 cas [4 2]</div></a><a href="#i1385"><div class="op ok" id="i1385" style="width:100;left:1378;top:640;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:29.244Z
+
+Op:
+{:process 378
+ :type :ok
+ :f :write
+ :index 1385
+ :value 4}">378 write 4</div></a><a href="#i1388"><div class="op fail" id="i1388" style="width:100;left:424;top:688;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 3 but had 4&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.277Z
+
+Op:
+{:process 355
+ :type :fail
+ :f :cas
+ :index 1388
+ :error [:precondition-failed &quot;expected 3 but had 4&quot;]
+ :value [3 1]}">355 cas [3 1]</div></a><a href="#i1389"><div class="op fail" id="i1389" style="width:100;left:1378;top:672;height:48" title="Dur: 3 ms
+Err: [:precondition-failed &quot;expected 3 but had 4&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.277Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1389
+ :error [:precondition-failed &quot;expected 3 but had 4&quot;]
+ :value [3 4]}">378 cas [3 4]</div></a><a href="#i1399"><div class="op fail" id="i1399" style="width:100;left:742;top:736;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 3 but had 4&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.500Z
+
+Op:
+{:process 358
+ :type :fail
+ :f :cas
+ :index 1399
+ :error [:precondition-failed &quot;expected 3 but had 4&quot;]
+ :value [3 3]}">358 cas [3 3]</div></a><a href="#i1401"><div class="op fail" id="i1401" style="width:100;left:848;top:768;height:16" title="Dur: 1 ms
+Err: [:precondition-failed &quot;expected 1 but had 4&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.525Z
+
+Op:
+{:process 359
+ :type :fail
+ :f :cas
+ :index 1401
+ :error [:precondition-failed &quot;expected 1 but had 4&quot;]
+ :value [1 3]}">359 cas [1 3]</div></a><a href="#i1405"><div class="op ok" id="i1405" style="width:100;left:1378;top:800;height:16" title="Dur: 1 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:29.565Z
+
+Op:
+{:process 378
+ :type :ok
+ :f :write
+ :index 1405
+ :value 4}">378 write 4</div></a><a href="#i1409"><div class="op fail" id="i1409" style="width:100;left:1378;top:832;height:16" title="Dur: 1 ms
+Err: [:precondition-failed &quot;expected 1 but had 4&quot;]
+Wall-clock Time: 2026-03-14T14:01:29.651Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1409
+ :error [:precondition-failed &quot;expected 1 but had 4&quot;]
+ :value [1 2]}">378 cas [1 2]</div></a><a href="#i1425"><div class="op ok" id="i1425" style="width:100;left:742;top:864;height:16" title="Dur: 7 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:29.985Z
+
+Op:
+{:process 358
+ :type :ok
+ :f :cas
+ :index 1425
+ :value [4 3]}">358 cas [4 3]</div></a><a href="#i1431"><div class="op ok" id="i1431" style="width:100;left:1378;top:896;height:16" title="Dur: 6 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:30.173Z
+
+Op:
+{:process 378
+ :type :ok
+ :f :write
+ :index 1431
+ :value 3}">378 write 3</div></a><a href="#i1435"><div class="op fail" id="i1435" style="width:100;left:1378;top:928;height:16" title="Dur: 5 ms
+Err: [:precondition-failed &quot;expected 1 but had 3&quot;]
+Wall-clock Time: 2026-03-14T14:01:30.229Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1435
+ :error [:precondition-failed &quot;expected 1 but had 3&quot;]
+ :value [1 1]}">378 cas [1 1]</div></a><a href="#i1437"><div class="op ok" id="i1437" style="width:100;left:1378;top:960;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:30.235Z
+
+Op:
+{:process 378
+ :type :ok
+ :f :write
+ :index 1437
+ :value 3}">378 write 3</div></a><a href="#i1439"><div class="op fail" id="i1439" style="width:100;left:1378;top:992;height:16" title="Dur: 1 ms
+Err: [:precondition-failed &quot;expected 1 but had 3&quot;]
+Wall-clock Time: 2026-03-14T14:01:30.263Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1439
+ :error [:precondition-failed &quot;expected 1 but had 3&quot;]
+ :value [1 4]}">378 cas [1 4]</div></a><a href="#i1443"><div class="op fail" id="i1443" style="width:100;left:1378;top:1024;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 4 but had 3&quot;]
+Wall-clock Time: 2026-03-14T14:01:30.331Z
+
+Op:
+{:process 378
+ :type :fail
+ :f :cas
+ :index 1443
+ :error [:precondition-failed &quot;expected 4 but had 3&quot;]
+ :value [4 4]}">378 cas [4 4]</div></a><a href="#i1445"><div class="op ok" id="i1445" style="width:100;left:424;top:1056;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2026-03-14T14:01:30.386Z
+
+Op:
+{:process 355
+ :type :ok
+ :f :cas
+ :index 1445
+ :value [3 1]}">355 cas [3 1]</div></a><a href="#i1447"><div class="op fail" id="i1447" style="width:100;left:530;top:1088;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 2 but had 1&quot;]
+Wall-clock Time: 2026-03-14T14:01:30.407Z
+
+Op:
+{:process 356
+ :type :fail
+ :f :cas
+ :index 1447
+ :error [:precondition-failed &quot;expected 2 but had 1&quot;]
+ :value [2 1]}">356 cas [2 1]</div></a><a href="#i1449"><div class="op fail" id="i1449" style="width:100;left:636;top:1120;height:16" title="Dur: 2 ms
+Err: [:precondition-failed &quot;expected 3 but had 1&quot;]
+Wall-clock Time: 2026-03-14T14:01:30.423Z
+
+Op:
+{:process 357
+ :type :fail
+ :f :cas
+ :index 1449
+ :error [:precondition-failed &quot;expected 3 but had 1&quot;]
+ :value [3 3]}">357 cas [3 3]</div></a><a href="#i1466"><div class="op info" id="i1466" style="width:100;left:1378;top:1152;height:336" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:31.562Z
+
+Op:
+{:process 378
+ :type :info
+ :f :cas
+ :index 1466
+ :error :net-timeout
+ :value [3 0]}">378 cas [3 0]</div></a><a href="#i1471"><div class="op info" id="i1471" style="width:100;left:424;top:1168;height:320" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:31.688Z
+
+Op:
+{:process 355
+ :type :info
+ :f :cas
+ :index 1471
+ :error :net-timeout
+ :value [4 2]}">355 cas [4 2]</div></a><a href="#i1474"><div class="op info" id="i1474" style="width:100;left:530;top:1184;height:304" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:31.742Z
+
+Op:
+{:process 356
+ :type :info
+ :f :write
+ :index 1474
+ :error :net-timeout
+ :value 1}">356 write 1</div></a><a href="#i1476"><div class="op info" id="i1476" style="width:100;left:636;top:1200;height:288" title="Dur: 1005 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:31.756Z
+
+Op:
+{:process 357
+ :type :info
+ :f :write
+ :index 1476
+ :error :net-timeout
+ :value 1}">357 write 1</div></a><a href="#i1482"><div class="op info" id="i1482" style="width:100;left:742;top:1216;height:272" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:31.903Z
+
+Op:
+{:process 358
+ :type :info
+ :f :cas
+ :index 1482
+ :error :net-timeout
+ :value [3 0]}">358 cas [3 0]</div></a><a href="#i1484"><div class="op info" id="i1484" style="width:100;left:848;top:1232;height:256" title="Dur: 1004 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:31.954Z
+
+Op:
+{:process 359
+ :type :info
+ :f :cas
+ :index 1484
+ :error :net-timeout
+ :value [1 0]}">359 cas [1 0]</div></a><a href="#i1490"><div class="op info" id="i1490" style="width:100;left:1484;top:1264;height:224" title="Dur: 1005 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:32.601Z
+
+Op:
+{:process 390
+ :type :info
+ :f :cas
+ :index 1490
+ :error :net-timeout
+ :value [1 1]}">390 cas [1 1]</div></a><a href="#i1494"><div class="op info" id="i1494" style="width:100;left:1060;top:1296;height:192" title="Dur: 1001 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:32.689Z
+
+Op:
+{:process 367
+ :type :info
+ :f :write
+ :index 1494
+ :error :net-timeout
+ :value 2}">367 write 2</div></a><a href="#i1497"><div class="op info" id="i1497" style="width:100;left:1166;top:1328;height:160" title="Dur: 1003 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:32.758Z
+
+Op:
+{:process 368
+ :type :info
+ :f :write
+ :index 1497
+ :error :net-timeout
+ :value 3}">368 write 3</div></a><a href="#i1500"><div class="op info" id="i1500" style="width:100;left:1272;top:1360;height:128" title="Dur: 1005 ms
+Err: :net-timeout
+Wall-clock Time: 2026-03-14T14:01:32.815Z
+
+Op:
+{:process 369
+ :type :info
+ :f :cas
+ :index 1500
+ :error :net-timeout
+ :value [3 0]}">369 cas [3 0]</div></a></div></body></html>
