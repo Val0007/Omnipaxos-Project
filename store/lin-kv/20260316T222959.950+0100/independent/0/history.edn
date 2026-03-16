@@ -1,0 +1,566 @@
+{:index 0, :time 15223916, :type :invoke, :process 0, :f :read, :value nil}
+{:index 1, :time 94489500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 2, :time 95414875, :type :invoke, :process 2, :f :read, :value nil}
+{:index 3, :time 101162375, :type :fail, :process 0, :f :read, :value nil, :error [:key-does-not-exist "key not found"]}
+{:index 4, :time 102348958, :type :fail, :process 2, :f :read, :value nil, :error [:key-does-not-exist "key not found"]}
+{:index 5, :time 102718500, :type :fail, :process 1, :f :read, :value nil, :error [:key-does-not-exist "key not found"]}
+{:index 6, :time 121074583, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 7, :time 131302666, :type :fail, :process 3, :f :cas, :value [4 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 8, :time 142212750, :type :invoke, :process 4, :f :cas, :value [4 0]}
+{:index 9, :time 152191416, :type :fail, :process 4, :f :cas, :value [4 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 10, :time 248697916, :type :invoke, :process 5, :f :write, :value 2}
+{:index 11, :time 257998083, :type :ok, :process 5, :f :write, :value 2}
+{:index 12, :time 273253708, :type :invoke, :process 3, :f :cas, :value [1 2]}
+{:index 13, :time 276807541, :type :fail, :process 3, :f :cas, :value [1 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 14, :time 475896541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 15, :time 482515375, :type :ok, :process 0, :f :read, :value 2}
+{:index 16, :time 523560833, :type :invoke, :process 3, :f :write, :value 4}
+{:index 17, :time 532918000, :type :ok, :process 3, :f :write, :value 4}
+{:index 18, :time 702983875, :type :invoke, :process 2, :f :read, :value nil}
+{:index 19, :time 714385291, :type :ok, :process 2, :f :read, :value 4}
+{:index 20, :time 828028583, :type :invoke, :process 0, :f :read, :value nil}
+{:index 21, :time 841512625, :type :ok, :process 0, :f :read, :value 4}
+{:index 22, :time 930457541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 23, :time 944479000, :type :ok, :process 0, :f :read, :value 4}
+{:index 24, :time 1107291833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 25, :time 1131499583, :type :ok, :process 0, :f :read, :value 4}
+{:index 26, :time 1256719916, :type :invoke, :process 3, :f :cas, :value [1 3]}
+{:index 27, :time 1276126958, :type :fail, :process 3, :f :cas, :value [1 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 28, :time 1447753666, :type :invoke, :process 3, :f :write, :value 1}
+{:index 29, :time 1465666125, :type :ok, :process 3, :f :write, :value 1}
+{:index 30, :time 1536273541, :type :invoke, :process 1, :f :read, :value nil}
+{:index 31, :time 1547354041, :type :ok, :process 1, :f :read, :value 1}
+{:index 32, :time 1561699125, :type :invoke, :process 2, :f :read, :value nil}
+{:index 33, :time 1578851208, :type :ok, :process 2, :f :read, :value 1}
+{:index 34, :time 1751167416, :type :invoke, :process 0, :f :read, :value nil}
+{:index 35, :time 2149696000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 36, :time 2205588250, :type :invoke, :process 2, :f :read, :value nil}
+{:index 37, :time 2327616416, :type :ok, :process 1, :f :read, :value 1}
+{:index 38, :time 2328831583, :type :ok, :process 0, :f :read, :value 1}
+{:index 39, :time 2341455333, :type :ok, :process 2, :f :read, :value 1}
+{:index 40, :time 2341699583, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 41, :time 2396923208, :type :fail, :process 3, :f :cas, :value [4 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 42, :time 2520966416, :type :invoke, :process 0, :f :read, :value nil}
+{:index 43, :time 2566413833, :type :ok, :process 0, :f :read, :value 1}
+{:index 44, :time 2567841416, :type :invoke, :process 1, :f :read, :value nil}
+{:index 45, :time 2601325125, :type :ok, :process 1, :f :read, :value 1}
+{:index 46, :time 2707246166, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 47, :time 2712601375, :type :fail, :process 3, :f :cas, :value [0 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 48, :time 2839300375, :type :invoke, :process 0, :f :read, :value nil}
+{:index 49, :time 2843822416, :type :ok, :process 0, :f :read, :value 1}
+{:index 50, :time 2928826958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 51, :time 2933282291, :type :ok, :process 0, :f :read, :value 1}
+{:index 52, :time 2973451333, :type :invoke, :process 5, :f :write, :value 0}
+{:index 53, :time 2981329291, :type :ok, :process 5, :f :write, :value 0}
+{:index 54, :time 2998446250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 55, :time 3005884875, :type :ok, :process 0, :f :read, :value 0}
+{:index 56, :time 3123241291, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 57, :time 3130060708, :type :fail, :process 3, :f :cas, :value [3 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 58, :time 3198237000, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 59, :time 3207043041, :type :fail, :process 3, :f :cas, :value [4 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 60, :time 3386590833, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 61, :time 3393880750, :type :fail, :process 3, :f :cas, :value [3 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 62, :time 3480628416, :type :invoke, :process 3, :f :cas, :value [2 1]}
+{:index 63, :time 3486978500, :type :fail, :process 3, :f :cas, :value [2 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 64, :time 3498363750, :type :invoke, :process 0, :f :read, :value nil}
+{:index 65, :time 3503504958, :type :ok, :process 0, :f :read, :value 0}
+{:index 66, :time 3670176958, :type :invoke, :process 5, :f :write, :value 4}
+{:index 67, :time 3681316666, :type :ok, :process 5, :f :write, :value 4}
+{:index 68, :time 3699602041, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 69, :time 3706120958, :type :fail, :process 3, :f :cas, :value [0 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 70, :time 3801148916, :type :invoke, :process 3, :f :write, :value 0}
+{:index 71, :time 3812584791, :type :ok, :process 3, :f :write, :value 0}
+{:index 72, :time 4005662916, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 73, :time 4014732833, :type :fail, :process 3, :f :cas, :value [3 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 74, :time 4100688458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 75, :time 4106093583, :type :ok, :process 2, :f :read, :value 0}
+{:index 76, :time 4210068291, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 77, :time 4266068500, :type :invoke, :process 4, :f :cas, :value [3 2]}
+{:index 78, :time 4357933125, :type :fail, :process 3, :f :cas, :value [4 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 79, :time 4428199958, :type :invoke, :process 5, :f :cas, :value [2 1]}
+{:index 80, :time 4463273166, :type :fail, :process 4, :f :cas, :value [3 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 81, :time 4484592000, :type :fail, :process 5, :f :cas, :value [2 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 82, :time 4517302666, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 83, :time 4582748625, :type :ok, :process 3, :f :cas, :value [0 1]}
+{:index 84, :time 4669832750, :type :invoke, :process 0, :f :read, :value nil}
+{:index 85, :time 4699345625, :type :ok, :process 0, :f :read, :value 1}
+{:index 86, :time 4719296833, :type :invoke, :process 3, :f :cas, :value [1 2]}
+{:index 87, :time 4725873375, :type :ok, :process 3, :f :cas, :value [1 2]}
+{:index 88, :time 4868695666, :type :invoke, :process 2, :f :read, :value nil}
+{:index 89, :time 4873599208, :type :ok, :process 2, :f :read, :value 2}
+{:index 90, :time 4958025125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 91, :time 4962143375, :type :ok, :process 0, :f :read, :value 2}
+{:index 92, :time 5061166625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 93, :time 5067701458, :type :ok, :process 0, :f :read, :value 2}
+{:index 94, :time 5227742916, :type :invoke, :process 5, :f :cas, :value [3 3]}
+{:index 95, :time 5236940625, :type :fail, :process 5, :f :cas, :value [3 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 96, :time 5280360250, :type :invoke, :process 3, :f :write, :value 3}
+{:index 97, :time 5289680791, :type :ok, :process 3, :f :write, :value 3}
+{:index 98, :time 5446414875, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 99, :time 5455778541, :type :ok, :process 3, :f :cas, :value [3 1]}
+{:index 100, :time 5621353166, :type :invoke, :process 1, :f :read, :value nil}
+{:index 101, :time 5633692750, :type :ok, :process 1, :f :read, :value 1}
+{:index 102, :time 5818191416, :type :invoke, :process 2, :f :read, :value nil}
+{:index 103, :time 5829068291, :type :ok, :process 2, :f :read, :value 1}
+{:index 104, :time 5984168208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 105, :time 5991654375, :type :ok, :process 0, :f :read, :value 1}
+{:index 106, :time 6112906958, :type :invoke, :process 4, :f :write, :value 1}
+{:index 107, :time 6119547250, :type :ok, :process 4, :f :write, :value 1}
+{:index 108, :time 6266203666, :type :invoke, :process 0, :f :read, :value nil}
+{:index 109, :time 6270893875, :type :ok, :process 0, :f :read, :value 1}
+{:index 110, :time 6347236000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 111, :time 6353477833, :type :ok, :process 0, :f :read, :value 1}
+{:index 112, :time 6393471125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 113, :time 6404313458, :type :ok, :process 0, :f :read, :value 1}
+{:index 114, :time 6535715416, :type :invoke, :process 3, :f :write, :value 1}
+{:index 115, :time 6548094916, :type :ok, :process 3, :f :write, :value 1}
+{:index 116, :time 6689763541, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 117, :time 6722805958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 118, :time 6749808541, :type :invoke, :process 1, :f :read, :value nil}
+{:index 119, :time 6782915833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 120, :time 6849054166, :type :ok, :process 0, :f :read, :value 1}
+{:index 121, :time 6868606875, :type :fail, :process 3, :f :cas, :value [4 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 122, :time 6969681958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 123, :time 6981509791, :type :ok, :process 1, :f :read, :value 1}
+{:index 124, :time 6981587083, :type :ok, :process 2, :f :read, :value 1}
+{:index 125, :time 7031189708, :type :ok, :process 0, :f :read, :value 1}
+{:index 126, :time 7033241958, :type :invoke, :process 3, :f :cas, :value [2 4]}
+{:index 127, :time 7063360083, :type :fail, :process 3, :f :cas, :value [2 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 128, :time 7094516583, :type :invoke, :process 1, :f :read, :value nil}
+{:index 129, :time 7133361833, :type :invoke, :process 2, :f :read, :value nil}
+{:index 130, :time 7171064375, :type :ok, :process 1, :f :read, :value 1}
+{:index 131, :time 7175390208, :type :ok, :process 2, :f :read, :value 1}
+{:index 132, :time 7183817833, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 133, :time 7193278041, :type :fail, :process 3, :f :cas, :value [4 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 134, :time 7275358583, :type :invoke, :process 4, :f :cas, :value [0 2]}
+{:index 135, :time 7279245166, :type :fail, :process 4, :f :cas, :value [0 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 136, :time 7294190541, :type :invoke, :process 5, :f :cas, :value [0 2]}
+{:index 137, :time 7299621000, :type :fail, :process 5, :f :cas, :value [0 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 138, :time 7311145333, :type :invoke, :process 3, :f :cas, :value [2 1]}
+{:index 139, :time 7315393291, :type :fail, :process 3, :f :cas, :value [2 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 140, :time 7480209250, :type :invoke, :process 3, :f :write, :value 1}
+{:index 141, :time 7491506041, :type :ok, :process 3, :f :write, :value 1}
+{:index 142, :time 7586632500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 143, :time 7595768291, :type :ok, :process 1, :f :read, :value 1}
+{:index 144, :time 7693521958, :type :invoke, :process 2, :f :read, :value nil}
+{:index 145, :time 7703050416, :type :ok, :process 2, :f :read, :value 1}
+{:index 146, :time 7721565166, :type :invoke, :process 0, :f :read, :value nil}
+{:index 147, :time 7725530250, :type :ok, :process 0, :f :read, :value 1}
+{:index 148, :time 7856447333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 149, :time 7862951458, :type :ok, :process 0, :f :read, :value 1}
+{:index 150, :time 7986476458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 151, :time 7991098166, :type :ok, :process 0, :f :read, :value 1}
+{:index 152, :time 8126583333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 153, :time 8131560125, :type :ok, :process 0, :f :read, :value 1}
+{:index 154, :time 8195896250, :type :invoke, :process 3, :f :cas, :value [1 1]}
+{:index 155, :time 8204384666, :type :ok, :process 3, :f :cas, :value [1 1]}
+{:index 156, :time 8316152916, :type :invoke, :process 1, :f :read, :value nil}
+{:index 157, :time 8322736541, :type :ok, :process 1, :f :read, :value 1}
+{:index 158, :time 8497894500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 159, :time 8504639375, :type :ok, :process 2, :f :read, :value 1}
+{:index 160, :time 8554203291, :type :invoke, :process 0, :f :read, :value nil}
+{:index 161, :time 8558368000, :type :ok, :process 0, :f :read, :value 1}
+{:index 162, :time 8701570666, :type :invoke, :process 0, :f :read, :value nil}
+{:index 163, :time 8704275625, :type :ok, :process 0, :f :read, :value 1}
+{:index 164, :time 8882889166, :type :invoke, :process 0, :f :read, :value nil}
+{:index 165, :time 8944523000, :type :invoke, :process 1, :f :read, :value nil}
+{:index 166, :time 8988376333, :type :ok, :process 1, :f :read, :value 1}
+{:index 167, :time 9005905416, :type :ok, :process 0, :f :read, :value 1}
+{:index 168, :time 9037384625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 169, :time 9040790750, :type :ok, :process 0, :f :read, :value 1}
+{:index 170, :time 9094799750, :type :invoke, :process 1, :f :read, :value nil}
+{:index 171, :time 9125581916, :type :ok, :process 1, :f :read, :value 1}
+{:index 172, :time 9206011500, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 173, :time 9210264166, :type :fail, :process 3, :f :cas, :value [4 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 174, :time 9347350250, :type :invoke, :process 3, :f :cas, :value [0 0]}
+{:index 175, :time 9359805666, :type :fail, :process 3, :f :cas, :value [0 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 176, :time 9416588250, :type :invoke, :process 4, :f :write, :value 4}
+{:index 177, :time 9423537541, :type :ok, :process 4, :f :write, :value 4}
+{:index 178, :time 9447075291, :type :invoke, :process 5, :f :cas, :value [0 4]}
+{:index 179, :time 9450434541, :type :fail, :process 5, :f :cas, :value [0 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 180, :time 9601495833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 181, :time 9607737416, :type :ok, :process 0, :f :read, :value 4}
+{:index 182, :time 9720412291, :type :invoke, :process 3, :f :cas, :value [2 2]}
+{:index 183, :time 9728958125, :type :fail, :process 3, :f :cas, :value [2 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 184, :time 9878755666, :type :invoke, :process 1, :f :read, :value nil}
+{:index 185, :time 9887698541, :type :ok, :process 1, :f :read, :value 4}
+{:index 186, :time 9965247500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 187, :time 9971765791, :type :ok, :process 2, :f :read, :value 4}
+{:index 188, :time 10146744041, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 189, :time 10154414416, :type :ok, :process 3, :f :cas, :value [4 1]}
+{:index 190, :time 10227842125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 191, :time 10233879541, :type :ok, :process 0, :f :read, :value 1}
+{:index 192, :time 10300036333, :type :invoke, :process 5, :f :cas, :value [3 3]}
+{:index 193, :time 10305775333, :type :fail, :process 5, :f :cas, :value [3 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 194, :time 10422846541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 195, :time 10427937833, :type :ok, :process 0, :f :read, :value 1}
+{:index 196, :time 10564045083, :type :invoke, :process 3, :f :cas, :value [1 0]}
+{:index 197, :time 10572325000, :type :ok, :process 3, :f :cas, :value [1 0]}
+{:index 198, :time 10771608500, :type :invoke, :process 1, :f :read, :value nil}
+{:index 199, :time 10867564875, :type :invoke, :process 3, :f :write, :value 0}
+{:index 200, :time 10899491833, :type :ok, :process 1, :f :read, :value 0}
+{:index 201, :time 10904188541, :type :ok, :process 3, :f :write, :value 0}
+{:index 202, :time 11036847416, :type :invoke, :process 3, :f :cas, :value [3 1]}
+{:index 203, :time 11062202208, :type :fail, :process 3, :f :cas, :value [3 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 204, :time 11172046666, :type :invoke, :process 0, :f :read, :value nil}
+{:index 205, :time 11177936000, :type :ok, :process 0, :f :read, :value 0}
+{:index 206, :time 11271109416, :type :invoke, :process 0, :f :read, :value nil}
+{:index 207, :time 11283088083, :type :ok, :process 0, :f :read, :value 0}
+{:index 208, :time 11313134000, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 209, :time 11318479500, :type :invoke, :process 4, :f :write, :value 0}
+{:index 210, :time 11319655958, :type :fail, :process 3, :f :cas, :value [3 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 211, :time 11325838708, :type :ok, :process 4, :f :write, :value 0}
+{:index 212, :time 11403174083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 213, :time 11407654541, :type :ok, :process 1, :f :read, :value 0}
+{:index 214, :time 11437818375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 215, :time 11442624166, :type :ok, :process 2, :f :read, :value 0}
+{:index 216, :time 11520388708, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 217, :time 11526506500, :type :fail, :process 3, :f :cas, :value [4 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 218, :time 11642846916, :type :invoke, :process 0, :f :read, :value nil}
+{:index 219, :time 11647988500, :type :ok, :process 0, :f :read, :value 0}
+{:index 220, :time 11717213291, :type :invoke, :process 5, :f :cas, :value [4 2]}
+{:index 221, :time 11750889708, :type :fail, :process 5, :f :cas, :value [4 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 222, :time 11847344875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 223, :time 11852514416, :type :ok, :process 0, :f :read, :value 0}
+{:index 224, :time 11886087416, :type :invoke, :process 3, :f :cas, :value [0 3]}
+{:index 225, :time 11897823541, :type :ok, :process 3, :f :cas, :value [0 3]}
+{:index 226, :time 11991747125, :type :invoke, :process 1, :f :read, :value nil}
+{:index 227, :time 11997582208, :type :ok, :process 1, :f :read, :value 3}
+{:index 228, :time 12171077583, :type :invoke, :process 3, :f :cas, :value [2 0]}
+{:index 229, :time 12187930625, :type :fail, :process 3, :f :cas, :value [2 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 230, :time 12222743083, :type :invoke, :process 0, :f :read, :value nil}
+{:index 231, :time 12225953500, :type :ok, :process 0, :f :read, :value 3}
+{:index 232, :time 12362090500, :type :invoke, :process 4, :f :cas, :value [0 0]}
+{:index 233, :time 12365311166, :type :fail, :process 4, :f :cas, :value [0 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 234, :time 12477831958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 235, :time 12482156833, :type :ok, :process 0, :f :read, :value 3}
+{:index 236, :time 12602165750, :type :invoke, :process 0, :f :read, :value nil}
+{:index 237, :time 12606835708, :type :ok, :process 0, :f :read, :value 3}
+{:index 238, :time 12621271000, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 239, :time 12624409916, :type :fail, :process 3, :f :cas, :value [4 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 240, :time 12794023666, :type :invoke, :process 1, :f :read, :value nil}
+{:index 241, :time 12932047166, :type :invoke, :process 3, :f :cas, :value [1 4]}
+{:index 242, :time 12993272833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 243, :time 13041248500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 244, :time 13070192166, :type :ok, :process 0, :f :read, :value 3}
+{:index 245, :time 13072175416, :type :fail, :process 3, :f :cas, :value [1 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 246, :time 13082763916, :type :ok, :process 2, :f :read, :value 3}
+{:index 247, :time 13104742125, :type :ok, :process 1, :f :read, :value 3}
+{:index 248, :time 13130857291, :type :invoke, :process 0, :f :read, :value nil}
+{:index 249, :time 13176696541, :type :ok, :process 0, :f :read, :value 3}
+{:index 250, :time 13258406291, :type :invoke, :process 0, :f :read, :value nil}
+{:index 251, :time 13266612500, :type :ok, :process 0, :f :read, :value 3}
+{:index 252, :time 13449813166, :type :invoke, :process 0, :f :read, :value nil}
+{:index 253, :time 13453843750, :type :ok, :process 0, :f :read, :value 3}
+{:index 254, :time 13465940500, :type :invoke, :process 3, :f :write, :value 1}
+{:index 255, :time 13472186541, :type :ok, :process 3, :f :write, :value 1}
+{:index 256, :time 13534279708, :type :invoke, :process 2, :f :read, :value nil}
+{:index 257, :time 13539155708, :type :ok, :process 2, :f :read, :value 1}
+{:index 258, :time 13653135125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 259, :time 13659396041, :type :ok, :process 0, :f :read, :value 1}
+{:index 260, :time 13686107583, :type :invoke, :process 4, :f :cas, :value [0 3]}
+{:index 261, :time 13691270750, :type :fail, :process 4, :f :cas, :value [0 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 262, :time 13847620458, :type :invoke, :process 5, :f :cas, :value [1 0]}
+{:index 263, :time 13854625500, :type :ok, :process 5, :f :cas, :value [1 0]}
+{:index 264, :time 13900133750, :type :invoke, :process 3, :f :write, :value 2}
+{:index 265, :time 13907431958, :type :ok, :process 3, :f :write, :value 2}
+{:index 266, :time 13935321041, :type :invoke, :process 3, :f :cas, :value [0 2]}
+{:index 267, :time 13940489041, :type :fail, :process 3, :f :cas, :value [0 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 268, :time 14098729791, :type :invoke, :process 3, :f :write, :value 1}
+{:index 269, :time 14105184125, :type :ok, :process 3, :f :write, :value 1}
+{:index 270, :time 14243423291, :type :invoke, :process 3, :f :write, :value 0}
+{:index 271, :time 14249836000, :type :ok, :process 3, :f :write, :value 0}
+{:index 272, :time 14319064250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 273, :time 14324104500, :type :ok, :process 0, :f :read, :value 0}
+{:index 274, :time 14349596625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 275, :time 14353820208, :type :ok, :process 0, :f :read, :value 0}
+{:index 276, :time 14472804875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 277, :time 14480863208, :type :ok, :process 0, :f :read, :value 0}
+{:index 278, :time 14652826500, :type :invoke, :process 3, :f :write, :value 2}
+{:index 279, :time 14659438375, :type :ok, :process 3, :f :write, :value 2}
+{:index 280, :time 14712534125, :type :invoke, :process 3, :f :write, :value 2}
+{:index 281, :time 14718340333, :type :ok, :process 3, :f :write, :value 2}
+{:index 282, :time 14747503791, :type :invoke, :process 3, :f :write, :value 2}
+{:index 283, :time 14866182458, :type :invoke, :process 4, :f :cas, :value [1 4]}
+{:index 284, :time 14913535125, :type :ok, :process 3, :f :write, :value 2}
+{:index 285, :time 14913589666, :type :fail, :process 4, :f :cas, :value [1 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 286, :time 15033103750, :type :invoke, :process 0, :f :read, :value nil}
+{:index 287, :time 15035284708, :type :invoke, :process 1, :f :read, :value nil}
+{:index 288, :time 15037350125, :type :ok, :process 0, :f :read, :value 2}
+{:index 289, :time 15038898458, :type :ok, :process 1, :f :read, :value 2}
+{:index 290, :time 15110250250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 291, :time 15116997458, :type :ok, :process 0, :f :read, :value 2}
+{:index 292, :time 15235662125, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 293, :time 15240973291, :type :fail, :process 3, :f :cas, :value [4 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 294, :time 15346563541, :type :invoke, :process 3, :f :cas, :value [1 4]}
+{:index 295, :time 15351555083, :type :fail, :process 3, :f :cas, :value [1 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 296, :time 15473964083, :type :invoke, :process 3, :f :write, :value 1}
+{:index 297, :time 15480784833, :type :ok, :process 3, :f :write, :value 1}
+{:index 298, :time 15619088291, :type :invoke, :process 3, :f :cas, :value [3 3]}
+{:index 299, :time 15624655166, :type :fail, :process 3, :f :cas, :value [3 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 300, :time 15688001625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 301, :time 15693140083, :type :ok, :process 0, :f :read, :value 1}
+{:index 302, :time 15769140041, :type :invoke, :process 4, :f :cas, :value [3 0]}
+{:index 303, :time 15774198291, :type :fail, :process 4, :f :cas, :value [3 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 304, :time 15791925333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 305, :time 15796411250, :type :ok, :process 0, :f :read, :value 1}
+{:index 306, :time 15960365541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 307, :time 15969627500, :type :ok, :process 0, :f :read, :value 1}
+{:index 308, :time 16040015000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 309, :time 16047449458, :type :ok, :process 0, :f :read, :value 1}
+{:index 310, :time 16170183208, :type :invoke, :process 3, :f :cas, :value [0 3]}
+{:index 311, :time 16175658083, :type :fail, :process 3, :f :cas, :value [0 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 312, :time 16311539458, :type :invoke, :process 2, :f :read, :value nil}
+{:index 313, :time 16324237416, :type :ok, :process 2, :f :read, :value 1}
+{:index 314, :time 16475242500, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 315, :time 16482287250, :type :fail, :process 3, :f :cas, :value [4 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 316, :time 16553078583, :type :invoke, :process 0, :f :read, :value nil}
+{:index 317, :time 16557038416, :type :ok, :process 0, :f :read, :value 1}
+{:index 318, :time 16621003000, :type :invoke, :process 0, :f :read, :value nil}
+{:index 319, :time 16625185625, :type :ok, :process 0, :f :read, :value 1}
+{:index 320, :time 16809784708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 321, :time 16821880041, :type :invoke, :process 1, :f :read, :value nil}
+{:index 322, :time 16843002625, :type :ok, :process 0, :f :read, :value 1}
+{:index 323, :time 16843204958, :type :ok, :process 1, :f :read, :value 1}
+{:index 324, :time 17027846833, :type :invoke, :process 3, :f :write, :value 0}
+{:index 325, :time 17035555875, :type :ok, :process 3, :f :write, :value 0}
+{:index 326, :time 17226894041, :type :invoke, :process 2, :f :read, :value nil}
+{:index 327, :time 17234183250, :type :ok, :process 2, :f :read, :value 0}
+{:index 328, :time 17421843125, :type :invoke, :process 3, :f :write, :value 1}
+{:index 329, :time 17430023041, :type :ok, :process 3, :f :write, :value 1}
+{:index 330, :time 17490327291, :type :invoke, :process 0, :f :read, :value nil}
+{:index 331, :time 17495295958, :type :ok, :process 0, :f :read, :value 1}
+{:index 332, :time 17523189666, :type :invoke, :process 0, :f :read, :value nil}
+{:index 333, :time 17531303916, :type :ok, :process 0, :f :read, :value 1}
+{:index 334, :time 17708330041, :type :invoke, :process 0, :f :read, :value nil}
+{:index 335, :time 17719534583, :type :ok, :process 0, :f :read, :value 1}
+{:index 336, :time 17757504625, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 337, :time 17764534500, :type :fail, :process 3, :f :cas, :value [3 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 338, :time 17884335583, :type :invoke, :process 1, :f :read, :value nil}
+{:index 339, :time 17889143666, :type :ok, :process 1, :f :read, :value 1}
+{:index 340, :time 18060381541, :type :invoke, :process 2, :f :read, :value nil}
+{:index 341, :time 18066204583, :type :ok, :process 2, :f :read, :value 1}
+{:index 342, :time 18157955333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 343, :time 18164549916, :type :ok, :process 0, :f :read, :value 1}
+{:index 344, :time 18227005708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 345, :time 18232803583, :type :ok, :process 0, :f :read, :value 1}
+{:index 346, :time 18311194541, :type :invoke, :process 5, :f :write, :value 1}
+{:index 347, :time 18319512125, :type :ok, :process 5, :f :write, :value 1}
+{:index 348, :time 18397442791, :type :invoke, :process 0, :f :read, :value nil}
+{:index 349, :time 18403978291, :type :ok, :process 0, :f :read, :value 1}
+{:index 350, :time 18545038208, :type :invoke, :process 3, :f :cas, :value [0 2]}
+{:index 351, :time 18551038875, :type :fail, :process 3, :f :cas, :value [0 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 352, :time 18551839625, :type :invoke, :process 1, :f :read, :value nil}
+{:index 353, :time 18556651500, :type :ok, :process 1, :f :read, :value 1}
+{:index 354, :time 18584289416, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 355, :time 18593031166, :type :fail, :process 3, :f :cas, :value [4 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 356, :time 18787693666, :type :invoke, :process 0, :f :read, :value nil}
+{:index 357, :time 18883367083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 358, :time 18944864791, :type :ok, :process 0, :f :read, :value 1}
+{:index 359, :time 18978259708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 360, :time 18996187250, :type :ok, :process 1, :f :read, :value 1}
+{:index 361, :time 18999605875, :type :ok, :process 0, :f :read, :value 1}
+{:index 362, :time 19040237541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 363, :time 19051832833, :type :ok, :process 0, :f :read, :value 1}
+{:index 364, :time 19177369333, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 365, :time 19183290375, :type :fail, :process 3, :f :cas, :value [4 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 366, :time 19290187291, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 367, :time 19294652916, :type :fail, :process 3, :f :cas, :value [4 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 368, :time 19412924500, :type :invoke, :process 2, :f :read, :value nil}
+{:index 369, :time 19420715916, :type :ok, :process 2, :f :read, :value 1}
+{:index 370, :time 19441014958, :type :invoke, :process 3, :f :write, :value 3}
+{:index 371, :time 19447867833, :type :ok, :process 3, :f :write, :value 3}
+{:index 372, :time 19527466041, :type :invoke, :process 4, :f :write, :value 0}
+{:index 373, :time 19535675458, :type :ok, :process 4, :f :write, :value 0}
+{:index 374, :time 19696014958, :type :invoke, :process 5, :f :cas, :value [4 1]}
+{:index 375, :time 19701610541, :type :fail, :process 5, :f :cas, :value [4 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 376, :time 19817124666, :type :invoke, :process 0, :f :read, :value nil}
+{:index 377, :time 19824726750, :type :ok, :process 0, :f :read, :value 0}
+{:index 378, :time 19939128625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 379, :time 19947771833, :type :ok, :process 0, :f :read, :value 0}
+{:index 380, :time 20048451083, :type :invoke, :process 1, :f :read, :value nil}
+{:index 381, :time 20055723416, :type :ok, :process 1, :f :read, :value 0}
+{:index 382, :time 20130623166, :type :invoke, :process 2, :f :read, :value nil}
+{:index 383, :time 20140041708, :type :ok, :process 2, :f :read, :value 0}
+{:index 384, :time 20166380916, :type :invoke, :process 0, :f :read, :value nil}
+{:index 385, :time 20170815041, :type :ok, :process 0, :f :read, :value 0}
+{:index 386, :time 20314080458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 387, :time 20318677416, :type :ok, :process 0, :f :read, :value 0}
+{:index 388, :time 20357942791, :type :invoke, :process 5, :f :cas, :value [0 2]}
+{:index 389, :time 20364374375, :type :ok, :process 5, :f :cas, :value [0 2]}
+{:index 390, :time 20389187333, :type :invoke, :process 0, :f :read, :value nil}
+{:index 391, :time 20397256958, :type :ok, :process 0, :f :read, :value 2}
+{:index 392, :time 20545656000, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 393, :time 20553366708, :type :fail, :process 3, :f :cas, :value [0 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 394, :time 20714889375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 395, :time 20859923666, :type :invoke, :process 3, :f :cas, :value [2 1]}
+{:index 396, :time 21028922708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 397, :time 21053938291, :type :ok, :process 1, :f :read, :value 1}
+{:index 398, :time 21054223458, :type :ok, :process 3, :f :cas, :value [2 1]}
+{:index 399, :time 21056272791, :type :ok, :process 0, :f :read, :value 1}
+{:index 400, :time 21056341291, :type :invoke, :process 4, :f :write, :value 4}
+{:index 401, :time 21148235666, :type :ok, :process 4, :f :write, :value 4}
+{:index 402, :time 21200717166, :type :invoke, :process 0, :f :read, :value nil}
+{:index 403, :time 21208446500, :type :ok, :process 0, :f :read, :value 4}
+{:index 404, :time 21347045708, :type :invoke, :process 0, :f :read, :value nil}
+{:index 405, :time 21371772333, :type :ok, :process 0, :f :read, :value 4}
+{:index 406, :time 21491102625, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 407, :time 21496971791, :type :ok, :process 3, :f :cas, :value [4 3]}
+{:index 408, :time 21668007708, :type :invoke, :process 1, :f :read, :value nil}
+{:index 409, :time 21673780916, :type :ok, :process 1, :f :read, :value 3}
+{:index 410, :time 21719068958, :type :invoke, :process 2, :f :read, :value nil}
+{:index 411, :time 21725376458, :type :ok, :process 2, :f :read, :value 3}
+{:index 412, :time 21804962791, :type :invoke, :process 0, :f :read, :value nil}
+{:index 413, :time 21810271708, :type :ok, :process 0, :f :read, :value 3}
+{:index 414, :time 21821566166, :type :invoke, :process 0, :f :read, :value nil}
+{:index 415, :time 21826091291, :type :ok, :process 0, :f :read, :value 3}
+{:index 416, :time 21944515958, :type :invoke, :process 5, :f :cas, :value [1 4]}
+{:index 417, :time 21951607333, :type :fail, :process 5, :f :cas, :value [1 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 418, :time 22131639458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 419, :time 22138153541, :type :ok, :process 0, :f :read, :value 3}
+{:index 420, :time 22205329000, :type :invoke, :process 3, :f :write, :value 0}
+{:index 421, :time 22214118916, :type :ok, :process 3, :f :write, :value 0}
+{:index 422, :time 22233592791, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 423, :time 22239622458, :type :ok, :process 3, :f :cas, :value [0 1]}
+{:index 424, :time 22418708833, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 425, :time 22423832916, :type :fail, :process 3, :f :cas, :value [4 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 426, :time 22436585208, :type :invoke, :process 0, :f :read, :value nil}
+{:index 427, :time 22440498750, :type :ok, :process 0, :f :read, :value 1}
+{:index 428, :time 22466196250, :type :invoke, :process 0, :f :read, :value nil}
+{:index 429, :time 22469644750, :type :ok, :process 0, :f :read, :value 1}
+{:index 430, :time 22511574375, :type :invoke, :process 5, :f :write, :value 1}
+{:index 431, :time 22517660208, :type :ok, :process 5, :f :write, :value 1}
+{:index 432, :time 22713416750, :type :invoke, :process 3, :f :cas, :value [2 2]}
+{:index 433, :time 22830345958, :type :fail, :process 3, :f :cas, :value [2 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 434, :time 22891402916, :type :invoke, :process 0, :f :read, :value nil}
+{:index 435, :time 22928614375, :type :ok, :process 0, :f :read, :value 1}
+{:index 436, :time 22977949375, :type :invoke, :process 3, :f :write, :value 0}
+{:index 437, :time 23049471375, :type :ok, :process 3, :f :write, :value 0}
+{:index 438, :time 23054211250, :type :invoke, :process 2, :f :read, :value nil}
+{:index 439, :time 23062055041, :type :ok, :process 2, :f :read, :value 0}
+{:index 440, :time 23091984458, :type :invoke, :process 3, :f :write, :value 3}
+{:index 441, :time 23114161666, :type :ok, :process 3, :f :write, :value 3}
+{:index 442, :time 23194608625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 443, :time 23198221041, :type :ok, :process 0, :f :read, :value 3}
+{:index 444, :time 23385865083, :type :invoke, :process 5, :f :write, :value 2}
+{:index 445, :time 23393686875, :type :ok, :process 5, :f :write, :value 2}
+{:index 446, :time 23449118958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 447, :time 23453546291, :type :ok, :process 0, :f :read, :value 2}
+{:index 448, :time 23575027333, :type :invoke, :process 3, :f :cas, :value [4 2]}
+{:index 449, :time 23583587000, :type :fail, :process 3, :f :cas, :value [4 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 450, :time 23746887583, :type :invoke, :process 3, :f :write, :value 4}
+{:index 451, :time 23751572875, :type :invoke, :process 2, :f :read, :value nil}
+{:index 452, :time 23755254458, :type :ok, :process 3, :f :write, :value 4}
+{:index 453, :time 23756777791, :type :ok, :process 2, :f :read, :value 4}
+{:index 454, :time 23803022083, :type :invoke, :process 0, :f :read, :value nil}
+{:index 455, :time 23808255583, :type :ok, :process 0, :f :read, :value 4}
+{:index 456, :time 24003972583, :type :invoke, :process 0, :f :read, :value nil}
+{:index 457, :time 24009185166, :type :ok, :process 0, :f :read, :value 4}
+{:index 458, :time 24203119791, :type :invoke, :process 5, :f :cas, :value [3 1]}
+{:index 459, :time 24208333625, :type :fail, :process 5, :f :cas, :value [3 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 460, :time 24386578208, :type :invoke, :process 3, :f :cas, :value [4 0]}
+{:index 461, :time 24393284125, :type :ok, :process 3, :f :cas, :value [4 0]}
+{:index 462, :time 24526872041, :type :invoke, :process 0, :f :read, :value nil}
+{:index 463, :time 24532330291, :type :ok, :process 0, :f :read, :value 0}
+{:index 464, :time 24649075958, :type :invoke, :process 3, :f :write, :value 0}
+{:index 465, :time 24655816166, :type :ok, :process 3, :f :write, :value 0}
+{:index 466, :time 24774786375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 467, :time 24789619958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 468, :time 24801479208, :type :invoke, :process 4, :f :write, :value 3}
+{:index 469, :time 24963264083, :type :ok, :process 2, :f :read, :value 0}
+{:index 470, :time 25064532750, :type :ok, :process 4, :f :write, :value 3}
+{:index 471, :time 25064610166, :type :ok, :process 0, :f :read, :value 3}
+{:index 472, :time 25064681541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 473, :time 25092565791, :type :ok, :process 0, :f :read, :value 3}
+{:index 474, :time 25092953541, :type :invoke, :process 0, :f :read, :value nil}
+{:index 475, :time 25142856416, :type :ok, :process 0, :f :read, :value 3}
+{:index 476, :time 25229521375, :type :invoke, :process 3, :f :cas, :value [2 4]}
+{:index 477, :time 25233721875, :type :fail, :process 3, :f :cas, :value [2 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 478, :time 25411042541, :type :invoke, :process 3, :f :cas, :value [1 0]}
+{:index 479, :time 25415905625, :type :fail, :process 3, :f :cas, :value [1 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 480, :time 25444830166, :type :invoke, :process 2, :f :read, :value nil}
+{:index 481, :time 25451291208, :type :ok, :process 2, :f :read, :value 3}
+{:index 482, :time 25509705750, :type :invoke, :process 3, :f :cas, :value [2 3]}
+{:index 483, :time 25517879125, :type :fail, :process 3, :f :cas, :value [2 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 484, :time 25549058083, :type :invoke, :process 4, :f :write, :value 0}
+{:index 485, :time 25556135000, :type :ok, :process 4, :f :write, :value 0}
+{:index 486, :time 25685651458, :type :invoke, :process 0, :f :read, :value nil}
+{:index 487, :time 25691461708, :type :ok, :process 0, :f :read, :value 0}
+{:index 488, :time 25773475916, :type :invoke, :process 3, :f :cas, :value [4 3]}
+{:index 489, :time 25779851791, :type :fail, :process 3, :f :cas, :value [4 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 490, :time 25800520958, :type :invoke, :process 3, :f :cas, :value [0 1]}
+{:index 491, :time 25806044666, :type :ok, :process 3, :f :cas, :value [0 1]}
+{:index 492, :time 25823526375, :type :invoke, :process 1, :f :read, :value nil}
+{:index 493, :time 25827211458, :type :ok, :process 1, :f :read, :value 1}
+{:index 494, :time 26021443041, :type :invoke, :process 2, :f :read, :value nil}
+{:index 495, :time 26027525291, :type :ok, :process 2, :f :read, :value 1}
+{:index 496, :time 26067489208, :type :invoke, :process 3, :f :cas, :value [1 3]}
+{:index 497, :time 26075879166, :type :ok, :process 3, :f :cas, :value [1 3]}
+{:index 498, :time 26195767250, :type :invoke, :process 4, :f :write, :value 1}
+{:index 499, :time 26197506166, :type :invoke, :process 0, :f :read, :value nil}
+{:index 500, :time 26210220375, :type :ok, :process 4, :f :write, :value 1}
+{:index 501, :time 26210296083, :type :ok, :process 0, :f :read, :value 1}
+{:index 502, :time 26344503958, :type :invoke, :process 3, :f :cas, :value [3 0]}
+{:index 503, :time 26350577208, :type :fail, :process 3, :f :cas, :value [3 0], :error [:precondition-failed "cas precondition failed"]}
+{:index 504, :time 26506521833, :type :invoke, :process 3, :f :write, :value 1}
+{:index 505, :time 26514472083, :type :ok, :process 3, :f :write, :value 1}
+{:index 506, :time 26603603166, :type :invoke, :process 3, :f :cas, :value [1 4]}
+{:index 507, :time 26610000333, :type :ok, :process 3, :f :cas, :value [1 4]}
+{:index 508, :time 26638227333, :type :invoke, :process 2, :f :read, :value nil}
+{:index 509, :time 26642932208, :type :ok, :process 2, :f :read, :value 4}
+{:index 510, :time 26796361583, :type :invoke, :process 0, :f :read, :value nil}
+{:index 511, :time 26829793416, :type :ok, :process 0, :f :read, :value 4}
+{:index 512, :time 26994485958, :type :invoke, :process 0, :f :read, :value nil}
+{:index 513, :time 27014142916, :type :ok, :process 0, :f :read, :value 4}
+{:index 514, :time 27072290416, :type :invoke, :process 0, :f :read, :value nil}
+{:index 515, :time 27081541916, :type :ok, :process 0, :f :read, :value 4}
+{:index 516, :time 27204044125, :type :invoke, :process 3, :f :cas, :value [0 2]}
+{:index 517, :time 27210900916, :type :fail, :process 3, :f :cas, :value [0 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 518, :time 27285695083, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 519, :time 27292385708, :type :ok, :process 3, :f :cas, :value [4 1]}
+{:index 520, :time 27328942750, :type :invoke, :process 3, :f :cas, :value [0 3]}
+{:index 521, :time 27333098125, :type :fail, :process 3, :f :cas, :value [0 3], :error [:precondition-failed "cas precondition failed"]}
+{:index 522, :time 27469552666, :type :invoke, :process 2, :f :read, :value nil}
+{:index 523, :time 27479601708, :type :ok, :process 2, :f :read, :value 1}
+{:index 524, :time 27543519833, :type :invoke, :process 0, :f :read, :value nil}
+{:index 525, :time 27550342791, :type :ok, :process 0, :f :read, :value 1}
+{:index 526, :time 27656597208, :type :invoke, :process 4, :f :cas, :value [2 2]}
+{:index 527, :time 27663131041, :type :fail, :process 4, :f :cas, :value [2 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 528, :time 27703377625, :type :invoke, :process 0, :f :read, :value nil}
+{:index 529, :time 27706799958, :type :ok, :process 0, :f :read, :value 1}
+{:index 530, :time 27889826458, :type :invoke, :process 3, :f :cas, :value [4 4]}
+{:index 531, :time 27896028583, :type :fail, :process 3, :f :cas, :value [4 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 532, :time 28072846125, :type :invoke, :process 0, :f :read, :value nil}
+{:index 533, :time 28078270916, :type :ok, :process 0, :f :read, :value 1}
+{:index 534, :time 28247976583, :type :invoke, :process 1, :f :read, :value nil}
+{:index 535, :time 28252744250, :type :ok, :process 1, :f :read, :value 1}
+{:index 536, :time 28317417416, :type :invoke, :process 2, :f :read, :value nil}
+{:index 537, :time 28321384416, :type :ok, :process 2, :f :read, :value 1}
+{:index 538, :time 28399589208, :type :invoke, :process 3, :f :cas, :value [4 1]}
+{:index 539, :time 28402047166, :type :fail, :process 3, :f :cas, :value [4 1], :error [:precondition-failed "cas precondition failed"]}
+{:index 540, :time 28525266250, :type :invoke, :process 4, :f :cas, :value [3 2]}
+{:index 541, :time 28529896166, :type :fail, :process 4, :f :cas, :value [3 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 542, :time 28686858750, :type :invoke, :process 5, :f :cas, :value [1 1]}
+{:index 543, :time 28728797958, :type :invoke, :process 3, :f :cas, :value [3 4]}
+{:index 544, :time 28787333208, :type :ok, :process 5, :f :cas, :value [1 1]}
+{:index 545, :time 28873286541, :type :fail, :process 3, :f :cas, :value [3 4], :error [:precondition-failed "cas precondition failed"]}
+{:index 546, :time 28873372291, :type :invoke, :process 3, :f :write, :value 1}
+{:index 547, :time 28911052833, :type :invoke, :process 4, :f :cas, :value [2 2]}
+{:index 548, :time 28966861541, :type :ok, :process 3, :f :write, :value 1}
+{:index 549, :time 28967239166, :type :fail, :process 4, :f :cas, :value [2 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 550, :time 29111951375, :type :invoke, :process 2, :f :read, :value nil}
+{:index 551, :time 29112436875, :type :invoke, :process 0, :f :read, :value nil}
+{:index 552, :time 29114602625, :type :ok, :process 2, :f :read, :value 1}
+{:index 553, :time 29114627083, :type :ok, :process 0, :f :read, :value 1}
+{:index 554, :time 29260700250, :type :invoke, :process 4, :f :cas, :value [4 2]}
+{:index 555, :time 29266710291, :type :fail, :process 4, :f :cas, :value [4 2], :error [:precondition-failed "cas precondition failed"]}
+{:index 556, :time 29460649708, :type :invoke, :process 5, :f :write, :value 3}
+{:index 557, :time 29468493875, :type :ok, :process 5, :f :write, :value 3}
+{:index 558, :time 29558807291, :type :invoke, :process 3, :f :write, :value 2}
+{:index 559, :time 29565927708, :type :ok, :process 3, :f :write, :value 2}
+{:index 560, :time 29719105416, :type :invoke, :process 0, :f :read, :value nil}
+{:index 561, :time 29723640250, :type :ok, :process 0, :f :read, :value 2}
+{:index 562, :time 29891868666, :type :invoke, :process 1, :f :read, :value nil}
+{:index 563, :time 29897197333, :type :ok, :process 1, :f :read, :value 2}
+{:index 564, :time 29995556333, :type :invoke, :process 3, :f :cas, :value [1 1]}
+{:index 565, :time 30001809166, :type :fail, :process 3, :f :cas, :value [1 1], :error [:precondition-failed "cas precondition failed"]}

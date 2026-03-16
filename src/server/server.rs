@@ -37,7 +37,7 @@ impl OmniPaxosServer {
         let network = Network::new(config.clone(), NETWORK_BATCH_SIZE).await;
         OmniPaxosServer {
             id: config.local.server_id,
-            database: Database::new(),
+            database: Database::new(format!("logs/db-node-{}.json", config.local.server_id)),
             network,
             omnipaxos,
             current_decided_idx: 0,

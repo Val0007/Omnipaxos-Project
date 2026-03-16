@@ -11,7 +11,7 @@ kill_port() {
 while true; do
     sleep $((RANDOM % 10 + 5))
 
-    SERVER=$((RANDOM % 3 + 1))
+    SERVER=$((RANDOM % 2 + 1))
     PORT=$((8000 + SERVER))
     echo "Killing server $SERVER (port $PORT)"
 

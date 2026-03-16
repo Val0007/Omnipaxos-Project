@@ -1,0 +1,874 @@
+{:index 449, :time 13633268916, :type :invoke, :process 42, :f :cas, :value [2 1]}
+{:index 451, :time 13725733291, :type :invoke, :process 43, :f :cas, :value [4 0]}
+{:index 455, :time 13862588333, :type :invoke, :process 44, :f :cas, :value [0 1]}
+{:index 457, :time 13951884208, :type :invoke, :process 46, :f :write, :value 3}
+{:index 467, :time 14469295916, :type :invoke, :process 57, :f :cas, :value [1 2]}
+{:index 469, :time 14549370791, :type :invoke, :process 59, :f :cas, :value [2 3]}
+{:index 472, :time 14640061625, :type :info, :process 42, :f :cas, :value [2 1], :error :net-timeout}
+{:index 473, :time 14678710791, :type :invoke, :process 54, :f :write, :value 4}
+{:index 474, :time 14726739166, :type :info, :process 43, :f :cas, :value [4 0], :error :net-timeout}
+{:index 475, :time 14726878333, :type :invoke, :process 55, :f :cas, :value [0 4]}
+{:index 478, :time 14867832583, :type :info, :process 44, :f :cas, :value [0 1], :error :net-timeout}
+{:index 479, :time 14876564291, :type :invoke, :process 56, :f :cas, :value [2 0]}
+{:index 480, :time 14957843666, :type :info, :process 46, :f :write, :value 3, :error :net-timeout}
+{:index 481, :time 14958037625, :type :invoke, :process 58, :f :write, :value 0}
+{:index 490, :time 15461609708, :type :fail, :process 57, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 491, :time 15461734583, :type :invoke, :process 57, :f :write, :value 2}
+{:index 493, :time 15463438166, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 495, :time 15464993583, :type :fail, :process 57, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 498, :time 15527879791, :type :fail, :process 59, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 499, :time 15528402291, :type :fail, :process 56, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 506, :time 15728979958, :type :info, :process 55, :f :cas, :value [0 4], :error :net-timeout}
+{:index 507, :time 15752049750, :type :invoke, :process 56, :f :cas, :value [4 4]}
+{:index 508, :time 15771621041, :type :fail, :process 56, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 510, :time 15793402458, :type :fail, :process 58, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 512, :time 15844125083, :type :invoke, :process 57, :f :write, :value 0}
+{:index 513, :time 15847505375, :type :fail, :process 57, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 514, :time 15906709208, :type :invoke, :process 58, :f :write, :value 2}
+{:index 515, :time 15910256166, :type :fail, :process 58, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 516, :time 15959832166, :type :invoke, :process 59, :f :cas, :value [0 1]}
+{:index 517, :time 15967900208, :type :fail, :process 59, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 520, :time 16135319041, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 521, :time 16138058000, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 522, :time 16182904375, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 523, :time 16185997875, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 532, :time 16537839791, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 533, :time 16542120208, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 536, :time 16646442416, :type :invoke, :process 56, :f :write, :value 1}
+{:index 537, :time 16649549791, :type :fail, :process 56, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 538, :time 16669907250, :type :invoke, :process 57, :f :cas, :value [0 3]}
+{:index 539, :time 16672789833, :type :fail, :process 57, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 540, :time 16749475083, :type :invoke, :process 58, :f :write, :value 4}
+{:index 541, :time 16752394250, :type :fail, :process 58, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 546, :time 16843693291, :type :invoke, :process 54, :f :write, :value 2}
+{:index 547, :time 16845954458, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 550, :time 16982163666, :type :invoke, :process 54, :f :write, :value 2}
+{:index 551, :time 16984431041, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 554, :time 17104509583, :type :invoke, :process 54, :f :cas, :value [3 2]}
+{:index 555, :time 17108423875, :type :fail, :process 54, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 556, :time 17115668875, :type :invoke, :process 54, :f :write, :value 4}
+{:index 557, :time 17118507916, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 560, :time 17156407583, :type :invoke, :process 67, :f :write, :value 0}
+{:index 561, :time 17158709291, :type :fail, :process 67, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 562, :time 17196230750, :type :invoke, :process 56, :f :write, :value 2}
+{:index 563, :time 17198482916, :type :fail, :process 56, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 564, :time 17257171666, :type :invoke, :process 57, :f :write, :value 1}
+{:index 565, :time 17259037750, :type :fail, :process 57, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 568, :time 17383711625, :type :invoke, :process 59, :f :write, :value 2}
+{:index 569, :time 17385972916, :type :fail, :process 59, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 570, :time 17462501166, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 571, :time 17464992916, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 572, :time 17540405833, :type :invoke, :process 54, :f :write, :value 3}
+{:index 573, :time 17543180250, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 578, :time 17617956375, :type :invoke, :process 54, :f :write, :value 2}
+{:index 579, :time 17620753458, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 580, :time 17698022333, :type :invoke, :process 54, :f :cas, :value [4 4]}
+{:index 581, :time 17701013375, :type :fail, :process 54, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 582, :time 17775394416, :type :invoke, :process 54, :f :write, :value 1}
+{:index 583, :time 17777569666, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 588, :time 17966034416, :type :invoke, :process 56, :f :write, :value 1}
+{:index 589, :time 17969959500, :type :fail, :process 56, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 594, :time 18116013166, :type :invoke, :process 59, :f :cas, :value [1 3]}
+{:index 595, :time 18117860666, :type :fail, :process 59, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 596, :time 18141215041, :type :invoke, :process 54, :f :write, :value 1}
+{:index 597, :time 18143451000, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 598, :time 18234003125, :type :invoke, :process 54, :f :write, :value 4}
+{:index 599, :time 18239205333, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 600, :time 18310182583, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 601, :time 18312229833, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 602, :time 18359354541, :type :invoke, :process 54, :f :cas, :value [3 1]}
+{:index 603, :time 18363204625, :type :fail, :process 54, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 608, :time 18456591375, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 609, :time 18460691541, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 612, :time 18510888375, :type :invoke, :process 67, :f :cas, :value [4 3]}
+{:index 613, :time 18512984000, :type :fail, :process 67, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 614, :time 18536861333, :type :invoke, :process 56, :f :write, :value 3}
+{:index 615, :time 18538866916, :type :fail, :process 56, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 624, :time 18876783250, :type :invoke, :process 54, :f :write, :value 1}
+{:index 625, :time 18878439958, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 628, :time 18971579625, :type :invoke, :process 54, :f :cas, :value [2 3]}
+{:index 629, :time 18973276625, :type :fail, :process 54, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 630, :time 19047315500, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 631, :time 19048995708, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 632, :time 19119022875, :type :invoke, :process 54, :f :write, :value 4}
+{:index 633, :time 19120945625, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 634, :time 19174039250, :type :invoke, :process 54, :f :write, :value 0}
+{:index 635, :time 19175742666, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 638, :time 19297116083, :type :invoke, :process 67, :f :write, :value 3}
+{:index 639, :time 19298911791, :type :fail, :process 67, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 640, :time 19313278125, :type :invoke, :process 56, :f :write, :value 4}
+{:index 641, :time 19315067875, :type :fail, :process 56, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 642, :time 19357904583, :type :invoke, :process 57, :f :write, :value 0}
+{:index 643, :time 19359354791, :type :fail, :process 57, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 644, :time 19396318458, :type :invoke, :process 58, :f :write, :value 2}
+{:index 645, :time 19397848833, :type :fail, :process 58, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 648, :time 19485002333, :type :invoke, :process 54, :f :write, :value 4}
+{:index 649, :time 19487026250, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 650, :time 19500096958, :type :invoke, :process 54, :f :cas, :value [2 4]}
+{:index 651, :time 19501774250, :type :fail, :process 54, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 652, :time 19584340291, :type :invoke, :process 54, :f :cas, :value [3 1]}
+{:index 653, :time 19586003416, :type :fail, :process 54, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 654, :time 19640035916, :type :invoke, :process 54, :f :cas, :value [1 2]}
+{:index 655, :time 19641663458, :type :fail, :process 54, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 660, :time 19779223041, :type :invoke, :process 54, :f :write, :value 3}
+{:index 661, :time 19780553125, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 662, :time 19878596458, :type :invoke, :process 54, :f :cas, :value [2 1]}
+{:index 663, :time 19880116125, :type :fail, :process 54, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 664, :time 19895357791, :type :invoke, :process 67, :f :write, :value 3}
+{:index 665, :time 19896456291, :type :fail, :process 67, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 668, :time 19942271916, :type :invoke, :process 57, :f :cas, :value [0 1]}
+{:index 669, :time 19943125416, :type :fail, :process 57, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 670, :time 19956531500, :type :invoke, :process 58, :f :cas, :value [2 3]}
+{:index 671, :time 19957639583, :type :fail, :process 58, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 672, :time 20032684333, :type :invoke, :process 59, :f :write, :value 3}
+{:index 673, :time 20035419708, :type :fail, :process 59, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 674, :time 20104173500, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 675, :time 20108963875, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 684, :time 20435896666, :type :invoke, :process 54, :f :cas, :value [0 2]}
+{:index 685, :time 20441285500, :type :fail, :process 54, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 686, :time 20454310791, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 687, :time 20459024333, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 688, :time 20502687333, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 689, :time 20506308583, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 700, :time 20931721333, :type :invoke, :process 54, :f :write, :value 3}
+{:index 701, :time 20936355375, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 704, :time 21123811375, :type :invoke, :process 54, :f :write, :value 4}
+{:index 705, :time 21130520500, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 708, :time 21294609791, :type :invoke, :process 54, :f :write, :value 2}
+{:index 709, :time 21297103375, :type :invoke, :process 67, :f :cas, :value [4 0]}
+{:index 710, :time 21301179791, :type :fail, :process 67, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 711, :time 21301253291, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 712, :time 21340526416, :type :invoke, :process 54, :f :write, :value 2}
+{:index 713, :time 21347082125, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 716, :time 21413188208, :type :invoke, :process 67, :f :write, :value 4}
+{:index 717, :time 21418179083, :type :fail, :process 67, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 720, :time 21495821833, :type :invoke, :process 57, :f :cas, :value [2 0]}
+{:index 721, :time 21499486625, :type :fail, :process 57, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 726, :time 21596127083, :type :invoke, :process 54, :f :write, :value 2}
+{:index 727, :time 21601645083, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 732, :time 21744378833, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 733, :time 21746836166, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 736, :time 21821260458, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 737, :time 21825929916, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 740, :time 21925544791, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 741, :time 21931368916, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 754, :time 22306895708, :type :invoke, :process 54, :f :write, :value 3}
+{:index 755, :time 22311323958, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 756, :time 22340463041, :type :invoke, :process 54, :f :cas, :value [2 4]}
+{:index 757, :time 22342509166, :type :fail, :process 54, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 758, :time 22438472208, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 759, :time 22443585750, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 768, :time 22717024875, :type :invoke, :process 67, :f :write, :value 4}
+{:index 769, :time 22719643583, :type :fail, :process 67, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 770, :time 22723126458, :type :invoke, :process 56, :f :cas, :value [4 1]}
+{:index 771, :time 22724276875, :type :fail, :process 56, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 772, :time 22786314875, :type :invoke, :process 57, :f :cas, :value [2 3]}
+{:index 773, :time 22788029166, :type :fail, :process 57, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 776, :time 22888530250, :type :invoke, :process 59, :f :write, :value 1}
+{:index 777, :time 22891832166, :type :fail, :process 59, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 778, :time 22976766125, :type :invoke, :process 54, :f :cas, :value [2 3]}
+{:index 779, :time 22978883416, :type :fail, :process 54, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 780, :time 23026074750, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 781, :time 23027623958, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 784, :time 23090914583, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 785, :time 23092109625, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 788, :time 23152295708, :type :invoke, :process 54, :f :write, :value 3}
+{:index 789, :time 23153888708, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 792, :time 23305657541, :type :invoke, :process 54, :f :write, :value 3}
+{:index 793, :time 23308817791, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 794, :time 23381952875, :type :invoke, :process 67, :f :write, :value 4}
+{:index 795, :time 23384154041, :type :fail, :process 67, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 798, :time 23472263541, :type :invoke, :process 57, :f :cas, :value [3 3]}
+{:index 799, :time 23473814625, :type :fail, :process 57, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 800, :time 23545547666, :type :invoke, :process 58, :f :cas, :value [4 0]}
+{:index 801, :time 23548377958, :type :fail, :process 58, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 808, :time 23805205458, :type :invoke, :process 54, :f :write, :value 2}
+{:index 809, :time 23807725958, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 818, :time 24029225041, :type :invoke, :process 54, :f :write, :value 0}
+{:index 819, :time 24031732208, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 820, :time 24078922291, :type :invoke, :process 67, :f :write, :value 2}
+{:index 821, :time 24080439875, :type :fail, :process 67, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 826, :time 24260573500, :type :invoke, :process 58, :f :cas, :value [4 1]}
+{:index 827, :time 24262002083, :type :fail, :process 58, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 828, :time 24329658041, :type :invoke, :process 59, :f :cas, :value [1 3]}
+{:index 829, :time 24331516291, :type :fail, :process 59, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 832, :time 24466927833, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 833, :time 24471476666, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 834, :time 24542442750, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 835, :time 24548138958, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 836, :time 24565887916, :type :invoke, :process 54, :f :write, :value 3}
+{:index 837, :time 24580132666, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 838, :time 24610529166, :type :invoke, :process 54, :f :cas, :value [1 3]}
+{:index 839, :time 24613130916, :type :fail, :process 54, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 847, :time 24872014291, :type :invoke, :process 56, :f :cas, :value [1 0]}
+{:index 849, :time 24873898666, :type :fail, :process 56, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 850, :time 24925816500, :type :invoke, :process 57, :f :cas, :value [4 0]}
+{:index 851, :time 24927691458, :type :fail, :process 57, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 854, :time 25054743625, :type :invoke, :process 59, :f :write, :value 2}
+{:index 855, :time 25056505916, :type :fail, :process 59, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 856, :time 25141598375, :type :invoke, :process 54, :f :cas, :value [4 4]}
+{:index 857, :time 25143424583, :type :fail, :process 54, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 860, :time 25168413708, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 861, :time 25170047208, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 862, :time 25269589125, :type :invoke, :process 54, :f :write, :value 3}
+{:index 863, :time 25271776791, :type :invoke, :process 67, :f :cas, :value [4 3]}
+{:index 864, :time 25275069791, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 865, :time 25276180708, :type :fail, :process 67, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 866, :time 25307109458, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 867, :time 25311059791, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 868, :time 25382102666, :type :invoke, :process 54, :f :write, :value 1}
+{:index 869, :time 25386026958, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 874, :time 25625386333, :type :invoke, :process 56, :f :cas, :value [4 4]}
+{:index 875, :time 25627970166, :type :fail, :process 56, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 884, :time 25938208000, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 885, :time 25942593791, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 892, :time 26159703583, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 893, :time 26168208083, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 896, :time 26242610000, :type :invoke, :process 54, :f :write, :value 1}
+{:index 897, :time 26247272750, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 898, :time 26271633041, :type :invoke, :process 67, :f :cas, :value [4 3]}
+{:index 899, :time 26275091625, :type :fail, :process 67, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 900, :time 26311727458, :type :invoke, :process 56, :f :cas, :value [3 1]}
+{:index 901, :time 26314213541, :type :fail, :process 56, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 906, :time 26453772333, :type :invoke, :process 59, :f :write, :value 2}
+{:index 907, :time 26455718041, :type :fail, :process 59, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 914, :time 26639981166, :type :invoke, :process 54, :f :write, :value 0}
+{:index 915, :time 26644711916, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 918, :time 26746508750, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 919, :time 26751170458, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 920, :time 26842306333, :type :invoke, :process 54, :f :cas, :value [3 2]}
+{:index 921, :time 26846885583, :type :fail, :process 54, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 924, :time 26912317541, :type :invoke, :process 67, :f :write, :value 4}
+{:index 925, :time 26915799583, :type :fail, :process 67, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 926, :time 26973865333, :type :invoke, :process 56, :f :write, :value 4}
+{:index 927, :time 26979559041, :type :fail, :process 56, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 928, :time 27054911000, :type :invoke, :process 57, :f :cas, :value [0 2]}
+{:index 931, :time 27061793666, :type :fail, :process 57, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 934, :time 27210956166, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 935, :time 27213442250, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 938, :time 27304399250, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 939, :time 27306148000, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 944, :time 27479744875, :type :invoke, :process 54, :f :cas, :value [3 1]}
+{:index 945, :time 27486295208, :type :fail, :process 54, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 948, :time 27658134250, :type :invoke, :process 54, :f :cas, :value [0 2]}
+{:index 949, :time 27662637541, :type :fail, :process 54, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 950, :time 27690530250, :type :invoke, :process 67, :f :cas, :value [0 0]}
+{:index 951, :time 27694428208, :type :fail, :process 67, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 952, :time 27701847625, :type :invoke, :process 56, :f :cas, :value [3 1]}
+{:index 953, :time 27704239166, :type :fail, :process 56, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 954, :time 27794955666, :type :invoke, :process 57, :f :write, :value 2}
+{:index 955, :time 27798149625, :type :fail, :process 57, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 958, :time 27898374416, :type :invoke, :process 59, :f :cas, :value [1 3]}
+{:index 959, :time 27903654333, :type :fail, :process 59, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 960, :time 27938927250, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 961, :time 27943378833, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 966, :time 27971250916, :type :invoke, :process 54, :f :cas, :value [1 2]}
+{:index 967, :time 27972664208, :type :fail, :process 54, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 968, :time 28044258583, :type :invoke, :process 54, :f :cas, :value [0 2]}
+{:index 969, :time 28056616750, :type :fail, :process 54, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 970, :time 28104072083, :type :invoke, :process 54, :f :write, :value 1}
+{:index 971, :time 28107853833, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 972, :time 28129468166, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 973, :time 28132345416, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 974, :time 28154467541, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 975, :time 28156893791, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 978, :time 28236693041, :type :invoke, :process 56, :f :cas, :value [3 1]}
+{:index 979, :time 28238546666, :type :fail, :process 56, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 984, :time 28422681375, :type :invoke, :process 59, :f :cas, :value [3 2]}
+{:index 985, :time 28428657291, :type :fail, :process 59, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 986, :time 28495510291, :type :invoke, :process 54, :f :cas, :value [4 2]}
+{:index 987, :time 28500338666, :type :fail, :process 54, :f :cas, :value [4 2], :error [:abort "TCP sender unavailable"]}
+{:index 988, :time 28580478875, :type :invoke, :process 54, :f :write, :value 3}
+{:index 989, :time 28583487166, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 991, :time 28646825500, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 993, :time 28650622791, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 994, :time 28653877291, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 995, :time 28655315875, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 996, :time 28701508333, :type :invoke, :process 54, :f :write, :value 2}
+{:index 997, :time 28703645333, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 998, :time 28736141708, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 999, :time 28737872041, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 1000, :time 28782436666, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1001, :time 28783816625, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1002, :time 28794094166, :type :invoke, :process 67, :f :cas, :value [3 3]}
+{:index 1003, :time 28796914125, :type :fail, :process 67, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1004, :time 28799537625, :type :invoke, :process 56, :f :write, :value 4}
+{:index 1005, :time 28801114750, :type :fail, :process 56, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1010, :time 28935181958, :type :invoke, :process 59, :f :cas, :value [1 2]}
+{:index 1011, :time 28937864416, :type :fail, :process 59, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 1020, :time 29141018500, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 1021, :time 29142584958, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 1022, :time 29201627416, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1023, :time 29205823500, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1028, :time 29431690583, :type :invoke, :process 67, :f :cas, :value [2 2]}
+{:index 1029, :time 29434476041, :type :fail, :process 67, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1030, :time 29467857875, :type :invoke, :process 56, :f :cas, :value [3 1]}
+{:index 1031, :time 29469724625, :type :fail, :process 56, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 1032, :time 29500399708, :type :invoke, :process 57, :f :write, :value 2}
+{:index 1033, :time 29502070291, :type :fail, :process 57, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1038, :time 29713948333, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 1039, :time 29717547583, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 1040, :time 29755229000, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 1041, :time 29758193041, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1046, :time 29892667625, :type :invoke, :process 54, :f :cas, :value [4 4]}
+{:index 1047, :time 29895184833, :type :fail, :process 54, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 1048, :time 29972595500, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 1049, :time 29975225833, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1050, :time 30032355375, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 1051, :time 30035461916, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1054, :time 30197936291, :type :invoke, :process 67, :f :write, :value 0}
+{:index 1055, :time 30200409166, :type :fail, :process 67, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1056, :time 30203676333, :type :invoke, :process 56, :f :write, :value 1}
+{:index 1057, :time 30205710791, :type :fail, :process 56, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1072, :time 30685030125, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 1073, :time 30688595500, :type :invoke, :process 67, :f :cas, :value [3 4]}
+{:index 1074, :time 30692400000, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 1075, :time 30695015875, :type :fail, :process 67, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1076, :time 30748280333, :type :invoke, :process 54, :f :cas, :value [1 3]}
+{:index 1077, :time 30753808291, :type :fail, :process 54, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1080, :time 30853657000, :type :invoke, :process 67, :f :cas, :value [2 2]}
+{:index 1081, :time 30859502916, :type :fail, :process 67, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1082, :time 30883313458, :type :invoke, :process 56, :f :cas, :value [1 1]}
+{:index 1083, :time 30886069833, :type :fail, :process 56, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1086, :time 30939272375, :type :invoke, :process 58, :f :cas, :value [1 1]}
+{:index 1087, :time 30941110791, :type :fail, :process 58, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1088, :time 30964467375, :type :invoke, :process 59, :f :write, :value 2}
+{:index 1089, :time 30966228083, :type :fail, :process 59, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1092, :time 31068649250, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1093, :time 31070885708, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1094, :time 31167500250, :type :invoke, :process 54, :f :cas, :value [2 4]}
+{:index 1095, :time 31173101083, :type :fail, :process 54, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 1104, :time 31383636500, :type :invoke, :process 54, :f :cas, :value [1 2]}
+{:index 1105, :time 31387463500, :type :fail, :process 54, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 1106, :time 31453392958, :type :invoke, :process 67, :f :cas, :value [0 2]}
+{:index 1107, :time 31465252166, :type :fail, :process 67, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1118, :time 31810868125, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1119, :time 31815616666, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1120, :time 31891572541, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 1121, :time 31897651458, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1122, :time 31933550875, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 1123, :time 31938535333, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1126, :time 32067815791, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 1127, :time 32069802625, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1128, :time 32168904000, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1129, :time 32172627625, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1130, :time 32264196541, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 1131, :time 32267195791, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1132, :time 32348310958, :type :invoke, :process 67, :f :write, :value 1}
+{:index 1133, :time 32351089083, :type :fail, :process 67, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1144, :time 32558400541, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 1145, :time 32560480333, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1148, :time 32732764333, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1149, :time 32734994791, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1152, :time 32815669250, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 1153, :time 32817126000, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1158, :time 32890084500, :type :invoke, :process 67, :f :cas, :value [0 0]}
+{:index 1159, :time 32892812625, :type :fail, :process 67, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1160, :time 32895549666, :type :invoke, :process 56, :f :cas, :value [3 3]}
+{:index 1161, :time 32900462833, :type :fail, :process 56, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1164, :time 32928379333, :type :invoke, :process 58, :f :write, :value 4}
+{:index 1165, :time 32929664875, :type :fail, :process 58, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1174, :time 33308618208, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1175, :time 33310826791, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1178, :time 33465065000, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 1179, :time 33469584083, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1180, :time 33557894625, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 1181, :time 33561122291, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1186, :time 33647401041, :type :invoke, :process 56, :f :cas, :value [1 3]}
+{:index 1187, :time 33649074958, :type :fail, :process 56, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1188, :time 33705986416, :type :invoke, :process 57, :f :write, :value 1}
+{:index 1189, :time 33707793500, :type :fail, :process 57, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1190, :time 33748637666, :type :invoke, :process 58, :f :cas, :value [2 1]}
+{:index 1191, :time 33750869666, :type :fail, :process 58, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1200, :time 34093309375, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 1201, :time 34094861000, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1202, :time 34127366333, :type :invoke, :process 54, :f :cas, :value [1 4]}
+{:index 1203, :time 34128992041, :type :fail, :process 54, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 1210, :time 34282168833, :type :invoke, :process 67, :f :write, :value 4}
+{:index 1211, :time 34284364041, :type :fail, :process 67, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1212, :time 34329971208, :type :invoke, :process 56, :f :cas, :value [1 3]}
+{:index 1213, :time 34331581333, :type :fail, :process 56, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1214, :time 34403084625, :type :invoke, :process 57, :f :write, :value 0}
+{:index 1215, :time 34405019500, :type :fail, :process 57, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1228, :time 34763239041, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1229, :time 34765576916, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1232, :time 34831915625, :type :invoke, :process 54, :f :cas, :value [0 2]}
+{:index 1233, :time 34834767083, :type :fail, :process 54, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1238, :time 34994566125, :type :invoke, :process 56, :f :cas, :value [0 1]}
+{:index 1239, :time 34997063166, :type :fail, :process 56, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1240, :time 35083808166, :type :invoke, :process 57, :f :write, :value 2}
+{:index 1241, :time 35090385791, :type :fail, :process 57, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1242, :time 35092728000, :type :invoke, :process 58, :f :cas, :value [3 1]}
+{:index 1243, :time 35096367083, :type :fail, :process 58, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 1244, :time 35169018583, :type :invoke, :process 59, :f :write, :value 2}
+{:index 1245, :time 35173114375, :type :fail, :process 59, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1248, :time 35197971916, :type :invoke, :process 54, :f :cas, :value [1 1]}
+{:index 1249, :time 35199759500, :type :fail, :process 54, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1252, :time 35314210083, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1253, :time 35319244958, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1254, :time 35365054000, :type :invoke, :process 54, :f :cas, :value [1 1]}
+{:index 1255, :time 35369287166, :type :fail, :process 54, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1256, :time 35455414916, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 1257, :time 35457461458, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1258, :time 35492682458, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1259, :time 35494267375, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1268, :time 35808833875, :type :invoke, :process 58, :f :write, :value 3}
+{:index 1269, :time 35811634791, :type :fail, :process 58, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1290, :time 36579544166, :type :invoke, :process 56, :f :write, :value 3}
+{:index 1291, :time 36581239916, :type :fail, :process 56, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1294, :time 36640451958, :type :invoke, :process 58, :f :write, :value 0}
+{:index 1295, :time 36641616166, :type :fail, :process 58, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1296, :time 36705820041, :type :invoke, :process 59, :f :cas, :value [3 2]}
+{:index 1297, :time 36707216083, :type :fail, :process 59, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1298, :time 36759650500, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1299, :time 36762227208, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1302, :time 36884862791, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 1303, :time 36887703500, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 1306, :time 37002081291, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1307, :time 37005918541, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1308, :time 37056248708, :type :invoke, :process 54, :f :cas, :value [2 3]}
+{:index 1309, :time 37058341125, :type :fail, :process 54, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 1312, :time 37215837958, :type :invoke, :process 54, :f :cas, :value [2 1]}
+{:index 1313, :time 37217774791, :type :fail, :process 54, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1318, :time 37365152666, :type :invoke, :process 57, :f :cas, :value [3 1]}
+{:index 1319, :time 37373644291, :type :fail, :process 57, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 1322, :time 37476942750, :type :invoke, :process 59, :f :cas, :value [2 2]}
+{:index 1323, :time 37479879333, :type :fail, :process 59, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1324, :time 37577799041, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1325, :time 37587564166, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1326, :time 37637670750, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 1327, :time 37667620500, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1328, :time 37698985416, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 1329, :time 37702106625, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1336, :time 37834572125, :type :invoke, :process 54, :f :cas, :value [0 1]}
+{:index 1337, :time 37835906666, :type :fail, :process 54, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1338, :time 37890942708, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 1339, :time 37892302541, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1350, :time 38159704958, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 1351, :time 38161188666, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1352, :time 38258501916, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 1353, :time 38264422958, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 1354, :time 38301701958, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1355, :time 38303465708, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1356, :time 38324015000, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1357, :time 38325438125, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1364, :time 38588660708, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 1365, :time 38590845583, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1366, :time 38637386208, :type :invoke, :process 67, :f :cas, :value [3 2]}
+{:index 1367, :time 38644232583, :type :fail, :process 67, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1368, :time 38658988375, :type :invoke, :process 56, :f :cas, :value [1 1]}
+{:index 1369, :time 38662373125, :type :fail, :process 56, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1370, :time 38663584750, :type :invoke, :process 57, :f :cas, :value [2 1]}
+{:index 1371, :time 38665188000, :type :fail, :process 57, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1374, :time 38782562125, :type :invoke, :process 59, :f :write, :value 3}
+{:index 1375, :time 38786521791, :type :fail, :process 59, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1380, :time 38927466375, :type :invoke, :process 54, :f :cas, :value [3 2]}
+{:index 1381, :time 38931785541, :type :fail, :process 54, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1382, :time 38944199958, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1383, :time 38947662625, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1384, :time 38987617625, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 1385, :time 38992168875, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1386, :time 39083877958, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1387, :time 39086740500, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1390, :time 39222692583, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1391, :time 39226406166, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1400, :time 39431232708, :type :invoke, :process 59, :f :cas, :value [1 4]}
+{:index 1401, :time 39432894541, :type :fail, :process 59, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 1404, :time 39464266541, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1405, :time 39465937541, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1406, :time 39558936041, :type :invoke, :process 54, :f :cas, :value [2 4]}
+{:index 1407, :time 39560568000, :type :fail, :process 54, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 1408, :time 39655628083, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 1409, :time 39657057375, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1418, :time 39826022583, :type :invoke, :process 67, :f :write, :value 3}
+{:index 1419, :time 39827742291, :type :fail, :process 67, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1422, :time 39926056166, :type :invoke, :process 57, :f :write, :value 4}
+{:index 1423, :time 39930808458, :type :fail, :process 57, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1426, :time 39998394666, :type :invoke, :process 59, :f :cas, :value [1 3]}
+{:index 1427, :time 40001082875, :type :fail, :process 59, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1434, :time 40269430500, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1435, :time 40273762666, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1436, :time 40347690041, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1437, :time 40352117416, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1444, :time 40594315125, :type :invoke, :process 67, :f :write, :value 0}
+{:index 1445, :time 40598279708, :type :fail, :process 67, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1448, :time 40707151833, :type :invoke, :process 57, :f :write, :value 3}
+{:index 1449, :time 40711106041, :type :fail, :process 57, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1452, :time 40774405041, :type :invoke, :process 59, :f :write, :value 0}
+{:index 1453, :time 40778564875, :type :fail, :process 59, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1454, :time 40781322541, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1455, :time 40783960416, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1458, :time 40893432000, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1459, :time 40894452166, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1462, :time 41028392958, :type :invoke, :process 54, :f :cas, :value [2 3]}
+{:index 1463, :time 41032876416, :type :fail, :process 54, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 1464, :time 41096691916, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1465, :time 41101537625, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1466, :time 41142009541, :type :invoke, :process 54, :f :cas, :value [1 3]}
+{:index 1467, :time 41145033958, :type :fail, :process 54, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1468, :time 41211109541, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1469, :time 41214966791, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1470, :time 41268973958, :type :invoke, :process 67, :f :write, :value 1}
+{:index 1471, :time 41273051291, :type :fail, :process 67, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1472, :time 41345853083, :type :invoke, :process 56, :f :cas, :value [3 4]}
+{:index 1473, :time 41350230833, :type :fail, :process 56, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1476, :time 41483814583, :type :invoke, :process 58, :f :cas, :value [2 1]}
+{:index 1477, :time 41488165791, :type :fail, :process 58, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1480, :time 41592230166, :type :invoke, :process 54, :f :cas, :value [1 2]}
+{:index 1481, :time 41595715875, :type :fail, :process 54, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 1482, :time 41639759416, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 1483, :time 41643812208, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1486, :time 41702911791, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1487, :time 41706115166, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1498, :time 42006402000, :type :invoke, :process 56, :f :cas, :value [3 1]}
+{:index 1500, :time 42011580791, :type :fail, :process 56, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 1502, :time 42070045166, :type :invoke, :process 58, :f :cas, :value [3 4]}
+{:index 1503, :time 42076183583, :type :fail, :process 58, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1506, :time 42189651583, :type :invoke, :process 54, :f :cas, :value [1 3]}
+{:index 1507, :time 42194443041, :type :fail, :process 54, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1508, :time 42211535500, :type :invoke, :process 54, :f :cas, :value [1 4]}
+{:index 1509, :time 42214364791, :type :fail, :process 54, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 1510, :time 42240576625, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1511, :time 42244766375, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1516, :time 42315444083, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1517, :time 42316688583, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1518, :time 42321844666, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 1519, :time 42322976875, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 1528, :time 42615309750, :type :invoke, :process 58, :f :write, :value 0}
+{:index 1529, :time 42619407708, :type :fail, :process 58, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1532, :time 42781081250, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1533, :time 42782742875, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1534, :time 42850716916, :type :invoke, :process 54, :f :cas, :value [1 4]}
+{:index 1535, :time 42852554166, :type :fail, :process 54, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 1536, :time 42867694166, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1537, :time 42869165041, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1542, :time 42990609916, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 1543, :time 42995517833, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 1544, :time 43027175291, :type :invoke, :process 54, :f :cas, :value [2 3]}
+{:index 1545, :time 43031048375, :type :fail, :process 54, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 1546, :time 43085358458, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1547, :time 43091644916, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1550, :time 43237476750, :type :invoke, :process 56, :f :cas, :value [3 2]}
+{:index 1551, :time 43244081958, :type :fail, :process 56, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1554, :time 43344546333, :type :invoke, :process 58, :f :cas, :value [4 1]}
+{:index 1555, :time 43346676208, :type :fail, :process 58, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1558, :time 43494169875, :type :invoke, :process 54, :f :cas, :value [0 2]}
+{:index 1559, :time 43496851375, :type :fail, :process 54, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1560, :time 43597604666, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1561, :time 43600605458, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1564, :time 43759090916, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 1565, :time 43764015583, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1566, :time 43764072083, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 1567, :time 43766335875, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1570, :time 43911964000, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1571, :time 43913872416, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1576, :time 44172508958, :type :invoke, :process 56, :f :cas, :value [3 3]}
+{:index 1577, :time 44174647750, :type :fail, :process 56, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1578, :time 44174685875, :type :invoke, :process 57, :f :cas, :value [2 2]}
+{:index 1579, :time 44176212625, :type :fail, :process 57, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1582, :time 44289806708, :type :invoke, :process 59, :f :write, :value 4}
+{:index 1583, :time 44294040375, :type :fail, :process 59, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1584, :time 44386772416, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 1585, :time 44393035375, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1586, :time 44482134833, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1587, :time 44488353750, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1593, :time 44621550291, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 1595, :time 44624006666, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1598, :time 44639682833, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 1599, :time 44644317875, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 1600, :time 44673165208, :type :invoke, :process 67, :f :cas, :value [0 1]}
+{:index 1601, :time 44677407083, :type :fail, :process 67, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1603, :time 44756643625, :type :invoke, :process 57, :f :cas, :value [1 2]}
+{:index 1605, :time 44759132916, :type :fail, :process 57, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 1610, :time 44886552000, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1611, :time 44892061166, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1616, :time 45023379291, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1617, :time 45028125750, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1618, :time 45092150250, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 1619, :time 45094073291, :type :invoke, :process 67, :f :cas, :value [1 1]}
+{:index 1620, :time 45097081083, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1621, :time 45097123250, :type :fail, :process 67, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1622, :time 45133090583, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 1623, :time 45138305166, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 1626, :time 45292745708, :type :invoke, :process 67, :f :cas, :value [3 0]}
+{:index 1627, :time 45297904458, :type :fail, :process 67, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 1628, :time 45393199125, :type :invoke, :process 56, :f :write, :value 3}
+{:index 1629, :time 45399223708, :type :fail, :process 56, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1630, :time 45411070708, :type :invoke, :process 57, :f :write, :value 2}
+{:index 1631, :time 45413896625, :type :fail, :process 57, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1632, :time 45419955583, :type :invoke, :process 58, :f :cas, :value [0 1]}
+{:index 1633, :time 45421877500, :type :fail, :process 58, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1634, :time 45444102041, :type :invoke, :process 59, :f :cas, :value [4 1]}
+{:index 1635, :time 45447440375, :type :fail, :process 59, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1636, :time 45525150208, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 1637, :time 45529607666, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1638, :time 45616118125, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1639, :time 45621657541, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1640, :time 45640492875, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1641, :time 45645059000, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1642, :time 45666345875, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1643, :time 45671224041, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1646, :time 45714773958, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 1647, :time 45719252125, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1648, :time 45812128750, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 1649, :time 45817770083, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1652, :time 45940032500, :type :invoke, :process 67, :f :cas, :value [2 4]}
+{:index 1653, :time 45945648916, :type :fail, :process 67, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 1654, :time 45945713875, :type :invoke, :process 56, :f :cas, :value [0 2]}
+{:index 1655, :time 45948286291, :type :fail, :process 56, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1662, :time 46151723125, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1663, :time 46155444875, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1664, :time 46177398208, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1665, :time 46181845666, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1676, :time 46539185250, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1678, :time 46544581750, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1680, :time 46595998541, :type :invoke, :process 56, :f :write, :value 1}
+{:index 1681, :time 46601506541, :type :fail, :process 56, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1684, :time 46701130916, :type :invoke, :process 58, :f :write, :value 1}
+{:index 1685, :time 46707098125, :type :fail, :process 58, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1686, :time 46711084458, :type :invoke, :process 59, :f :cas, :value [0 0]}
+{:index 1687, :time 46713801125, :type :fail, :process 59, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1688, :time 46790003333, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 1689, :time 46795670166, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 1692, :time 46849853750, :type :invoke, :process 54, :f :cas, :value [4 3]}
+{:index 1693, :time 46854566958, :type :fail, :process 54, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 1694, :time 46920415333, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1695, :time 46924917833, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1696, :time 46991757750, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 1697, :time 46995791083, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1698, :time 47083148958, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1699, :time 47088011000, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1700, :time 47153857125, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1701, :time 47156136416, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1702, :time 47224772500, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1703, :time 47227758750, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1704, :time 47306496958, :type :invoke, :process 67, :f :write, :value 3}
+{:index 1705, :time 47311722625, :type :fail, :process 67, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1708, :time 47404488916, :type :invoke, :process 57, :f :cas, :value [1 2]}
+{:index 1709, :time 47410543375, :type :fail, :process 57, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 1722, :time 47738450750, :type :invoke, :process 54, :f :cas, :value [1 1]}
+{:index 1723, :time 47744178208, :type :fail, :process 54, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1724, :time 47776140291, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 1726, :time 47781473041, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 1730, :time 47853862291, :type :invoke, :process 67, :f :cas, :value [4 1]}
+{:index 1731, :time 47856866375, :type :fail, :process 67, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1732, :time 47873819125, :type :invoke, :process 56, :f :cas, :value [0 4]}
+{:index 1733, :time 47877851208, :type :fail, :process 56, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1734, :time 47969373583, :type :invoke, :process 57, :f :cas, :value [4 1]}
+{:index 1735, :time 47974305541, :type :fail, :process 57, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1736, :time 48019168000, :type :invoke, :process 58, :f :cas, :value [1 1]}
+{:index 1737, :time 48023518416, :type :fail, :process 58, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1740, :time 48083997583, :type :invoke, :process 54, :f :cas, :value [1 0]}
+{:index 1741, :time 48088603208, :type :fail, :process 54, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 1744, :time 48134749916, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 1745, :time 48137011666, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 1746, :time 48146772750, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1747, :time 48149438625, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1748, :time 48166118666, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1751, :time 48169708375, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1756, :time 48296890250, :type :invoke, :process 67, :f :cas, :value [4 0]}
+{:index 1757, :time 48301361041, :type :fail, :process 67, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 1758, :time 48350107041, :type :invoke, :process 56, :f :cas, :value [4 4]}
+{:index 1759, :time 48354482791, :type :fail, :process 56, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 1760, :time 48408698250, :type :invoke, :process 57, :f :write, :value 3}
+{:index 1761, :time 48413454166, :type :fail, :process 57, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1762, :time 48505991375, :type :invoke, :process 58, :f :cas, :value [1 2]}
+{:index 1763, :time 48509617750, :type :fail, :process 58, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 1768, :time 48744764208, :type :invoke, :process 54, :f :cas, :value [2 4]}
+{:index 1769, :time 48749795958, :type :fail, :process 54, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 1778, :time 49008086250, :type :invoke, :process 54, :f :write, :value 3}
+{:index 1779, :time 49012358750, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1784, :time 49163214125, :type :invoke, :process 56, :f :cas, :value [2 1]}
+{:index 1785, :time 49166762000, :type :fail, :process 56, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1786, :time 49265248625, :type :invoke, :process 57, :f :cas, :value [4 3]}
+{:index 1787, :time 49270434250, :type :fail, :process 57, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 1790, :time 49309062083, :type :invoke, :process 59, :f :cas, :value [3 3]}
+{:index 1791, :time 49312525500, :type :fail, :process 59, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 1792, :time 49367616708, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 1793, :time 49372199875, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 1794, :time 49467163291, :type :invoke, :process 54, :f :cas, :value [2 1]}
+{:index 1795, :time 49468658250, :type :fail, :process 54, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1800, :time 49645831416, :type :invoke, :process 54, :f :cas, :value [3 2]}
+{:index 1801, :time 49646929916, :type :fail, :process 54, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1808, :time 49833513541, :type :invoke, :process 67, :f :cas, :value [3 2]}
+{:index 1809, :time 49836565375, :type :fail, :process 67, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1810, :time 49932758000, :type :invoke, :process 56, :f :cas, :value [3 0]}
+{:index 1811, :time 49936694333, :type :fail, :process 56, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 1814, :time 49993502208, :type :invoke, :process 58, :f :cas, :value [4 2]}
+{:index 1815, :time 49997225958, :type :fail, :process 58, :f :cas, :value [4 2], :error [:abort "TCP sender unavailable"]}
+{:index 1816, :time 50026085500, :type :invoke, :process 59, :f :write, :value 0}
+{:index 1817, :time 50030221208, :type :fail, :process 59, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1818, :time 50087679583, :type :invoke, :process 54, :f :write, :value 2}
+{:index 1819, :time 50091445375, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 1828, :time 50373019250, :type :invoke, :process 54, :f :cas, :value [0 4]}
+{:index 1829, :time 50376038208, :type :fail, :process 54, :f :cas, :value [0 4], :error [:abort "TCP sender unavailable"]}
+{:index 1832, :time 50516134875, :type :invoke, :process 54, :f :cas, :value [1 1]}
+{:index 1833, :time 50521032916, :type :fail, :process 54, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 1834, :time 50561643000, :type :invoke, :process 67, :f :cas, :value [0 2]}
+{:index 1835, :time 50563468208, :type :invoke, :process 56, :f :cas, :value [2 1]}
+{:index 1836, :time 50565510791, :type :fail, :process 67, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 1837, :time 50565547416, :type :fail, :process 56, :f :cas, :value [2 1], :error [:abort "TCP sender unavailable"]}
+{:index 1840, :time 50629066416, :type :invoke, :process 58, :f :write, :value 3}
+{:index 1841, :time 50632604041, :type :fail, :process 58, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1844, :time 50726080916, :type :invoke, :process 54, :f :cas, :value [1 4]}
+{:index 1845, :time 50731373625, :type :fail, :process 54, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 1846, :time 50823035750, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1847, :time 50828251166, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1850, :time 50922253875, :type :invoke, :process 54, :f :cas, :value [3 2]}
+{:index 1851, :time 50926645833, :type :fail, :process 54, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1858, :time 51152486916, :type :invoke, :process 54, :f :cas, :value [1 3]}
+{:index 1859, :time 51155173875, :type :fail, :process 54, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1861, :time 51216042666, :type :invoke, :process 56, :f :cas, :value [1 4]}
+{:index 1863, :time 51220199750, :type :fail, :process 56, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 1864, :time 51228317666, :type :invoke, :process 57, :f :cas, :value [1 3]}
+{:index 1865, :time 51230875750, :type :fail, :process 57, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1872, :time 51525512041, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1873, :time 51529161916, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1877, :time 51669127791, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 1879, :time 51672440541, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1881, :time 51771481000, :type :invoke, :process 54, :f :cas, :value [4 4]}
+{:index 1883, :time 51774043500, :type :fail, :process 54, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 1886, :time 51953910791, :type :invoke, :process 67, :f :write, :value 3}
+{:index 1887, :time 51957902625, :type :fail, :process 67, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1890, :time 52085529166, :type :invoke, :process 57, :f :write, :value 4}
+{:index 1891, :time 52089449166, :type :fail, :process 57, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1894, :time 52173792583, :type :invoke, :process 59, :f :write, :value 3}
+{:index 1895, :time 52178157791, :type :fail, :process 59, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1902, :time 52285718875, :type :invoke, :process 54, :f :cas, :value [0 1]}
+{:index 1903, :time 52289595958, :type :fail, :process 54, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1910, :time 52457176833, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1912, :time 52461975000, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1916, :time 52617579083, :type :invoke, :process 57, :f :cas, :value [4 4]}
+{:index 1917, :time 52621816166, :type :fail, :process 57, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 1924, :time 52848972083, :type :invoke, :process 54, :f :cas, :value [1 3]}
+{:index 1925, :time 52850665208, :type :fail, :process 54, :f :cas, :value [1 3], :error [:abort "TCP sender unavailable"]}
+{:index 1934, :time 53021628958, :type :invoke, :process 54, :f :cas, :value [4 1]}
+{:index 1935, :time 53025688458, :type :fail, :process 54, :f :cas, :value [4 1], :error [:abort "TCP sender unavailable"]}
+{:index 1938, :time 53099848166, :type :invoke, :process 67, :f :write, :value 3}
+{:index 1939, :time 53103998708, :type :fail, :process 67, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1942, :time 53248570291, :type :invoke, :process 57, :f :cas, :value [0 1]}
+{:index 1943, :time 53253284291, :type :fail, :process 57, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 1944, :time 53258808583, :type :invoke, :process 58, :f :cas, :value [4 2]}
+{:index 1945, :time 53261766666, :type :fail, :process 58, :f :cas, :value [4 2], :error [:abort "TCP sender unavailable"]}
+{:index 1952, :time 53431407708, :type :invoke, :process 54, :f :write, :value 0}
+{:index 1953, :time 53433655625, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 1962, :time 53673835666, :type :invoke, :process 54, :f :write, :value 1}
+{:index 1963, :time 53676581916, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 1964, :time 53750933583, :type :invoke, :process 67, :f :cas, :value [3 1]}
+{:index 1965, :time 53752316166, :type :fail, :process 67, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 1966, :time 53778313375, :type :invoke, :process 56, :f :write, :value 3}
+{:index 1967, :time 53779343500, :type :fail, :process 56, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 1968, :time 53880806208, :type :invoke, :process 57, :f :cas, :value [3 2]}
+{:index 1969, :time 53882334000, :type :fail, :process 57, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 1972, :time 53996707541, :type :invoke, :process 59, :f :cas, :value [2 2]}
+{:index 1973, :time 53999798333, :type :fail, :process 59, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 1975, :time 54066245958, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 1977, :time 54068507500, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 1978, :time 54073083166, :type :invoke, :process 54, :f :write, :value 4}
+{:index 1979, :time 54074390708, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 1980, :time 54087257208, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 1981, :time 54088718750, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 1984, :time 54230183791, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 1985, :time 54231741791, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 1992, :time 54499682625, :type :invoke, :process 56, :f :cas, :value [4 3]}
+{:index 1993, :time 54502355458, :type :fail, :process 56, :f :cas, :value [4 3], :error [:abort "TCP sender unavailable"]}
+{:index 1994, :time 54526240041, :type :invoke, :process 57, :f :cas, :value [4 0]}
+{:index 1995, :time 54527451833, :type :fail, :process 57, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 2004, :time 54844010958, :type :invoke, :process 54, :f :write, :value 0}
+{:index 2005, :time 54846206083, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 2010, :time 55004417916, :type :invoke, :process 54, :f :cas, :value [3 1]}
+{:index 2011, :time 55005712875, :type :fail, :process 54, :f :cas, :value [3 1], :error [:abort "TCP sender unavailable"]}
+{:index 2018, :time 55185570416, :type :invoke, :process 56, :f :cas, :value [1 4]}
+{:index 2019, :time 55200951708, :type :fail, :process 56, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 2028, :time 55485285041, :type :invoke, :process 54, :f :cas, :value [1 4]}
+{:index 2029, :time 55489450250, :type :fail, :process 54, :f :cas, :value [1 4], :error [:abort "TCP sender unavailable"]}
+{:index 2034, :time 55638767166, :type :invoke, :process 54, :f :write, :value 0}
+{:index 2035, :time 55642951000, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 2036, :time 55688124291, :type :invoke, :process 54, :f :cas, :value [0 2]}
+{:index 2037, :time 55689855416, :type :fail, :process 54, :f :cas, :value [0 2], :error [:abort "TCP sender unavailable"]}
+{:index 2038, :time 55752693541, :type :invoke, :process 54, :f :write, :value 1}
+{:index 2039, :time 55754610916, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2044, :time 55975869333, :type :invoke, :process 56, :f :write, :value 1}
+{:index 2045, :time 55977545875, :type :fail, :process 56, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2048, :time 56000633916, :type :invoke, :process 58, :f :write, :value 1}
+{:index 2049, :time 56001558416, :type :fail, :process 58, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2056, :time 56215906208, :type :invoke, :process 54, :f :write, :value 3}
+{:index 2057, :time 56217419291, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 2060, :time 56260712958, :type :invoke, :process 54, :f :cas, :value [3 3]}
+{:index 2061, :time 56262137208, :type :fail, :process 54, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 2062, :time 56271000083, :type :invoke, :process 54, :f :cas, :value [0 1]}
+{:index 2063, :time 56272052541, :type :fail, :process 54, :f :cas, :value [0 1], :error [:abort "TCP sender unavailable"]}
+{:index 2064, :time 56362055541, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 2065, :time 56363855000, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 2068, :time 56515552958, :type :invoke, :process 67, :f :cas, :value [2 3]}
+{:index 2069, :time 56517009791, :type :fail, :process 67, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 2074, :time 56655431000, :type :invoke, :process 58, :f :write, :value 0}
+{:index 2075, :time 56659416083, :type :fail, :process 58, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 2076, :time 56687885541, :type :invoke, :process 59, :f :cas, :value [2 3]}
+{:index 2077, :time 56688397416, :type :invoke, :process 54, :f :write, :value 4}
+{:index 2078, :time 56691658333, :type :fail, :process 59, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 2079, :time 56691700791, :type :fail, :process 54, :f :write, :value 4, :error [:abort "TCP sender unavailable"]}
+{:index 2080, :time 56728147500, :type :invoke, :process 54, :f :cas, :value [3 2]}
+{:index 2081, :time 56731487708, :type :fail, :process 54, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 2084, :time 56805662375, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 2085, :time 56806791208, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 2086, :time 56905619625, :type :invoke, :process 54, :f :write, :value 2}
+{:index 2087, :time 56907287166, :type :fail, :process 54, :f :write, :value 2, :error [:abort "TCP sender unavailable"]}
+{:index 2090, :time 56949129625, :type :invoke, :process 54, :f :cas, :value [1 1]}
+{:index 2091, :time 56950470916, :type :fail, :process 54, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 2096, :time 57088655875, :type :invoke, :process 56, :f :cas, :value [4 2]}
+{:index 2097, :time 57093196708, :type :fail, :process 56, :f :cas, :value [4 2], :error [:abort "TCP sender unavailable"]}
+{:index 2100, :time 57199086708, :type :invoke, :process 58, :f :cas, :value [4 4]}
+{:index 2101, :time 57202882166, :type :fail, :process 58, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 2106, :time 57382726000, :type :invoke, :process 54, :f :cas, :value [4 4]}
+{:index 2107, :time 57384366125, :type :fail, :process 54, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 2110, :time 57468858583, :type :invoke, :process 54, :f :cas, :value [1 2]}
+{:index 2111, :time 57469986250, :type :fail, :process 54, :f :cas, :value [1 2], :error [:abort "TCP sender unavailable"]}
+{:index 2114, :time 57603980291, :type :invoke, :process 54, :f :cas, :value [2 3]}
+{:index 2115, :time 57605630125, :type :fail, :process 54, :f :cas, :value [2 3], :error [:abort "TCP sender unavailable"]}
+{:index 2116, :time 57692189375, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 2117, :time 57695962583, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 2120, :time 57804703625, :type :invoke, :process 67, :f :write, :value 1}
+{:index 2121, :time 57810780833, :type :fail, :process 67, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2124, :time 57886195000, :type :invoke, :process 57, :f :cas, :value [2 2]}
+{:index 2125, :time 57887645166, :type :fail, :process 57, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 2126, :time 57984468208, :type :invoke, :process 58, :f :cas, :value [3 3]}
+{:index 2127, :time 57987539041, :type :fail, :process 58, :f :cas, :value [3 3], :error [:abort "TCP sender unavailable"]}
+{:index 2128, :time 58024812708, :type :invoke, :process 59, :f :cas, :value [2 4]}
+{:index 2129, :time 58027935291, :type :fail, :process 59, :f :cas, :value [2 4], :error [:abort "TCP sender unavailable"]}
+{:index 2132, :time 58141495125, :type :invoke, :process 54, :f :write, :value 3}
+{:index 2133, :time 58145068791, :type :fail, :process 54, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
+{:index 2136, :time 58245785875, :type :invoke, :process 54, :f :cas, :value [3 4]}
+{:index 2137, :time 58250079666, :type :fail, :process 54, :f :cas, :value [3 4], :error [:abort "TCP sender unavailable"]}
+{:index 2138, :time 58274939791, :type :invoke, :process 54, :f :cas, :value [2 2]}
+{:index 2139, :time 58278683041, :type :fail, :process 54, :f :cas, :value [2 2], :error [:abort "TCP sender unavailable"]}
+{:index 2142, :time 58349503875, :type :invoke, :process 54, :f :write, :value 1}
+{:index 2143, :time 58352405500, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2144, :time 58383080958, :type :invoke, :process 54, :f :cas, :value [1 1]}
+{:index 2145, :time 58386232916, :type :fail, :process 54, :f :cas, :value [1 1], :error [:abort "TCP sender unavailable"]}
+{:index 2148, :time 58499968250, :type :invoke, :process 56, :f :cas, :value [1 0]}
+{:index 2149, :time 58504875791, :type :fail, :process 56, :f :cas, :value [1 0], :error [:abort "TCP sender unavailable"]}
+{:index 2160, :time 58750093333, :type :invoke, :process 54, :f :write, :value 0}
+{:index 2161, :time 58752769125, :type :fail, :process 54, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 2168, :time 58926194333, :type :invoke, :process 54, :f :cas, :value [3 0]}
+{:index 2169, :time 58927820416, :type :fail, :process 54, :f :cas, :value [3 0], :error [:abort "TCP sender unavailable"]}
+{:index 2180, :time 59339115666, :type :invoke, :process 59, :f :cas, :value [3 2]}
+{:index 2181, :time 59341307625, :type :fail, :process 59, :f :cas, :value [3 2], :error [:abort "TCP sender unavailable"]}
+{:index 2182, :time 59440148458, :type :invoke, :process 54, :f :cas, :value [0 0]}
+{:index 2183, :time 59444010625, :type :fail, :process 54, :f :cas, :value [0 0], :error [:abort "TCP sender unavailable"]}
+{:index 2184, :time 59508169416, :type :invoke, :process 54, :f :write, :value 1}
+{:index 2185, :time 59510492083, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2186, :time 59575248208, :type :invoke, :process 54, :f :cas, :value [2 0]}
+{:index 2187, :time 59577423583, :type :fail, :process 54, :f :cas, :value [2 0], :error [:abort "TCP sender unavailable"]}
+{:index 2188, :time 59602591250, :type :invoke, :process 54, :f :write, :value 1}
+{:index 2189, :time 59604147583, :type :fail, :process 54, :f :write, :value 1, :error [:abort "TCP sender unavailable"]}
+{:index 2192, :time 59694763625, :type :invoke, :process 54, :f :cas, :value [0 3]}
+{:index 2193, :time 59697332125, :type :fail, :process 54, :f :cas, :value [0 3], :error [:abort "TCP sender unavailable"]}
+{:index 2196, :time 59812734333, :type :invoke, :process 54, :f :cas, :value [4 0]}
+{:index 2197, :time 59818614125, :type :fail, :process 54, :f :cas, :value [4 0], :error [:abort "TCP sender unavailable"]}
+{:index 2198, :time 59839216416, :type :invoke, :process 67, :f :cas, :value [4 4]}
+{:index 2199, :time 59843119791, :type :invoke, :process 56, :f :write, :value 0}
+{:index 2200, :time 59843274208, :type :fail, :process 67, :f :cas, :value [4 4], :error [:abort "TCP sender unavailable"]}
+{:index 2201, :time 59845595666, :type :fail, :process 56, :f :write, :value 0, :error [:abort "TCP sender unavailable"]}
+{:index 2202, :time 59898007375, :type :invoke, :process 57, :f :write, :value 3}
+{:index 2203, :time 59900306333, :type :fail, :process 57, :f :write, :value 3, :error [:abort "TCP sender unavailable"]}
